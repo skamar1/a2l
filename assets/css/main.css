@@ -2177,3 +2177,112 @@ p { color: var(--text-secondary); }
   .stat-grid { grid-template-columns: 1fr 1fr; }
   .cta-section { padding: 48px 24px; }
 }
+
+/* --- App Page -------------------------------------------- */
+.app-hero {
+  position: relative;
+  padding: 100px 0 80px;
+  overflow: hidden;
+}
+.app-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.app-hero__logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 24px;
+  border-radius: var(--radius);
+}
+.app-hero__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+.app-hero__desc {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.app-hero__screens {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: flex-end;
+}
+.app-hero__screens .app-screen {
+  width: 48%;
+  max-width: 220px;
+  border-radius: 20px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.15);
+  border: 1px solid var(--border);
+}
+.app-store-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.app-store-badges--center {
+  justify-content: center;
+  margin-top: 24px;
+}
+.store-badge img {
+  display: block;
+  height: 44px;
+  width: auto;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+}
+.store-badge--google img { height: 51px; }
+.store-badge:hover img { opacity: 0.85; }
+
+.app-gallery {
+  padding: 80px 0;
+  background: var(--bg-surface);
+}
+.app-screens-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.app-screen-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.app-screen-card img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.app-screen-card img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.18);
+}
+.app-screen-caption {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .app-screens-grid { grid-template-columns: repeat(2, 1fr); }
+  .app-hero__inner  { grid-template-columns: 1fr; gap: 48px; }
+  .app-hero__screens { justify-content: center; }
+}
+@media (max-width: 768px) {
+  .app-screens-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .app-hero { padding: 72px 0 56px; }
+}

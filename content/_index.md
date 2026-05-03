@@ -107,6 +107,8 @@ clients:
       alt: "Πελάτης"
     - img: "/images/clients/logo_1.jpg"
       alt: "Πελάτης"
+    - img: "/images/clients/panesgiaolous-logo.png"
+      alt: "Πάνες για Όλους"
 
 cta:
   title: "Ξεκινήστε σήμερα"

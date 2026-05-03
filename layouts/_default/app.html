@@ -1,0 +1,112 @@
+{{ define "main" }}
+
+{{/* App Hero */}}
+<section class="app-hero">
+  <div class="hero__blob hero__blob--tl" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--tr" aria-hidden="true"></div>
+  <div class="container">
+    <div class="app-hero__inner">
+      <div class="app-hero__text">
+        {{ with .Params.app_logo }}
+          <img src="{{ . }}" alt="{{ $.Title }} logo" class="app-hero__logo">
+        {{ end }}
+        <div class="product-hero__eyebrow">{{ .Params.tag | default "Mobile App" }}</div>
+        <h1 class="app-hero__title"><span class="gradient-text">{{ .Title }}</span></h1>
+        <p class="app-hero__desc">{{ .Params.description }}</p>
+        <div class="app-store-badges">
+          {{ with .Params.app_store_url }}
+            <a href="{{ . }}" target="_blank" rel="noopener" class="store-badge store-badge--apple">
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/el-gr" alt="Κατεβάστε στο App Store">
+            </a>
+          {{ end }}
+          {{ with .Params.play_store_url }}
+            <a href="{{ . }}" target="_blank" rel="noopener" class="store-badge store-badge--google">
+              <img src="https://play.google.com/intl/el/badges/static/images/badges/el_badge_web_generic.png" alt="Διαθέσιμο στο Google Play">
+            </a>
+          {{ end }}
+        </div>
+      </div>
+      {{ with .Params.screenshots }}
+        <div class="app-hero__screens">
+          {{ range first 2 . }}
+            <img src="{{ .img }}" alt="{{ .alt }}" class="app-screen" loading="eager">
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* Screenshots Gallery */}}
+{{ with .Params.screenshots }}
+<section class="app-gallery">
+  <div class="container">
+    <div class="section-header" style="text-align:center">
+      <span class="section-label">SCREENSHOTS</span>
+      <h2 class="section-title">Δείτε την Εφαρμογή</h2>
+    </div>
+    <div class="app-screens-grid">
+      {{ range . }}
+        <div class="app-screen-card">
+          <img src="{{ .img }}" alt="{{ .alt }}" loading="lazy">
+          {{ with .caption }}<p class="app-screen-caption">{{ . }}</p>{{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* Feature Sections */}}
+<div class="page-content">
+  <div class="container">
+    {{ range .Params.sections }}
+      <section class="section">
+        <div class="section-header">
+          <span class="section-label">{{ .label }}</span>
+          <h2 class="section-title">{{ .title }}</h2>
+          {{ with .subtitle }}<p class="section-subtitle">{{ . }}</p>{{ end }}
+        </div>
+        {{ with .modules }}
+          <div class="modules">
+            {{ range . }}
+              <div class="module-card">
+                <div class="module-card__icon">{{ .icon }}</div>
+                <h3 class="module-card__title">{{ .title }}</h3>
+                <p class="module-card__desc">{{ .desc }}</p>
+                {{ with .features }}
+                  <ul class="module-card__list">
+                    {{ range . }}<li>{{ . }}</li>{{ end }}
+                  </ul>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        {{ end }}
+      </section>
+      <div class="divider"></div>
+    {{ end }}
+
+    {{/* CTA Bottom with store badges */}}
+    {{ with .Params.cta_bottom }}
+      <div class="cta-section">
+        <h2 class="cta-section__title gradient-text">{{ .title }}</h2>
+        <p class="cta-section__sub">{{ .subtitle }}</p>
+        <div class="app-store-badges app-store-badges--center">
+          {{ with $.Params.app_store_url }}
+            <a href="{{ . }}" target="_blank" rel="noopener" class="store-badge store-badge--apple">
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/el-gr" alt="Κατεβάστε στο App Store">
+            </a>
+          {{ end }}
+          {{ with $.Params.play_store_url }}
+            <a href="{{ . }}" target="_blank" rel="noopener" class="store-badge store-badge--google">
+              <img src="https://play.google.com/intl/el/badges/static/images/badges/el_badge_web_generic.png" alt="Διαθέσιμο στο Google Play">
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}
