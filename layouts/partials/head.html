@@ -16,9 +16,17 @@
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 
-{{/* Fonts — Inter από rsms.me (επίσημο CDN με πλήρη Greek unicode-range support) */}}
-<link rel="preconnect" href="https://rsms.me">
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+{{/* Fonts — Inter self-hosted, no external requests */}}
+<style>
+  @font-face {
+    font-family: InterVariable;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/InterVariable.woff2') format('woff2');
+  }
+  :root { font-family: InterVariable, Inter, sans-serif; }
+</style>
 
 {{/* CSS */}}
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}

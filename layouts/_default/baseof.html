@@ -11,6 +11,7 @@
   </main>
 
   {{ partial "footer.html" . }}
+  {{ partial "cookie-banner.html" . }}
 
   {{/* JS */}}
   {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
