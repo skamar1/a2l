@@ -53,6 +53,11 @@ title = "A2Labs"
     url = "/plano/"
     parent = "programata"
     weight = 6
+  [[menus.main]]
+    name = "Mobile App — Πάνες για Όλους"
+    url = "/panesgiaolous-app/"
+    parent = "programata"
+    weight = 7
 
   [[menus.main]]
     name = "Υπολογιστές"

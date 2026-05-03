@@ -1,0 +1,179 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "A2Labs - Αρχική" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "A2Labs" [ref=e6]
+      - navigation "Κύρια πλοήγηση" [ref=e7]:
+        - link "Αρχική" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e9]:
+          - button "Προγράμματα" [ref=e10] [cursor=pointer]:
+            - text: Προγράμματα
+            - img [ref=e11]
+          - generic [ref=e14]:
+            - link "A2 CRM" [ref=e15] [cursor=pointer]:
+              - /url: /a2crm/
+            - link "Εφαρμογές EntersoftOne" [ref=e16] [cursor=pointer]:
+              - /url: /soft1/
+            - link "Εφαρμογές Dynasoft" [ref=e17] [cursor=pointer]:
+              - /url: /result-crm/
+            - link "Εφαρμογές Megasoft" [ref=e18] [cursor=pointer]:
+              - /url: /megasoft/
+            - link "Εφαρμογές Qorrect" [ref=e19] [cursor=pointer]:
+              - /url: /plano/
+            - link "Mobile App — Πάνες για Όλους" [ref=e20] [cursor=pointer]:
+              - /url: /panesgiaolous-app/
+        - link "Υπολογιστές" [ref=e21] [cursor=pointer]:
+          - /url: /ypologistes/
+        - link "Σχετικά" [ref=e22] [cursor=pointer]:
+          - /url: /sxetika/
+        - link "Νέα & Οδηγίες" [ref=e23] [cursor=pointer]:
+          - /url: /odigies-nea/
+        - link "Επικοινωνία" [ref=e24] [cursor=pointer]:
+          - /url: /epikoinonia/
+  - main [ref=e25]:
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - img "Πάνες για Όλους — Mobile App logo" [ref=e30]
+        - generic [ref=e31]: Mobile App
+        - heading "Πάνες για Όλους — Mobile App" [level=1] [ref=e32]
+        - paragraph [ref=e33]: Παραγγείλτε πάνες, είδη μωρού, καλλυντικά και προϊόντα νοικοκυριού απευθείας από το κινητό σας. Δωρεάν για iOS και Android.
+        - generic [ref=e34]:
+          - link "Κατεβάστε στο App Store" [ref=e35] [cursor=pointer]:
+            - /url: https://apps.apple.com/gr/app/panesgiaolous-gr/id6743780395
+            - img "Κατεβάστε στο App Store" [ref=e36]
+          - link "Διαθέσιμο στο Google Play" [ref=e37] [cursor=pointer]:
+            - /url: https://play.google.com/store/apps/details?id=gr.panesgiaolous.app
+            - img "Διαθέσιμο στο Google Play" [ref=e38]
+      - generic [ref=e39]:
+        - img "Αρχική σελίδα εφαρμογής" [ref=e40]
+        - img "Προϊόντα" [ref=e41]
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]: SCREENSHOTS
+        - heading "Δείτε την Εφαρμογή" [level=2] [ref=e46]
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - img "Αρχική σελίδα εφαρμογής" [ref=e49]
+          - paragraph [ref=e50]: Αρχική
+        - generic [ref=e51]:
+          - img "Προϊόντα" [ref=e52]
+          - paragraph [ref=e53]: Κατάλογος Προϊόντων
+        - generic [ref=e54]:
+          - img "Παραγγελίες" [ref=e55]
+          - paragraph [ref=e56]: Παραγγελίες
+        - generic [ref=e57]:
+          - img "Συνδρομές" [ref=e58]
+          - paragraph [ref=e59]: Συνδρομές
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]: ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ
+          - heading "ΟΛΑ ΣΤΟ ΚΙΝΗΤΟ ΣΑΣ" [level=2] [ref=e65]
+          - paragraph [ref=e66]: Η εφαρμογή panesgiaolous.gr φέρνει ολόκληρο τον κατάλογο στην οθόνη σας — γρήγορα, εύκολα, χωρίς browser.
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]: 📦
+            - heading "Πλήρης Κατάλογος" [level=3] [ref=e70]
+            - paragraph [ref=e71]: Πρόσβαση σε εκατοντάδες προϊόντα οργανωμένα ανά κατηγορία, με ενημερωμένες τιμές σε πραγματικό χρόνο.
+            - list [ref=e72]:
+              - listitem [ref=e73]: → Πάνες & είδη μωρού (Pampers, Babylino, Septona)
+              - listitem [ref=e74]: → Προϊόντα ακράτειας
+              - listitem [ref=e75]: → Καλλυντικά & Korean Beauty
+              - listitem [ref=e76]: → Είδη νοικοκυριού & βιταμίνες
+          - generic [ref=e77]:
+            - generic [ref=e78]: 🛒
+            - heading "Εύκολες Παραγγελίες" [level=3] [ref=e79]
+            - paragraph [ref=e80]: Παραγγείλτε με λίγα βήματα χωρίς να χρειάζεστε browser. Η εφαρμογή θυμάται τις προτιμήσεις σας.
+            - list [ref=e81]:
+              - listitem [ref=e82]: → Γρήγορη επανάληψη παραγγελίας
+              - listitem [ref=e83]: → Αποθηκευμένες διευθύνσεις
+              - listitem [ref=e84]: → Ιστορικό παραγγελιών
+          - generic [ref=e85]:
+            - generic [ref=e86]: ⚡
+            - heading "Γρήγορη Πλοήγηση" [level=3] [ref=e87]
+            - paragraph [ref=e88]: Ο κατάλογος αποθηκεύεται τοπικά — πλοήγηση χωρίς καθυστέρηση ακόμα και με αδύναμη σύνδεση.
+            - list [ref=e89]:
+              - listitem [ref=e90]: → Offline περιήγηση καταλόγου
+              - listitem [ref=e91]: → Άμεση αναζήτηση προϊόντος
+              - listitem [ref=e92]: → Αυτόματη ενημέρωση τιμών
+          - generic [ref=e93]:
+            - generic [ref=e94]: 🔔
+            - heading "Ειδοποιήσεις" [level=3] [ref=e95]
+            - paragraph [ref=e96]: Ενημερωθείτε για νέα προϊόντα, προσφορές και την κατάσταση της παραγγελίας σας.
+            - list [ref=e97]:
+              - listitem [ref=e98]: → Κατάσταση παραγγελίας σε πραγματικό χρόνο
+              - listitem [ref=e99]: → Νέα προϊόντα & προσφορές
+              - listitem [ref=e100]: → Ειδοποίηση αποστολής
+      - generic [ref=e102]:
+        - heading "Κατεβάστε Δωρεάν" [level=2] [ref=e103]
+        - paragraph [ref=e104]: Διαθέσιμο δωρεάν για iPhone και Android. Παραγγείλτε από οπουδήποτε, οποτεδήποτε.
+        - generic [ref=e105]:
+          - link "Κατεβάστε στο App Store" [ref=e106] [cursor=pointer]:
+            - /url: https://apps.apple.com/gr/app/panesgiaolous-gr/id6743780395
+            - img "Κατεβάστε στο App Store" [ref=e107]
+          - link "Διαθέσιμο στο Google Play" [ref=e108] [cursor=pointer]:
+            - /url: https://play.google.com/store/apps/details?id=gr.panesgiaolous.app
+            - img "Διαθέσιμο στο Google Play" [ref=e109]
+  - contentinfo [ref=e110]:
+    - generic [ref=e111]:
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - link "A2Labs - Αρχική" [ref=e114] [cursor=pointer]:
+            - /url: /
+            - img "A2Labs" [ref=e115]
+          - paragraph [ref=e116]: A2 Labs
+        - generic [ref=e117]:
+          - heading "Σύνδεσμοι" [level=4] [ref=e118]
+          - generic [ref=e119]:
+            - link "Αρχική" [ref=e120] [cursor=pointer]:
+              - /url: /
+            - link "Προγράμματα" [ref=e121] [cursor=pointer]:
+              - /url: /programata/
+            - link "Υπολογιστές" [ref=e122] [cursor=pointer]:
+              - /url: /ypologistes/
+            - link "Σχετικά" [ref=e123] [cursor=pointer]:
+              - /url: /sxetika/
+            - link "Νέα & Οδηγίες" [ref=e124] [cursor=pointer]:
+              - /url: /odigies-nea/
+            - link "Επικοινωνία" [ref=e125] [cursor=pointer]:
+              - /url: /epikoinonia/
+        - generic [ref=e126]:
+          - heading "Προϊόντα" [level=4] [ref=e127]
+          - generic [ref=e128]:
+            - link "A2 CRM" [ref=e129] [cursor=pointer]:
+              - /url: /a2crm/
+            - link "Εφαρμογές EntersoftOne" [ref=e130] [cursor=pointer]:
+              - /url: /soft1/
+            - link "Εφαρμογές Dynasoft" [ref=e131] [cursor=pointer]:
+              - /url: /result-crm/
+            - link "Εφαρμογές Megasoft" [ref=e132] [cursor=pointer]:
+              - /url: /megasoft/
+            - link "Εφαρμογές Qorrect" [ref=e133] [cursor=pointer]:
+              - /url: /plano/
+            - link "Υπολογιστές" [ref=e134] [cursor=pointer]:
+              - /url: /ypologistes/
+        - generic [ref=e135]:
+          - heading "Επικοινωνία" [level=4] [ref=e136]
+          - paragraph [ref=e137]:
+            - text: 📞
+            - link "210 224 1787" [ref=e138] [cursor=pointer]:
+              - /url: tel:+302102241787
+          - paragraph [ref=e139]:
+            - text: ✉️
+            - link "info@a2l.gr" [ref=e140] [cursor=pointer]:
+              - /url: mailto:info@a2l.gr
+          - paragraph [ref=e141]: 📍 Γ. Παπανδρέου 55, 143 41 Νέα Φιλαδέλφεια
+          - paragraph [ref=e142]: "🕐 Δευ–Παρ: 09:00–17:00"
+      - generic [ref=e143]:
+        - paragraph [ref=e144]: © 2014–2026 A2 Labs. Όλα τα δικαιώματα διατηρούνται.
+        - generic [ref=e145]:
+          - link "Σχετικά με εμάς" [ref=e146] [cursor=pointer]:
+            - /url: /sxetika/
+          - link "Τρόποι Πληρωμής" [ref=e147] [cursor=pointer]:
+            - /url: /tropoi-plirwmis/
+          - link "Πολιτική Cookies" [ref=e148] [cursor=pointer]:
+            - /url: /politiki-cookies/
+          - link "Επικοινωνία" [ref=e149] [cursor=pointer]:
+            - /url: /epikoinonia/
