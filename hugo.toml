@@ -1,0 +1,72 @@
+baseURL = "https://a2l.gr/"
+languageCode = "el"
+defaultContentLanguage = "el"
+title = "A2Labs"
+
+[params]
+  description = "Μηχανογράφηση Επιχειρήσεων. ERP, CRM, Υπολογιστές."
+  author = "Σταματάκη Ειρήνη — A2Labs"
+  logo = "/images/logo.png"
+  phone = "210 224 1787"
+  email = "info@a2l.gr"
+  address = "Γ. Παπανδρέου 55, 143 41 Νέα Φιλαδέλφεια"
+  hours = "Δευ–Παρ: 09:00–17:00"
+  vat = "050747890"
+  doy = "ΚΕ.ΦΟ.ΔΕ ΑΤΤΙΚΗΣ"
+  gemi = "164754803000"
+  company_full = "A2 Labs"
+
+[menus]
+  [[menus.main]]
+    name = "Αρχική"
+    url = "/"
+    weight = 1
+
+  # Dropdown: Προγράμματα
+  [[menus.main]]
+    name = "Προγράμματα"
+    identifier = "programata"
+    url = "/programata/"
+    weight = 2
+  [[menus.main]]
+    name = "A2 CRM"
+    url = "/a2crm/"
+    parent = "programata"
+    weight = 1
+  [[menus.main]]
+    name = "Εφαρμογές EntersoftOne"
+    url = "/soft1/"
+    parent = "programata"
+    weight = 2
+  [[menus.main]]
+    name = "Εφαρμογές Dynasoft"
+    url = "/result-crm/"
+    parent = "programata"
+    weight = 4
+  [[menus.main]]
+    name = "Εφαρμογές Megasoft"
+    url = "/megasoft/"
+    parent = "programata"
+    weight = 5
+  [[menus.main]]
+    name = "Εφαρμογές Qorrect"
+    url = "/plano/"
+    parent = "programata"
+    weight = 6
+
+  [[menus.main]]
+    name = "Υπολογιστές"
+    url = "/ypologistes/"
+    weight = 3
+  [[menus.main]]
+    name = "Σχετικά"
+    url = "/sxetika/"
+    weight = 4
+  [[menus.main]]
+    name = "Νέα & Οδηγίες"
+    url = "/odigies-nea/"
+    weight = 5
+  [[menus.main]]
+    name = "Επικοινωνία"
+    url = "/epikoinonia/"
+    weight = 6

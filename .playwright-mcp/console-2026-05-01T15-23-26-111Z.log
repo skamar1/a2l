@@ -1,0 +1,35 @@
+[    4253ms] [LOG] clear cache on company change @ https://plano.plus/main.17e9da2aa5607731.js:5195
+[    5632ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://plano.plus/landing/login:0
+[   23951ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtag/js?id=G-CHR04ND96B:0
+[   23951ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtm.js?id=GTM-K47TG2HZ:0
+[   24835ms] [LOG] activating-google-analytics ... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   24835ms] [LOG] adding google tag manager script for analytics... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   24836ms] [LOG] adding google tag manager script for analytics was added to head... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   24836ms] [LOG] google-analytics is activated @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   24836ms] [LOG] adding-googleTagManagerScript ... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   24836ms] [LOG] googleTagManager Script has been added @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   24842ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtag/js?id=G-CHR04ND96B:0
+[   24842ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtm.js?id=GTM-K47TG2HZ:0
+[   25014ms] [LOG] google-analytics is firing with slug : / @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   35511ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtag/js?id=G-CHR04ND96B:0
+[   35542ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtm.js?id=GTM-K47TG2HZ:0
+[   35643ms] [LOG] activating-google-analytics ... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   35643ms] [LOG] adding google tag manager script for analytics... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   35644ms] [LOG] adding google tag manager script for analytics was added to head... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   35644ms] [LOG] google-analytics is activated @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   35644ms] [LOG] adding-googleTagManagerScript ... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   35644ms] [LOG] googleTagManager Script has been added @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   35646ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtag/js?id=G-CHR04ND96B:0
+[   35646ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtm.js?id=GTM-K47TG2HZ:0
+[   35650ms] [LOG] google-analytics is firing with slug : /web @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   43241ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtag/js?id=G-CHR04ND96B:0
+[   43259ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtm.js?id=GTM-K47TG2HZ:0
+[   43429ms] [LOG] activating-google-analytics ... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   43429ms] [LOG] adding google tag manager script for analytics... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   43430ms] [LOG] adding google tag manager script for analytics was added to head... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   43430ms] [LOG] google-analytics is activated @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   43430ms] [LOG] adding-googleTagManagerScript ... @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   43430ms] [LOG] googleTagManager Script has been added @ https://dataway.gr/main.e2ee5a8c79911a20.js:0
+[   43432ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtag/js?id=G-CHR04ND96B:0
+[   43432ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtm.js?id=GTM-K47TG2HZ:0
+[   43436ms] [LOG] google-analytics is firing with slug : / @ https://dataway.gr/main.e2ee5a8c79911a20.js:0

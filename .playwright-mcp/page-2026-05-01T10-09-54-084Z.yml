@@ -1,0 +1,212 @@
+- generic [active] [ref=e1]:
+  - link:
+    - /url: https://moth.social/@a2l_
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]:
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - generic [ref=e15]: 
+              - generic [ref=e16]: 210 300 5787
+            - listitem [ref=e17]:
+              - generic [ref=e19]: 
+              - generic [ref=e20]: info@a2l.gr
+            - listitem [ref=e21]:
+              - generic [ref=e23]: 
+              - generic [ref=e24]: Γ. Παπανδρέέου 55, 14341 Νέα Φιλαδέλφεια
+          - search [ref=e29] [cursor=pointer]:
+            - generic [ref=e30]:
+              - searchbox "Search" [ref=e31]
+              - generic [ref=e32]: 
+        - generic [ref=e34]:
+          - link "default-logo" [ref=e40] [cursor=pointer]:
+            - /url: https://a2l.gr
+            - img "default-logo" [ref=e43]
+          - navigation [ref=e49]:
+            - list [ref=e50]:
+              - listitem [ref=e51]:
+                - link "Αρχική" [ref=e52] [cursor=pointer]:
+                  - /url: https://a2l.gr/
+              - listitem [ref=e53]:
+                - button "Προγράμματα " [ref=e54]:
+                  - link "Προγράμματα " [ref=e55] [cursor=pointer]:
+                    - /url: https://#
+                    - text: Προγράμματα
+                    - generic [ref=e57]: 
+              - listitem [ref=e58]:
+                - link "Υπολογιστές" [ref=e59] [cursor=pointer]:
+                  - /url: https://a2l.gr/%cf%85%cf%80%ce%bf%ce%bb%ce%bf%ce%b3%ce%b9%cf%83%cf%84%ce%ad%cf%82/
+              - listitem [ref=e60]:
+                - link "Σχετικά" [ref=e61] [cursor=pointer]:
+                  - /url: https://a2l.gr/%cf%83%cf%87%ce%b5%cf%84%ce%b9%ce%ba%ce%ac-%ce%bc%ce%b5-%ce%b5%ce%bc%ce%ac%cf%82/
+              - listitem [ref=e62]:
+                - link "ΟΔΗΓΙΕΣ – ΝΕΑ" [ref=e63] [cursor=pointer]:
+                  - /url: https://a2l.gr/%ce%bf%ce%b4%ce%b7%ce%b3%ce%b9%ce%b5%cf%82-%ce%bd%ce%b5%ce%b1/
+              - listitem [ref=e64]:
+                - link "Επικοινωνία" [ref=e65] [cursor=pointer]:
+                  - /url: https://a2l.gr/%ce%b5%cf%80%ce%b9%ce%ba%ce%bf%ce%b9%ce%bd%cf%89%ce%bd%ce%af%ce%b1/
+    - generic [ref=e68]:
+      - generic [ref=e76]:
+        - button "Previous" [ref=e77] [cursor=pointer]:
+          - generic [ref=e78]: 
+        - generic [ref=e80]:
+          - tabpanel [ref=e81]
+          - tabpanel [ref=e92]
+          - tabpanel [ref=e105]
+          - tabpanel [ref=e114]
+          - tabpanel [ref=e123]
+        - button "Next" [ref=e132] [cursor=pointer]:
+          - generic [ref=e133]: 
+        - tablist [ref=e134]
+      - generic [ref=e138]:
+        - heading "Γιατί διαφέρουμε;" [level=2] [ref=e141]
+        - generic [ref=e143]:
+          - list [ref=e149]:
+            - listitem [ref=e150]:
+              - generic [ref=e152]:
+                - heading "Αξιοπιστία" [level=2] [ref=e153]
+                - paragraph [ref=e154]: Όταν μας ανατίθεται ένα έργο, δουλέυουμε σκληρά και με υπευθυνότητα για να έχουμε ενά ολοκληρομένο και φιλικό προς τον χρήστη αποτέλεσμα.
+            - listitem [ref=e155]:
+              - generic [ref=e157]:
+                - heading "Υποστήριξη & Βοήθεια" [level=2] [ref=e158]
+                - paragraph [ref=e159]: Δεν σας παρέχουμε απλά τις υπηρεσίες μας αλλά παρέχουμε και συνεχή υποστήριξη και βοηθάμε σε όποιο πρόβλημα μπορεί να σας προκύψει.
+            - listitem [ref=e160]:
+              - generic [ref=e161]:
+                - heading "Εμπιστοσύνη Πελατών" [level=2] [ref=e162]
+                - paragraph [ref=e163]: Μέσα σε όλα αυτά τα χρόνια λειτουργίας μας, εχουμε χτίσει μια σχέση εμπιστοσύνης με όλους εσάς και ξέρετε οτι μπορείτε να βασιστέιτε πάνω μας.
+          - list [ref=e169]:
+            - listitem [ref=e170]:
+              - generic [ref=e172]:
+                - heading "Προσιτές Τιμές" [level=2] [ref=e173]
+                - paragraph [ref=e174]: Η κοστολόγηση από project σε project διαφέρει αλλά προσπαθούμε να έχουμε χαμηλές τιμολογήσεις καθώς κατανοούμε τις δυσκολίες που μπορεί να υπάρχουν.
+            - listitem [ref=e175]:
+              - generic [ref=e177]:
+                - heading "Εμπειρία στον Χώρο" [level=2] [ref=e178]
+                - paragraph [ref=e179]: Λειτουργούμε από το 2014 και έχοντας έρθει σε επαφή με εκατοντάδες πελάτες χρησιμοποιούμε την εμπειρία μας για να σας παρέχουμε το καλύτερο δυνατό αποτέλεσμα.
+            - listitem [ref=e180]:
+              - generic [ref=e181]:
+                - heading "Γρήγορή Παράδοση" [level=2] [ref=e182]
+                - paragraph [ref=e183]: Παραμένουμε στα χρονικά περιθόρια που εσείς ορίζετε και που θα συμφωνήσουμε στην αρχή. Σας παραδίδουμε το τελικό αποτέλεσμα πάντα στην ώρα μας.
+        - region "Image Carousel" [ref=e192]:
+          - generic [ref=e193]:
+            - group [ref=e194]:
+              - figure [ref=e195]:
+                - img [ref=e196]
+            - group [ref=e197]:
+              - figure [ref=e198]:
+                - img [ref=e199]
+            - group [ref=e200]:
+              - figure [ref=e201]:
+                - img [ref=e202]
+            - group [ref=e203]:
+              - figure [ref=e204]:
+                - img [ref=e205]
+            - group [ref=e206]:
+              - figure [ref=e207]:
+                - img [ref=e208]
+            - group "1 / 20" [ref=e209]:
+              - figure [ref=e210]:
+                - img "logo_1" [ref=e211]
+            - group "2 / 20" [ref=e212]:
+              - figure [ref=e213]:
+                - img "6" [ref=e214]
+            - group "3 / 20" [ref=e215]:
+              - figure [ref=e216]:
+                - img "logo_hotelavailabilities" [ref=e217]
+            - group "4 / 20" [ref=e218]:
+              - figure [ref=e219]:
+                - img "4" [ref=e220]
+            - group "5 / 20" [ref=e221]:
+              - figure [ref=e222]:
+                - img "3" [ref=e223]
+            - group [ref=e224]:
+              - figure [ref=e225]:
+                - img [ref=e226]
+            - group [ref=e227]:
+              - figure [ref=e228]:
+                - img [ref=e229]
+            - group [ref=e230]:
+              - figure [ref=e231]:
+                - img [ref=e232]
+            - group [ref=e233]:
+              - figure [ref=e234]:
+                - img [ref=e235]
+            - group [ref=e236]:
+              - figure [ref=e237]:
+                - img [ref=e238]
+            - group [ref=e239]:
+              - figure [ref=e240]:
+                - img [ref=e241]
+            - group [ref=e242]:
+              - figure [ref=e243]:
+                - img [ref=e244]
+            - group [ref=e245]:
+              - figure [ref=e246]:
+                - img [ref=e247]
+            - group [ref=e248]:
+              - figure [ref=e249]:
+                - img [ref=e250]
+            - group [ref=e251]:
+              - figure [ref=e252]:
+                - img [ref=e253]
+            - group [ref=e254]:
+              - figure [ref=e255]:
+                - img [ref=e256]
+            - group [ref=e257]:
+              - figure [ref=e258]:
+                - img [ref=e259]
+            - group [ref=e260]:
+              - figure [ref=e261]:
+                - img [ref=e262]
+            - group [ref=e263]:
+              - figure [ref=e264]:
+                - img [ref=e265]
+            - group [ref=e266]:
+              - figure [ref=e267]:
+                - img [ref=e268]
+            - group [ref=e269]:
+              - figure [ref=e270]:
+                - img [ref=e271]
+            - group [ref=e272]:
+              - figure [ref=e273]:
+                - img [ref=e274]
+            - group [ref=e275]:
+              - figure [ref=e276]:
+                - img [ref=e277]
+            - group [ref=e278]:
+              - figure [ref=e279]:
+                - img [ref=e280]
+            - group [ref=e281]:
+              - figure [ref=e282]:
+                - img [ref=e283]
+          - button "Previous slide" [ref=e284] [cursor=pointer]:
+            - generic [ref=e285]: 
+          - button "Next slide" [ref=e286] [cursor=pointer]:
+            - generic [ref=e287]: 
+          - generic [ref=e288]:
+            - button "Go to slide 1" [ref=e289] [cursor=pointer]
+            - button "Go to slide 2" [ref=e290] [cursor=pointer]
+            - button "Go to slide 3" [ref=e291] [cursor=pointer]
+            - button "Go to slide 4" [ref=e292] [cursor=pointer]
+            - button "Go to slide 5" [ref=e293] [cursor=pointer]
+            - button "Go to slide 6" [ref=e294] [cursor=pointer]
+            - button "Go to slide 7" [ref=e295] [cursor=pointer]
+            - button "Go to slide 8" [ref=e296] [cursor=pointer]
+            - button "Go to slide 9" [ref=e297] [cursor=pointer]
+            - button "Go to slide 10" [ref=e298] [cursor=pointer]
+            - button "Go to slide 11" [ref=e299] [cursor=pointer]
+            - button "Go to slide 12" [ref=e300] [cursor=pointer]
+            - button "Go to slide 13" [ref=e301] [cursor=pointer]
+            - button "Go to slide 14" [ref=e302] [cursor=pointer]
+            - button "Go to slide 15" [ref=e303] [cursor=pointer]
+            - button "Go to slide 16" [ref=e304] [cursor=pointer]
+            - button "Go to slide 17" [ref=e305] [cursor=pointer]
+            - button "Go to slide 18" [ref=e306] [cursor=pointer]
+            - button "Go to slide 19" [ref=e307] [cursor=pointer]
+            - button "Go to slide 20" [ref=e308] [cursor=pointer]
+    - contentinfo [ref=e318]
+  - generic [ref=e325]: desktop
+  - status [ref=e326]

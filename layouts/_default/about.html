@@ -1,0 +1,111 @@
+{{ define "main" }}
+
+{{/* ── HERO ── */}}
+<div class="product-hero">
+  <div class="container">
+    <div class="product-hero__eyebrow">Σχετικά με εμάς</div>
+    <h1 class="product-hero__title"><span class="gradient-text">{{ .Title }}</span></h1>
+    <p class="product-hero__desc">{{ .Description }}</p>
+  </div>
+</div>
+
+{{/* ── STATS ── */}}
+<section class="section--sm" style="background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="stat-grid">
+      {{ range .Params.stats }}
+        <div class="stat-item">
+          <div class="stat-item__number">{{ .number }}</div>
+          <div class="stat-item__label">{{ .label }}</div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ── ΠΟΙΟΙ ΕΙΜΑΣΤΕ ── */}}
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="section-label">Η αποστολή μας</span>
+        <h2 class="section-title">Τεχνολογία στην υπηρεσία της επιχείρησής σας</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 20px; line-height: 1.85; font-size: 1.05rem;">
+          Από το <strong style="color: var(--text-primary);">2014</strong>, η <strong style="color: var(--text-primary);">A2 Labs</strong>
+          υποστηρίζει επιχειρήσεις στη Νέα Φιλαδέλφεια και σε όλη την Ελλάδα με ολοκληρωμένες λύσεις λογισμικού και τεχνολογίας.
+        </p>
+        <p style="color: var(--text-secondary); margin-bottom: 20px; line-height: 1.85;">
+          Πιστεύουμε ότι κάθε επιχείρηση — μικρή ή μεγάλη — αξίζει να έχει πρόσβαση στα κατάλληλα εργαλεία.
+          Γι' αυτό προσφέρουμε τόσο <strong style="color: var(--text-primary);">έτοιμες λύσεις</strong> κορυφαίων εταιρειών,
+          όσο και <strong style="color: var(--text-primary);">custom ανάπτυξη</strong> εφαρμογών προσαρμοσμένων ακριβώς στις ανάγκες σας.
+        </p>
+        <p style="color: var(--text-secondary); margin-bottom: 36px; line-height: 1.85;">
+          Δεν πουλάμε απλώς λογισμικό — γινόμαστε ο τεχνολογικός σας συνεργάτης, από την πρώτη εγκατάσταση
+          έως τη συνεχή υποστήριξη και εξέλιξη.
+        </p>
+        <a href="/epikoinonia/" class="btn btn--primary btn--lg">Μιλήστε μαζί μας →</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 28px; background: var(--accent-glow);">
+          <div style="font-size: 1.6rem; margin-bottom: 12px;">🎯</div>
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Το όραμά μας</h3>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">
+            Να δώσουμε σε κάθε επιχείρηση την τεχνολογία που χρειάζεται για να αναπτυχθεί —
+            χωρίς περιττή πολυπλοκότητα, με πρακτικές λύσεις που αποδίδουν άμεσα.
+          </p>
+        </div>
+        <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px;">
+          <div style="font-size: 1.6rem; margin-bottom: 12px;">🤝</div>
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Η προσέγγισή μας</h3>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">
+            Ακούμε πρώτα, προτείνουμε μετά. Κάθε λύση ξεκινά από κατανόηση των αναγκών σας —
+            όχι από μια τυποποιημένη προσφορά.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ── ΤΙ ΚΑΝΟΥΜΕ ── */}}
+<section class="section section--dotted">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-label">Υπηρεσίες</span>
+      <h2 class="section-title">Τι κάνουμε</h2>
+      <p class="section-subtitle">Από έτοιμα προγράμματα έως custom ανάπτυξη — καλύπτουμε κάθε τεχνολογική ανάγκη.</p>
+    </div>
+
+    <div class="about-services">
+      {{ range .Params.services }}
+        <div class="about-service-card">
+          <div class="about-service-card__icon">{{ .icon }}</div>
+          <h3 class="about-service-card__title">{{ .title }}</h3>
+          <p class="about-service-card__desc">{{ .desc }}</p>
+          <ul class="about-service-card__list">
+            {{ range .items }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ── CTA ── */}}
+<section class="section" style="background: var(--bg-surface); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="cta-section">
+      <h2 class="cta-section__title gradient-text">Έτοιμοι να ξεκινήσουμε;</h2>
+      <p class="cta-section__sub">Πείτε μας τι χρειάζεστε και θα βρούμε μαζί τη σωστή λύση για την επιχείρησή σας.</p>
+      <div class="cta-section__actions">
+        <a href="/epikoinonia/" class="btn btn--primary btn--lg">Επικοινωνήστε μαζί μας</a>
+        <a href="/programata/" class="btn btn--outline btn--lg">Δείτε τα προγράμματά μας →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

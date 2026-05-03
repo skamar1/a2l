@@ -1,0 +1,166 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "A2Labs - Αρχική" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "A2Labs" [ref=e6]
+      - navigation "Κύρια πλοήγηση" [ref=e7]:
+        - link "Αρχική" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - button "Προγράμματα" [ref=e10] [cursor=pointer]:
+          - text: Προγράμματα
+          - img [ref=e11]
+        - link "Υπολογιστές" [ref=e13] [cursor=pointer]:
+          - /url: /ypologistes/
+        - link "Σχετικά" [ref=e14] [cursor=pointer]:
+          - /url: /sxetika/
+        - link "Νέα & Οδηγίες" [ref=e15] [cursor=pointer]:
+          - /url: /odigies-nea/
+        - link "Επικοινωνία" [ref=e16] [cursor=pointer]:
+          - /url: /epikoinonia/
+  - main [ref=e17]:
+    - article [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - time [ref=e23]: 12 December 2024
+          - generic [ref=e24]: Οδηγοί
+          - generic [ref=e25]: A2Labs
+        - heading "PLANO – Έναρξη Χρήσης & Μεταφοράς Υπολοίπων" [level=1] [ref=e26]
+        - paragraph [ref=e27]: "Το σύνολο ενεργειών που απαιτούνται ως προς τη διαχείριση νέας χρήσης στο Plano: άνοιγμα χρήσης και μεταφορά υπολοίπων."
+      - img "PLANO – Έναρξη Χρήσης & Μεταφοράς Υπολοίπων" [ref=e28]
+      - generic [ref=e29]:
+        - heading "Ενέργειες Ανοίγματος Χρήσης" [level=2] [ref=e30]
+        - heading "Εισαγωγή" [level=3] [ref=e31]
+        - paragraph [ref=e32]: Στο παρόν κείμενο περιγράφεται το σύνολο ενεργειών που απαιτούνται ως προς τη διαχείριση νέας χρήσης.
+        - heading "Άνοιγμα Χρήσης" [level=3] [ref=e33]
+        - paragraph [ref=e34]:
+          - text: Στο μενού
+          - strong [ref=e35]: Ρυθμίσεις – Εταιρία – Χρήσεις
+          - text: εμφανίζονται αριστερά όλες οι χρήσεις, και δεξιά όλη η παραμετροποίηση που αφορά την κάθε μία από αυτές τις χρήσεις. Για την δημιουργία μιας νέας χρήσης, επιλέγετε προσθήκη από το σχετικό σύμβολο κάτω αριστερά και θα πρέπει να συμπληρωθούν τα πεδία δεξιά όπως απεικονίζεται στο παράδειγμα.
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - strong [ref=e38]: "Εισαγωγή:"
+            - text: Από το εικονίδιο των ρυθμίσεων.
+          - listitem [ref=e39]: Επιλέγουμε εταιρεία και χρήση.
+        - paragraph [ref=e40]:
+          - img "Άνοιγμα χρήσης - βήμα 1" [ref=e41]
+        - paragraph [ref=e42]:
+          - text: Υποχρεωτικά πρέπει να συμπληρωθεί ο
+          - strong [ref=e43]: Κωδικός
+          - text: και το
+          - strong [ref=e44]: Όνομα
+          - text: της χρήσης. Οι ημερομηνίες Έναρξης και Λήξης προτείνονται από το σύστημα αλλά μπορείτε να τις τροποποιήσετε.
+        - paragraph [ref=e45]:
+          - text: Επίσης υποχρεωτικό είναι το πεδίο
+          - strong [ref=e46]: Νόμισμα
+          - text: .
+        - paragraph [ref=e47]:
+          - text: Στη συνέχεια θα πρέπει να δημιουργηθούν οι Περίοδοι με την επιλογή
+          - strong [ref=e48]: ΜΗΝΙΑΙΕΣ ΠΕΡΙΟΔΟΙ
+          - text: ", οπότε θα ανοίξουν αυτόματα οι περίοδοι σε επίπεδο μήνα, είτε χειροκίνητα οπότε μπορείτε να διαφοροποιήσετε τις περιόδους όπως εσείς επιθυμείτε."
+        - paragraph [ref=e49]:
+          - img "Ρυθμίσεις χρήσης" [ref=e50]
+        - paragraph [ref=e51]: "Στο tab: Λογιστική, θα πρέπει να ορίσετε την κατηγορία βιβλίων και τα Λογιστικά Συστήματα που θα χρησιμοποιηθούν σε αυτή τη χρήση. Είναι προαιρετικό και δεν χρησιμοποιείτε στην παρούσα φάση."
+        - paragraph [ref=e52]:
+          - text: Για την ολοκλήρωση της δημιουργίας Χρήσης, επιλέγετε
+          - strong [ref=e53]: Αποθήκευση
+          - text: .
+        - heading "Διαδικασία Μεταφοράς Υπολοίπων" [level=2] [ref=e54]
+        - paragraph [ref=e55]:
+          - text: Από το μενού
+          - strong [ref=e56]: Ρυθμίσεις – Εταιρία – Μεταφορά Υπολοίπων
+          - text: εκτελείτε την ενέργεια της μεταφοράς, ώστε να εμφανίζονται τα υπόλοιπα της εκάστοτε οντότητας (πελάτων, προμηθευτών, ειδών, χρεωστών, πιστωτών) στη νέα χρήση.
+        - paragraph [ref=e57]:
+          - img "Μεταφορά υπολοίπων - επιλογές" [ref=e58]
+        - paragraph [ref=e59]:
+          - text: Η μεταφορά υπολοίπων καλό είναι να εκτελείται αφού έχουν συμφωνηθεί τα υπόλοιπα στο τέλος της χρήσης.
+          - strong [ref=e60]: Σε περίπτωση που μετά την ενέργεια αυτή γίνουν επιπλέον κινήσεις στην προηγούμενη χρήση, που επηρεάζουν αποθήκη ή συν/νους, τότε η ενέργεια αυτή θα πρέπει να εκτελεστεί εκ νέου αφού διαγραφούν οι κινήσεις που έχουν δημιουργηθεί σε κάθε οντότητα.
+          - text: "Η συγκεκριμένη ενέργεια παράγει παραστατικά ανάλογα με τις επιλογές που θα κάνετε:"
+        - paragraph [ref=e61]:
+          - img "Παράμετροι μεταφοράς υπολοίπων" [ref=e62]
+        - paragraph [ref=e63]:
+          - text: Στο πεδίο
+          - strong [ref=e64]: “Χρήση από”
+          - text: εμφανίζεται η χρήση από την οποία θέλετε να μεταφερθούν τα υπόλοιπα, ενώ στο
+          - strong [ref=e65]: “Χρήση σε”
+          - text: ποια χρήση θα ενημερώσει. Στο πεδίο
+          - strong [ref=e66]: “Ημερομηνία”
+          - text: ορίζετε την ημερομηνία που θα δημιουργηθεί το παραστατικό της μεταφοράς των υπολοίπων — θα πρέπει να είναι 01/01 της χρήσης που θα μεταφερθούν.
+        - paragraph [ref=e67]:
+          - text: Στη μεταφορά μπορεί να επιλεχθεί συγκεκριμένη οντότητα π.χ. Είδη αποθήκης ή η ένδειξη
+          - strong [ref=e68]: όλα
+          - text: . Για την ενότητα που θέλουμε να μεταφέρουμε θα πρέπει να ενεργοποιήσουμε το αντίστοιχο πεδίο
+          - strong [ref=e69]: “Μεταφορά”
+          - text: . Στο πεδίο
+          - strong [ref=e70]: “Τύπος Παραστατικού”
+          - text: για τα είδη της αποθήκης μπορείτε να επιλέξετε αν θα μεταφερθούν μόνο οι ποσότητες, μόνο οι αξίες ή και τα δύο με το παραστατικό που θα δημιουργηθεί. Στο πεδίο
+          - strong [ref=e71]: “Αποθήκες”
+          - text: ", μπορείτε να επιλέξετε τις αποθήκες για τις οποίες θα εκτελεστεί η ενέργεια. Στο πεδίο"
+          - strong [ref=e72]: “Σειρά Παραστατικού”
+          - text: ", ορίζετε την σειρά για το παραστατικό που θα προκύψει. Για τους συν/μένους θα πρέπει να επιλεχθεί τύπος Παραστατικού"
+          - strong [ref=e73]: “Χρέωσης”
+          - text: και
+          - strong [ref=e74]: “Πίστωσης”
+          - text: καθώς και την αντίστοιχη σειρά.
+      - generic [ref=e75]:
+        - link "← Πίσω στα Νέα" [ref=e76] [cursor=pointer]:
+          - /url: /odigies-nea/
+        - link "Επικοινωνία" [ref=e77] [cursor=pointer]:
+          - /url: /epikoinonia/
+  - contentinfo [ref=e78]:
+    - generic [ref=e79]:
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - link "A2Labs - Αρχική" [ref=e82] [cursor=pointer]:
+            - /url: /
+            - img "A2Labs" [ref=e83]
+          - paragraph [ref=e84]: A2 Labs
+        - generic [ref=e85]:
+          - heading "Σύνδεσμοι" [level=4] [ref=e86]
+          - generic [ref=e87]:
+            - link "Αρχική" [ref=e88] [cursor=pointer]:
+              - /url: /
+            - link "Προγράμματα" [ref=e89] [cursor=pointer]:
+              - /url: /programata/
+            - link "Υπολογιστές" [ref=e90] [cursor=pointer]:
+              - /url: /ypologistes/
+            - link "Σχετικά" [ref=e91] [cursor=pointer]:
+              - /url: /sxetika/
+            - link "Νέα & Οδηγίες" [ref=e92] [cursor=pointer]:
+              - /url: /odigies-nea/
+            - link "Επικοινωνία" [ref=e93] [cursor=pointer]:
+              - /url: /epikoinonia/
+        - generic [ref=e94]:
+          - heading "Προϊόντα" [level=4] [ref=e95]
+          - generic [ref=e96]:
+            - link "Entersoftone" [ref=e97] [cursor=pointer]:
+              - /url: /entersoftone/
+            - link "Dynasoft — Result CRM" [ref=e98] [cursor=pointer]:
+              - /url: /result-crm/
+            - link "Megasoft PRISMA Win" [ref=e99] [cursor=pointer]:
+              - /url: /megasoft/
+            - link "Plano ERP / Retail / Web" [ref=e100] [cursor=pointer]:
+              - /url: /plano/
+            - link "Υπολογιστές" [ref=e101] [cursor=pointer]:
+              - /url: /ypologistes/
+        - generic [ref=e102]:
+          - heading "Επικοινωνία" [level=4] [ref=e103]
+          - paragraph [ref=e104]:
+            - text: 📞
+            - link "210 224 1787" [ref=e105] [cursor=pointer]:
+              - /url: tel:+302102241787
+          - paragraph [ref=e106]:
+            - text: ✉️
+            - link "info@a2l.gr" [ref=e107] [cursor=pointer]:
+              - /url: mailto:info@a2l.gr
+          - paragraph [ref=e108]: 📍 Γ. Παπανδρέου 55, 143 41 Νέα Φιλαδέλφεια
+          - paragraph [ref=e109]: "🕐 Δευ–Παρ: 09:00–17:00"
+      - generic [ref=e110]:
+        - paragraph [ref=e111]: © 2014–2026 A2 Labs. Όλα τα δικαιώματα διατηρούνται.
+        - generic [ref=e112]:
+          - link "Σχετικά με εμάς" [ref=e113] [cursor=pointer]:
+            - /url: /sxetika/
+          - link "Τρόποι Πληρωμής" [ref=e114] [cursor=pointer]:
+            - /url: /tropoi-plirwmis/
+          - link "Επικοινωνία" [ref=e115] [cursor=pointer]:
+            - /url: /epikoinonia/

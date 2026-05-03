@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="page-content">
+  <div class="container">
+    <article class="article">
+      <header class="article__header">
+        <div class="article__meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+          {{ with .Params.category }}<span class="badge">{{ . }}</span>{{ end }}
+          {{ with .Params.author }}<span>{{ . }}</span>{{ end }}
+        </div>
+        <h1 class="article__title">{{ .Title }}</h1>
+        {{ with .Description }}<p class="section-subtitle">{{ . }}</p>{{ end }}
+      </header>
+
+      {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" style="width:100%; border-radius: var(--radius-lg); margin-bottom: 48px; border: 1px solid var(--border);" loading="lazy">
+      {{ end }}
+
+      <div class="article__body">
+        {{ .Content }}
+      </div>
+
+      <div style="margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+        <a href="/odigies-nea/" class="btn btn--outline">← Πίσω στα Νέα</a>
+        <a href="/epikoinonia/" class="btn btn--primary">Επικοινωνία</a>
+      </div>
+    </article>
+  </div>
+</div>
+{{ end }}

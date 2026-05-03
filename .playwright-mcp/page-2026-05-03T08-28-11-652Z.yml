@@ -1,0 +1,249 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "A2Labs - Αρχική" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "A2Labs" [ref=e6]
+      - navigation "Κύρια πλοήγηση" [ref=e7]:
+        - link "Αρχική" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - button "Προγράμματα" [ref=e10] [cursor=pointer]:
+          - text: Προγράμματα
+          - img [ref=e11]
+        - link "Υπολογιστές" [ref=e13] [cursor=pointer]:
+          - /url: /ypologistes/
+        - link "Σχετικά" [ref=e14] [cursor=pointer]:
+          - /url: /sxetika/
+        - link "Νέα & Οδηγίες" [ref=e15] [cursor=pointer]:
+          - /url: /odigies-nea/
+        - link "Επικοινωνία" [ref=e16] [cursor=pointer]:
+          - /url: /epikoinonia/
+  - main [ref=e17]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]: SOFT1 Series 6
+        - heading "Εφαρμογές EntersoftOne" [level=1] [ref=e23]
+        - paragraph [ref=e24]: Ολοκληρωμένη σουίτα cloud ERP, CRM, HR, mobile και κλαδικών λύσεων για επιχειρήσεις κάθε μεγέθους — από start-up έως μεγάλες επιχειρήσεις.
+        - link "Ζητήστε Πληροφορίες" [ref=e26] [cursor=pointer]:
+          - /url: /epikoinonia/
+      - img "Εφαρμογές EntersoftOne" [ref=e28]
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]: ERP, CRM & ΑΥΤΟΜΑΤΙΣΜΟΣ
+          - heading "SOFT1 Series 6 — Cloud ERP & CRM" [level=2] [ref=e34]
+          - paragraph [ref=e35]: Πρωτοποριακό cloud ERP που συνδυάζει ευφυή αυτοματισμό διεργασιών, πλήρη εμπορική διαχείριση και CRM σε μία ενιαία πλατφόρμα. Πάνω από 8.000 εγκαταστάσεις σε Ελλάδα και Κύπρο.
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - generic [ref=e39]: 🏭
+            - heading "SOFT1 Cloud ERP Series 6" [level=3] [ref=e40]
+            - paragraph [ref=e41]: Ολοκληρωμένο cloud ERP για εμπορική διαχείριση, παραγωγή, αποθήκη, χρηματοοικονομικά και myDATA. Λειτουργεί on-premise, cloud (Azure) ή υβριδικά.
+            - list [ref=e42]:
+              - listitem [ref=e43]: → Εμπορική διαχείριση & αποθήκη
+              - listitem [ref=e44]: → Χρηματοοικονομική διαχείριση & λογιστική
+              - listitem [ref=e45]: → Παραγωγή & κοστολόγηση
+              - listitem [ref=e46]: → Πλήρης myDATA & ηλεκτρονική τιμολόγηση
+          - generic [ref=e47]:
+            - generic [ref=e48]: 🤝
+            - heading "SOFT1 Cloud CRM" [level=3] [ref=e49]
+            - paragraph [ref=e50]: SaaS CRM για πωλήσεις, marketing και υποστήριξη πελατών. Διαχείριση leads, ευκαιριών, campaigns και έργων από οποιαδήποτε συσκευή.
+            - list [ref=e51]:
+              - listitem [ref=e52]: → Διαχείριση πελατών, leads & ευκαιριών
+              - listitem [ref=e53]: → Marketing campaigns & SMS
+              - listitem [ref=e54]: → Διαχείριση έργων & τεχνικών
+              - listitem [ref=e55]: → Πλήρης mobility μέσω SOFT1 360
+          - generic [ref=e56]:
+            - generic [ref=e57]: 🤖
+            - heading "Smart Automation" [level=3] [ref=e58]
+            - paragraph [ref=e59]: "Τρία εργαλεία αυτοματισμού: Business Robotics (no-code RPA), B.A.M. (ορχήστρωση διεργασιών) και EVA (conversational AI assistant μέσω Azure Cognitive Services)."
+            - list [ref=e60]:
+              - listitem [ref=e61]: → Business Robotics — drag-and-drop αυτοματισμός
+              - listitem [ref=e62]: → B.A.M. — ορχήστρωση & monitoring ροών
+              - listitem [ref=e63]: → EVA — AI assistant (Skype, Messenger, mobile)
+              - listitem [ref=e64]: → No-code, cross-team flows
+          - generic [ref=e65]:
+            - generic [ref=e66]: 📊
+            - heading "SOFT1 BI Data Lake" [level=3] [ref=e67]
+            - paragraph [ref=e68]: Subscription υπηρεσία επιχειρηματικής ευφυΐας ενσωματωμένη με Microsoft Power BI. Real-time dashboards, predictive analytics και έτοιμα templates πωλήσεων & οικονομικών.
+            - list [ref=e69]:
+              - listitem [ref=e70]: → Microsoft Power BI ενσωμάτωση
+              - listitem [ref=e71]: → Έτοιμα Sales & Financial templates
+              - listitem [ref=e72]: → Predictive analytics & what-if σενάρια
+              - listitem [ref=e73]: → Cloud + on-premise πηγές δεδομένων
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - generic [ref=e77]: MOBILE, ΑΠΟΘΗΚΗ & FINTECH
+          - heading "Mobile Εφαρμογές & Χρηματοοικονομικά" [level=2] [ref=e78]
+          - paragraph [ref=e79]: Από ασύρματη διαχείριση αποθήκης και mobile πωλήσεις έως τραπεζικές συναλλαγές μέσα από το ERP — η EntersoftOne καλύπτει κάθε λειτουργική ανάγκη.
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - generic [ref=e83]: 📱
+            - heading "SOFT1 360 — Enterprise Mobility" [level=3] [ref=e84]
+            - paragraph [ref=e85]: Πλήρης πρόσβαση σε κάθε λειτουργία του SOFT1 από smartphone, tablet ή laptop (iOS, Android, web). Role-based παραμετροποίηση, BYOD και αυστηρός έλεγχος ασφαλείας.
+            - list [ref=e86]:
+              - listitem [ref=e87]: → iOS, Android & web browser
+              - listitem [ref=e88]: → Role-based διαμόρφωση ανά χρήστη
+              - listitem [ref=e89]: → SSL + OAuth + geolocation logging
+              - listitem [ref=e90]: → Online & offline λειτουργία
+          - generic [ref=e91]:
+            - generic [ref=e92]: 📦
+            - heading "SOFT1 WMS Lite" [level=3] [ref=e93]
+            - paragraph [ref=e94]: Mobile εφαρμογή διαχείρισης αποθήκης για παραλαβές, picking, φυσική απογραφή, packing και ενδοδιακίνηση. Υποστήριξη Bluetooth scanners και printers.
+            - list [ref=e95]:
+              - listitem [ref=e96]: → Picking πωλήσεων & αγορών
+              - listitem [ref=e97]: → Φυσική απογραφή με scanner
+              - listitem [ref=e98]: → Packing & ετικέτες Bluetooth
+              - listitem [ref=e99]: → Ενδοδιακίνηση μεταξύ αποθηκών
+          - generic [ref=e100]:
+            - generic [ref=e101]: 🚗
+            - heading "SFA Lite — Sales Force Automation" [level=3] [ref=e102]
+            - paragraph [ref=e103]: Mobile εφαρμογή πωλητών για iOS & Android. Παραγγελιοληψία, είσπραξη, διαχείριση πελατών και reporting — online και offline.
+            - list [ref=e104]:
+              - listitem [ref=e105]: → Παραγγελιοληψία με barcode scanner
+              - listitem [ref=e106]: → Εισπράξεις & αποδείξεις PDF
+              - listitem [ref=e107]: → Real-time σύνδεση με SOFT1 ERP
+              - listitem [ref=e108]: → Οργάνωση επισκέψεων & δρομολόγια
+          - generic [ref=e109]:
+            - generic [ref=e110]: 🏦
+            - heading "SOFT1 FinTech & PayHub" [level=3] [ref=e111]
+            - paragraph [ref=e112]: Τραπεζικές συναλλαγές μέσα από το ERP. Αυτόματη είσπραξη μέσω RF κωδικών πληρωμής, real-time ειδοποιήσεις, αυτόματη λογιστικοποίηση και συμφωνία τραπεζών.
+            - list [ref=e113]:
+              - listitem [ref=e114]: → E-banking σύνδεση & αυτόματες πληρωμές
+              - listitem [ref=e115]: → RF κωδικοί & payment links
+              - listitem [ref=e116]: → Αυτόματη συμφωνία τραπεζικών κινήσεων
+              - listitem [ref=e117]: → Υποστήριξη IRIS (PayHub)
+          - generic [ref=e118]:
+            - generic [ref=e119]: 🧾
+            - heading "myDATA Live & Accounting Reconciliation" [level=3] [ref=e120]
+            - paragraph [ref=e121]: "Μία οθόνη για όλες τις myDATA λειτουργίες: αποστολή συνόψεων, χαρακτηρισμοί, έλεγχος εγκυρότητας. Συνοδεύεται από εργαλείο συμφωνίας Γενικής Λογιστικής–Εμπορικού."
+            - list [ref=e122]:
+              - listitem [ref=e123]: → Αποστολή & ανάκτηση myDATA
+              - listitem [ref=e124]: → Ηλεκτρονική τιμολόγηση ENTERSOFTONE
+              - listitem [ref=e125]: → Συμφωνία GL–Εμπορικού μίας εργασίας
+              - listitem [ref=e126]: → Drill-down σε ημερήσιο επίπεδο
+          - generic [ref=e127]:
+            - generic [ref=e128]: 🖨️
+            - heading "GO ΤΑΜΕΙΑΚΗ — ALL IN ONE Ψηφιακή Ταμειακή" [level=3] [ref=e129]
+            - paragraph [ref=e130]: Η ταχύτερη ψηφιακή ταμειακή για τη λιανική. Ταμειακή, εκτυπωτής και POS σε μία συσκευή — χωρίς ΦΗΜ, χωρίς Ζ, με άμεση αποστολή αποδείξεων στη myDATA.
+            - list [ref=e131]:
+              - listitem [ref=e132]: "→ All-in-one: ταμειακή + εκτυπωτής + POS"
+              - listitem [ref=e133]: → Άμεση διασύνδεση με myDATA / ΑΑΔΕ
+              - listitem [ref=e134]: → Offline λειτουργία — χωρίς διακοπές
+              - listitem [ref=e135]: → Plug & play, χωρίς εκπαίδευση
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - generic [ref=e139]: HR, ΜΙΣΘΟΔΟΣΙΑ & ΚΛΑΔΙΚΕΣ ΛΥΣΕΙΣ
+          - heading "HR Suite & Λύσεις ανά Κλάδο" [level=2] [ref=e140]
+          - paragraph [ref=e141]: Πλήρες οικοσύστημα διαχείρισης ανθρώπινου δυναμικού, μισθοδοσίας και ψηφιακής κάρτας εργασίας — συνδυασμένο με εξειδικευμένες κλαδικές λύσεις για λιανική, χονδρική, παραγωγή και υπηρεσίες.
+        - generic [ref=e143]:
+          - generic [ref=e144]:
+            - generic [ref=e145]: 👥
+            - heading "SOFT1 HRMS & myWorkplace" [level=3] [ref=e146]
+            - paragraph [ref=e147]: "Πλήρες σύστημα διαχείρισης ανθρώπινου δυναμικού: παρουσιολόγιο, βαρδιολόγιο, αξιολογήσεις, εκπαιδεύσεις, recruitment και self-service portal για εργαζόμενους."
+            - list [ref=e148]:
+              - listitem [ref=e149]: → Παρουσιολόγιο, βαρδιολόγιο & οργανόγραμμα
+              - listitem [ref=e150]: → Αξιολογήσεις & recruitment
+              - listitem [ref=e151]: → myWorkplace self-service portal
+              - listitem [ref=e152]: → CloudShift για προγραμματισμό βαρδιών
+          - generic [ref=e153]:
+            - generic [ref=e154]: 💰
+            - heading "SOFT1 Μισθοδοσία" [level=3] [ref=e155]
+            - paragraph [ref=e156]: Ισχυρή μισθοδοσία για όλα τα είδη εργασιακών σχέσεων, ασφαλιστικά ταμεία (ΕΦΚΑ, συμπληρωματικά, ΟΑΕΔ) και αυτόματη μεταφορά στην τράπεζα μέσω FinTech.
+            - list [ref=e157]:
+              - listitem [ref=e158]: → Όλα τα είδη εργασιακών σχέσεων
+              - listitem [ref=e159]: → ΕΦΚΑ, ΙΚΑ & συμπληρωματικά ταμεία
+              - listitem [ref=e160]: → Αυτόματες συλλογικές συμβάσεις
+              - listitem [ref=e161]: → Σύνδεση με τράπεζες & λογιστική
+          - generic [ref=e162]:
+            - generic [ref=e163]: 🪪
+            - heading "Ψηφιακή Κάρτα Εργασίας — myErgani LIVE" [level=3] [ref=e164]
+            - paragraph [ref=e165]: Πλήρης συμμόρφωση με την υποχρεωτική Ψηφιακή Κάρτα Εργασίας. Web Check-In/Out, QR scanner app, σύνδεση με ρολόι παρουσίας και αυτόματη αποστολή στο ΕΡΓΑΝΗ ΙΙ.
+            - list [ref=e166]:
+              - listitem [ref=e167]: → Web, mobile & QR check-in/check-out
+              - listitem [ref=e168]: → Αυτόματη αποστολή στο ΕΡΓΑΝΗ ΙΙ
+              - listitem [ref=e169]: → Απολογιστική δήλωση ωραρίου
+              - listitem [ref=e170]: → Λειτουργεί ανεξάρτητα ή με μισθοδοσία
+          - generic [ref=e171]:
+            - generic [ref=e172]: 🏪
+            - heading "SOFT1 Retail & Retail Pro" [level=3] [ref=e173]
+            - paragraph [ref=e174]: POS για λιανική πώληση 24x7 — από απλά καταστήματα έως αλυσίδες και franchise. Loyalty, barcode, online/offline, διασύνδεση με POS terminals (Cardlink, Euronet, Worldline).
+            - list [ref=e175]:
+              - listitem [ref=e176]: → SOFT1 Retail (online/offline)
+              - listitem [ref=e177]: → SOFT1 Retail Pro — touch POS αλυσίδων
+              - listitem [ref=e178]: → Loyalty Card & εισιτήρια δώρου
+              - listitem [ref=e179]: → Διασύνδεση ERP–POS με myDATA
+          - generic [ref=e180]:
+            - generic [ref=e181]: 🏗️
+            - heading "Κλαδικές Λύσεις" [level=3] [ref=e182]
+            - paragraph [ref=e183]: Εξειδικευμένες λύσεις για χονδρικό εμπόριο & διανομή, παραγωγή, υπηρεσίες (service contracts, ticketing) και SMB/start-up cloud-only πακέτα.
+            - list [ref=e184]:
+              - listitem [ref=e185]: → Χονδρικό εμπόριο & διανομή
+              - listitem [ref=e186]: → Παραγωγή & βιομηχανική κοστολόγηση
+              - listitem [ref=e187]: → Service & τεχνική υποστήριξη
+              - listitem [ref=e188]: → Start-up & SMB cloud πακέτα
+      - generic [ref=e190]:
+        - heading "Ανακαλύψτε τη δύναμη του SOFT1" [level=2] [ref=e191]
+        - paragraph [ref=e192]: Επικοινωνήστε μαζί μας για αξιολόγηση αναγκών και δωρεάν παρουσίαση.
+        - link "Ζητήστε Demo" [ref=e194] [cursor=pointer]:
+          - /url: /epikoinonia/
+  - contentinfo [ref=e195]:
+    - generic [ref=e196]:
+      - generic [ref=e197]:
+        - generic [ref=e198]:
+          - link "A2Labs - Αρχική" [ref=e199] [cursor=pointer]:
+            - /url: /
+            - img "A2Labs" [ref=e200]
+          - paragraph [ref=e201]: A2 Labs
+        - generic [ref=e202]:
+          - heading "Σύνδεσμοι" [level=4] [ref=e203]
+          - generic [ref=e204]:
+            - link "Αρχική" [ref=e205] [cursor=pointer]:
+              - /url: /
+            - link "Προγράμματα" [ref=e206] [cursor=pointer]:
+              - /url: /programata/
+            - link "Υπολογιστές" [ref=e207] [cursor=pointer]:
+              - /url: /ypologistes/
+            - link "Σχετικά" [ref=e208] [cursor=pointer]:
+              - /url: /sxetika/
+            - link "Νέα & Οδηγίες" [ref=e209] [cursor=pointer]:
+              - /url: /odigies-nea/
+            - link "Επικοινωνία" [ref=e210] [cursor=pointer]:
+              - /url: /epikoinonia/
+        - generic [ref=e211]:
+          - heading "Προϊόντα" [level=4] [ref=e212]
+          - generic [ref=e213]:
+            - link "A2 CRM" [ref=e214] [cursor=pointer]:
+              - /url: /a2crm/
+            - link "Εφαρμογές EntersoftOne" [ref=e215] [cursor=pointer]:
+              - /url: /soft1/
+            - link "Εφαρμογές Dynasoft" [ref=e216] [cursor=pointer]:
+              - /url: /result-crm/
+            - link "Εφαρμογές Megasoft" [ref=e217] [cursor=pointer]:
+              - /url: /megasoft/
+            - link "Plano ERP / Retail / Web" [ref=e218] [cursor=pointer]:
+              - /url: /plano/
+            - link "Υπολογιστές" [ref=e219] [cursor=pointer]:
+              - /url: /ypologistes/
+        - generic [ref=e220]:
+          - heading "Επικοινωνία" [level=4] [ref=e221]
+          - paragraph [ref=e222]:
+            - text: 📞
+            - link "210 224 1787" [ref=e223] [cursor=pointer]:
+              - /url: tel:+302102241787
+          - paragraph [ref=e224]:
+            - text: ✉️
+            - link "info@a2l.gr" [ref=e225] [cursor=pointer]:
+              - /url: mailto:info@a2l.gr
+          - paragraph [ref=e226]: 📍 Γ. Παπανδρέου 55, 143 41 Νέα Φιλαδέλφεια
+          - paragraph [ref=e227]: "🕐 Δευ–Παρ: 09:00–17:00"
+      - generic [ref=e228]:
+        - paragraph [ref=e229]: © 2014–2026 A2 Labs. Όλα τα δικαιώματα διατηρούνται.
+        - generic [ref=e230]:
+          - link "Σχετικά με εμάς" [ref=e231] [cursor=pointer]:
+            - /url: /sxetika/
+          - link "Τρόποι Πληρωμής" [ref=e232] [cursor=pointer]:
+            - /url: /tropoi-plirwmis/
+          - link "Πολιτική Cookies" [ref=e233] [cursor=pointer]:
+            - /url: /politiki-cookies/
+          - link "Επικοινωνία" [ref=e234] [cursor=pointer]:
+            - /url: /epikoinonia/

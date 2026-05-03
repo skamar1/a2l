@@ -1,0 +1,170 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "A2Labs - Αρχική" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "A2Labs" [ref=e6]
+      - navigation "Κύρια πλοήγηση" [ref=e7]:
+        - link "Αρχική" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - button "Προγράμματα" [ref=e10] [cursor=pointer]:
+          - text: Προγράμματα
+          - img [ref=e11]
+        - link "Υπολογιστές" [ref=e13] [cursor=pointer]:
+          - /url: /ypologistes/
+        - link "Σχετικά" [ref=e14] [cursor=pointer]:
+          - /url: /sxetika/
+        - link "Νέα & Οδηγίες" [ref=e15] [cursor=pointer]:
+          - /url: /odigies-nea/
+        - link "Επικοινωνία" [ref=e16] [cursor=pointer]:
+          - /url: /epikoinonia/
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]: Σχετικά με εμάς
+      - heading "Σχετικά με εμάς" [level=1] [ref=e21]
+      - paragraph [ref=e22]: Από το 2014 βοηθάμε επιχειρήσεις να αναπτυχθούν μέσα από τη σωστή τεχνολογία.
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e27]: 10+
+        - generic [ref=e28]: Χρόνια εμπειρία
+      - generic [ref=e29]:
+        - generic [ref=e30]: 120+
+        - generic [ref=e31]: Ενεργοί πελάτες
+      - generic [ref=e32]:
+        - generic [ref=e33]: 10+
+        - generic [ref=e34]: Προγράμματα για κάθε επιχείρηση
+      - generic [ref=e35]:
+        - generic [ref=e36]: Custom
+        - generic [ref=e37]: Ανάπτυξη λογισμικού
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - generic [ref=e42]: Η αποστολή μας
+        - heading "Τεχνολογία στην υπηρεσία της επιχείρησής σας" [level=2] [ref=e43]
+        - paragraph [ref=e44]:
+          - text: Από το
+          - strong [ref=e45]: "2014"
+          - text: ", η"
+          - strong [ref=e46]: A2 Labs
+          - text: υποστηρίζει επιχειρήσεις στη Νέα Φιλαδέλφεια και σε όλη την Ελλάδα με ολοκληρωμένες λύσεις λογισμικού και τεχνολογίας.
+        - paragraph [ref=e47]:
+          - text: Πιστεύουμε ότι κάθε επιχείρηση — μικρή ή μεγάλη — αξίζει να έχει πρόσβαση στα κατάλληλα εργαλεία. Γι' αυτό προσφέρουμε τόσο
+          - strong [ref=e48]: έτοιμες λύσεις
+          - text: κορυφαίων εταιρειών, όσο και
+          - strong [ref=e49]: custom ανάπτυξη
+          - text: εφαρμογών προσαρμοσμένων ακριβώς στις ανάγκες σας.
+        - paragraph [ref=e50]: Δεν πουλάμε απλώς λογισμικό — γινόμαστε ο τεχνολογικός σας συνεργάτης, από την πρώτη εγκατάσταση έως τη συνεχή υποστήριξη και εξέλιξη.
+        - link "Μιλήστε μαζί μας →" [ref=e51] [cursor=pointer]:
+          - /url: /epikoinonia/
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]: 🎯
+          - heading "Το όραμά μας" [level=3] [ref=e55]
+          - paragraph [ref=e56]: Να δώσουμε σε κάθε επιχείρηση την τεχνολογία που χρειάζεται για να αναπτυχθεί — χωρίς περιττή πολυπλοκότητα, με πρακτικές λύσεις που αποδίδουν άμεσα.
+        - generic [ref=e57]:
+          - generic [ref=e58]: 🤝
+          - heading "Η προσέγγισή μας" [level=3] [ref=e59]
+          - paragraph [ref=e60]: Ακούμε πρώτα, προτείνουμε μετά. Κάθε λύση ξεκινά από κατανόηση των αναγκών σας — όχι από μια τυποποιημένη προσφορά.
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e64]: Υπηρεσίες
+        - heading "Τι κάνουμε" [level=2] [ref=e65]
+        - paragraph [ref=e66]: Από έτοιμα προγράμματα έως custom ανάπτυξη — καλύπτουμε κάθε τεχνολογική ανάγκη.
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - generic [ref=e69]: 📦
+          - heading "Έτοιμα προγράμματα" [level=3] [ref=e70]
+          - paragraph [ref=e71]: Προγράμματα για κάθε επιχείρηση, από τις μεγαλύτερες εταιρείες λογισμικού της Ελλάδος — από ERP και CRM έως τιμολόγηση και ψηφιακή κάρτα εργασίας.
+          - list [ref=e72]:
+            - listitem [ref=e73]: ▸ Plano ERP / Retail / Web
+            - listitem [ref=e74]: ▸ Dynasoft Result CRM
+            - listitem [ref=e75]: ▸ Megasoft PRISMA Win
+            - listitem [ref=e76]: ▸ Entersoftone GO & ERGANI
+        - generic [ref=e77]:
+          - generic [ref=e78]: ⚙️
+          - heading "Custom Ανάπτυξη Λογισμικού" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Σχεδιάζουμε και αναπτύσσουμε εξατομικευμένες εφαρμογές που ανταποκρίνονται ακριβώς στις ανάγκες της επιχείρησής σας.
+          - list [ref=e81]:
+            - listitem [ref=e82]: ▸ Ανάλυση & σχεδιασμός λύσης
+            - listitem [ref=e83]: ▸ Ανάπτυξη από μηδενική βάση
+            - listitem [ref=e84]: ▸ Ενσωμάτωση με υπάρχοντα συστήματα
+        - generic [ref=e85]:
+          - generic [ref=e86]: 🌐
+          - heading "Websites & E-commerce" [level=3] [ref=e87]
+          - paragraph [ref=e88]: Δημιουργούμε σύγχρονα, λειτουργικά websites και ολοκληρωμένα e-shops που μετατρέπουν τo φυσικό κατάστημα σε ψηφιακή επιχείρηση.
+          - list [ref=e89]:
+            - listitem [ref=e90]: ▸ Εταιρικές ιστοσελίδες
+            - listitem [ref=e91]: ▸ Ηλεκτρονικά καταστήματα
+            - listitem [ref=e92]: ▸ B2B & B2C πλατφόρμες
+        - generic [ref=e93]:
+          - generic [ref=e94]: 🖥️
+          - heading "Υπολογιστές & Hardware" [level=3] [ref=e95]
+          - paragraph [ref=e96]: Επαγγελματικός εξοπλισμός πληροφορικής, servers και δικτυακές υποδομές για επιχειρήσεις κάθε μεγέθους.
+          - list [ref=e97]:
+            - listitem [ref=e98]: ▸ Workstations & laptops
+            - listitem [ref=e99]: ▸ Servers & δίκτυα
+            - listitem [ref=e100]: ▸ POS & περιφερειακά
+    - generic [ref=e103]:
+      - heading "Έτοιμοι να ξεκινήσουμε;" [level=2] [ref=e104]
+      - paragraph [ref=e105]: Πείτε μας τι χρειάζεστε και θα βρούμε μαζί τη σωστή λύση για την επιχείρησή σας.
+      - generic [ref=e106]:
+        - link "Επικοινωνήστε μαζί μας" [ref=e107] [cursor=pointer]:
+          - /url: /epikoinonia/
+        - link "Δείτε τα προγράμματά μας →" [ref=e108] [cursor=pointer]:
+          - /url: /plano/
+  - contentinfo [ref=e109]:
+    - generic [ref=e110]:
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - link "A2Labs - Αρχική" [ref=e113] [cursor=pointer]:
+            - /url: /
+            - img "A2Labs" [ref=e114]
+          - paragraph [ref=e115]: A2 Labs
+        - generic [ref=e116]:
+          - heading "Σύνδεσμοι" [level=4] [ref=e117]
+          - generic [ref=e118]:
+            - link "Αρχική" [ref=e119] [cursor=pointer]:
+              - /url: /
+            - link "Προγράμματα" [ref=e120] [cursor=pointer]:
+              - /url: "#"
+            - link "Υπολογιστές" [ref=e121] [cursor=pointer]:
+              - /url: /ypologistes/
+            - link "Σχετικά" [ref=e122] [cursor=pointer]:
+              - /url: /sxetika/
+            - link "Νέα & Οδηγίες" [ref=e123] [cursor=pointer]:
+              - /url: /odigies-nea/
+            - link "Επικοινωνία" [ref=e124] [cursor=pointer]:
+              - /url: /epikoinonia/
+        - generic [ref=e125]:
+          - heading "Προϊόντα" [level=4] [ref=e126]
+          - generic [ref=e127]:
+            - link "Entersoftone" [ref=e128] [cursor=pointer]:
+              - /url: /entersoftone/
+            - link "Dynasoft — Result CRM" [ref=e129] [cursor=pointer]:
+              - /url: /result-crm/
+            - link "Megasoft PRISMA Win" [ref=e130] [cursor=pointer]:
+              - /url: /megasoft/
+            - link "Plano ERP / Retail / Web" [ref=e131] [cursor=pointer]:
+              - /url: /plano/
+            - link "Υπολογιστές" [ref=e132] [cursor=pointer]:
+              - /url: /ypologistes/
+        - generic [ref=e133]:
+          - heading "Επικοινωνία" [level=4] [ref=e134]
+          - paragraph [ref=e135]:
+            - text: 📞
+            - link "210 224 1787" [ref=e136] [cursor=pointer]:
+              - /url: tel:+302102241787
+          - paragraph [ref=e137]:
+            - text: ✉️
+            - link "info@a2l.gr" [ref=e138] [cursor=pointer]:
+              - /url: mailto:info@a2l.gr
+          - paragraph [ref=e139]: 📍 Γ. Παπανδρέου 55, 143 41 Νέα Φιλαδέλφεια
+          - paragraph [ref=e140]: "🕐 Δευ–Παρ: 09:00–17:00"
+      - generic [ref=e141]:
+        - paragraph [ref=e142]: © 2014–2026 A2 Labs. Όλα τα δικαιώματα διατηρούνται.
+        - generic [ref=e143]:
+          - link "Σχετικά με εμάς" [ref=e144] [cursor=pointer]:
+            - /url: /sxetika/
+          - link "Τρόποι Πληρωμής" [ref=e145] [cursor=pointer]:
+            - /url: /tropoi-plirwmis/
+          - link "Επικοινωνία" [ref=e146] [cursor=pointer]:
+            - /url: /epikoinonia/

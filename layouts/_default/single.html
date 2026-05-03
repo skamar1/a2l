@@ -1,0 +1,117 @@
+{{ define "main" }}
+
+{{ if .Params.product }}
+
+  {{/* Split hero: κείμενο αριστερά, εικόνα δεξιά */}}
+  {{ if .Params.hero_image }}
+  <section class="product-split-hero">
+    <div class="hero__blob hero__blob--tl" aria-hidden="true"></div>
+    <div class="hero__blob hero__blob--tr" aria-hidden="true"></div>
+    <div class="container">
+      <div class="product-split-hero__inner">
+        <div class="product-split-hero__text">
+          <div class="product-hero__eyebrow">{{ .Params.tag | default "Λογισμικό" }}</div>
+          <h1 class="product-split-hero__title"><span class="gradient-text">{{ .Title }}</span></h1>
+          <p class="product-split-hero__desc">{{ .Params.description }}</p>
+          {{ with .Params.cta }}
+            <div class="hero__actions" style="justify-content:flex-start;">
+              <a href="{{ .url | default "/epikoinonia/" }}" class="btn btn--primary btn--lg">{{ .text | default "Ζητήστε Demo" }}</a>
+            </div>
+          {{ end }}
+        </div>
+        <div class="product-split-hero__visual">
+          <img src="{{ .Params.hero_image }}" alt="{{ .Title }}" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ else }}
+  <div class="page-content">
+    <div class="container">
+      <section class="product-hero">
+        <div class="product-hero__eyebrow">{{ .Params.tag | default "Λογισμικό" }}</div>
+        <h1 class="product-hero__title"><span class="gradient-text">{{ .Title }}</span></h1>
+        <p class="product-hero__desc">{{ .Params.description }}</p>
+        {{ with .Params.cta }}
+          <div class="hero__actions">
+            <a href="{{ .url | default "/epikoinonia/" }}" class="btn btn--primary btn--lg">{{ .text | default "Ζητήστε Demo" }}</a>
+          </div>
+        {{ end }}
+      </section>
+    </div>
+  </div>
+  {{ end }}
+
+  {{/* Sections & CTA */}}
+  <div class="page-content">
+    <div class="container">
+      {{ range .Params.sections }}
+        {{ with .hero_image }}
+        <section class="section-banner" style="background-image:url('{{ . }}')">
+          <div class="section-banner__content">
+            <span class="section-label">{{ $.Params.tag | default "Λογισμικό" }}</span>
+          </div>
+        </section>
+        {{ end }}
+        <section class="section">
+          <div class="section-header">
+            <span class="section-label">{{ .label }}</span>
+            <h2 class="section-title">{{ .title }}</h2>
+            {{ with .subtitle }}<p class="section-subtitle">{{ . }}</p>{{ end }}
+          </div>
+          {{ with .image }}
+            <div class="section-screenshot">
+              <img src="{{ . }}" alt="" loading="lazy">
+            </div>
+          {{ end }}
+          {{ with .modules }}
+            <div class="modules">
+              {{ range . }}
+                <div class="module-card">
+                  <div class="module-card__icon">{{ .icon }}</div>
+                  <h3 class="module-card__title">{{ .title }}</h3>
+                  <p class="module-card__desc">{{ .desc }}</p>
+                  {{ with .features }}
+                    <ul class="module-card__list">
+                      {{ range . }}<li>{{ . }}</li>{{ end }}
+                    </ul>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          {{ end }}
+        </section>
+        <div class="divider"></div>
+      {{ end }}
+
+      {{ with .Params.cta_bottom }}
+        <div class="cta-section">
+          <h2 class="cta-section__title gradient-text">{{ .title }}</h2>
+          <p class="cta-section__sub">{{ .subtitle }}</p>
+          <div class="cta-section__actions">
+            <a href="{{ .primary_url | default "/epikoinonia/" }}" class="btn btn--primary btn--lg">{{ .primary }}</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+
+{{ else }}
+
+  {{/* Generic static page */}}
+  <div class="page-content">
+    <div class="container">
+      <article class="article">
+        <header class="article__header">
+          <h1 class="article__title">{{ .Title }}</h1>
+        </header>
+        <div class="article__body">
+          {{ .Content }}
+        </div>
+      </article>
+    </div>
+  </div>
+
+{{ end }}
+
+{{ end }}

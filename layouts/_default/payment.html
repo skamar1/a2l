@@ -1,0 +1,121 @@
+{{ define "main" }}
+<div class="page-content">
+  <div class="container">
+
+    <header class="section-header section-header--center" style="margin-bottom: 80px;">
+      <span class="section-label">Εξυπηρέτηση Πελατών</span>
+      <h1 class="section-title">{{ .Title }}</h1>
+      <p class="section-subtitle">{{ .Description }}</p>
+    </header>
+
+    <div class="payment-methods">
+      {{ range .Params.methods }}
+
+        {{/* ── IRIS ─────────────────────────────────────────── */}}
+        {{ if eq .id "iris" }}
+        <div class="payment-card" id="iris">
+          <div class="payment-card__header">
+            <div class="payment-card__icon">{{ .icon }}</div>
+            <div>
+              <div class="payment-card__num">1</div>
+              <h2 class="payment-card__title">{{ .title }}</h2>
+            </div>
+          </div>
+          <p class="payment-card__desc">{{ .desc }}</p>
+
+          <div class="iris-block">
+            {{ if .qr }}
+              <div class="iris-qr">
+                <img src="{{ .qr }}" alt="IRIS QR Code" width="200" height="200">
+              </div>
+            {{ else }}
+              <div class="iris-qr iris-qr--placeholder">
+                <div style="font-size: 0.85rem; color: var(--text-muted); text-align: center; padding: 16px;">
+                  QR Code<br><span style="font-size: 0.75rem;">iris-qr.png</span>
+                </div>
+              </div>
+            {{ end }}
+            {{ with .vat }}
+              <div class="iris-vat">
+                <span class="iris-vat__label">ΑΦΜ για IRIS:</span>
+                <span class="iris-vat__value">{{ . }}</span>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        {{/* ── BANK ─────────────────────────────────────────── */}}
+        {{ if eq .id "bank" }}
+        <div class="payment-card" id="bank">
+          <div class="payment-card__header">
+            <div class="payment-card__icon">{{ .icon }}</div>
+            <div>
+              <div class="payment-card__num">2</div>
+              <h2 class="payment-card__title">{{ .title }}</h2>
+            </div>
+          </div>
+          <p class="payment-card__desc">{{ .desc }}</p>
+
+          {{/* Accounts table */}}
+          <div class="bank-accounts">
+            {{ range .accounts }}
+              <div class="bank-row">
+                <span class="bank-row__name">{{ .bank }}</span>
+                <span class="bank-row__iban">{{ .iban }}</span>
+                <button class="bank-row__copy" data-iban="{{ .iban }}" aria-label="Αντιγραφή IBAN {{ .bank }}">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+            {{ end }}
+          </div>
+
+          {{/* Beneficiary */}}
+          <div class="bank-beneficiary">
+            <span class="bank-beneficiary__label">Δικαιούχος:</span>
+            <span class="bank-beneficiary__value">«{{ .beneficiary }}»</span>
+          </div>
+
+          {{/* Notes */}}
+          {{ with .notes }}
+            <ul class="payment-notes">
+              {{ range . }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          {{ end }}
+
+          {{/* Notify */}}
+          {{ with .notify }}
+            <div class="payment-notify">
+              <span class="payment-notify__icon">💬</span>
+              <p>{{ . }}</p>
+            </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
+      {{ end }}
+    </div>
+
+    {{/* CTA */}}
+    <div style="text-align: center; margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--border);">
+      <p style="color: var(--text-muted); margin-bottom: 24px;">Έχετε απορίες για την παραγγελία σας;</p>
+      <a href="/epikoinonia/" class="btn btn--primary btn--lg">Επικοινωνήστε μαζί μας →</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.bank-row__copy').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var iban = btn.getAttribute('data-iban').replace(/\s/g, '');
+    navigator.clipboard.writeText(iban).then(function() {
+      btn.classList.add('copied');
+      setTimeout(function() { btn.classList.remove('copied'); }, 2000);
+    });
+  });
+});
+</script>
+{{ end }}

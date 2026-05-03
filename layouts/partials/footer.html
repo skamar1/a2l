@@ -1,0 +1,52 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/" class="header__logo" aria-label="{{ site.Title }} - Αρχική">
+          <img src="{{ site.Params.logo }}" alt="{{ site.Title }}" class="footer__logo-img">
+        </a>
+        <p>{{ site.Params.company_full }}</p>
+      </div>
+
+      <div>
+        <h4 class="footer__col-title">Σύνδεσμοι</h4>
+        <div class="footer__links">
+          {{ range site.Menus.main }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          {{ end }}
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer__col-title">Προϊόντα</h4>
+        <div class="footer__links">
+          <a href="/a2crm/">A2 CRM</a>
+          <a href="/soft1/">Εφαρμογές EntersoftOne</a>
+
+          <a href="/result-crm/">Εφαρμογές Dynasoft</a>
+          <a href="/megasoft/">Εφαρμογές Megasoft</a>
+          <a href="/plano/">Εφαρμογές Qorrect</a>
+          <a href="/ypologistes/">Υπολογιστές</a>
+        </div>
+      </div>
+
+      <div class="footer__info">
+        <h4 class="footer__col-title">Επικοινωνία</h4>
+        <p>📞 <a href="tel:+302102241787" style="color: inherit;">{{ site.Params.phone }}</a></p>
+        <p>✉️ <a href="mailto:{{ site.Params.email }}" style="color: inherit;">{{ site.Params.email }}</a></p>
+        <p>📍 {{ site.Params.address }}</p>
+        <p>🕐 {{ site.Params.hours }}</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2014–{{ now.Year }} {{ site.Params.company_full }}. Όλα τα δικαιώματα διατηρούνται.</p>
+      <div class="footer__bottom-links">
+        <a href="/sxetika/">Σχετικά με εμάς</a>
+        <a href="/tropoi-plirwmis/">Τρόποι Πληρωμής</a>
+        <a href="/politiki-cookies/">Πολιτική Cookies</a>
+        <a href="/epikoinonia/">Επικοινωνία</a>
+      </div>
+    </div>
+  </div>
+</footer>

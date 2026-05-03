@@ -1,0 +1,10 @@
+[    1509ms] [LOG] %cmetric: color:gray {name: LCP, entries: Array(1), value: 3860, rating: needs-improvement, delta: 3860} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1509ms] [LOG] %cusr: color:gray {locale: en-US} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1509ms] [LOG] %croute_data: color:gray Search-Photos @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1510ms] [LOG] %cmetric: color:gray {name: CLS, entries: Array(1), value: 0.00007483122628334726, rating: good, delta: 0.00007483122628334726} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1510ms] [LOG] %cusr: color:gray {locale: en-US} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1510ms] [LOG] %croute_data: color:gray Search-Photos @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1807ms] [LOG] %cmetric: color:gray {name: TTFB, entries: Array(1), value: 1478.1000000238419, rating: needs-improvement, delta: 1478.1000000238419} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1807ms] [LOG] %cusr: color:gray {locale: en-US} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1807ms] [LOG] %croute_data: color:gray Search-Photos @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    2206ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://e-10457.adzerk.net/i.gif?e=eyJ2IjoiMS4xNCIsImF2Ijo4MjM1NTIsImF0Ijo1LCJidCI6MCwiY20iOjk0ODU5NTcsImNoIjo0NTE2MywiY2siOnt9LCJjciI6MzY0OTkzNjEyLCJkaSI6IjU2ZmQ1ZTM0NmZjNzQ4YzM4NGZjNWU1MDU2NmZmNWViIiwiZGoiOjAsImlpIjoiMTM0MGQyYzEyNTU4NDk3NWIxNjhlOTU4ZWFlM2ZiN2QiLCJkbSI6MywiZmMiOjU0MDEzMDcyMiwiZmwiOjU1ODQ4Njg0LCJpcCI6IjE0OS4xMDcuMzQuMTk3IiwibnciOjEwNDU3LCJwYyI6MCwib3AiOjAsIm1wIjowLCJlYyI6MCwiZ20iOjAsImVwIjpudWxsLCJwciI6MjA4MjgzLCJydCI6MSwicnMiOjUwMCwic2EiOiI5NiIsInNiIjoiaS0wNjE2ZDY3YTNmMDc2ZjVkZiIsInNwIjozNDQ4Mjg2LCJzdCI6MTEyMTk1NCwidWsiOiJjZDU1Y2QxZC1hMGZhLTQxZWQtYmY1Zi1jNGFjMTE0NmI4Y2YiLCJ6biI6MjQxMzQ4LCJ6bSI6WzI0MTM0OF0sInRzIjoxNzc3NjMyOTE1MjMxLCJwbiI6InNlYXJjaC1pbi1mZWVkIiwiZ3IiOnRydWUsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ2kiOnRydWUsImdzIjoicmVxIiwidHoiOiJBbWVyaWNhL05ld19Zb3JrIiwiYmEiOjEsImZxIjowfQ&s=e0DNd27J9IM8JAuZXTafetJhd_Y:0

@@ -1,0 +1,625 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link [ref=e6] [cursor=pointer]:
+        - /url: https://www.softone.gr
+        - img [ref=e7]
+      - list [ref=e9]:
+        - listitem [ref=e10]:
+          - button "GR " [ref=e11] [cursor=pointer]:
+            - text: GR
+            - generic [ref=e12]: 
+        - listitem [ref=e13]:
+          - link "Επικοινωνία" [ref=e16] [cursor=pointer]:
+            - /url: "?page_id=2261"
+        - listitem [ref=e17]:
+          - search [ref=e18]:
+            - generic [ref=e19]:
+              - textbox [ref=e20]
+              - button [ref=e22] [cursor=pointer]:
+                - img [ref=e23]
+        - listitem [ref=e24]:
+          - link "Δωρεάν δοκιμή" [ref=e25] [cursor=pointer]:
+            - /url: https://www.softone.gr/erp-free-trial/
+  - navigation [ref=e26]:
+    - list [ref=e29]:
+      - listitem [ref=e30]:
+        - link "Cloud ERP" [ref=e31] [cursor=pointer]:
+          - /url: https://www.softone.gr/cloud-erp/
+      - listitem [ref=e32]:
+        - link "Cloud CRM" [ref=e33] [cursor=pointer]:
+          - /url: https://www.softone.gr/cloud-crm/
+      - listitem [ref=e34]:
+        - link "Ψηφιακή Κάρτα / ΕΡΓΑΝΗ" [ref=e35] [cursor=pointer]:
+          - /url: https://www.softone.gr/employee-digital-card/
+      - listitem [ref=e36]:
+        - link "Ψηφιακό Πελατολόγιο" [ref=e37] [cursor=pointer]:
+          - /url: https://ecustomers.softone.gr/
+      - listitem [ref=e38]:
+        - link "Συνεργάτες" [ref=e39] [cursor=pointer]:
+          - /url: https://www.softone.gr/partner-search/
+      - listitem [ref=e40]:
+        - link "Πελάτες" [ref=e41] [cursor=pointer]:
+          - /url: https://www.softone.gr/featured-customers/
+      - listitem [ref=e42]:
+        - link "Blog" [ref=e43] [cursor=pointer]:
+          - /url: /blog/
+      - listitem [ref=e44]:
+        - link "MENU" [ref=e45] [cursor=pointer]:
+          - /url: "#main-navigation"
+  - navigation [ref=e46]:
+    - link "×" [ref=e49] [cursor=pointer]:
+      - /url: "#"
+    - generic [ref=e50]:
+      - generic:
+        - list:
+          - listitem:
+            - link "SOFT1 Series 6" [ref=e51] [cursor=pointer]:
+              - /url: "#"
+            - list:
+              - listitem:
+                - link "The Platform" [ref=e52] [cursor=pointer]:
+                  - /url: https://www.softone.gr/series-6/
+              - listitem:
+                - link "UI/UX" [ref=e53] [cursor=pointer]:
+                  - /url: https://www.softone.gr/series-6-ui/
+              - listitem:
+                - link "Mobility" [ref=e54] [cursor=pointer]:
+                  - /url: "#"
+                - list:
+                  - listitem:
+                    - link "SOFT1 360" [ref=e55] [cursor=pointer]:
+                      - /url: https://www.softone.gr/enterprise-mobility/
+                  - listitem:
+                    - link "SOFT1 WMS Lite" [ref=e56] [cursor=pointer]:
+                      - /url: https://www.softone.gr/soft1-wms-lite/
+              - listitem [ref=e57] [cursor=pointer]:
+                - link "Δυναμική Ευφυΐα" [ref=e58]:
+                  - /url: "#"
+                - list:
+                  - listitem:
+                    - link "Business Robotics" [ref=e59]:
+                      - /url: https://www.softone.gr/smart-automation/#tab-1
+                  - listitem:
+                    - link "Business Automation – BAM" [ref=e60]:
+                      - /url: https://www.softone.gr/smart-automation/#tab-2
+                  - listitem:
+                    - link "Virtual Assistant – EVA" [ref=e61]:
+                      - /url: https://www.softone.gr/smart-automation/#tab-3
+                  - listitem:
+                    - link "BI Data Lake" [ref=e62]:
+                      - /url: https://www.softone.gr/soft1-bi-data-lake/
+              - listitem:
+                - link "Διασυνδεσιμότητα" [ref=e63] [cursor=pointer]:
+                  - /url: "#"
+                - list:
+                  - listitem:
+                    - link "FinTech" [ref=e64] [cursor=pointer]:
+                      - /url: https://www.softone.gr/fintech/
+                  - listitem:
+                    - link "SOFT1 PayHub" [ref=e65] [cursor=pointer]:
+                      - /url: https://www.softone.gr/payhub/
+                  - listitem:
+                    - link "Διασύνδεση POS" [ref=e66] [cursor=pointer]:
+                      - /url: https://www.softone.gr/erp-pos/
+                  - listitem:
+                    - link "E-Services" [ref=e67] [cursor=pointer]:
+                      - /url: https://einvoicing.gr
+              - listitem:
+                - link "Cloud" [ref=e68] [cursor=pointer]:
+                  - /url: "#"
+                - list:
+                  - listitem:
+                    - link "Cloud ERP" [ref=e69] [cursor=pointer]:
+                      - /url: https://www.softone.gr/cloud-erp/
+                  - listitem:
+                    - link "Cloud CRM" [ref=e70] [cursor=pointer]:
+                      - /url: https://www.softone.gr/cloud-crm/
+          - listitem:
+            - link "Cloud ERP" [ref=e71] [cursor=pointer]:
+              - /url: https://www.softone.gr/cloud-erp/
+          - listitem:
+            - link "Cloud CRM" [ref=e72] [cursor=pointer]:
+              - /url: http://www.softone.gr/cloud-crm
+          - listitem:
+            - link "Enterprise Mobillity" [ref=e73] [cursor=pointer]:
+              - /url: "#"
+            - list:
+              - listitem:
+                - link "SOFT1 360" [ref=e74] [cursor=pointer]:
+                  - /url: https://www.softone.gr/enterprise-mobility/
+              - listitem:
+                - link "SOFT1 WMS Lite" [ref=e75] [cursor=pointer]:
+                  - /url: https://www.softone.gr/soft1-wms-lite/
+              - listitem:
+                - link "SHOPRANOS ENTERPRISE MOBILITY" [ref=e76] [cursor=pointer]:
+                  - /url: https://www.softone.gr/mobility/?tab=regate-mobility
+              - listitem:
+                - link "Entersoft SFA Lite" [ref=e77] [cursor=pointer]:
+                  - /url: https://www.softone.gr/sfa-lite/
+              - listitem:
+                - link "Web & Mobile" [ref=e78] [cursor=pointer]:
+                  - /url: "#"
+                - list:
+                  - listitem:
+                    - link "myCustomer" [ref=e79] [cursor=pointer]:
+                      - /url: https://www.softone.gr/soft1-mycustomer/
+                  - listitem:
+                    - link "Web Report" [ref=e80] [cursor=pointer]:
+                      - /url: https://www.softone.gr/soft1-web-report/
+          - listitem:
+            - link "Λογιστικές Εφαρμογές" [ref=e81] [cursor=pointer]:
+              - /url: "#"
+            - list:
+              - listitem:
+                - link "ENTERSOFTONE Accounting Suite" [ref=e82] [cursor=pointer]:
+                  - /url: https://www.prosvasis.com/pbsone/
+              - listitem:
+                - link "Ηλεκτρονικά Βιβλία myDATA" [ref=e83] [cursor=pointer]:
+                  - /url: https://www.softone.gr/mydata/
+              - listitem:
+                - link "Accounting Reconciliation" [ref=e84] [cursor=pointer]:
+                  - /url: https://www.softone.gr/accounting-reconciliation/
+          - listitem:
+            - link "FinTech" [ref=e85] [cursor=pointer]:
+              - /url: "#"
+            - list:
+              - listitem:
+                - link "FinTech" [ref=e86] [cursor=pointer]:
+                  - /url: https://www.softone.gr/fintech/
+              - listitem:
+                - link "SOFT1 PayHub" [ref=e87] [cursor=pointer]:
+                  - /url: https://www.softone.gr/payhub/
+          - listitem:
+            - link "E-Commerce" [ref=e88] [cursor=pointer]:
+              - /url: "#"
+            - list:
+              - listitem:
+                - link "ENTERSOFTONE SHOPRANOS" [ref=e89] [cursor=pointer]:
+                  - /url: https://shopranos.gr
+          - listitem:
+            - link "Διαχείριση Προσωπικού" [ref=e90] [cursor=pointer]:
+              - /url: "#"
+            - list:
+              - listitem:
+                - link "Payroll" [ref=e91] [cursor=pointer]:
+                  - /url: https://www.softone.gr/payroll/
+              - listitem:
+                - link "HRMS" [ref=e92] [cursor=pointer]:
+                  - /url: https://www.softone.gr/soft1-hrms/
+              - listitem:
+                - link "myWorkplace" [ref=e93] [cursor=pointer]:
+                  - /url: https://www.softone.gr/myworkplace/
+              - listitem:
+                - link "Ψηφιακή Κάρτα Εργασίας" [ref=e94] [cursor=pointer]:
+                  - /url: https://www.softone.gr/employee-digital-card/
+              - listitem:
+                - link "SOFT1 CloudShift" [ref=e95] [cursor=pointer]:
+                  - /url: https://www.softone.gr/soft1-cloudshift/
+          - listitem:
+            - link "E-Services" [ref=e96] [cursor=pointer]:
+              - /url: "#"
+            - list:
+              - listitem:
+                - link "EINVOICING" [ref=e97] [cursor=pointer]:
+                  - /url: https://www.einvoicing.gr/
+          - listitem:
+            - link "Ηλεκτρονικές Προμήθειες" [ref=e98] [cursor=pointer]:
+              - /url: https://www.cosmo-one.gr/
+          - listitem:
+            - link "ESG" [ref=e99] [cursor=pointer]:
+              - /url: https://globalsustain.org/
+          - listitem:
+            - link "Επιδοτούμενα Προγράμματα ΕΣΠΑ" [ref=e100] [cursor=pointer]:
+              - /url: https://espa.softone.gr
+          - listitem:
+            - link "Λύσεις" [ref=e101] [cursor=pointer]:
+              - /url: "#"
+            - list:
+              - listitem:
+                - link "Χονδρικό Εμπόριο & Διανομή" [ref=e102] [cursor=pointer]:
+                  - /url: https://www.softone.gr/wholesale-distribution/
+              - listitem:
+                - link "Υπηρεσίες" [ref=e103] [cursor=pointer]:
+                  - /url: https://www.softone.gr/service-industries/
+              - listitem:
+                - link "Παραγωγή" [ref=e104] [cursor=pointer]:
+                  - /url: https://www.softone.gr/manufacturing/
+              - listitem:
+                - link "Λιανικό Εμπόριο" [ref=e105] [cursor=pointer]:
+                  - /url: https://www.softone.gr/retail/
+              - listitem:
+                - link "Εντατική Λιανική" [ref=e106] [cursor=pointer]:
+                  - /url: https://www.softone.gr/soft1-retail-pro/
+              - listitem:
+                - link "SOFT1 Solution Store" [ref=e107] [cursor=pointer]:
+                  - /url: https://www.softone.gr/softone-solution-store/
+          - listitem:
+            - link "Υπηρεσίες" [ref=e108] [cursor=pointer]:
+              - /url: "#"
+            - list:
+              - listitem:
+                - link "Υποστήριξη" [ref=e109] [cursor=pointer]:
+                  - /url: https://www.softone.gr/customer-support/
+              - listitem:
+                - link "Υλοποίηση Έργων" [ref=e110] [cursor=pointer]:
+                  - /url: https://www.softone.gr/implementation-services/
+              - listitem:
+                - link "Training Services" [ref=e111] [cursor=pointer]:
+                  - /url: https://www.s1trainingservices.gr/
+          - listitem:
+            - link "Συνεργάτες" [ref=e112] [cursor=pointer]:
+              - /url: "#"
+            - list:
+              - listitem:
+                - link "Συνεργαστείτε με την ENTERSOFTONE" [ref=e113] [cursor=pointer]:
+                  - /url: https://www.softone.gr/become-a-softone-partner/
+              - listitem:
+                - link "Αναζήτηση Συνεργάτη" [ref=e114] [cursor=pointer]:
+                  - /url: https://www.softone.gr/partner-search/
+              - listitem:
+                - link "Portal Συνεργατών" [ref=e115] [cursor=pointer]:
+                  - /url: https://operations.softone.gr/?lang=el
+          - listitem:
+            - link "Εταιρεία" [ref=e116] [cursor=pointer]:
+              - /url: "#"
+            - list:
+              - listitem:
+                - link "Η ENTERSOFTONE" [ref=e117] [cursor=pointer]:
+                  - /url: https://www.softone.gr/about-softone/
+              - listitem:
+                - link "Τεχνολογία" [ref=e118] [cursor=pointer]:
+                  - /url: "#"
+                - list:
+                  - listitem:
+                    - link "Τεχνολογία SOFT1" [ref=e119] [cursor=pointer]:
+                      - /url: https://www.softone.gr/soft1-technology/
+                  - listitem:
+                    - link "SOFT1 Cloud Τεχνολογίες" [ref=e120] [cursor=pointer]:
+                      - /url: https://www.softone.gr/soft1-cloud-technology/
+                  - listitem:
+                    - link "Μοντέλα Λειτουργίας" [ref=e121] [cursor=pointer]:
+                      - /url: https://www.softone.gr/soft1-delivery-options/
+                  - listitem:
+                    - link "Cloud Υποδομές" [ref=e122] [cursor=pointer]:
+                      - /url: https://www.softone.gr/cloud-infrastructure/
+              - listitem:
+                - link "Πολιτική Ασφάλειας Πληροφοριών" [ref=e123] [cursor=pointer]:
+                  - /url: https://www.softone.gr/information-security-policy/
+              - listitem:
+                - link "Ανθρώπινο Δυναμικό" [ref=e124] [cursor=pointer]:
+                  - /url: https://www.softone.gr/company-people/
+              - listitem:
+                - link "Ευκαιρίες Καριέρας" [ref=e125] [cursor=pointer]:
+                  - /url: https://apply.smartcv.co/entersoft-softone
+              - listitem:
+                - link "Εταιρική Κοινωνική Ευθύνη" [ref=e126] [cursor=pointer]:
+                  - /url: https://www.softone.gr/social-responsibility/
+              - listitem:
+                - link "Πελάτες & Έργα" [ref=e127] [cursor=pointer]:
+                  - /url: https://www.softone.gr/featured-customers/
+              - listitem:
+                - link "Διεθνής Δραστηριότητα" [ref=e128] [cursor=pointer]:
+                  - /url: https://www.softone.gr/international-activity/
+              - listitem:
+                - link "Νέα & Ανακοινώσεις" [ref=e129] [cursor=pointer]:
+                  - /url: /blog/?cat=31
+              - listitem:
+                - link "Επικοινωνία" [ref=e130] [cursor=pointer]:
+                  - /url: https://www.softone.gr/contact-us/
+  - generic [ref=e134]:
+    - generic [ref=e135]:
+      - generic [ref=e136]:
+        - link "Home" [ref=e137] [cursor=pointer]:
+          - /url: /
+        - text: "> Διαχείριση Προσωπικού >"
+        - link "HRMS" [ref=e138] [cursor=pointer]:
+          - /url: https://www.softone.gr/soft1-hrms/
+      - button [ref=e140] [cursor=pointer]:
+        - img [ref=e141]
+    - text: 
+  - generic [ref=e144]:
+    - heading "SOFT1 HRMS" [level=1] [ref=e145]
+    - heading [level=4]
+  - generic [ref=e148]:
+    - heading "Διαχείριση ανθρώπινου δυναμικού" [level=2] [ref=e149]
+    - paragraph
+    - img "iStock_000054378336_Largetiny" [ref=e150]
+    - paragraph [ref=e151]:
+      - text: Η εφαρμογή SOFT1 HRMS προσφέρει όλα όσα χρειάζεται η επιχείρησή σας για την ανάπτυξη ενός ανταγωνιστικού εργασιακού περιβάλλοντος με σύγχρονα και ευέλικτα μοντέλα εργασίας, που αυξάνουν την παραγωγικότητα και μειώνουν το κόστος διαχείρισης των ανθρώπων σας. H λύση της ENTERSOFTONE καλύπτει με τον πλέον αποτελεσματικό τρόπο τις ιδιαίτερες απαιτήσεις λειτουργίας ενός τμήματος HR, παρέχοντας άμεση και ασφαλή πρόσβαση σε ακριβείς πληροφορίες που βοηθούν τη λήψη τεκμηριωμένων αποφάσεων.
+      - text: Το SOFT1 HRMS περιλαμβάνει ολοκληρωμένο αρχείο στελεχών με απεριόριστες δυνατότητες καταχώρησης προσωπικών και επαγγελματικών στοιχείων, υποστηρίζοντας παράλληλα την παρακολούθηση κάθε στοιχείου εξέλιξης των εργαζομένων. Ενσωματώνοντας εξειδικευμένη λειτουργικότητα, επιτρέπει στα τμήματα HR να εντοπίζουν κατάλληλους υποψηφίους για καίριες θέσεις εργασίας, καθώς επίσης να αξιολογούν την απόδοση κάθε εργαζόμενου αναφορικά με τις απαιτήσεις της εργασίας του, τη συνεργασία με τους συναδέλφους του, τη συμπεριφορά και την κατανόηση του ρόλου του στην εταιρεία.
+      - text: Σε πλήρη διασύνδεση με την πρωτοποριακή πλατφόρμα αλληλεπίδρασης εργαζομένων-επιχείρησης,
+      - link "SOFT1 myWorkplace" [ref=e152] [cursor=pointer]:
+        - /url: https://www.softone.gr/myworkplace/
+      - text: ", η εφαρμογή SOFT1 HRMS κάνει πράξη τον ψηφιακό μετασχηματισμό όλων των λειτουργιών της διαχείρισης ανθρώπινου δυναμικού, επιτυγχάνοντας την εξάλειψη παραδοσιακών, χειρόγραφων διαδικασιών αλλά και τη βελτιστοποίηση λειτουργιών, καθώς όλοι οι εργαζόμενοι αφιερώνουν περισσότερο χρόνο σε εργασίες που προσδίδουν αξία στην εταιρεία."
+    - paragraph [ref=e153]
+    - paragraph
+  - generic [ref=e155]:
+    - paragraph [ref=e157]:
+      - img [ref=e158]
+    - generic [ref=e159]:
+      - heading "Σύστημα διαχείρισης ανθρώπινου δυναμικού" [level=2] [ref=e160]
+      - paragraph
+      - paragraph [ref=e161]: Η εφαρμογή SOFT1 HRMS αποτελεί μια σύγχρονη και ολοκληρωμένη λύση που διευκολύνει την αξιολόγηση της απόδοσης των εργαζομένων, επιτρέποντας στα τμήματα HR να εντοπίζουν και να καταγράφουν ανάγκες εκπαίδευσης με στόχο την ταχύτερη εξέλιξη των ανθρώπων της επιχείρησης. Την ίδια στιγμή, αυτοματοποιεί τη διαχείριση βιογραφικών, διευκολύνοντας τη δημιουργία λίστας με τους πλέον κατάλληλους υποψήφιους για κάθε νέα θέση εργασίας.
+      - paragraph
+      - link "Ζητήστε παρουσίαση" [ref=e162] [cursor=pointer]:
+        - /url: "#scroll-target"
+  - generic [ref=e164]:
+    - generic [ref=e165]:
+      - heading "Πλατφόρμα αλληλεπίδρασης εργαζομένων-εταιρείας" [level=2] [ref=e166]
+      - paragraph
+      - paragraph [ref=e167]:
+        - text: Το SOFT1 myWorkplace αποτελεί μία πρωτοποριακή online πλατφόρμα αλληλεπίδρασης εργαζομένων και επιχείρησης, η οποία επιτρέπει την άμεση και ασφαλή πρόσβαση σε διαδικασίες και πληροφορίες που αφορούν το HR.
+        - text: Μέσα από ένα εύχρηστο και φιλικό περιβάλλον, κάθε εργαζόμενος μπορεί να καταχωρεί αιτήματα προς τον προϊστάμενό του ή/και το τμήμα HR (παρακολουθώντας την εξέλιξή τους), να έχει πρόσβαση στο πρόγραμμα εργασίας του καθώς επίσης σε σημαντικές προσωπικές και εταιρικές ανακοινώσεις κα.
+      - paragraph
+      - link "Mάθετε περισσότερα" [ref=e168] [cursor=pointer]:
+        - /url: https://www.softone.gr/myworkplace/
+    - paragraph [ref=e170]:
+      - img [ref=e171]
+  - heading "Μοναδικά οφέλη για την επιχείρησή σας" [level=2] [ref=e173]
+  - generic [ref=e174]:
+    - generic [ref=e175]:
+      - img [ref=e176]
+      - heading "Ολοκληρωμένη διαχείριση" [level=3] [ref=e177]
+      - paragraph
+      - paragraph [ref=e178]: Απλοποιήστε και αυτοματοποιήστε όλες τις διαδικασίες διαχείρισης του ανθρώπινου δυναμικού της επιχείρησής σας με ένα λειτουργικό και εύχρηστο σύστημα HRMS που κάνει πράξη τον ψηφιακό μετασχηματισμό της καθημερινής λειτουργίας κάθε σύγχρονου τμήματος HR.
+      - paragraph
+    - generic [ref=e179]:
+      - img [ref=e180]
+      - heading "Αποδοτικότερη εργασία" [level=3] [ref=e181]
+      - paragraph
+      - paragraph [ref=e182]: Μεγιστοποιήστε την απόδοση των εργαζομένων σας με συνεχή παρακολούθηση των αναγκών εκπαίδευσης και κατάρτισής τους. Προσφέρετε στα στελέχη σας τα κατάλληλα εργαλεία για την αξιολόγηση των υφισταμένων τους, μειώνοντας έως και 50% το χρόνο ανάλυσης και επεξεργασίας των αξιολογήσεων.
+      - paragraph
+    - generic [ref=e183]:
+      - img [ref=e184]
+      - heading "Καλύτερο εργασιακό περιβάλλον" [level=3] [ref=e185]
+      - paragraph
+      - paragraph [ref=e186]: Διαμορφώστε ένα σύγχρονο εργασιακό περιβάλλον που προωθεί την αλληλεπίδραση των εργαζομένων με την επιχείρηση και καταργεί άσκοπες γραφειοκρατικές διαδικασίες. Προσφέρετε στους ανθρώπους σας όλα όσα χρειάζονται για να επικεντρώνονται σε εργασίες με υψηλή προστιθέμενη αξία.
+      - paragraph
+    - generic [ref=e187]:
+      - img [ref=e188]
+      - heading "Λειτουργία 24/7" [level=3] [ref=e189]
+      - paragraph
+      - paragraph [ref=e190]: Ενισχύστε ουσιαστικά τους εργαζόμενούς σας, παρέχοντάς τους τη δυνατότητα να υποβάλλουν αιτήματα προς έγκριση οποιαδήποτε χρονική στιγμή και μέσα από οποιαδήποτε συσκευή. Υποστηρίξτε έμπρακτα κάθε μοντέλο (φυσική παρουσία ή τηλεργασία) αλλά και ρόλο εργασίας (πωλητές, τεχνικούς κα.).
+      - paragraph
+    - generic [ref=e191]:
+      - img [ref=e192]
+      - heading "Εύκολη επέκταση" [level=3] [ref=e193]
+      - paragraph
+      - paragraph [ref=e194]: Βελτιστοποιήστε τη λειτουργία του τμήματος HR με μία σύγχρονη εφαρμογή που ανταποκρίνεται στις απαιτήσεις μικρών και μεσαίων επιχειρήσεων, διαθέτοντας ταυτόχρονα απεριόριστες δυνατότητες παραμετροποίησης και επέκτασης για την αποτελεσματική κάλυψη των εξειδικευμένων αναγκών μεγάλων εταιρειών.
+      - paragraph
+    - generic [ref=e195]:
+      - img [ref=e196]
+      - heading "Καλύτερες αποφάσεις" [level=3] [ref=e197]
+      - paragraph
+      - paragraph [ref=e198]: Αξιοποιήστε ισχυρά εργαλεία HR metrics και επεξεργαστείτε real-time πλήθος αναφορών και μετρήσεων για κάθε παράμετρο που αφορά το ανθρώπινο δυναμικό της επιχείρησής σας (δημογραφικά και μισθολογικά στοιχεία, ανάγκες εκπαίδευσης και αξιολόγησης προσωπικού, καθορισμού και παρακολούθησης στόχων κα.).
+      - paragraph
+  - heading "Λειτουργικές Ενότητες" [level=2] [ref=e200]
+  - generic [ref=e201]:
+    - tablist [ref=e203]:
+      - generic [ref=e204]:
+        - tablist:
+          - generic [ref=e205]:
+            - tab "Διαχείριση Στελεχών" [ref=e207]:
+              - heading "Διαχείριση Στελεχών" [level=4] [ref=e208]:
+                - button "Διαχείριση Στελεχών" [ref=e209] [cursor=pointer]:
+                  - generic [ref=e210]: Διαχείριση Στελεχών
+            - tab "Παρουσιολόγιο" [ref=e212]:
+              - heading "Παρουσιολόγιο" [level=4] [ref=e213]:
+                - button "Παρουσιολόγιο" [ref=e214] [cursor=pointer]:
+                  - generic [ref=e215]: Παρουσιολόγιο
+            - tab "Βαρδιολόγιο" [ref=e217]:
+              - heading "Βαρδιολόγιο" [level=4] [ref=e218]:
+                - button "Βαρδιολόγιο" [ref=e219] [cursor=pointer]:
+                  - generic [ref=e220]: Βαρδιολόγιο
+            - tab "Στοιχεία Εργαζόμενου" [ref=e222]:
+              - heading "Στοιχεία Εργαζόμενου" [level=4] [ref=e223]:
+                - button "Στοιχεία Εργαζόμενου" [ref=e224] [cursor=pointer]:
+                  - generic [ref=e225]: Στοιχεία Εργαζόμενου
+            - tab "Εγκρίσεις" [ref=e227]:
+              - heading "Εγκρίσεις" [level=4] [ref=e228]:
+                - button "Εγκρίσεις" [ref=e229] [cursor=pointer]:
+                  - generic [ref=e230]: Εγκρίσεις
+          - generic [ref=e231]:
+            - tab "Οργανόγραμμα" [ref=e233]:
+              - heading "Οργανόγραμμα" [level=4] [ref=e234]:
+                - button "Οργανόγραμμα" [ref=e235] [cursor=pointer]:
+                  - generic [ref=e236]: Οργανόγραμμα
+            - tab "Σεμινάρια" [ref=e238]:
+              - heading "Σεμινάρια" [level=4] [ref=e239]:
+                - button "Σεμινάρια" [ref=e240] [cursor=pointer]:
+                  - generic [ref=e241]: Σεμινάρια
+            - tab "Πακέτα παροχών" [ref=e243]:
+              - heading "Πακέτα παροχών" [level=4] [ref=e244]:
+                - button "Πακέτα παροχών" [ref=e245] [cursor=pointer]:
+                  - generic [ref=e246]: Πακέτα παροχών
+            - tab "Άδειες" [ref=e248]:
+              - heading "Άδειες" [level=4] [ref=e249]:
+                - button "Άδειες" [ref=e250] [cursor=pointer]:
+                  - generic [ref=e251]: Άδειες
+            - tab "Ημερολόγιο Εργασίας" [ref=e253]:
+              - heading "Ημερολόγιο Εργασίας" [level=4] [ref=e254]:
+                - button "Ημερολόγιο Εργασίας" [ref=e255] [cursor=pointer]:
+                  - generic [ref=e256]: Ημερολόγιο Εργασίας
+          - generic [ref=e257]:
+            - tab "Αξιολογήσεις" [ref=e259]:
+              - heading "Αξιολογήσεις" [level=4] [ref=e260]:
+                - button "Αξιολογήσεις" [ref=e261] [cursor=pointer]:
+                  - generic [ref=e262]: Αξιολογήσεις
+            - tab "Recruitment" [ref=e264]:
+              - heading "Recruitment" [level=4] [ref=e265]:
+                - button "Recruitment" [ref=e266] [cursor=pointer]:
+                  - generic [ref=e267]: Recruitment
+            - tab "Ειδικές λειτουργίες" [ref=e269]:
+              - heading "Ειδικές λειτουργίες" [level=4] [ref=e270]:
+                - button "Ειδικές λειτουργίες" [ref=e271] [cursor=pointer]:
+                  - generic [ref=e272]: Ειδικές λειτουργίες
+            - tab "Αιτήσεις" [ref=e274]:
+              - heading "Αιτήσεις" [level=4] [ref=e275]:
+                - button "Αιτήσεις" [ref=e276] [cursor=pointer]:
+                  - generic [ref=e277]: Αιτήσεις
+            - tab "Ψηφιακή Κάρτα Εργασίας" [ref=e279]:
+              - heading "Ψηφιακή Κάρτα Εργασίας" [level=4] [ref=e280]:
+                - button "Ψηφιακή Κάρτα Εργασίας" [ref=e281] [cursor=pointer]:
+                  - generic [ref=e282]: Ψηφιακή Κάρτα Εργασίας
+    - generic [ref=e284]:
+      - generic [ref=e285]: Δείτε επιπλέον
+      - link "Brochure" [ref=e287] [cursor=pointer]:
+        - /url: /wp-content/uploads/2024/10/myworkplace-GR.pdf
+        - img [ref=e288]
+        - text: Brochure
+  - generic [ref=e291]:
+    - heading "Ζητήστε παρουσίαση" [level=2] [ref=e292]
+    - paragraph
+    - generic [ref=e293]:
+      - generic [ref=e294]:
+        - generic [ref=e295]:
+          - generic [ref=e296]: Όνομα*
+          - textbox "Όνομα*" [ref=e298]
+          - paragraph
+        - generic [ref=e299]:
+          - generic [ref=e300]: Επώνυμο*
+          - textbox "Επώνυμο*" [ref=e302]
+          - paragraph
+      - generic [ref=e303]:
+        - generic [ref=e304]:
+          - generic [ref=e305]: Τηλέφωνο*
+          - textbox "Τηλέφωνο*" [ref=e307]
+          - paragraph
+        - generic [ref=e308]:
+          - generic [ref=e309]: E-mail
+          - textbox "E-mail" [ref=e311]
+          - paragraph
+      - generic [ref=e312]:
+        - generic [ref=e313]:
+          - generic [ref=e314]: Επωνυμία εταιρείας*
+          - textbox "Επωνυμία εταιρείας*" [ref=e316]
+          - paragraph
+        - generic [ref=e317]:
+          - checkbox [ref=e319]
+          - text: Συμφωνώ με την
+          - link "Πολιτική Απορρήτου" [ref=e320] [cursor=pointer]:
+            - /url: "?page_id=23251"
+          - text: "*"
+          - paragraph
+      - paragraph [ref=e321]:
+        - button "Αποστολή" [ref=e322] [cursor=pointer]
+      - paragraph [ref=e323]: "*Η συμπλήρωση των πεδίων είναι υποχρεωτική"
+      - paragraph
+      - generic:
+        - paragraph
+        - paragraph
+      - paragraph
+    - paragraph
+  - img "Ελλάδα 2.0 - Με τη χρηματοδότηση της Ευρωπαϊκής Ένωσης - NextGenerationEU" [ref=e326]
+  - generic [ref=e328]:
+    - generic [ref=e329]:
+      - heading "Προϊόντα & Yπηρεσίες" [level=3] [ref=e330]
+      - list [ref=e331]:
+        - listitem [ref=e332]:
+          - link "Cloud ERP" [ref=e333] [cursor=pointer]:
+            - /url: https://www.softone.gr/cloud-erp/
+        - listitem [ref=e334]:
+          - link "Cloud CRM" [ref=e335] [cursor=pointer]:
+            - /url: https://www.softone.gr/cloud-crm/
+        - listitem [ref=e336]:
+          - link "Enterprise Mobility" [ref=e337] [cursor=pointer]:
+            - /url: https://www.softone.gr/mobility/
+        - listitem [ref=e338]:
+          - link "Λογιστικές Εφαρμογές" [ref=e339] [cursor=pointer]:
+            - /url: https://www.prosvasis.com
+        - listitem [ref=e340]:
+          - link "Μισθοδοσία" [ref=e341] [cursor=pointer]:
+            - /url: https://www.softone.gr/payroll/
+        - listitem [ref=e342]:
+          - link "EINVOICING" [ref=e343] [cursor=pointer]:
+            - /url: https://www.einvoicing.gr/
+    - generic [ref=e344]:
+      - heading "Resources" [level=3] [ref=e345]
+      - list [ref=e346]:
+        - listitem [ref=e347]:
+          - link "Portal Συνεργατών" [ref=e348] [cursor=pointer]:
+            - /url: https://softone.oncloud.gr/s360/web/Login.html
+        - listitem [ref=e349]:
+          - link "SOFT1 Wiki" [ref=e350] [cursor=pointer]:
+            - /url: http://wiki.softone.gr/
+        - listitem [ref=e351]:
+          - link "Νέα εκδόσεων SOFT1" [ref=e352] [cursor=pointer]:
+            - /url: https://wiki.soft1.eu/pages/viewrecentblogposts.action?key=SS5EL
+        - listitem [ref=e353]:
+          - link "ENTERSOFTONE Training Services" [ref=e354] [cursor=pointer]:
+            - /url: https://www.s1trainingservices.gr/
+        - listitem [ref=e355]:
+          - link "R&D Developers Group" [ref=e356] [cursor=pointer]:
+            - /url: https://groups.google.com/forum/?hl=el#!forum/soft1
+        - listitem [ref=e357]:
+          - link "e-Learning Platform" [ref=e358] [cursor=pointer]:
+            - /url: https://learn.softone.gr/#/login
+        - listitem [ref=e359]:
+          - link "Blog" [ref=e360] [cursor=pointer]:
+            - /url: https://www.softone.gr/blog/
+    - generic [ref=e361]:
+      - heading "Δημοφιλείς Σύνδεσμοι" [level=3] [ref=e362]
+      - list [ref=e363]:
+        - listitem [ref=e364]:
+          - link "H ENTERSOFTONE" [ref=e365] [cursor=pointer]:
+            - /url: https://www.softone.gr/about-softone/
+        - listitem [ref=e366]:
+          - link "myDATA" [ref=e367] [cursor=pointer]:
+            - /url: https://www.softone.gr/mydata/
+        - listitem [ref=e368]:
+          - link "Οδηγός Ψηφιακής Κάρτας Εργασίας" [ref=e369] [cursor=pointer]:
+            - /url: https://www.softone.gr/employee-digital-card/faqs/
+        - listitem [ref=e370]:
+          - link "Τι είναι το ERP;" [ref=e371] [cursor=pointer]:
+            - /url: https://www.softone.gr/what-is-erp/
+        - listitem [ref=e372]:
+          - link "Τι είναι το CRM;" [ref=e373] [cursor=pointer]:
+            - /url: https://www.softone.gr/what-is-crm/
+        - listitem [ref=e374]:
+          - link "GDPR" [ref=e375] [cursor=pointer]:
+            - /url: https://www.softone.gr/gdpr/
+        - listitem [ref=e376]:
+          - link "Ασφάλεια Πληροφοριών" [ref=e377] [cursor=pointer]:
+            - /url: https://www.softone.gr/information-security/
+    - generic [ref=e378]:
+      - generic [ref=e379]:
+        - link [ref=e380] [cursor=pointer]:
+          - /url: https://www.facebook.com/Entersoftone
+          - img [ref=e381]
+        - link [ref=e382] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/entersoftone/
+          - img [ref=e383]
+        - link [ref=e384] [cursor=pointer]:
+          - /url: https://www.youtube.com/@ENTERSOFTONE-SA
+          - img [ref=e385]
+        - link [ref=e386] [cursor=pointer]:
+          - /url: https://www.instagram.com/entersoftone/
+          - img [ref=e387]
+      - generic [ref=e388]:
+        - heading "Χρειάζεστε Βοήθεια;" [level=3] [ref=e389]
+        - paragraph [ref=e390]:
+          - text: +30 211 10 22222 |
+          - link "info@softone.gr" [ref=e391] [cursor=pointer]:
+            - /url: mailto:info@softone.gr
+        - paragraph [ref=e392]:
+          - link "Εξυπηρέτηση Πελατών" [ref=e393] [cursor=pointer]:
+            - /url: /?page_id=32191
+            - text: Εξυπηρέτηση Πελατών
+            - img [ref=e394]
+  - generic [ref=e397]:
+    - text: SoftOne Technologies Α.Ε. © 2016-2026
+    - generic [ref=e398]: "|"
+    - link "Πολιτική Aπορρήτου" [ref=e399] [cursor=pointer]:
+      - /url: https://www.softone.gr/privacy-policy/
+    - generic [ref=e400]: "|"
+    - link "Πολιτική Cookies" [ref=e401] [cursor=pointer]:
+      - /url: https://www.softone.gr/cookies-policy/
+    - generic [ref=e402]: "|"
+    - link "Πολιτική CCTV" [ref=e403] [cursor=pointer]:
+      - /url: https://www.softone.gr/cctv-policy/
+    - generic [ref=e404]: "|"
+    - link "Αναφορά Παράτυπης Συμπεριφοράς (Whistleblowing)" [ref=e405] [cursor=pointer]:
+      - /url: https://softone.integrityline.com/?lang=el
+  - iframe [ref=e406]:
+    

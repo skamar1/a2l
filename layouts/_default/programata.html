@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+<div class="product-hero">
+  <div class="hero__blob hero__blob--tl" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--tr" aria-hidden="true"></div>
+  <div class="container">
+    <div class="product-hero__eyebrow">Λύσεις Λογισμικού</div>
+    <h1 class="product-hero__title"><span class="gradient-text">{{ .Title }}</span></h1>
+    <p class="product-hero__desc">{{ .Description }}</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="programata-grid">
+      {{ range .Params.products }}
+        <a href="{{ .url }}" class="programata-card">
+          <div class="programata-card__img">
+            <img src="{{ .image }}" alt="{{ .name }}" loading="lazy">
+          </div>
+          <div class="programata-card__body">
+            <span class="badge">{{ .tag }}</span>
+            <h2 class="programata-card__title">{{ .name }}</h2>
+            <p class="programata-card__desc">{{ .desc }}</p>
+            <span class="programata-card__cta">Μάθετε περισσότερα →</span>
+          </div>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--bg-surface); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="cta-section">
+      <h2 class="cta-section__title gradient-text">Δεν ξέρετε ποιο να επιλέξετε;</h2>
+      <p class="cta-section__sub">Επικοινωνήστε μαζί μας και θα σας καθοδηγήσουμε στην καλύτερη λύση για τις ανάγκες σας.</p>
+      <div class="cta-section__actions">
+        <a href="/epikoinonia/" class="btn btn--primary btn--lg">Επικοινωνήστε μαζί μας</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

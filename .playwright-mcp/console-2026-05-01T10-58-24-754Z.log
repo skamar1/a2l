@@ -1,0 +1,10 @@
+[    1214ms] [LOG] %cmetric: color:gray {name: LCP, entries: Array(1), value: 2220, rating: good, delta: 2220} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1214ms] [LOG] %cusr: color:gray {locale: en-US} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1214ms] [LOG] %croute_data: color:gray Search-Photos @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1216ms] [LOG] %cmetric: color:gray {name: CLS, entries: Array(1), value: 0.00007483122628334726, rating: good, delta: 0.00007483122628334726} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1216ms] [LOG] %cusr: color:gray {locale: en-US} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1216ms] [LOG] %croute_data: color:gray Search-Photos @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1577ms] [LOG] %cmetric: color:gray {name: TTFB, entries: Array(1), value: 1163.9000000357628, rating: needs-improvement, delta: 1163.9000000357628} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1580ms] [LOG] %cusr: color:gray {locale: en-US} @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1580ms] [LOG] %croute_data: color:gray Search-Photos @ https://unsplash.com/a/en-US/4160.a89cffb7.js:13
+[    1978ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://e-10457.adzerk.net/i.gif?e=eyJ2IjoiMS4xNCIsImF2Ijo4MjM1NTIsImF0Ijo1LCJidCI6MCwiY20iOjk0ODU5NTcsImNoIjo0NTE2MywiY2siOnt9LCJjciI6MzY0OTkzNjA3LCJkaSI6IjdmNjQzODhiN2JlMzRhNjZiMTUwMWE1YjA2NWE3M2Y3IiwiZGoiOjAsImlpIjoiZDRiZDdmMzY3MmEyNDlmNmJlOTJhMjM0ODFjOGYwMTkiLCJkbSI6MywiZmMiOjU0MDEzMDcxNywiZmwiOjU1ODQ4Njg0LCJpcCI6IjE0OS4xMDcuMzQuMTk3IiwibnciOjEwNDU3LCJwYyI6MCwib3AiOjAsIm1wIjowLCJlYyI6MCwiZ20iOjAsImVwIjpudWxsLCJwciI6MjA4MjgzLCJydCI6MSwicnMiOjUwMCwic2EiOiI5NiIsInNiIjoiaS0wNDZiMDNkMmE3OTU3ZjUzZCIsInNwIjozNDExNDM1LCJzdCI6MTEyMTk1NCwidWsiOiJjZDU1Y2QxZC1hMGZhLTQxZWQtYmY1Zi1jNGFjMTE0NmI4Y2YiLCJ6biI6MjQxMzQ4LCJ6bSI6WzI0MTM0OF0sInRzIjoxNzc3NjMzMTA2NjYxLCJwbiI6InNlYXJjaC1pbi1mZWVkIiwiZ3IiOnRydWUsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ2kiOnRydWUsImdzIjoicmVxIiwidHoiOiJBbWVyaWNhL05ld19Zb3JrIiwiYmEiOjEsImZxIjowfQ&s=1qeMt0n9iFA_ibSHCuzvKz690GI:0

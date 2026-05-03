@@ -1,0 +1,695 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "Megasoft" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - heading "Megasoft" [level=1] [ref=e9]:
+          - img "Megasoft" [ref=e10]
+      - generic [ref=e11]:
+        - generic:
+          - generic:
+            - text: 
+            - list [ref=e12]:
+              - listitem [ref=e13]:
+                - link "Home" [ref=e14] [cursor=pointer]:
+                  - /url: https://www.megasoft.gr/
+              - listitem [ref=e15]:
+                - link "H εταιρεια" [ref=e16] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e17]:
+                - link " ΠΡΟΙΟΝΤΑ" [ref=e18] [cursor=pointer]:
+                  - /url: https://www.megasoft.gr/#undefined
+              - listitem [ref=e19]:
+                - link " ΥΠΟΣΤΗΡΙΞΗ" [ref=e20] [cursor=pointer]:
+                  - /url: https://www.megasoft.gr/#undefined
+              - listitem [ref=e21]:
+                - link " ΣΥΝΕΡΓΑΤΕΣ" [ref=e22] [cursor=pointer]:
+                  - /url: https://www.megasoft.gr/#undefined
+              - listitem [ref=e23]:
+                - link " ΤΑ ΝΕΑ ΜΑΣ" [ref=e24] [cursor=pointer]:
+                  - /url: https://www.megasoft.gr/#undefined
+              - listitem [ref=e25]:
+                - link "Ευκαιρίες καριέρας" [ref=e26] [cursor=pointer]:
+                  - /url: /efkairies-karieras
+              - listitem [ref=e27]:
+                - link "ΕΠΙΚΟΙΝΩΝΙΑ" [ref=e28] [cursor=pointer]:
+                  - /url: /contact
+  - generic [ref=e34]:
+    - generic [ref=e43]:
+      - generic [ref=e49]:
+        - heading "Πιστοποιημένος Πάροχος Ηλεκτρονικής Τιμολόγησης" [level=1] [ref=e50]
+        - heading "Αυξήστε την αξιοπιστία των συναλλαγών σας και απλοποιήστε τις διαδικασίες επιλέγοντας τη διασύνδεση με την ψηφιακή πλατφόρμα myDATA, μέσω της πιστοποιημένης υπηρεσίας Invoicelink της Megasoft." [level=3] [ref=e51]
+        - link "Μάθετε περισσότερα" [ref=e52] [cursor=pointer]:
+          - /url: https://www.invoicelink.gr/
+          - generic [ref=e53]: Μάθετε περισσότερα
+      - generic [ref=e55]:
+        - generic [ref=e57] [cursor=pointer]: 
+        - generic [ref=e59] [cursor=pointer]: 
+    - generic [ref=e65]:
+      - generic [ref=e68]:
+        - generic [ref=e71]:
+          - heading "Software για επιχειρήσεις που θέλουν να προχωρούν μπροστά." [level=3] [ref=e72]
+          - generic [ref=e73]:
+            - paragraph [ref=e74]:
+              - emphasis [ref=e75]: Έξυπνη απλότητα. Πλήρης έλεγχος. Πραγματική εξέλιξη.
+            - paragraph [ref=e76]: Στη Megasoft, σχεδιάζουμε, αναπτύσσουμε και υλοποιούμε σύγχρονα πληροφοριακά συστήματα που καλύπτουν κάθε ανάγκη της επιχείρησης, από την καθημερινή λειτουργία έως τη συνολική οργάνωση και πρόοδό της. Ενοποιούμε διαδικασίες, δεδομένα και ανθρώπους σε ένα ενιαίο ψηφιακό περιβάλλον, προσφέροντας ταχύτητα, ακρίβεια και πλήρη εικόνα σε πραγματικό χρόνο.
+        - iframe [ref=e81]:
+          - generic [active] [ref=f33e1]:
+            - generic "YouTube Video Player" [ref=f33e3]
+            - generic [ref=f33e5]:
+              - generic:
+                - generic:
+                  - button "Play video" [ref=f33e10] [cursor=pointer]:
+                    - generic [ref=f33e13]:
+                      - img
+                  - button "Hide player controls" [ref=f33e14] [cursor=pointer]
+                  - generic [ref=f33e16]:
+                    - generic [ref=f33e21]:
+                      - generic [ref=f33e22]:
+                        - link "ERP, POS, E-commerce, Ηλεκτρονική Τιμολόγηση, eErgani | Megasoft" [ref=f33e23] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=xlWGjcsiImI
+                        - link "Megasoft AE" [ref=f33e24] [cursor=pointer]:
+                          - /url: /channel/UC5U9k7rznHFd4YtmuN8Imkw
+                          - generic [ref=f33e25]: Megasoft AE
+                      - generic [ref=f33e26]:
+                        - button "thumbnail-image" [ref=f33e27] [cursor=pointer]:
+                          - img "thumbnail-image" [ref=f33e28]
+                        - generic [ref=f33e30]:
+                          - generic: Megasoft AE
+                          - generic: 380 subscribers
+                    - generic [ref=f33e31]:
+                      - button "Share" [ref=f33e34] [cursor=pointer]:
+                        - generic [ref=f33e38]:
+                          - img
+                      - link "Watch on YouTube" [ref=f33e45] [cursor=pointer]:
+                        - /url: https://www.youtube.com/watch?v=xlWGjcsiImI
+                        - generic [ref=f33e48]:
+                          - text: Watch on
+                          - img [ref=f33e50]:
+                            - generic [ref=f33e52]:
+                              - img
+      - generic [ref=e84]:
+        - generic [ref=e88]: Δείτε πώς μπορεί να λειτουργήσει στην επιχείρησή σας
+        - generic [ref=e96]:
+          - generic [ref=e97]:
+            - generic [ref=e99]: Το e-mail σας *
+            - textbox "Το e-mail σας *" [ref=e101]
+          - generic [ref=e102]:
+            - generic [ref=e104]: Ονοματεπώνυμο *
+            - textbox "Ονοματεπώνυμο *" [ref=e106]
+          - generic [ref=e107]:
+            - generic [ref=e109]: Τηλέφωνο *
+            - textbox "Τηλέφωνο *" [ref=e111]
+          - generic [ref=e112]:
+            - generic [ref=e114]: hCaptcha *
+            - iframe [ref=e117]:
+              - generic [ref=f38e2] [cursor=pointer]:
+                - checkbox "«Είμαι άνθρωπος», Επιλέξτε για να ενεργοποιήσετε την πρόκληση ή για να την παρακάμψετε εάν έχετε cookie προσβασιμότητας." [ref=f38e7]
+                - generic [ref=f38e11]: Είμαι άνθρωπος
+                - generic [ref=f38e12]:
+                  - generic "hCaptcha" [ref=f38e13]:
+                    - button "Λογότυπο hCaptcha, ανοίγει νέο παράθυρο με περισσότερες πληροφορίες" [ref=f38e14]:
+                      - img [ref=f38e16]
+                  - generic [ref=f38e78]:
+                    - link "Πολιτική Απορρήτου hCaptcha, ανοίγει σε νέα καρτέλα" [ref=f38e79]:
+                      - /url: https://hcaptcha.com/privacy?ref=www.megasoft.gr&utm_campaign=95de6496-e98a-41fe-9d30-af86f540c77a&utm_medium=checkbox&hl=el
+                      - text: Μυστικότητα
+                    - text: "-"
+                    - link "Όροι Παροχής Υπηρεσιών hCaptcha, ανοίγει σε νέα καρτέλα" [ref=f38e80]:
+                      - /url: https://hcaptcha.com/terms?ref=www.megasoft.gr&utm_campaign=95de6496-e98a-41fe-9d30-af86f540c77a&utm_medium=checkbox&hl=el
+                      - text: Οροι
+          - button "Ζητήστε δωρεάν παρουσίαση" [ref=e121] [cursor=pointer]
+    - generic [ref=e124]:
+      - generic [ref=e126]:
+        - heading "Λύσεις που απογειώνουν τις δυνατότητες των επιχειρήσεων" [level=2] [ref=e127]
+        - paragraph [ref=e128]: Βρείτε ποια ταιριάζει στη δική σας επιχείρηση
+      - generic [ref=e129]:
+        - link "emporiko.jpg" [ref=e138] [cursor=pointer]:
+          - /url: https://www.megasoft.gr/proionta/emporikes-efarmoges-2
+          - img "emporiko.jpg" [ref=e139]
+        - link "live.jpg" [ref=e148] [cursor=pointer]:
+          - /url: https://www.megasoft.gr/live-saas
+          - img "live.jpg" [ref=e149]
+        - link "retail2-1.jpg" [ref=e158] [cursor=pointer]:
+          - /url: https://www.megasoft.gr/proionta/pos-efarmoges
+          - img "retail2-1.jpg" [ref=e159]
+        - link "estiash-2.jpg" [ref=e168] [cursor=pointer]:
+          - /url: https://www.megasoft.gr/proionta/efarmoges-estiashs
+          - img "estiash-2.jpg" [ref=e169]
+    - generic [ref=e172]:
+      - heading "Μας εμπιστεύονται" [level=3] [ref=e174]
+      - generic [ref=e262]:
+        - generic [ref=e264] [cursor=pointer]: 
+        - generic [ref=e266] [cursor=pointer]: 
+    - generic [ref=e270]:
+      - generic [ref=e277]:
+        - img "Αναβαθμίσεις" [ref=e279]
+        - link "Αναβαθμίσεις" [ref=e280] [cursor=pointer]:
+          - /url: http://www.megasoft.gr/support/updates
+          - heading "Αναβαθμίσεις" [level=3] [ref=e281]
+        - paragraph [ref=e283]: Κατεβάστε τις τελευταίες αναβαθμίσεις, μείνετε ενημερωμένοι και εκμεταλλευτείτε όλες τις νέες δυνατότητες.
+      - generic [ref=e290]:
+        - img "Customer Success Stories" [ref=e292]
+        - link "Customer Success Stories" [ref=e293] [cursor=pointer]:
+          - /url: https://www.megasoft.gr/blog/case-studies
+          - heading "Customer Success Stories" [level=3] [ref=e294]
+        - paragraph [ref=e296]: Δείτε επιτυχημένες ιστορίες πελατών μας και διαβάστε πώς οι εφαρμογές PRISMA Win έχουν καλύψει διαφορετικές ανάγκες επιχειρήσεων όλων των κλάδων.
+      - generic [ref=e303]:
+        - img "Our Blog" [ref=e305]
+        - link "Our Blog" [ref=e306] [cursor=pointer]:
+          - /url: https://www.megasoft.gr/blog/news
+          - heading "Our Blog" [level=3] [ref=e307]
+        - paragraph [ref=e309]: Μείνετε ενημερωμένοι για όλα τα τεχνολογικά νέα που αφορούν τις εφαρμογές σας, αλλά και τις φορολογικές εξελίξεις που σας ενδιαφέρουν!
+      - generic [ref=e316]:
+        - img "Βρείτε έναν συνεργάτη μας" [ref=e318]
+        - link "Βρείτε έναν συνεργάτη μας" [ref=e319] [cursor=pointer]:
+          - /url: http://www.megasoft.gr/partners/find-a-partner
+          - heading "Βρείτε έναν συνεργάτη μας" [level=3] [ref=e320]
+        - paragraph [ref=e322]: Το ισχυρό δίκτυο της Megasoft βρίσκεται σε κάθε πόλη της Ελλάδος και της Κύπρου. Βρείτε τώρα τον κοντινότερο σε εσάς συνεργάτη μας!
+    - generic [ref=e326]:
+      - iframe [ref=e334]:
+        - generic [active] [ref=f34e1]:
+          - generic "YouTube Video Player" [ref=f34e3]
+          - generic [ref=f34e5]:
+            - generic:
+              - generic:
+                - button "Play video" [ref=f34e10] [cursor=pointer]
+                - button "Hide player controls" [ref=f34e12] [cursor=pointer]
+                - generic [ref=f34e14]:
+                  - generic [ref=f34e19]:
+                    - generic [ref=f34e20]:
+                      - link "InvoiceLink - Πιστοποιημένος Πάροχος Ηλεκτρονικής Τιμολόγησης" [ref=f34e21] [cursor=pointer]:
+                        - /url: https://www.youtube.com/watch?v=hWCLOE6ceKs
+                      - link "Megasoft AE" [ref=f34e22] [cursor=pointer]:
+                        - /url: /channel/UC5U9k7rznHFd4YtmuN8Imkw
+                        - generic [ref=f34e23]: Megasoft AE
+                    - generic [ref=f34e24]:
+                      - button [ref=f34e25] [cursor=pointer]
+                      - generic [ref=f34e27]:
+                        - generic: Megasoft AE
+                        - generic: 380 subscribers
+                  - generic [ref=f34e28]:
+                    - button "Share" [ref=f34e31] [cursor=pointer]:
+                      - generic [ref=f34e35]:
+                        - img
+                    - link "Watch on YouTube" [ref=f34e42] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=hWCLOE6ceKs
+                      - generic [ref=f34e45]:
+                        - text: Watch on
+                        - img [ref=f34e47]:
+                          - generic [ref=f34e49]:
+                            - img
+      - iframe [ref=e342]:
+        - generic [active] [ref=f35e1]:
+          - generic "YouTube Video Player" [ref=f35e3]
+          - generic [ref=f35e5]:
+            - generic:
+              - generic:
+                - button "Play video" [ref=f35e10] [cursor=pointer]
+                - button "Hide player controls" [ref=f35e12] [cursor=pointer]
+                - generic [ref=f35e14]:
+                  - generic [ref=f35e19]:
+                    - generic [ref=f35e20]:
+                      - link "eErgani by Megasoft" [ref=f35e21] [cursor=pointer]:
+                        - /url: https://www.youtube.com/watch?v=tUyghkZHtsI
+                      - link "Megasoft AE" [ref=f35e22] [cursor=pointer]:
+                        - /url: /channel/UC5U9k7rznHFd4YtmuN8Imkw
+                        - generic [ref=f35e23]: Megasoft AE
+                    - generic [ref=f35e24]:
+                      - button [ref=f35e25] [cursor=pointer]
+                      - generic [ref=f35e27]:
+                        - generic: Megasoft AE
+                        - generic: 380 subscribers
+                  - generic [ref=f35e28]:
+                    - button "Share" [ref=f35e31] [cursor=pointer]:
+                      - generic [ref=f35e35]:
+                        - img
+                    - link "Watch on YouTube" [ref=f35e42] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=tUyghkZHtsI
+                      - generic [ref=f35e45]:
+                        - text: Watch on
+                        - img [ref=f35e47]:
+                          - generic [ref=f35e49]:
+                            - img
+      - iframe [ref=e350]:
+        - generic [active] [ref=f36e1]:
+          - generic "YouTube Video Player" [ref=f36e3]
+          - generic [ref=f36e5]:
+            - generic:
+              - generic:
+                - button "Play video" [ref=f36e10] [cursor=pointer]
+                - button "Hide player controls" [ref=f36e12] [cursor=pointer]
+                - generic [ref=f36e14]:
+                  - generic [ref=f36e19]:
+                    - generic [ref=f36e20]:
+                      - link "PrismaNET" [ref=f36e21] [cursor=pointer]:
+                        - /url: https://www.youtube.com/watch?v=mEgTsgG_Hj0
+                      - link "Megasoft AE" [ref=f36e22] [cursor=pointer]:
+                        - /url: /channel/UC5U9k7rznHFd4YtmuN8Imkw
+                        - generic [ref=f36e23]: Megasoft AE
+                    - generic [ref=f36e24]:
+                      - button [ref=f36e25] [cursor=pointer]
+                      - generic [ref=f36e27]:
+                        - generic: Megasoft AE
+                        - generic: 380 subscribers
+                  - generic [ref=f36e28]:
+                    - button "Share" [ref=f36e31] [cursor=pointer]:
+                      - generic [ref=f36e35]:
+                        - img
+                    - link "Watch on YouTube" [ref=f36e42] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=mEgTsgG_Hj0
+                      - generic [ref=f36e45]:
+                        - text: Watch on
+                        - img [ref=f36e47]:
+                          - generic [ref=f36e49]:
+                            - img
+    - generic [ref=e352]:
+      - heading "Τι λένε οι πελάτες μας" [level=3] [ref=e354]
+      - generic [ref=e361]:
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - generic [ref=e366]: "\"Το PRISMA Win συνέβαλε σημαντικά στη σωστή και εύρυθμη λειτουργία της επιχείρησης. Με τη χρήση του όλες οι διαδικασίες υλοποιούνται γρήγορα και εύκολα, χωρίς να δαπανάται πολύτιμος χρόνος. Είναι αναμφίβολα ο καλύτερος σύντροφος του σύγχρονου επαγγελματία. Δεν θα μπορούσαμε σε καμία περίπτωση να δουλέψουμε χωρίς αυτό!\""
+            - generic [ref=e367]:
+              - img "Καστάνης Αλέξανδρος" [ref=e369]
+              - generic [ref=e370]:
+                - generic [ref=e371]: Καστάνης Αλέξανδρος
+                - generic [ref=e372]: Εσκιμώ Παγωτά
+          - generic [ref=e373]:
+            - generic [ref=e375]: "\"Αναμφίβολα είναι ένα πρόγραμμα με πολλές δυνατότητες που καλύπτει κάθε πτυχή μιας επιχείρησης. Διαρκώς ανακαλύπτω κάτι καινούριο!.\""
+            - generic [ref=e376]:
+              - img "Βέργης Φώτης" [ref=e378]
+              - generic [ref=e379]:
+                - generic [ref=e380]: Βέργης Φώτης
+                - generic [ref=e381]: Βεργής Δάπεδο Μπάνιο
+          - generic [ref=e382]:
+            - generic [ref=e384]: "\"Οι δυνατότητες του συγκεκριμένου προγράμματος είναι απεριόριστες, η διαρκής τεχνική υποστήριξη μοναδική. MEGASOFT σ’ ευχαριστούμε!\""
+            - generic [ref=e385]:
+              - img "Καραγιαννόπουλος Θεοδόσης" [ref=e387]
+              - generic [ref=e388]:
+                - generic [ref=e389]: Καραγιαννόπουλος Θεοδόσης
+                - generic [ref=e390]: O2XYGEN
+          - generic [ref=e391]:
+            - generic [ref=e393]: "\"Το πρόγραμμα της Megasoft είναι ο προσωπικός βοηθός μου στο θέμα της εμπορικής οργάνωσης των πελατών, των προμηθευτών και των εμπορευμάτων μου. Μου γλιτώνει πολλές ώρες άσκοπης δουλειάς, εύκολα και γρήγορα\""
+            - generic [ref=e394]:
+              - img "Παρασκευοπούλου Πωλίνα" [ref=e396]
+              - generic [ref=e397]:
+                - generic [ref=e398]: Παρασκευοπούλου Πωλίνα
+                - generic [ref=e399]: Bagno Casa Παρασκευόπουλος
+          - generic [ref=e400]:
+            - generic [ref=e402]: "\"Η οργάνωση της επιχείρησής μας απαιτεί αυστηρά πρωτόκολλα κωδικοποίησης, ιχνηλασιμότητας, printing reports και ευελιξίας. Μόνο έτσι μπορούμε να εστιάζουμε στη δουλειά μας και να κοιτάζουμε το μέλλον στα μάτια. Το PRISMA Win -και φυσικά ο συνεργάτης μας από τη Mega Support- ανταποκρίθηκε στις προκλήσεις που θέσαμε, με αποτέλεσμα να έχουμε σήμερα ένα ολοκληρωμένο σύστημα διαχείρισης, αρωγό στην ανάπτυξη της εταιρείας!\""
+            - generic [ref=e403]:
+              - img "Τέλης Αγγελικάκης" [ref=e405]
+              - generic [ref=e406]:
+                - generic [ref=e407]: Τέλης Αγγελικάκης
+                - generic [ref=e408]: FORMULA Πυροσβεστήρες ΑΕ
+          - generic [ref=e409]:
+            - generic [ref=e411]: "\"Η απλότητα στη χρήση, το φιλικό περιβάλλον της εφαρμογής και η εξαιρετική υποστήριξη, έχουν κάνει το PRISMA Win για εμάς, έναν πολύτιμο συνεργάτη.\""
+            - generic [ref=e412]:
+              - img "Σπυρόπουλος Θανάσης" [ref=e414]
+              - generic [ref=e415]:
+                - generic [ref=e416]: Σπυρόπουλος Θανάσης
+                - generic [ref=e417]: BAYA
+          - generic [ref=e418]:
+            - generic [ref=e420]: "\"Ασφάλεια, προνοητικότητα και εξοικονόμηση χρόνου ειναι τα τρία βασικά χαρακτηριστικά που παρέχει το PRISMA Win στην εταιρεία μας. Η ευκολία στη χρήση του, το κάνει ιδιαίτερα φιλικό\""
+            - generic [ref=e421]:
+              - img "Σιώτη Ειρήνη" [ref=e423]
+              - generic [ref=e424]:
+                - generic [ref=e425]: Σιώτη Ειρήνη
+                - generic [ref=e426]: ESIOT
+          - generic [ref=e427]:
+            - generic [ref=e429]: "\"Ζούμε στην εποχή της πληροφορίας και της ταχύτητας των αποφάσεων! Η Megasoft είναι ο συνεργάτης που κάνει τα πάντα για να μας παρέχει πληροφοριακά συστήματα που «κουμπώνουν» ακριβώς στη δουλειά μας! Αυτό όμως που μας έχει κερδίσει είναι ότι καταγράφουν και την πιο δύσκολη επιθυμία μας για να την υλοποιήσουν!!!!\""
+            - generic [ref=e430]:
+              - img "Ιωάννης Δρίτσας" [ref=e432]
+              - generic [ref=e433]:
+                - generic [ref=e434]: Ιωάννης Δρίτσας
+                - generic [ref=e435]: Ι Γ ΔΡΙΤΣΑΣ ΕΕΒΕ
+          - generic [ref=e436]:
+            - generic [ref=e438]: "\"Πιο εύχρηστο πρόγραμμα από το PRISMA Win δεν υπάρχει. Κάνω τη δουλειά μου γρήγορα χωρίς κόπο!\""
+            - generic [ref=e439]:
+              - img "Σταμπουλής Γεώργιος" [ref=e441]
+              - generic [ref=e442]:
+                - generic [ref=e443]: Σταμπουλής Γεώργιος
+                - generic [ref=e444]: Καλαμοπλεκτική Σταμπουλής
+          - generic [ref=e445]:
+            - generic [ref=e447]: "\"Με το PRISMA Win μπορώ και έχω διαθέσιμη όλη την πληροφορία που χρειάζομαι. Είναι ένα εύκολο πρόγραμμα που με έχει βοηθήσει σημαντικά στη διεκπεραίωση όλων των καθημερινών εργασιών της επιχείρησής μου.\""
+            - generic [ref=e448]:
+              - img "Κουνουβέλη Μαίρη" [ref=e450]
+              - generic [ref=e451]:
+                - generic [ref=e452]: Κουνουβέλη Μαίρη
+                - generic [ref=e453]: Κουνουβέλης Επεξεργασία & Εμπορία Ξυλείας Α.Ε.
+          - generic [ref=e454]:
+            - generic [ref=e456]: "\"Με τις εφαρμογές PRISMA Win της Megasoft είμαι σύννομος με όσα απαιτούν οι νέες φορολογικές εξελίξεις, εξοικονομώ χρόνο στις καθημερινές μου εργασίες και μπορώ να αντλώ όλη την απαραίτητη πληροφορία που χρειάζομαι για να κατευθύνω με σιγουριά την επιχείρησή μου.\""
+            - generic [ref=e457]:
+              - img "Πανταβός Νίκος" [ref=e459]
+              - generic [ref=e460]:
+                - generic [ref=e461]: Πανταβός Νίκος
+                - generic [ref=e462]: Pantavos Εποχιακά είδη - Διακόσμηση
+          - generic [ref=e463]:
+            - generic [ref=e465]: "\"Ευελιξία, ευχρηστία και απλότητα. 3 λέξεις που χαρακτηρίζουν απόλυτα το PRISMA Win. Με τη χρήση του κατάφερα να διαχειρίζομαι με ευκολία τα καθημερινά ραντεβού και γενικότερα να έχω μια ολοκληρωμένη και πραγματική εικόνα για την πορεία της επιχείρησής μου.\""
+            - generic [ref=e466]:
+              - img "Νταούλας Νικόλαος" [ref=e468]
+              - generic [ref=e469]:
+                - generic [ref=e470]: Νταούλας Νικόλαος
+                - generic [ref=e471]: LaserLab Skin Therapies
+          - generic [ref=e472]:
+            - generic [ref=e474]: "\"Συνεργάζομαι 10 χρόνια με την Megasoft και είμαι πράγματι πολύ ευχαριστημένος! Το PRISMA Win είναι ένα πρόγραμμα που διαρκώς εξελίσσεται. Τόσο οι δυνατότητές του, όσο και οι άνθρωποι που βρίσκονται πίσω από αυτό με βοήθησαν να πάω ένα βήμα μπροστά την επιχείρησή μου!\""
+            - generic [ref=e475]:
+              - img "Τρύφωνας Κάντας" [ref=e477]
+              - generic [ref=e478]:
+                - generic [ref=e479]: Τρύφωνας Κάντας
+                - generic [ref=e480]: Bionome Health Club
+          - generic [ref=e481]:
+            - generic [ref=e483]:
+              - text: "\"Η εταιρεία μας"
+              - strong [ref=e484]: ΝΙΚΟΣ Ε. ΚΑΤΡΑΝΤΖΗΣ Ο.Ε
+              - text: . - (Βιολογικοί καθαρισμοί λυμάτων και πισίνες) χρησιμοποιεί το PRISMA Win- Εμπορική Διαχείριση από το 2009 και το PRISMA Win - Έσοδα - Έξοδα από το 2014. Όλα αυτά τα χρόνια τα προγράμματα αυτά μας στηρίζουν άψογα σε όλες τις λογιστικές διαδικασίες που χρειαζόμαστε ως εταιρία, ενώ καλύπτουν κάθε νέα νομοθετική απαίτηση με βάση τα λογιστικά και τα φορολογικά δεδομένα. Το πλήρως καταρτισμένο προσωπικό της εταιρείας Μegasoft, που παρέχει τα συγκεκριμένα προγράμματα, μας εξυπηρετεί πάντα άμεσα και με ευγένεια."
+            - generic [ref=e485]:
+              - img "Κατραντζή Έλενα" [ref=e487]
+              - generic [ref=e488]:
+                - generic [ref=e489]: Κατραντζή Έλενα
+                - generic [ref=e490]: Katrantzis Pisines
+          - generic [ref=e491]:
+            - generic [ref=e493]: "\"Με το PRISMA Win κατάφερα να βάλω σε μια τάξη την επιχείρησή μου. Με βοήθησε σημαντικά στην άψογη οργάνωση των προϊόντων μου, καθώς μπορώ να τα καταχωρώ και να τα αναζητώ εύκολα, χωρίς καθυστερήσεις. Όσες φορές έχει χρειαστεί, το τμήμα υποστήριξης της Megasoft με έχει εξυπηρετήσει με τον πιο άμεσο και αποτελεσματικό τρόπο.\""
+            - generic [ref=e494]:
+              - img "Νέστορας Παμπόρης" [ref=e496]
+              - generic [ref=e497]:
+                - generic [ref=e498]: Νέστορας Παμπόρης
+                - generic [ref=e499]: DesignGreen
+          - generic [ref=e500]:
+            - generic [ref=e502]: "\"Με το PRISMA Win πέτυχα ταχύτητα, οργάνωση και έλεγχο. Όλες οι καθημερινές εργασίες του μαγαζιού έχουν αυτοματοποιηθεί και μπορώ, πλέον, να έχω μια πλήρη εικόνα για το τί συμβαίνει. Ένα πολύ σημαντικό πλεονέκτημα στη συνεργασία μας με τη Megasoft είναι η άμεση υποστήριξη που μου παρέχει, όταν την χρειάζομαι!\""
+            - generic [ref=e503]:
+              - img "Τοδουλάκης Παρασκευάς" [ref=e505]
+              - generic [ref=e506]:
+                - generic [ref=e507]: Τοδουλάκης Παρασκευάς
+                - generic [ref=e508]: Π.Γ. Τοδουλάκης
+          - generic [ref=e509]:
+            - generic [ref=e511]: "\"Το PRISMA Win συνέβαλε σημαντικά στη σωστή και εύρυθμη λειτουργία της επιχείρησης. Με τη χρήση του όλες οι διαδικασίες υλοποιούνται γρήγορα και εύκολα, χωρίς να δαπανάται πολύτιμος χρόνος. Είναι αναμφίβολα ο καλύτερος σύντροφος του σύγχρονου επαγγελματία. Δεν θα μπορούσαμε σε καμία περίπτωση να δουλέψουμε χωρίς αυτό!\""
+            - generic [ref=e512]:
+              - img "Καστάνης Αλέξανδρος" [ref=e514]
+              - generic [ref=e515]:
+                - generic [ref=e516]: Καστάνης Αλέξανδρος
+                - generic [ref=e517]: Εσκιμώ Παγωτά
+          - generic [ref=e518]:
+            - generic [ref=e520]: "\"Αναμφίβολα είναι ένα πρόγραμμα με πολλές δυνατότητες που καλύπτει κάθε πτυχή μιας επιχείρησης. Διαρκώς ανακαλύπτω κάτι καινούριο!.\""
+            - generic [ref=e521]:
+              - img "Βέργης Φώτης" [ref=e523]
+              - generic [ref=e524]:
+                - generic [ref=e525]: Βέργης Φώτης
+                - generic [ref=e526]: Βεργής Δάπεδο Μπάνιο
+          - generic [ref=e527]:
+            - generic [ref=e529]: "\"Οι δυνατότητες του συγκεκριμένου προγράμματος είναι απεριόριστες, η διαρκής τεχνική υποστήριξη μοναδική. MEGASOFT σ’ ευχαριστούμε!\""
+            - generic [ref=e530]:
+              - img "Καραγιαννόπουλος Θεοδόσης" [ref=e532]
+              - generic [ref=e533]:
+                - generic [ref=e534]: Καραγιαννόπουλος Θεοδόσης
+                - generic [ref=e535]: O2XYGEN
+          - generic [ref=e536]:
+            - generic [ref=e538]: "\"Το πρόγραμμα της Megasoft είναι ο προσωπικός βοηθός μου στο θέμα της εμπορικής οργάνωσης των πελατών, των προμηθευτών και των εμπορευμάτων μου. Μου γλιτώνει πολλές ώρες άσκοπης δουλειάς, εύκολα και γρήγορα\""
+            - generic [ref=e539]:
+              - img "Παρασκευοπούλου Πωλίνα" [ref=e541]
+              - generic [ref=e542]:
+                - generic [ref=e543]: Παρασκευοπούλου Πωλίνα
+                - generic [ref=e544]: Bagno Casa Παρασκευόπουλος
+          - generic [ref=e545]:
+            - generic [ref=e547]: "\"Η οργάνωση της επιχείρησής μας απαιτεί αυστηρά πρωτόκολλα κωδικοποίησης, ιχνηλασιμότητας, printing reports και ευελιξίας. Μόνο έτσι μπορούμε να εστιάζουμε στη δουλειά μας και να κοιτάζουμε το μέλλον στα μάτια. Το PRISMA Win -και φυσικά ο συνεργάτης μας από τη Mega Support- ανταποκρίθηκε στις προκλήσεις που θέσαμε, με αποτέλεσμα να έχουμε σήμερα ένα ολοκληρωμένο σύστημα διαχείρισης, αρωγό στην ανάπτυξη της εταιρείας!\""
+            - generic [ref=e548]:
+              - img "Τέλης Αγγελικάκης" [ref=e550]
+              - generic [ref=e551]:
+                - generic [ref=e552]: Τέλης Αγγελικάκης
+                - generic [ref=e553]: FORMULA Πυροσβεστήρες ΑΕ
+          - generic [ref=e554]:
+            - generic [ref=e556]: "\"Η απλότητα στη χρήση, το φιλικό περιβάλλον της εφαρμογής και η εξαιρετική υποστήριξη, έχουν κάνει το PRISMA Win για εμάς, έναν πολύτιμο συνεργάτη.\""
+            - generic [ref=e557]:
+              - img "Σπυρόπουλος Θανάσης" [ref=e559]
+              - generic [ref=e560]:
+                - generic [ref=e561]: Σπυρόπουλος Θανάσης
+                - generic [ref=e562]: BAYA
+          - generic [ref=e563]:
+            - generic [ref=e565]: "\"Ασφάλεια, προνοητικότητα και εξοικονόμηση χρόνου ειναι τα τρία βασικά χαρακτηριστικά που παρέχει το PRISMA Win στην εταιρεία μας. Η ευκολία στη χρήση του, το κάνει ιδιαίτερα φιλικό\""
+            - generic [ref=e566]:
+              - img "Σιώτη Ειρήνη" [ref=e568]
+              - generic [ref=e569]:
+                - generic [ref=e570]: Σιώτη Ειρήνη
+                - generic [ref=e571]: ESIOT
+          - generic [ref=e572]:
+            - generic [ref=e574]: "\"Ζούμε στην εποχή της πληροφορίας και της ταχύτητας των αποφάσεων! Η Megasoft είναι ο συνεργάτης που κάνει τα πάντα για να μας παρέχει πληροφοριακά συστήματα που «κουμπώνουν» ακριβώς στη δουλειά μας! Αυτό όμως που μας έχει κερδίσει είναι ότι καταγράφουν και την πιο δύσκολη επιθυμία μας για να την υλοποιήσουν!!!!\""
+            - generic [ref=e575]:
+              - img "Ιωάννης Δρίτσας" [ref=e577]
+              - generic [ref=e578]:
+                - generic [ref=e579]: Ιωάννης Δρίτσας
+                - generic [ref=e580]: Ι Γ ΔΡΙΤΣΑΣ ΕΕΒΕ
+          - generic [ref=e581]:
+            - generic [ref=e583]: "\"Πιο εύχρηστο πρόγραμμα από το PRISMA Win δεν υπάρχει. Κάνω τη δουλειά μου γρήγορα χωρίς κόπο!\""
+            - generic [ref=e584]:
+              - img "Σταμπουλής Γεώργιος" [ref=e586]
+              - generic [ref=e587]:
+                - generic [ref=e588]: Σταμπουλής Γεώργιος
+                - generic [ref=e589]: Καλαμοπλεκτική Σταμπουλής
+          - generic [ref=e590]:
+            - generic [ref=e592]: "\"Με το PRISMA Win μπορώ και έχω διαθέσιμη όλη την πληροφορία που χρειάζομαι. Είναι ένα εύκολο πρόγραμμα που με έχει βοηθήσει σημαντικά στη διεκπεραίωση όλων των καθημερινών εργασιών της επιχείρησής μου.\""
+            - generic [ref=e593]:
+              - img "Κουνουβέλη Μαίρη" [ref=e595]
+              - generic [ref=e596]:
+                - generic [ref=e597]: Κουνουβέλη Μαίρη
+                - generic [ref=e598]: Κουνουβέλης Επεξεργασία & Εμπορία Ξυλείας Α.Ε.
+          - generic [ref=e599]:
+            - generic [ref=e601]: "\"Με τις εφαρμογές PRISMA Win της Megasoft είμαι σύννομος με όσα απαιτούν οι νέες φορολογικές εξελίξεις, εξοικονομώ χρόνο στις καθημερινές μου εργασίες και μπορώ να αντλώ όλη την απαραίτητη πληροφορία που χρειάζομαι για να κατευθύνω με σιγουριά την επιχείρησή μου.\""
+            - generic [ref=e602]:
+              - img "Πανταβός Νίκος" [ref=e604]
+              - generic [ref=e605]:
+                - generic [ref=e606]: Πανταβός Νίκος
+                - generic [ref=e607]: Pantavos Εποχιακά είδη - Διακόσμηση
+          - generic [ref=e608]:
+            - generic [ref=e610]: "\"Ευελιξία, ευχρηστία και απλότητα. 3 λέξεις που χαρακτηρίζουν απόλυτα το PRISMA Win. Με τη χρήση του κατάφερα να διαχειρίζομαι με ευκολία τα καθημερινά ραντεβού και γενικότερα να έχω μια ολοκληρωμένη και πραγματική εικόνα για την πορεία της επιχείρησής μου.\""
+            - generic [ref=e611]:
+              - img "Νταούλας Νικόλαος" [ref=e613]
+              - generic [ref=e614]:
+                - generic [ref=e615]: Νταούλας Νικόλαος
+                - generic [ref=e616]: LaserLab Skin Therapies
+          - generic [ref=e617]:
+            - generic [ref=e619]: "\"Συνεργάζομαι 10 χρόνια με την Megasoft και είμαι πράγματι πολύ ευχαριστημένος! Το PRISMA Win είναι ένα πρόγραμμα που διαρκώς εξελίσσεται. Τόσο οι δυνατότητές του, όσο και οι άνθρωποι που βρίσκονται πίσω από αυτό με βοήθησαν να πάω ένα βήμα μπροστά την επιχείρησή μου!\""
+            - generic [ref=e620]:
+              - img "Τρύφωνας Κάντας" [ref=e622]
+              - generic [ref=e623]:
+                - generic [ref=e624]: Τρύφωνας Κάντας
+                - generic [ref=e625]: Bionome Health Club
+          - generic [ref=e626]:
+            - generic [ref=e628]:
+              - text: "\"Η εταιρεία μας"
+              - strong [ref=e629]: ΝΙΚΟΣ Ε. ΚΑΤΡΑΝΤΖΗΣ Ο.Ε
+              - text: . - (Βιολογικοί καθαρισμοί λυμάτων και πισίνες) χρησιμοποιεί το PRISMA Win- Εμπορική Διαχείριση από το 2009 και το PRISMA Win - Έσοδα - Έξοδα από το 2014. Όλα αυτά τα χρόνια τα προγράμματα αυτά μας στηρίζουν άψογα σε όλες τις λογιστικές διαδικασίες που χρειαζόμαστε ως εταιρία, ενώ καλύπτουν κάθε νέα νομοθετική απαίτηση με βάση τα λογιστικά και τα φορολογικά δεδομένα. Το πλήρως καταρτισμένο προσωπικό της εταιρείας Μegasoft, που παρέχει τα συγκεκριμένα προγράμματα, μας εξυπηρετεί πάντα άμεσα και με ευγένεια."
+            - generic [ref=e630]:
+              - img "Κατραντζή Έλενα" [ref=e632]
+              - generic [ref=e633]:
+                - generic [ref=e634]: Κατραντζή Έλενα
+                - generic [ref=e635]: Katrantzis Pisines
+          - generic [ref=e636]:
+            - generic [ref=e638]: "\"Με το PRISMA Win κατάφερα να βάλω σε μια τάξη την επιχείρησή μου. Με βοήθησε σημαντικά στην άψογη οργάνωση των προϊόντων μου, καθώς μπορώ να τα καταχωρώ και να τα αναζητώ εύκολα, χωρίς καθυστερήσεις. Όσες φορές έχει χρειαστεί, το τμήμα υποστήριξης της Megasoft με έχει εξυπηρετήσει με τον πιο άμεσο και αποτελεσματικό τρόπο.\""
+            - generic [ref=e639]:
+              - img "Νέστορας Παμπόρης" [ref=e641]
+              - generic [ref=e642]:
+                - generic [ref=e643]: Νέστορας Παμπόρης
+                - generic [ref=e644]: DesignGreen
+          - generic [ref=e645]:
+            - generic [ref=e647]: "\"Με το PRISMA Win πέτυχα ταχύτητα, οργάνωση και έλεγχο. Όλες οι καθημερινές εργασίες του μαγαζιού έχουν αυτοματοποιηθεί και μπορώ, πλέον, να έχω μια πλήρη εικόνα για το τί συμβαίνει. Ένα πολύ σημαντικό πλεονέκτημα στη συνεργασία μας με τη Megasoft είναι η άμεση υποστήριξη που μου παρέχει, όταν την χρειάζομαι!\""
+            - generic [ref=e648]:
+              - img "Τοδουλάκης Παρασκευάς" [ref=e650]
+              - generic [ref=e651]:
+                - generic [ref=e652]: Τοδουλάκης Παρασκευάς
+                - generic [ref=e653]: Π.Γ. Τοδουλάκης
+        - generic [ref=e654]:
+          - generic [ref=e656] [cursor=pointer]: 
+          - generic [ref=e658] [cursor=pointer]: 
+        - list [ref=e660]:
+          - listitem [ref=e661] [cursor=pointer]
+          - listitem [ref=e663] [cursor=pointer]
+          - listitem [ref=e665] [cursor=pointer]
+          - listitem [ref=e667] [cursor=pointer]
+          - listitem [ref=e669] [cursor=pointer]
+          - listitem [ref=e671] [cursor=pointer]
+          - listitem [ref=e673] [cursor=pointer]
+          - listitem [ref=e675] [cursor=pointer]
+          - listitem [ref=e677] [cursor=pointer]
+          - listitem [ref=e679] [cursor=pointer]
+          - listitem [ref=e681] [cursor=pointer]
+          - listitem [ref=e683] [cursor=pointer]
+          - listitem [ref=e685] [cursor=pointer]
+          - listitem [ref=e687] [cursor=pointer]
+          - listitem [ref=e689] [cursor=pointer]
+          - listitem [ref=e691] [cursor=pointer]
+    - generic [ref=e696]:
+      - generic [ref=e703]:
+        - generic [ref=e704]: "0"
+        - generic [ref=e705]: χρόνια καινοτομίας
+      - generic [ref=e712]:
+        - generic [ref=e713]: "0"
+        - generic [ref=e714]: εφαρμογές λογισμικού
+      - generic [ref=e721]:
+        - generic [ref=e722]: "0"
+        - generic [ref=e723]: εξουσιοδοτημένοι συνεργάτες
+      - generic [ref=e730]:
+        - generic [ref=e731]: "0"
+        - generic [ref=e732]: εγκατεστημένες εφαρμογές
+    - generic [ref=e736]:
+      - generic [ref=e739]:
+        - generic [ref=e744]:
+          - generic [ref=e748]: 
+          - paragraph [ref=e751]: ".2103416900"
+        - generic [ref=e756]:
+          - generic [ref=e760]: 
+          - paragraph [ref=e763]: info@megasoft.gr (Γενικές Πληροφορίες)
+        - generic [ref=e768]:
+          - generic [ref=e772]: 
+          - paragraph [ref=e775]: sales@megasoft.gr (Πωλήσεις)
+        - generic [ref=e780]:
+          - generic [ref=e784]: 
+          - paragraph [ref=e787]: Λ. Κηφισού 174, 122 42, Αιγάλεω
+        - img "axiacert-002-new.png" [ref=e793]
+      - generic [ref=e796]:
+        - generic [ref=e798]:
+          - heading "Βρείτε μας στα Social Media" [level=3] [ref=e800]
+          - generic [ref=e801]:
+            - link "" [ref=e803] [cursor=pointer]:
+              - /url: https://www.facebook.com/megasoft.gr/
+              - generic [ref=e804]: 
+            - link "" [ref=e806] [cursor=pointer]:
+              - /url: https://twitter.com/megasoft_gr
+              - generic [ref=e807]: 
+            - link "" [ref=e809] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/megasoft-sa
+              - generic [ref=e810]: 
+            - link "" [ref=e812] [cursor=pointer]:
+              - /url: https://www.instagram.com/megasoft_sa/
+              - generic [ref=e813]: 
+            - link "" [ref=e815] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UC5U9k7rznHFd4YtmuN8Imkw/videos
+              - generic [ref=e816]: 
+        - link "Εγγραφείτε στο newsletter" [ref=e826] [cursor=pointer]:
+          - /url: https://www.megasoft.gr/index.php?option=com_sppagebuilder&view=page&id=1839
+        - link "Θέσεις Εργασίας" [ref=e834] [cursor=pointer]:
+          - /url: /efkairies-karieras
+          - generic [ref=e835]: Θέσεις Εργασίας
+        - paragraph [ref=e840]:
+          - link "Πολιτική Απορρήτου" [ref=e841] [cursor=pointer]:
+            - /url: http://megasoft.gr/index.php?option=com_content&view=article&id=1550
+        - paragraph [ref=e846]:
+          - link "Πολιτική για την καταπολέμηση της βίας και παρενόχλησης στην εργασία" [ref=e847] [cursor=pointer]:
+            - /url: http://megasoft.gr/index.php?option=com_content&view=article&id=2579
+            - text: Πολιτική για την καταπολέμηση της βίας
+            - text: και παρενόχλησης στην εργασία
+        - link "banner_psifiakos-metasx_2.png" [ref=e853] [cursor=pointer]:
+          - /url: https://digitalsme.gov.gr/
+          - img "banner_psifiakos-metasx_2.png" [ref=e854]
+        - paragraph [ref=e859]:
+          - link "Μάθετε περισσότερα για τη δράση" [ref=e862] [cursor=pointer]:
+            - /url: https://digitalsme.gov.gr/
+  - contentinfo [ref=e863]:
+    - generic [ref=e867]: COPYRIGHT© 2025 Megasoft. All Rights Reserved.
+  - generic [ref=e869]:
+    - link "" [ref=e870] [cursor=pointer]:
+      - /url: "#"
+      - generic [ref=e871]: 
+    - list [ref=e875]:
+      - listitem [ref=e876]:
+        - link "Home" [ref=e877] [cursor=pointer]:
+          - /url: https://www.megasoft.gr/
+      - listitem [ref=e878]:
+        - link "H εταιρεια" [ref=e879] [cursor=pointer]:
+          - /url: /about
+      - listitem [ref=e880]:
+        - text: ΠΡΟΙΟΝΤΑ
+        - list [ref=e881]:
+          - listitem [ref=e882]:
+            - link "InvoiceLink - Πάροχος Ηλεκτρονικής Τιμολόγησης" [ref=e883] [cursor=pointer]:
+              - /url: /proionta/invoicelink-parochos
+          - listitem [ref=e884]:
+            - link "Εμπορικές εφαρμογές" [ref=e885] [cursor=pointer]:
+              - /url: /proionta/emporikes-efarmoges-2
+          - listitem [ref=e886]:
+            - link "PrismaNET" [ref=e887] [cursor=pointer]:
+              - /url: /proionta/prisma-net-erp
+          - listitem [ref=e888]:
+            - link "Λύσεις ανά κλάδο" [ref=e889] [cursor=pointer]:
+              - /url: /proionta/lyseis-ana-klado
+          - listitem [ref=e890]:
+            - link "Εφαρμογές εστίασης" [ref=e891] [cursor=pointer]:
+              - /url: /proionta/efarmoges-estiashs
+          - listitem [ref=e892]:
+            - link "Εφαρμογές λιανικής" [ref=e893] [cursor=pointer]:
+              - /url: /proionta/pos-efarmoges
+          - listitem [ref=e894]:
+            - link "Λογιστικές εφαρμογές" [ref=e895] [cursor=pointer]:
+              - /url: /proionta/logistikes-efarmoges
+          - listitem [ref=e896]:
+            - link "BI - Business Intellingence" [ref=e897] [cursor=pointer]:
+              - /url: /proionta/business-intellingence-2
+          - listitem [ref=e898]:
+            - link "Σύνδεση με Ταμειακά και Ζυγιστικά Συστήματα" [ref=e899] [cursor=pointer]:
+              - /url: /proionta/syndesh-me-tameiaka-zygistika-systhmata
+          - listitem [ref=e900]:
+            - link "ΦΗΜΑΣ" [ref=e901] [cursor=pointer]:
+              - /url: /proionta/fimas
+      - listitem [ref=e902]:
+        - text: ΥΠΟΣΤΗΡΙΞΗ
+        - list [ref=e903]:
+          - listitem [ref=e904]:
+            - link "Αναβαθμίσεις" [ref=e905] [cursor=pointer]:
+              - /url: /support/updates
+          - listitem [ref=e906]:
+            - link "Χρήσιμα Εργαλεία" [ref=e907] [cursor=pointer]:
+              - /url: /support/tools
+          - listitem [ref=e908]:
+            - link "Video Tutorials" [ref=e909] [cursor=pointer]:
+              - /url: /support/video-tutorials
+          - listitem [ref=e910]:
+            - link "Συνεργαζόμενα Εκπαιδευτήρια" [ref=e911] [cursor=pointer]:
+              - /url: /support/affiliated-schools
+      - listitem [ref=e912]:
+        - text: ΣΥΝΕΡΓΑΤΕΣ
+        - list [ref=e913]:
+          - listitem [ref=e914]:
+            - link "Συνεργαστείτε μαζί μας" [ref=e915] [cursor=pointer]:
+              - /url: /partners/collaborate-with-us
+          - listitem [ref=e916]:
+            - link "Βρείτε ένα συνεργάτη μας" [ref=e917] [cursor=pointer]:
+              - /url: /partners/find-a-partner
+          - listitem [ref=e918]:
+            - link "Υλικό για Συνεργάτες" [ref=e919] [cursor=pointer]:
+              - /url: /partners/resources
+      - listitem [ref=e920]:
+        - text: ΤΑ ΝΕΑ ΜΑΣ
+        - list [ref=e921]:
+          - listitem [ref=e922]:
+            - link "Τα Νέα της Megasoft" [ref=e923] [cursor=pointer]:
+              - /url: /blog/news
+          - listitem [ref=e924]:
+            - link "Case studies" [ref=e925] [cursor=pointer]:
+              - /url: /blog/case-studies
+      - listitem [ref=e926]:
+        - link "Ευκαιρίες καριέρας" [ref=e927] [cursor=pointer]:
+          - /url: /efkairies-karieras
+        - list [ref=e928]:
+          - listitem [ref=e929]:
+            - link "Κάθετες Αγορές" [ref=e930] [cursor=pointer]:
+              - /url: /products/vertical-markets
+          - listitem [ref=e931]:
+            - link "Λογιστική Διαχείριση" [ref=e932] [cursor=pointer]:
+              - /url: /products/financial-management
+          - listitem [ref=e933]:
+            - link "Εφαρμογές Εστίασης" [ref=e934] [cursor=pointer]:
+              - /url: /products/hospitality-applications
+          - listitem [ref=e935]:
+            - link "Εφαρμογές Λιανικής" [ref=e936] [cursor=pointer]:
+              - /url: /products/retail-applications
+          - listitem [ref=e937]:
+            - link "Business Intellingence" [ref=e938] [cursor=pointer]:
+              - /url: /products/business-intellingence
+          - listitem [ref=e939]:
+            - link "Ε.Α.Φ.Δ.Σ.Σ." [ref=e940] [cursor=pointer]:
+              - /url: /products/taxation-instruments
+          - listitem [ref=e941]:
+            - link "Σύνδεση με Ταμειακά και Ζυγιστικά συστήματα" [ref=e942] [cursor=pointer]:
+              - /url: /products/connect-with-cash-and-weighing-systems
+      - listitem [ref=e943]:
+        - link "ΕΠΙΚΟΙΝΩΝΙΑ" [ref=e944] [cursor=pointer]:
+          - /url: /contact

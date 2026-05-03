@@ -1,0 +1,56 @@
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <a href="/" class="header__logo" aria-label="{{ site.Title }} - Αρχική">
+        <img src="{{ site.Params.logo }}" alt="{{ site.Title }}" class="header__logo-img">
+      </a>
+
+      <nav class="nav" aria-label="Κύρια πλοήγηση">
+        {{ range site.Menus.main }}
+          {{ if .HasChildren }}
+            <div class="nav__dropdown">
+              <button class="nav__link nav__dropdown-toggle" aria-expanded="false">
+                {{ .Name }} <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="nav__dropdown-menu">
+                <div class="nav__dropdown-menu-inner">
+                  {{ range .Children }}
+                    <a href="{{ .URL }}" class="nav__dropdown-item">{{ .Name }}</a>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          {{ else }}
+            {{ $active := eq $.RelPermalink .URL }}
+            <a href="{{ .URL }}"
+               class="nav__link{{ if $active }} nav__link--active{{ end }}"
+               {{ if $active }}aria-current="page"{{ end }}>
+              {{ .Name }}
+            </a>
+          {{ end }}
+        {{ end }}
+      </nav>
+
+      <button class="nav__toggle" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav__mobile" id="mobile-nav" aria-label="Κινητό μενού">
+  {{ range site.Menus.main }}
+    {{ if .HasChildren }}
+      <div class="nav__mobile-group">
+        <div class="nav__mobile-label">{{ .Name }}</div>
+        {{ range .Children }}
+          <a href="{{ .URL }}" class="nav__link nav__mobile-child">{{ .Name }}</a>
+        {{ end }}
+      </div>
+    {{ else }}
+      <a href="{{ .URL }}" class="nav__link">{{ .Name }}</a>
+    {{ end }}
+  {{ end }}
+</nav>

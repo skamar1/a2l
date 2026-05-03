@@ -1,0 +1,38 @@
+[     578ms] ReferenceError: gtag is not defined
+    at https://www.megasoft.gr/proionta/emporikes-efarmoges-2:13:3
+[     564ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js:0
+[     602ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtag/js?id=AW-974677718:0
+[     649ms] [LOG] JQMIGRATE: Migrate is installed, version 1.4.1 @ https://www.megasoft.gr/media/jui/js/jquery-migrate.min.js:1
+[     692ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtm.js?id=GTM-PCJTZ54:0
+[     692ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://ssl.google-analytics.com/ga.js:0
+[     711ms] TypeError: Cannot read properties of undefined (reading 'split')
+    at HTMLLIElement.<anonymous> (https://www.megasoft.gr/templates/shaper_qubic/js/main.js:189:28)
+    at x.each (https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js:4:5347)
+    at a.fn.init.each (https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js:4:1999)
+    at HTMLDocument.<anonymous> (https://www.megasoft.gr/templates/shaper_qubic/js/main.js:185:74)
+    at c (https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js:4:25967)
+    at Object.fireWith [as resolveWith] (https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js:4:26772)
+    at x.ready (https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js:4:3305)
+    at HTMLDocument.q (https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js:4:717)
+[     726ms] [LOG] runPoptinNow @ https://cdn.popt.in/pixel.js?id=d71ee6b8d528b:14
+[     726ms] [LOG] poptinInit loading @ https://cdn.popt.in/pixel.js?id=d71ee6b8d528b:3
+[     737ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 467787897092570. @ https://connect.facebook.net/en_US/fbevents.js:181
+[     744ms] [LOG] initiatePullPoptinsRequest() @ https://cdn.popt.in/pixel.js?id=d71ee6b8d528b:3
+[     967ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.invoicelink.gr/brevo-frame.html:0
+[     975ms] Uncaught SecurityError: Failed to read a named property 'pathname' from 'Location': Blocked a frame with origin "https://www.invoicelink.gr" from accessing a frame with origin "https://www.megasoft.gr". Protocols, domains, and ports must match.
+    at window.CookieControl.Cookie (https://consent.cookiebot.com/uc.js:1:115256)
+    at <anonymous> (https://consent.cookiebot.com/uc.js:1:117937)
+    at <anonymous> (https://consent.cookiebot.com/uc.js:1:118260)
+[    1069ms] [LOG] LiteSpeed: skipping guest vary reload (already reloaded this session) @ https://www.invoicelink.gr/brevo-frame.html:369
+[    1076ms] Uncaught TypeError: Cannot set properties of undefined (setting 'windowOnloadTriggered')
+    at signalWindowLoad (https://consent.cookiebot.com/uc.js:1:64856)
+[    1076ms] [LOG] [LiteSpeed] Start Lazy Load @ https://www.invoicelink.gr/brevo-frame.html:369
+[    1078ms] [WARNING] [Cloudflare Turnstile] Unable to find onload callback 'wpformsRecaptchaLoad' immediately after loading, expected 'function', got 'undefined'. @ https://challenges.cloudflare.com/turnstile/v0/api.js?onload=wpformsRecaptchaLoad&render=explicit:0
+[    1079ms] Uncaught TypeError: Cannot read properties of undefined (reading 'loadCDNiFrame')
+    at <anonymous> (https://consent.cookiebot.com/uc.js:1:69419)
+[    2079ms] [WARNING] [Cloudflare Turnstile] Unable to find onload callback 'wpformsRecaptchaLoad' after 1 second, expected 'function', got 'undefined'. @ https://challenges.cloudflare.com/turnstile/v0/api.js?onload=wpformsRecaptchaLoad&render=explicit:0
+[   11079ms] [WARNING] WonderPush seems to be taking some time to initialize one of its external resource on the domain  https://www.invoicelink.gr .
+If you see one error or repeated errors (which will stop in about 50 seconds) about "postMessage" and "target origin […] not match[ing] the recipient window's origin", then you either:
+- have a browser extension blocking that resource;
+- see a broken integration that you would be kind to report.
+If not, then just wait around, and everything should get loaded soon. @ https://cdn.by.wonderpush.com/sdk/1.1.42.0/wonderpush.min.js:0

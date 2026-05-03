@@ -1,0 +1,124 @@
+{{ define "main" }}
+{{ $d := .Params }}
+
+{{/* ── HERO ─────────────────────────────────────────────────── */}}
+<section class="hero">
+  <div class="hero__blob hero__blob--tl" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--tr" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--sm" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--sm2" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero__center">
+      <div class="hero__eyebrow">{{ $d.hero.eyebrow | default "Λογισμικό & Τεχνολογία" }}</div>
+      <h1 class="hero__title">
+        {{ $d.hero.title_line1 | default "Λύσεις που" }}<br>
+        <span class="gradient-text">{{ $d.hero.title_line2 | default "αναπτύσσουν επιχειρήσεις" }}</span>
+      </h1>
+      <p class="hero__subtitle">{{ $d.hero.subtitle | default "ERP, CRM και τεχνολογική υποδομή για σύγχρονες ελληνικές επιχειρήσεις. Από το 2014." }}</p>
+      <div class="hero__actions">
+        <a href="{{ $d.hero.cta_primary_url | default "/plano/" }}" class="btn btn--primary btn--lg">
+          {{ $d.hero.cta_primary | default "Τα Προγράμματά μας" }}
+        </a>
+        <a href="{{ $d.hero.cta_secondary_url | default "/epikoinonia/" }}" class="btn btn--outline btn--lg">
+          {{ $d.hero.cta_secondary | default "Επικοινωνία" }}
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__screenshot-card">
+        <div class="hero__screenshot-bar">
+          <div class="hero__screenshot-dot"></div>
+          <div class="hero__screenshot-dot"></div>
+          <div class="hero__screenshot-dot"></div>
+        </div>
+        <img src="/images/a2crm-hero.jpg" alt="A2CRM — Dashboard" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ── CLIENTS ─────────────────────────────────────────────── */}}
+{{ with $d.clients }}
+<section class="section--sm clients">
+  <div class="container">
+    <p class="clients__label">{{ .label | default "Μας εμπιστεύονται" }}</p>
+    <div class="clients__track-wrapper">
+      <div class="clients__track">
+        {{ range .items }}
+          <div class="clients__item">
+            <img src="{{ .img }}" alt="{{ .alt }}" loading="lazy">
+          </div>
+        {{ end }}
+        {{ range .items }}
+          <div class="clients__item" aria-hidden="true">
+            <img src="{{ .img }}" alt="" loading="lazy">
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── FEATURES ───────────────────────────────────────────── */}}
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-label">Γιατί A2Labs</span>
+      <h2 class="section-title">{{ $d.features.title | default "Γιατί διαφέρουμε;" }}</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">{{ $d.features.subtitle | default "Δουλεύουμε με αξιοπιστία, υπευθυνότητα και αγάπη για αυτό που κάνουμε." }}</p>
+    </div>
+    <div class="features-grid">
+      {{ range $d.features.items }}
+        <div class="feature-card">
+          <div class="feature-card__icon">{{ .icon }}</div>
+          <h3 class="feature-card__title">{{ .title }}</h3>
+          <p class="feature-card__desc">{{ .desc }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ── STEPS ─────────────────────────────────────────────── */}}
+{{ with $d.steps }}
+<section class="section">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-label">Διαδικασία</span>
+      <h2 class="section-title">{{ .title }}</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">{{ .subtitle }}</p>
+    </div>
+    <div class="steps-grid">
+      {{ range $i, $s := .items }}
+        <div class="step-card">
+          <div class="step-card__number">{{ add $i 1 }}</div>
+          <div class="step-card__icon">{{ $s.icon }}</div>
+          <h3 class="step-card__title">{{ $s.title }}</h3>
+          <p class="step-card__desc">{{ $s.desc }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── CTA ─────────────────────────────────────────────────── */}}
+<section class="section section--surface">
+  <div class="container">
+    <div class="cta-section">
+      <h2 class="cta-section__title gradient-text">{{ $d.cta.title | default "Ξεκινήστε σήμερα" }}</h2>
+      <p class="cta-section__sub">{{ $d.cta.subtitle | default "Επικοινωνήστε μαζί μας για δωρεάν demo και αξιολόγηση των αναγκών σας." }}</p>
+      <div class="cta-section__actions">
+        <a href="{{ $d.cta.primary_url | default "/epikoinonia/" }}" class="btn btn--primary btn--lg">{{ $d.cta.primary | default "Ζητήστε Demo" }}</a>
+        <a href="{{ $d.cta.secondary_url | default "/sxetika/" }}" class="btn btn--outline btn--lg">{{ $d.cta.secondary | default "Σχετικά με εμάς" }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,186 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "A2Labs - Αρχική" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "A2Labs" [ref=e6]
+      - navigation "Κύρια πλοήγηση" [ref=e7]:
+        - link "Αρχική" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - button "Προγράμματα" [ref=e10] [cursor=pointer]:
+          - text: Προγράμματα
+          - img [ref=e11]
+        - link "Υπολογιστές" [ref=e13] [cursor=pointer]:
+          - /url: /ypologistes/
+        - link "Σχετικά" [ref=e14] [cursor=pointer]:
+          - /url: /sxetika/
+        - link "Νέα & Οδηγίες" [ref=e15] [cursor=pointer]:
+          - /url: /odigies-nea/
+        - link "Επικοινωνία" [ref=e16] [cursor=pointer]:
+          - /url: /epikoinonia/
+  - main [ref=e17]:
+    - generic [ref=e20]:
+      - generic [ref=e21]: ERP / Retail / Web
+      - heading "Plano" [level=1] [ref=e22]
+      - paragraph [ref=e23]: Ολοκληρωμένο λογισμικό ERP, Retail και Web για κάθε επιχείρηση.
+      - generic [ref=e24]:
+        - link "Ζητήστε Demo" [ref=e25] [cursor=pointer]:
+          - /url: /epikoinonia/
+        - link "Επικοινωνία" [ref=e26] [cursor=pointer]:
+          - /url: /epikoinonia/
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]: ERP
+          - heading "Plano ERP" [level=2] [ref=e32]
+          - paragraph [ref=e33]: Διαχείριση αποθήκης, αγορών, πωλήσεων και παραγωγής σε ένα σύστημα.
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - generic [ref=e36]: 📦
+            - heading "Αποθήκη" [level=3] [ref=e37]
+            - paragraph [ref=e38]: Πλήρης διαχείριση αποθέματος με barcodes, σειριακούς αριθμούς και τοποθεσίες.
+            - list [ref=e39]:
+              - listitem [ref=e40]: → Εισαγωγές / Εξαγωγές
+              - listitem [ref=e41]: → Αποτίμηση αποθέματος
+              - listitem [ref=e42]: → Min/Max αναπαραγγελίες
+          - generic [ref=e43]:
+            - generic [ref=e44]: 🛒
+            - heading "Αγορές" [level=3] [ref=e45]
+            - paragraph [ref=e46]: Διαχείριση προμηθευτών, παραγγελιών αγοράς και παραλαβών.
+            - list [ref=e47]:
+              - listitem [ref=e48]: → Προσφορές προμηθευτών
+              - listitem [ref=e49]: → Εγκρίσεις παραγγελιών
+              - listitem [ref=e50]: → Αντιπαραβολή τιμολογίων
+          - generic [ref=e51]:
+            - generic [ref=e52]: 💼
+            - heading "Πωλήσεις" [level=3] [ref=e53]
+            - paragraph [ref=e54]: Από προσφορά έως τιμολόγιο με ηλεκτρονική διαβίβαση myDATA.
+            - list [ref=e55]:
+              - listitem [ref=e56]: → Διαχείριση τιμοκαταλόγων
+              - listitem [ref=e57]: → Εκπτώσεις & προσφορές
+              - listitem [ref=e58]: → myDATA & ΑΑΔΕ
+      - generic [ref=e60]:
+        - generic [ref=e61]:
+          - generic [ref=e62]: RETAIL
+          - heading "Plano Retail" [level=2] [ref=e63]
+          - paragraph [ref=e64]: Λύση POS για καταστήματα λιανικής με ταχύτητα και αξιοπιστία.
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - generic [ref=e67]: 🏪
+            - heading "POS Terminal" [level=3] [ref=e68]
+            - paragraph [ref=e69]: Γρήγορη ταμειακή με touch screen, barcodes και κάρτες πελατών.
+            - list [ref=e70]:
+              - listitem [ref=e71]: → Όλοι οι τρόποι πληρωμής
+              - listitem [ref=e72]: → Loyalty & δωροκάρτες
+              - listitem [ref=e73]: → Split payments
+          - generic [ref=e74]:
+            - generic [ref=e75]: 📊
+            - heading "Back Office" [level=3] [ref=e76]
+            - paragraph [ref=e77]: Κεντρική διαχείριση τιμών, αποθέματος και αναφορών πωλήσεων.
+            - list [ref=e78]:
+              - listitem [ref=e79]: → Κεντρική τιμολόγηση
+              - listitem [ref=e80]: → Αναφορές ανά κατάστημα
+              - listitem [ref=e81]: → Σύγκριση περιόδων
+          - generic [ref=e82]:
+            - generic [ref=e83]: 🔗
+            - heading "Multi-Store" [level=3] [ref=e84]
+            - paragraph [ref=e85]: Διαχείριση αλυσίδας καταστημάτων από ένα κεντρικό σύστημα.
+            - list [ref=e86]:
+              - listitem [ref=e87]: → Real-time συγχρονισμός
+              - listitem [ref=e88]: → Διαχείριση stock per store
+              - listitem [ref=e89]: → Κεντρικές αναφορές
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - generic [ref=e93]: WEB
+          - heading "Plano Web" [level=2] [ref=e94]
+          - paragraph [ref=e95]: B2B και B2C e-commerce ενσωματωμένο στο ERP σας.
+        - generic [ref=e96]:
+          - generic [ref=e97]:
+            - generic [ref=e98]: 🌐
+            - heading "B2B Portal" [level=3] [ref=e99]
+            - paragraph [ref=e100]: Online παραγγελίες από επαγγελματίες πελάτες με εξατομικευμένες τιμές.
+            - list [ref=e101]:
+              - listitem [ref=e102]: → Ατομικά τιμολόγια
+              - listitem [ref=e103]: → Ιστορικό παραγγελιών
+              - listitem [ref=e104]: → Online πληρωμές
+          - generic [ref=e105]:
+            - generic [ref=e106]: 🛍️
+            - heading "B2C E-shop" [level=3] [ref=e107]
+            - paragraph [ref=e108]: Πλήρες ηλεκτρονικό κατάστημα συνδεδεμένο με την αποθήκη σας.
+            - list [ref=e109]:
+              - listitem [ref=e110]: → Αυτόματος συγχρονισμός stock
+              - listitem [ref=e111]: → Skroutz / BestPrice feeds
+              - listitem [ref=e112]: → Courier integrations
+          - generic [ref=e113]:
+            - generic [ref=e114]: 📱
+            - heading "Mobile App" [level=3] [ref=e115]
+            - paragraph [ref=e116]: Native mobile εφαρμογή για Android και iOS για πωλητές και αποθηκάριους.
+            - list [ref=e117]:
+              - listitem [ref=e118]: → Barcode scanning
+              - listitem [ref=e119]: → Παραγγελίες πεδίου
+              - listitem [ref=e120]: → Offline mode
+      - generic [ref=e122]:
+        - heading "Δείτε το Plano σε δράση" [level=2] [ref=e123]
+        - paragraph [ref=e124]: Ζητήστε δωρεάν demo και δείτε πώς το Plano μπορεί να βελτιώσει τη λειτουργία σας.
+        - generic [ref=e125]:
+          - link "Ζητήστε Demo" [ref=e126] [cursor=pointer]:
+            - /url: /epikoinonia/
+          - link "Result CRM →" [ref=e127] [cursor=pointer]:
+            - /url: /result-crm/
+  - contentinfo [ref=e128]:
+    - generic [ref=e129]:
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - link "A2Labs - Αρχική" [ref=e132] [cursor=pointer]:
+            - /url: /
+            - img "A2Labs" [ref=e133]
+          - paragraph [ref=e134]: A2 Labs
+        - generic [ref=e135]:
+          - heading "Σύνδεσμοι" [level=4] [ref=e136]
+          - generic [ref=e137]:
+            - link "Αρχική" [ref=e138] [cursor=pointer]:
+              - /url: /
+            - link "Προγράμματα" [ref=e139] [cursor=pointer]:
+              - /url: "#"
+            - link "Υπολογιστές" [ref=e140] [cursor=pointer]:
+              - /url: /ypologistes/
+            - link "Σχετικά" [ref=e141] [cursor=pointer]:
+              - /url: /sxetika/
+            - link "Νέα & Οδηγίες" [ref=e142] [cursor=pointer]:
+              - /url: /odigies-nea/
+            - link "Επικοινωνία" [ref=e143] [cursor=pointer]:
+              - /url: /epikoinonia/
+        - generic [ref=e144]:
+          - heading "Προϊόντα" [level=4] [ref=e145]
+          - generic [ref=e146]:
+            - link "Entersoftone" [ref=e147] [cursor=pointer]:
+              - /url: /entersoftone/
+            - link "Dynasoft — Result CRM" [ref=e148] [cursor=pointer]:
+              - /url: /result-crm/
+            - link "Megasoft PRISMA Win" [ref=e149] [cursor=pointer]:
+              - /url: /megasoft/
+            - link "Plano ERP / Retail / Web" [ref=e150] [cursor=pointer]:
+              - /url: /plano/
+            - link "Υπολογιστές" [ref=e151] [cursor=pointer]:
+              - /url: /ypologistes/
+        - generic [ref=e152]:
+          - heading "Επικοινωνία" [level=4] [ref=e153]
+          - paragraph [ref=e154]:
+            - text: 📞
+            - link "210 224 1787" [ref=e155] [cursor=pointer]:
+              - /url: tel:+302102241787
+          - paragraph [ref=e156]:
+            - text: ✉️
+            - link "info@a2l.gr" [ref=e157] [cursor=pointer]:
+              - /url: mailto:info@a2l.gr
+          - paragraph [ref=e158]: 📍 Γ. Παπανδρέου 55, 143 41 Νέα Φιλαδέλφεια
+          - paragraph [ref=e159]: "🕐 Δευ–Παρ: 09:00–17:00"
+      - generic [ref=e160]:
+        - paragraph [ref=e161]: © 2014–2026 A2 Labs. Όλα τα δικαιώματα διατηρούνται.
+        - generic [ref=e162]:
+          - link "Σχετικά με εμάς" [ref=e163] [cursor=pointer]:
+            - /url: /sxetika/
+          - link "Τρόποι Πληρωμής" [ref=e164] [cursor=pointer]:
+            - /url: /tropoi-plirwmis/
+          - link "Επικοινωνία" [ref=e165] [cursor=pointer]:
+            - /url: /epikoinonia/

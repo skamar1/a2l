@@ -1,0 +1,152 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "A2Labs - Αρχική" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "A2Labs" [ref=e6]
+      - navigation "Κύρια πλοήγηση" [ref=e7]:
+        - link "Αρχική" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - button "Προγράμματα" [ref=e10] [cursor=pointer]:
+          - text: Προγράμματα
+          - img [ref=e11]
+        - link "Υπολογιστές" [ref=e13] [cursor=pointer]:
+          - /url: /ypologistes/
+        - link "Σχετικά" [ref=e14] [cursor=pointer]:
+          - /url: /sxetika/
+        - link "Νέα & Οδηγίες" [ref=e15] [cursor=pointer]:
+          - /url: /odigies-nea/
+        - link "Επικοινωνία" [ref=e16] [cursor=pointer]:
+          - /url: /epikoinonia/
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]: Εξυπηρέτηση Πελατών
+        - heading "Τρόποι Πληρωμής" [level=1] [ref=e22]
+        - paragraph [ref=e23]: Για την διευκόλυνσή σας, διαθέτουμε τους ακόλουθους τρόπους πληρωμής.
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - generic [ref=e27]: 📱
+            - generic [ref=e28]:
+              - generic [ref=e29]: "1"
+              - heading "IRIS Payments" [level=2] [ref=e30]
+          - paragraph [ref=e31]: Σαρώστε το παρακάτω QR Code με την φωτογραφική μηχανή του κινητού σας ή χρησιμοποιήστε το ΑΦΜ της εταιρείας μας.
+          - generic [ref=e32]:
+            - img "IRIS QR Code" [ref=e34]
+            - generic [ref=e35]:
+              - generic [ref=e36]: "ΑΦΜ για IRIS:"
+              - generic [ref=e37]: "050747890"
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e40]: 🏦
+            - generic [ref=e41]:
+              - generic [ref=e42]: "2"
+              - heading "Κατάθεση σε Τραπεζικό Λογαριασμό" [level=2] [ref=e43]
+          - paragraph [ref=e44]: Επιλέξτε την τράπεζα που σας διευκολύνει για την κατάθεση του ποσού της παραγγελίας σας.
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - generic [ref=e47]: VIVA
+              - generic [ref=e48]: GR05 7010 0000 0007 7312 9358 424
+              - button "Αντιγραφή IBAN VIVA" [ref=e49] [cursor=pointer]:
+                - img [ref=e50]
+            - generic [ref=e53]:
+              - generic [ref=e54]: Optima
+              - generic [ref=e55]: GR10 0340 0340 0340 0263 3022 197
+              - button "Αντιγραφή IBAN Optima" [ref=e56] [cursor=pointer]:
+                - img [ref=e57]
+            - generic [ref=e60]:
+              - generic [ref=e61]: Πειραιώς
+              - generic [ref=e62]: GR64 0172 0350 0050 3509 7722 184
+              - button "Αντιγραφή IBAN Πειραιώς" [ref=e63] [cursor=pointer]:
+                - img [ref=e64]
+            - generic [ref=e67]:
+              - generic [ref=e68]: Eurobank
+              - generic [ref=e69]: GR94 0260 0730 0001 1020 1078 207
+              - button "Αντιγραφή IBAN Eurobank" [ref=e70] [cursor=pointer]:
+                - img [ref=e71]
+            - generic [ref=e74]:
+              - generic [ref=e75]: Alpha
+              - generic [ref=e76]: GR15 0140 1370 1370 0200 2016 070
+              - button "Αντιγραφή IBAN Alpha" [ref=e77] [cursor=pointer]:
+                - img [ref=e78]
+            - generic [ref=e81]:
+              - generic [ref=e82]: Εθνική
+              - generic [ref=e83]: GR37 0110 1500 0000 1500 1033 065
+              - button "Αντιγραφή IBAN Εθνική" [ref=e84] [cursor=pointer]:
+                - img [ref=e85]
+            - generic [ref=e88]:
+              - generic [ref=e89]: Payzy
+              - generic [ref=e90]: GR78 7031 0000 0007 1537 9070 578
+              - button "Αντιγραφή IBAN Payzy" [ref=e91] [cursor=pointer]:
+                - img [ref=e92]
+          - generic [ref=e95]:
+            - generic [ref=e96]: "Δικαιούχος:"
+            - generic [ref=e97]: «ΣΤΑΜΑΤΑΚΗ ΕΙΡΗΝΗ»
+          - list [ref=e98]:
+            - listitem [ref=e99]: → Στο καταθετήριο της τράπεζας αναγράψτε το όνομά σας ή τον αριθμό παραγγελίας.
+            - listitem [ref=e100]: → Έξοδα προμήθειας Τράπεζας για καταθέσεις διαμέσου διαφορετικής Τράπεζας επιβαρύνουν τον αγοραστή.
+          - generic [ref=e101]:
+            - generic [ref=e102]: 💬
+            - paragraph [ref=e103]: "Ενημερώστε μας σε ποια τράπεζα έγινε η πληρωμή, τηλεφωνικά στα 2102241787 ή μέσω email: info@a2l.gr"
+      - generic [ref=e104]:
+        - paragraph [ref=e105]: Έχετε απορίες για την παραγγελία σας;
+        - link "Επικοινωνήστε μαζί μας →" [ref=e106] [cursor=pointer]:
+          - /url: /epikoinonia/
+  - contentinfo [ref=e107]:
+    - generic [ref=e108]:
+      - generic [ref=e109]:
+        - generic [ref=e110]:
+          - link "A2Labs - Αρχική" [ref=e111] [cursor=pointer]:
+            - /url: /
+            - img "A2Labs" [ref=e112]
+          - paragraph [ref=e113]: A2 Labs
+        - generic [ref=e114]:
+          - heading "Σύνδεσμοι" [level=4] [ref=e115]
+          - generic [ref=e116]:
+            - link "Αρχική" [ref=e117] [cursor=pointer]:
+              - /url: /
+            - link "Προγράμματα" [ref=e118] [cursor=pointer]:
+              - /url: "#"
+            - link "Υπολογιστές" [ref=e119] [cursor=pointer]:
+              - /url: /ypologistes/
+            - link "Σχετικά" [ref=e120] [cursor=pointer]:
+              - /url: /sxetika/
+            - link "Νέα & Οδηγίες" [ref=e121] [cursor=pointer]:
+              - /url: /odigies-nea/
+            - link "Επικοινωνία" [ref=e122] [cursor=pointer]:
+              - /url: /epikoinonia/
+        - generic [ref=e123]:
+          - heading "Προϊόντα" [level=4] [ref=e124]
+          - generic [ref=e125]:
+            - link "Entersoftone" [ref=e126] [cursor=pointer]:
+              - /url: /entersoftone/
+            - link "Dynasoft — Result CRM" [ref=e127] [cursor=pointer]:
+              - /url: /result-crm/
+            - link "Megasoft PRISMA Win" [ref=e128] [cursor=pointer]:
+              - /url: /megasoft/
+            - link "Plano ERP / Retail / Web" [ref=e129] [cursor=pointer]:
+              - /url: /plano/
+            - link "Υπολογιστές" [ref=e130] [cursor=pointer]:
+              - /url: /ypologistes/
+        - generic [ref=e131]:
+          - heading "Επικοινωνία" [level=4] [ref=e132]
+          - paragraph [ref=e133]:
+            - text: 📞
+            - link "210 224 1787" [ref=e134] [cursor=pointer]:
+              - /url: tel:+302102241787
+          - paragraph [ref=e135]:
+            - text: ✉️
+            - link "info@a2l.gr" [ref=e136] [cursor=pointer]:
+              - /url: mailto:info@a2l.gr
+          - paragraph [ref=e137]: 📍 Γ. Παπανδρέου 55, 143 41 Νέα Φιλαδέλφεια
+          - paragraph [ref=e138]: "🕐 Δευ–Παρ: 09:00–17:00"
+      - generic [ref=e139]:
+        - paragraph [ref=e140]: © 2014–2026 A2 Labs. Όλα τα δικαιώματα διατηρούνται.
+        - generic [ref=e141]:
+          - link "Σχετικά με εμάς" [ref=e142] [cursor=pointer]:
+            - /url: /sxetika/
+          - link "Τρόποι Πληρωμής" [ref=e143] [cursor=pointer]:
+            - /url: /tropoi-plirwmis/
+          - link "Επικοινωνία" [ref=e144] [cursor=pointer]:
+            - /url: /epikoinonia/

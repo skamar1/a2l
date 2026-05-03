@@ -1,0 +1,128 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "A2Labs - Αρχική" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "A2Labs" [ref=e6]
+      - navigation "Κύρια πλοήγηση" [ref=e7]:
+        - link "Αρχική" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - button "Προγράμματα" [ref=e10] [cursor=pointer]:
+          - text: Προγράμματα
+          - img [ref=e11]
+        - link "Υπολογιστές" [ref=e13] [cursor=pointer]:
+          - /url: /ypologistes/
+        - link "Σχετικά" [ref=e14] [cursor=pointer]:
+          - /url: /sxetika/
+        - link "Νέα & Οδηγίες" [ref=e15] [cursor=pointer]:
+          - /url: /odigies-nea/
+        - link "Επικοινωνία" [ref=e16] [cursor=pointer]:
+          - /url: /epikoinonia/
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]: Blog
+      - heading "Οδηγίες & Νέα" [level=1] [ref=e21]
+      - paragraph [ref=e22]: Τεχνικοί οδηγοί, ενημερώσεις προϊόντων και νέα της A2Labs.
+    - generic [ref=e25]:
+      - link "Νέα δήλωση προσωρινής βλάβης στο ESEND 27 July 2025 Οδηγοί Νέα δήλωση προσωρινής βλάβης στο ESEND Όταν η ταμειακή μας χρειάζεται επισκευή, πρέπει να δηλώσουμε την βλάβη στην πλατφόρμα της εφορίας ESEND. Οδηγός …" [ref=e26] [cursor=pointer]:
+        - /url: /odigies-nea/esend-vlavi/
+        - img "Νέα δήλωση προσωρινής βλάβης στο ESEND" [ref=e28]
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - time [ref=e31]: 27 July 2025
+            - generic [ref=e32]: Οδηγοί
+          - heading "Νέα δήλωση προσωρινής βλάβης στο ESEND" [level=2] [ref=e33]
+          - paragraph [ref=e34]: Όταν η ταμειακή μας χρειάζεται επισκευή, πρέπει να δηλώσουμε την βλάβη στην πλατφόρμα της εφορίας ESEND. Οδηγός …
+      - 'link "PLANO – Έναρξη Χρήσης & Μεταφοράς Υπολοίπων 12 December 2024 Οδηγοί PLANO – Έναρξη Χρήσης & Μεταφοράς Υπολοίπων Το σύνολο ενεργειών που απαιτούνται ως προς τη διαχείριση νέας χρήσης στο Plano: άνοιγμα χρήσης και μεταφορά υπολοίπων." [ref=e35] [cursor=pointer]':
+        - /url: /odigies-nea/plano-change-fiscal-year/
+        - img "PLANO – Έναρξη Χρήσης & Μεταφοράς Υπολοίπων" [ref=e37]
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - time [ref=e40]: 12 December 2024
+            - generic [ref=e41]: Οδηγοί
+          - heading "PLANO – Έναρξη Χρήσης & Μεταφοράς Υπολοίπων" [level=2] [ref=e42]
+          - paragraph [ref=e43]: "Το σύνολο ενεργειών που απαιτούνται ως προς τη διαχείριση νέας χρήσης στο Plano: άνοιγμα χρήσης και μεταφορά υπολοίπων."
+      - 'link "📖 15 November 2024 Οδηγοί Οδηγός myDATA: Ηλεκτρονική Διαβίβαση Παραστατικών με το Plano Βήμα προς βήμα οδηγός για τη σύνδεση του Plano ERP με το myDATA της ΑΑΔΕ." [ref=e44] [cursor=pointer]':
+        - /url: /odigies-nea/plano-mydata-odigios/
+        - generic [ref=e46]: 📖
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - time [ref=e49]: 15 November 2024
+            - generic [ref=e50]: Οδηγοί
+          - 'heading "Οδηγός myDATA: Ηλεκτρονική Διαβίβαση Παραστατικών με το Plano" [level=2] [ref=e51]'
+          - paragraph [ref=e52]: Βήμα προς βήμα οδηγός για τη σύνδεση του Plano ERP με το myDATA της ΑΑΔΕ.
+      - link "📖 8 October 2024 Οδηγοί Εισαγωγή Επαφών από Excel στο Result CRM Πώς να εισάγετε μαζικά επαφές και πελάτες από αρχείο Excel στο Result CRM." [ref=e53] [cursor=pointer]:
+        - /url: /odigies-nea/result-crm-eisagogi-epafon/
+        - generic [ref=e55]: 📖
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - time [ref=e58]: 8 October 2024
+            - generic [ref=e59]: Οδηγοί
+          - heading "Εισαγωγή Επαφών από Excel στο Result CRM" [level=2] [ref=e60]
+          - paragraph [ref=e61]: Πώς να εισάγετε μαζικά επαφές και πελάτες από αρχείο Excel στο Result CRM.
+      - link "📢 1 September 2024 Νέα Νέα έκδοση Plano 8.5 — Τι νέο υπάρχει Η έκδοση 8.5 του Plano φέρνει βελτιώσεις στο POS, νέο module B2B portal και πλήρη υποστήριξη myDATA 2024." [ref=e62] [cursor=pointer]:
+        - /url: /odigies-nea/nea-ekdosi-plano-2024/
+        - generic [ref=e64]: 📢
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - time [ref=e67]: 1 September 2024
+            - generic [ref=e68]: Νέα
+          - heading "Νέα έκδοση Plano 8.5 — Τι νέο υπάρχει" [level=2] [ref=e69]
+          - paragraph [ref=e70]: Η έκδοση 8.5 του Plano φέρνει βελτιώσεις στο POS, νέο module B2B portal και πλήρη υποστήριξη myDATA 2024.
+  - contentinfo [ref=e71]:
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - link "A2Labs - Αρχική" [ref=e75] [cursor=pointer]:
+            - /url: /
+            - img "A2Labs" [ref=e76]
+          - paragraph [ref=e77]: A2 Labs
+        - generic [ref=e78]:
+          - heading "Σύνδεσμοι" [level=4] [ref=e79]
+          - generic [ref=e80]:
+            - link "Αρχική" [ref=e81] [cursor=pointer]:
+              - /url: /
+            - link "Προγράμματα" [ref=e82] [cursor=pointer]:
+              - /url: /programata/
+            - link "Υπολογιστές" [ref=e83] [cursor=pointer]:
+              - /url: /ypologistes/
+            - link "Σχετικά" [ref=e84] [cursor=pointer]:
+              - /url: /sxetika/
+            - link "Νέα & Οδηγίες" [ref=e85] [cursor=pointer]:
+              - /url: /odigies-nea/
+            - link "Επικοινωνία" [ref=e86] [cursor=pointer]:
+              - /url: /epikoinonia/
+        - generic [ref=e87]:
+          - heading "Προϊόντα" [level=4] [ref=e88]
+          - generic [ref=e89]:
+            - link "Entersoftone" [ref=e90] [cursor=pointer]:
+              - /url: /entersoftone/
+            - link "Dynasoft — Result CRM" [ref=e91] [cursor=pointer]:
+              - /url: /result-crm/
+            - link "Megasoft PRISMA Win" [ref=e92] [cursor=pointer]:
+              - /url: /megasoft/
+            - link "Plano ERP / Retail / Web" [ref=e93] [cursor=pointer]:
+              - /url: /plano/
+            - link "Υπολογιστές" [ref=e94] [cursor=pointer]:
+              - /url: /ypologistes/
+        - generic [ref=e95]:
+          - heading "Επικοινωνία" [level=4] [ref=e96]
+          - paragraph [ref=e97]:
+            - text: 📞
+            - link "210 224 1787" [ref=e98] [cursor=pointer]:
+              - /url: tel:+302102241787
+          - paragraph [ref=e99]:
+            - text: ✉️
+            - link "info@a2l.gr" [ref=e100] [cursor=pointer]:
+              - /url: mailto:info@a2l.gr
+          - paragraph [ref=e101]: 📍 Γ. Παπανδρέου 55, 143 41 Νέα Φιλαδέλφεια
+          - paragraph [ref=e102]: "🕐 Δευ–Παρ: 09:00–17:00"
+      - generic [ref=e103]:
+        - paragraph [ref=e104]: © 2014–2026 A2 Labs. Όλα τα δικαιώματα διατηρούνται.
+        - generic [ref=e105]:
+          - link "Σχετικά με εμάς" [ref=e106] [cursor=pointer]:
+            - /url: /sxetika/
+          - link "Τρόποι Πληρωμής" [ref=e107] [cursor=pointer]:
+            - /url: /tropoi-plirwmis/
+          - link "Επικοινωνία" [ref=e108] [cursor=pointer]:
+            - /url: /epikoinonia/

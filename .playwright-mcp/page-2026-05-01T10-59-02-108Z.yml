@@ -1,0 +1,247 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Unsplash Home" [ref=e9]
+        - link "Photos" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img [ref=e12]
+        - link "Illustrations" [ref=e14] [cursor=pointer]:
+          - /url: /illustrations
+          - img [ref=e15]
+      - generic [ref=e17]:
+        - button "Explore" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+        - button "Collections" [ref=e21] [cursor=pointer]:
+          - img [ref=e22]
+        - button "Download History" [ref=e24] [cursor=pointer]:
+          - img [ref=e25]
+      - button "Bookmarks" [ref=e28] [cursor=pointer]:
+        - img [ref=e29]
+    - generic [ref=e31]:
+      - link "Log in / Sign up" [ref=e32] [cursor=pointer]:
+        - /url: /login?referrer=%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree
+        - img [ref=e33]
+      - button "Language" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - button "Menu" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - navigation [ref=e43]:
+        - search "Find visuals sitewide" [ref=e45]:
+          - button "Search Unsplash" [ref=e46] [cursor=pointer]:
+            - img [ref=e47]
+          - combobox [ref=e49]:
+            - searchbox "Search Unsplash" [ref=e50]: developer laptop office team
+            - listbox
+          - button "Clear" [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button "Visual search" [ref=e56] [cursor=pointer]:
+            - img [ref=e57]
+        - generic [ref=e59]:
+          - link "Get Unsplash+" [ref=e60] [cursor=pointer]:
+            - /url: /plus
+          - link "Log in" [ref=e61] [cursor=pointer]:
+            - /url: /login?referrer=%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree
+        - button "Submit an image" [ref=e63] [cursor=pointer]
+      - generic [ref=e64]:
+        - generic [ref=e70]:
+          - list [ref=e71]:
+            - listitem [ref=e72]:
+              - link "Photos 3.1k":
+                - /url: /s/photos/developer-laptop-office-team?license=free
+                - img
+                - text: Photos
+                - generic: 3.1k
+            - listitem [ref=e73]:
+              - link "Illustrations 4" [ref=e74] [cursor=pointer]:
+                - /url: /s/illustrations/developer-laptop-office-team?license=free
+                - img [ref=e75]
+                - text: Illustrations
+                - generic [ref=e77]: "4"
+            - listitem [ref=e78]:
+              - button "More" [ref=e79] [cursor=pointer]
+          - button "Filters" [ref=e81] [cursor=pointer]:
+            - img [ref=e83]
+            - text: Filters
+        - generic [ref=e85]:
+          - heading "Developer laptop office team" [level=1] [ref=e87]
+          - generic [ref=e89]:
+            - button "scroll list to the right" [ref=e91] [cursor=pointer]:
+              - img [ref=e92]
+            - generic [ref=e95]:
+              - link "person" [ref=e97] [cursor=pointer]:
+                - /url: /s/photos/person?license=free
+              - link "office" [ref=e99] [cursor=pointer]:
+                - /url: /s/photos/office?license=free
+              - link "work" [ref=e101] [cursor=pointer]:
+                - /url: /s/photos/work?license=free
+              - link "laptop" [ref=e103] [cursor=pointer]:
+                - /url: /s/photos/laptop?license=free
+              - link "technology" [ref=e105] [cursor=pointer]:
+                - /url: /s/photos/technology?license=free
+              - link "coding" [ref=e107] [cursor=pointer]:
+                - /url: /s/photos/coding?license=free
+              - link "website" [ref=e109] [cursor=pointer]:
+                - /url: /s/photos/website?license=free
+              - link "tech" [ref=e111] [cursor=pointer]:
+                - /url: /s/photos/tech?license=free
+              - link "colleague" [ref=e113] [cursor=pointer]:
+                - /url: /s/photos/colleague?license=free
+              - link "business" [ref=e115] [cursor=pointer]:
+                - /url: /s/photos/business?license=free
+              - link "team" [ref=e117] [cursor=pointer]:
+                - /url: /s/photos/team?license=free
+              - link "working" [ref=e119] [cursor=pointer]:
+                - /url: /s/photos/working?license=free
+        - generic [ref=e121]:
+          - generic [ref=e125]:
+            - generic [ref=e126]:
+              - figure [ref=e127]:
+                - link "group of people using laptop computer" [ref=e130]:
+                  - /url: /photos/group-of-people-using-laptop-computer-QckxruozjRg
+                  - img "group of people using laptop computer" [ref=e131]
+              - generic [ref=e132]:
+                - heading "Sponsored images" [level=4] [ref=e133]:
+                  - generic [ref=e134]: Sponsored images
+                  - link [ref=e135] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3A553e30c2-b4d0-466c-971b-62984c58e3f0&phrase=developer+laptop+office+team&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+                    - img [ref=e136]
+                - generic [ref=e138]:
+                  - link "Programmers working together and assisting each other with coding. Mature entrepreneurs working in office on laptops" [ref=e139] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/programmers-working-together-and-assisting-each-other-with-coding-mature-gm1429125231-472409466?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3A2fd82712-289d-4afd-9f37-cb770deb43dc
+                    - img "Programmers working together and assisting each other with coding. Mature entrepreneurs working in office on laptops" [ref=e140]
+                  - link "A cheerful man sits at a conference table across from his two female colleagues and learns to code" [ref=e141] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/a-cheerful-man-sits-at-a-conference-table-across-from-his-two-female-colleagues-and-gm1432260067-474572498?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3A7c614cc9-ea88-4df5-91fd-6237f077db92
+                    - img "A cheerful man sits at a conference table across from his two female colleagues and learns to code" [ref=e142]
+                  - link "Startup team having a brainstorming session on coding strategies." [ref=e143] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/startup-team-having-a-brainstorming-session-on-coding-strategies-gm2231487646-647092182?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3Af155ab07-8bb6-47c2-a0c2-d0b43b2932d7
+                    - img "Startup team having a brainstorming session on coding strategies." [ref=e144]
+                  - link "Portrait of Two Female and Male Engineers Using Laptop Computer to Analyze and Discuss How to Proceed with the Artificial Intelligence Software. Casually Chatting in High Tech Research Office" [ref=e145] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/portrait-of-two-female-and-male-engineers-using-laptop-computer-to-analyze-and-gm1489414218-514328554?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3A42c531f8-6498-4112-a8e6-ac2ae12a971b
+                    - img "Portrait of Two Female and Male Engineers Using Laptop Computer to Analyze and Discuss How to Proceed with the Artificial Intelligence Software. Casually Chatting in High Tech Research Office" [ref=e146]
+                - link "Get 20% off with code UNSPLASH20" [ref=e147] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3A553e30c2-b4d0-466c-971b-62984c58e3f0&phrase=developer+laptop+office+team&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+              - figure [ref=e148]:
+                - link "selective focus photography of people sits in front of table inside room" [ref=e151]:
+                  - /url: /photos/selective-focus-photography-of-people-sits-in-front-of-table-inside-room-sggw4-qDD54
+                  - img "selective focus photography of people sits in front of table inside room" [ref=e152]
+              - figure [ref=e153]:
+                - link "woman in pink shirt sitting in front of black laptop computer" [ref=e156]:
+                  - /url: /photos/woman-in-pink-shirt-sitting-in-front-of-black-laptop-computer-AQTA5E6mCNU
+                  - img "woman in pink shirt sitting in front of black laptop computer" [ref=e157]
+              - figure [ref=e158]:
+                - link "selective focus photography of woman and man using MacBook Pro on table" [ref=e161]:
+                  - /url: /photos/selective-focus-photography-of-woman-and-man-using-macbook-pro-on-table-dWYU3i-mqEo
+                  - img "selective focus photography of woman and man using MacBook Pro on table" [ref=e162]
+              - figure [ref=e163]:
+                - link "woman and man sitting in front of monitor" [ref=e166]:
+                  - /url: /photos/woman-and-man-sitting-in-front-of-monitor-IgUR1iX0mqM
+                  - img "woman and man sitting in front of monitor" [ref=e167]
+              - figure [ref=e168]:
+                - link "woman using MacBook" [ref=e171]:
+                  - /url: /photos/woman-using-macbook-FVgECvTjlBQ
+                  - img "woman using MacBook" [ref=e172]
+              - figure [ref=e173]:
+                - link "three men laughing while looking in the laptop inside room" [ref=e176]:
+                  - /url: /photos/three-men-laughing-while-looking-in-the-laptop-inside-room-XkKCui44iM0
+                  - img "three men laughing while looking in the laptop inside room" [ref=e177]
+            - generic [ref=e178]:
+              - figure [ref=e179]:
+                - link "people sitting on chair in front of computer monitor" [ref=e182]:
+                  - /url: /photos/people-sitting-on-chair-in-front-of-computer-monitor-Fa9b57hffnM
+                  - img "people sitting on chair in front of computer monitor" [ref=e183]
+              - figure [ref=e184]:
+                - link "woman in black shirt sitting beside black flat screen computer monitor" [ref=e187]:
+                  - /url: /photos/woman-in-black-shirt-sitting-beside-black-flat-screen-computer-monitor-Im_cQ6hQo10
+                  - img "woman in black shirt sitting beside black flat screen computer monitor" [ref=e188]
+              - figure [ref=e189]:
+                - link "man sitting on chair wearing gray crew-neck long-sleeved shirt using Apple Magic Keyboard" [ref=e192]:
+                  - /url: /photos/man-sitting-on-chair-wearing-gray-crew-neck-long-sleeved-shirt-using-apple-magic-keyboard-CPs2X8JYmS8
+                  - img "man sitting on chair wearing gray crew-neck long-sleeved shirt using Apple Magic Keyboard" [ref=e193]
+              - figure [ref=e194]:
+                - link "a group of people sitting around a table with laptops" [ref=e197]:
+                  - /url: /photos/a-group-of-people-sitting-around-a-table-with-laptops-rtD_lcsN6_U
+                  - img "a group of people sitting around a table with laptops" [ref=e198]
+              - figure [ref=e199]:
+                - link "four people all on laptops, two men and two women, listen to person talking in a board meeting" [ref=e202]:
+                  - /url: /photos/four-people-all-on-laptops-two-men-and-two-women-listen-to-person-talking-in-a-board-meeting-ZT5v0puBjZI
+                  - img "four people all on laptops, two men and two women, listen to person talking in a board meeting" [ref=e203]
+              - figure [ref=e204]:
+                - link "man using black laptop computer" [ref=e207]:
+                  - /url: /photos/man-using-black-laptop-computer-kwzWjTnDPLk
+                  - img "man using black laptop computer" [ref=e208]
+              - figure [ref=e209]:
+                - link "woman in black long sleeve shirt sitting beside woman in gray sweater" [ref=e212]:
+                  - /url: /photos/woman-in-black-long-sleeve-shirt-sitting-beside-woman-in-gray-sweater-UpsEF48wAgk
+                  - img "woman in black long sleeve shirt sitting beside woman in gray sweater" [ref=e213]
+              - figure [ref=e214]:
+                - link "man in gray dress shirt sitting beside woman in green crew neck t-shirt" [ref=e217]:
+                  - /url: /photos/man-in-gray-dress-shirt-sitting-beside-woman-in-green-crew-neck-t-shirt-Qx7A7SChpnI
+                  - img "man in gray dress shirt sitting beside woman in green crew neck t-shirt" [ref=e218]
+            - generic [ref=e219]:
+              - contentinfo [ref=e224]:
+                - generic [ref=e230]: –– ––– ––– –– ––– – ––– ––– –––– – – –– ––– – – ––– –– –– –––– ––
+              - figure [ref=e232]:
+                - link "men's gray crew-neck t-shirt" [ref=e235]:
+                  - /url: /photos/mens-gray-crew-neck-t-shirt-Of_m3hMsoAA
+                  - img "men's gray crew-neck t-shirt" [ref=e236]
+              - figure [ref=e237]:
+                - link "men sitting in front of their laptop computer" [ref=e240]:
+                  - /url: /photos/men-sitting-in-front-of-their-laptop-computer-MChSQHxGZrQ
+                  - img "men sitting in front of their laptop computer" [ref=e241]
+              - figure [ref=e242]:
+                - link "person using black and red Acer laptop computer on table" [ref=e245]:
+                  - /url: /photos/person-using-black-and-red-acer-laptop-computer-on-table-YgOCJz9uGMk
+                  - img "person using black and red Acer laptop computer on table" [ref=e246]
+              - figure [ref=e247]:
+                - link "man in black t-shirt using laptop computer" [ref=e250]:
+                  - /url: /photos/man-in-black-t-shirt-using-laptop-computer--ZZ7I31c0B8
+                  - img "man in black t-shirt using laptop computer" [ref=e251]
+              - figure [ref=e252]:
+                - link "A group of people sitting around a laptop computer" [ref=e255]:
+                  - /url: /photos/a-group-of-people-sitting-around-a-laptop-computer-BoJYXB7ufn8
+                  - img "A group of people sitting around a laptop computer" [ref=e256]
+          - button "Load more" [ref=e259] [cursor=pointer]
+          - generic [ref=e262]:
+            - heading "Browse premium images on iStock | Claim your discount now" [level=2] [ref=e263]:
+              - text: Browse premium images on iStock
+              - generic [ref=e264]: "| Claim your discount now"
+            - generic [ref=e266]:
+              - link "Multicultural professional businesspeople working together on research plan in boardroom." [ref=e267] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/multicultural-professional-businesspeople-working-together-on-research-plan-in-gm2214848489-631629134?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3Af8d95183-55c5-45ed-aa1a-eccb0b6f46fa
+                - img "Multicultural professional businesspeople working together on research plan in boardroom." [ref=e268]
+              - link "Asian programmers collaborating on software development at night, focused on writing code across multiple monitors in a tech office environment Programmers Collaborating on Software Development" [ref=e269] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/asian-programmers-collaborating-on-software-development-at-night-focused-on-writing-gm2215674808-632398154?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3Abeeab331-813c-43c8-9de0-c571062fcc38
+                - img "Asian programmers collaborating on software development at night, focused on writing code across multiple monitors in a tech office environment Programmers Collaborating on Software Development" [ref=e270]
+              - link "Two architects working on plans at construction site." [ref=e271] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/two-architects-working-on-plans-at-construction-site-gm2158557889-579194213?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3A548743cd-7d60-4e17-9477-edce480045d9
+                - img "Two architects working on plans at construction site." [ref=e272]
+              - link "Young businessman helping his female colleague in office" [ref=e273] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/young-businessman-helping-his-female-colleague-in-office-gm1280396610-378720250?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3Aefe03efd-ad0f-4598-ac6f-b4a14e9632a5
+                - img "Young businessman helping his female colleague in office" [ref=e274]
+              - link "Two young adult programmers discussing code on laptop in office" [ref=e275] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/two-young-adult-programmers-discussing-code-on-laptop-in-office-gm2233679883-649160145?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3A5a3da8c4-f036-450c-9c1a-feeb205ccb4c
+                - img "Two young adult programmers discussing code on laptop in office" [ref=e276]
+              - link "Freshly employed woman is taking some important notes while her colleague is sharing necessary info" [ref=e277] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/freshly-employed-woman-is-taking-some-important-notes-while-her-colleague-is-sharing-gm1432248398-474567562?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3A7b9b36c9-14f5-4df3-8e58-72273c4aeee6
+                - img "Freshly employed woman is taking some important notes while her colleague is sharing necessary info" [ref=e278]
+              - link "Top view of developer and designer shake hand together at meeting. Convocation." [ref=e279] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/top-view-of-developer-and-designer-shake-hand-together-at-meeting-convocation-gm2148225485-569320183?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3Afcf94fcb-77b8-4a8b-b5f9-bc5c6bc2d50b
+                - img "Top view of developer and designer shake hand together at meeting. Convocation." [ref=e280]
+              - generic [ref=e281]:
+                - link "Portrait of Two Creative Young Female and Male Engineers Using Laptop Computer to Analyze and Discuss How to Proceed with the Artificial Intelligence Software. Standing in High Tech Research Office" [ref=e282] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/photo/portrait-of-two-creative-young-female-and-male-engineers-using-laptop-computer-to-gm1489414070-514328336?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3A3534c50d-6055-41c4-996e-d65d5c92ad00
+                  - img "Portrait of Two Creative Young Female and Male Engineers Using Laptop Computer to Analyze and Discuss How to Proceed with the Artificial Intelligence Software. Standing in High Tech Research Office" [ref=e283]
+                - link "View more on iStock ↗" [ref=e284] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdeveloper-laptop-office-team%3Flicense%3Dfree&utm_term=developer+laptop+office+team%3A%3Aaffiliate-layout-optim%3Ab%3A1bba132b-094f-4354-be8e-a68632550716&phrase=developer+laptop+office+team&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+          - generic [ref=e286]:
+            - link [ref=e287] [cursor=pointer]:
+              - /url: /
+              - img [ref=e288]
+            - paragraph [ref=e290]: Make something awesome
+    - generic:
+      - region "Notifications"

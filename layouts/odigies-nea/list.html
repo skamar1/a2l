@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+<div class="product-hero">
+  <div class="container">
+    <div class="product-hero__eyebrow">Blog</div>
+    <h1 class="product-hero__title"><span class="gradient-text">Οδηγίες &amp; Νέα</span></h1>
+    <p class="product-hero__desc">Τεχνικοί οδηγοί, ενημερώσεις προϊόντων και νέα της A2Labs.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {{ if .Pages }}
+      <div class="blog-grid">
+        {{ range .Pages.ByDate.Reverse }}
+          <a href="{{ .RelPermalink }}" class="post-card">
+            <div class="post-card__img">
+              {{ if .Params.image }}
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+              {{ else }}
+                <div class="post-card__placeholder">
+                  {{ if eq .Params.category "Νέα" }}📢{{ else if eq .Params.category "Οδηγοί" }}📖{{ else }}✏️{{ end }}
+                </div>
+              {{ end }}
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+                {{ with .Params.category }}<span class="badge">{{ . }}</span>{{ end }}
+              </div>
+              <h2 class="post-card__title">{{ .Title }}</h2>
+              <p class="post-card__excerpt">{{ .Description | default .Summary | plainify | truncate 120 }}</p>
+            </div>
+          </a>
+        {{ end }}
+      </div>
+    {{ else }}
+      <p class="text-muted text-center" style="padding: 64px 0;">Δεν υπάρχουν άρθρα ακόμα.</p>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

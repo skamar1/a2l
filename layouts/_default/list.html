@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="page-content">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-label">Blog</span>
+      <h1 class="section-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="section-subtitle">{{ . }}</p>{{ end }}
+    </header>
+
+    {{ if .Pages }}
+      <div class="blog-grid">
+        {{ range .Pages }}
+          <article class="post-card">
+            {{ with .Params.image }}
+              <div class="post-card__img">
+                <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+              </div>
+            {{ end }}
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+                {{ with .Params.category }}<span>{{ . }}</span>{{ end }}
+              </div>
+              <h2 class="post-card__title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h2>
+              <p class="post-card__excerpt">{{ .Summary }}</p>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    {{ else }}
+      <p class="text-muted">Δεν υπάρχουν άρθρα ακόμα.</p>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

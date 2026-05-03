@@ -1,0 +1,246 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "A2Labs - Αρχική" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "A2Labs" [ref=e6]
+      - navigation "Κύρια πλοήγηση" [ref=e7]:
+        - link "Αρχική" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - button "Προγράμματα" [ref=e10] [cursor=pointer]:
+          - text: Προγράμματα
+          - img [ref=e11]
+        - link "Υπολογιστές" [ref=e13] [cursor=pointer]:
+          - /url: /ypologistes/
+        - link "Σχετικά" [ref=e14] [cursor=pointer]:
+          - /url: /sxetika/
+        - link "Νέα & Οδηγίες" [ref=e15] [cursor=pointer]:
+          - /url: /odigies-nea/
+        - link "Επικοινωνία" [ref=e16] [cursor=pointer]:
+          - /url: /epikoinonia/
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]: Blog
+        - heading "Οδηγίες & Νέα" [level=1] [ref=e22]
+        - paragraph [ref=e23]: Τεχνικοί οδηγοί, ενημερώσεις προϊόντων και νέα της A2Labs.
+      - generic [ref=e24]:
+        - 'link "15 November 2024 Οδηγοί Οδηγός myDATA: Ηλεκτρονική Διαβίβαση Παραστατικών με το Plano Τι είναι το myDATA Το myDATA (My Digital Accounting and Tax Application) είναι η πλατφόρμα ηλεκτρονικής διαβίβασης παραστατικών της ΑΑΔΕ. Από το 2021, όλες οι ελληνικές επιχειρήσεις υποχρεούνται να διαβιβάζουν τα παραστατικά τους ηλεκτρονικά. Σύνδεση Plano με myDATA Βήμα 1: Απόκτηση κλειδιών API Συνδεθείτε στο myAADE με τους κωδικούς Taxisnet Μεταβείτε στο myDATA → Διαχείριση → API Keys Δημιουργήστε νέο API Key Αποθηκεύστε το User ID και το Subscription Key Βήμα 2: Παραμετροποίηση στο Plano Ανοίξτε Ρυθμίσεις → Ηλεκτρονική Τιμολόγηση Εισάγετε τα στοιχεία API Επιλέξτε περιβάλλον: Παραγωγή ή Demo Κάντε Test σύνδεση Βήμα 3: Ρύθμιση τύπων παραστατικών Για κάθε τύπο παραστατικού (ΤΔΑ, ΑΠΥ, κ.λπ.) πρέπει να ορίσετε: →" [ref=e25] [cursor=pointer]':
+          - /url: /odigies-nea/plano-mydata-odigios/
+          - generic [ref=e26]:
+            - time [ref=e27]: 15 November 2024
+            - generic [ref=e28]: Οδηγοί
+          - generic [ref=e29]:
+            - 'heading "Οδηγός myDATA: Ηλεκτρονική Διαβίβαση Παραστατικών με το Plano" [level=2] [ref=e30]'
+            - paragraph
+            - heading "Τι είναι το myDATA" [level=2] [ref=e31]
+            - paragraph [ref=e32]:
+              - text: Το
+              - strong [ref=e33]: myDATA
+              - text: (My Digital Accounting and Tax Application) είναι η πλατφόρμα ηλεκτρονικής διαβίβασης παραστατικών της ΑΑΔΕ. Από το 2021, όλες οι ελληνικές επιχειρήσεις υποχρεούνται να διαβιβάζουν τα παραστατικά τους ηλεκτρονικά.
+            - heading "Σύνδεση Plano με myDATA" [level=2] [ref=e34]
+            - 'heading "Βήμα 1: Απόκτηση κλειδιών API" [level=3] [ref=e35]'
+            - list [ref=e36]:
+              - listitem [ref=e37]:
+                - text: Συνδεθείτε στο
+                - strong [ref=e38]: myAADE
+                - text: με τους κωδικούς Taxisnet
+              - listitem [ref=e39]:
+                - text: Μεταβείτε στο
+                - strong [ref=e40]: myDATA → Διαχείριση → API Keys
+              - listitem [ref=e41]: Δημιουργήστε νέο API Key
+              - listitem [ref=e42]:
+                - text: Αποθηκεύστε το
+                - code [ref=e43]: User ID
+                - text: και το
+                - code [ref=e44]: Subscription Key
+            - 'heading "Βήμα 2: Παραμετροποίηση στο Plano" [level=3] [ref=e45]'
+            - list [ref=e46]:
+              - listitem [ref=e47]:
+                - text: Ανοίξτε
+                - strong [ref=e48]: Ρυθμίσεις → Ηλεκτρονική Τιμολόγηση
+              - listitem [ref=e49]: Εισάγετε τα στοιχεία API
+              - listitem [ref=e50]:
+                - text: "Επιλέξτε περιβάλλον:"
+                - strong [ref=e51]: Παραγωγή
+                - text: ή
+                - strong [ref=e52]: Demo
+              - listitem [ref=e53]: Κάντε Test σύνδεση
+            - 'heading "Βήμα 3: Ρύθμιση τύπων παραστατικών" [level=3] [ref=e54]'
+            - paragraph [ref=e55]: "Για κάθε τύπο παραστατικού (ΤΔΑ, ΑΠΥ, κ.λπ.) πρέπει να ορίσετε:"
+            - paragraph
+          - generic [ref=e56]: →
+        - link "8 October 2024 Οδηγοί" [ref=e57] [cursor=pointer]:
+          - /url: /odigies-nea/result-crm-eisagogi-epafon/
+          - generic [ref=e58]:
+            - time [ref=e59]: 8 October 2024
+            - generic [ref=e60]: Οδηγοί
+        - generic [ref=e61]:
+          - 'link "Εισαγωγή Επαφών από Excel στο Result CRM Προετοιμασία αρχείου Excel Πριν την εισαγωγή, βεβαιωθείτε ότι το Excel σας έχει τις σωστές στήλες. Υποχρεωτικές στήλες Στήλη Περιγραφή Παράδειγμα Επωνυμία Όνομα εταιρείας ή επαφής ΑΒΓΔ ΑΕ ΑΦΜ ΑΦΜ επιχείρησης 123456789 Email Κύριο email info@company.gr Προαιρετικές στήλες Τηλέφωνο Διεύθυνση, Πόλη, ΤΚ Κατηγορία πελάτη Υπεύθυνος πωλητής Διαδικασία Εισαγωγής Μεταβείτε στο Επαφές → Εισαγωγή Επιλέξτε αρχείο .xlsx ή .csv Αντιστοιχίστε τις στήλες με τα πεδία του CRM Επιλέξτε τι θα γίνει αν υπάρχει ήδη η επαφή: Skip — παρακάμψτε τη Update — ενημερώστε τα στοιχεία Duplicate — δημιουργήστε νέα Κάντε Preview και στη συνέχεια Εισαγωγή Tips Αφαιρέστε κενές γραμμές από το Excel πριν την εισαγωγή Χρησιμοποιήστε UTF-8 encoding για ελληνικούς χαρακτήρες Για μεγάλα αρχεία (>1000 επαφές) χρησιμοποιήστε CSV Υποστήριξη" [ref=e62] [cursor=pointer]':
+            - /url: /odigies-nea/result-crm-eisagogi-epafon/
+            - heading "Εισαγωγή Επαφών από Excel στο Result CRM" [level=2] [ref=e63]
+            - paragraph
+            - heading "Προετοιμασία αρχείου Excel" [level=2] [ref=e64]
+            - paragraph [ref=e65]: Πριν την εισαγωγή, βεβαιωθείτε ότι το Excel σας έχει τις σωστές στήλες.
+            - heading "Υποχρεωτικές στήλες" [level=3] [ref=e66]
+            - table [ref=e67]:
+              - rowgroup [ref=e68]:
+                - row "Στήλη Περιγραφή Παράδειγμα" [ref=e69]:
+                  - columnheader "Στήλη" [ref=e70]
+                  - columnheader "Περιγραφή" [ref=e71]
+                  - columnheader "Παράδειγμα" [ref=e72]
+              - rowgroup [ref=e73]:
+                - row "Επωνυμία Όνομα εταιρείας ή επαφής ΑΒΓΔ ΑΕ" [ref=e74]:
+                  - cell "Επωνυμία" [ref=e75]:
+                    - code [ref=e76]: Επωνυμία
+                  - cell "Όνομα εταιρείας ή επαφής" [ref=e77]
+                  - cell "ΑΒΓΔ ΑΕ" [ref=e78]
+                - row "ΑΦΜ ΑΦΜ επιχείρησης 123456789" [ref=e79]:
+                  - cell "ΑΦΜ" [ref=e80]:
+                    - code [ref=e81]: ΑΦΜ
+                  - cell "ΑΦΜ επιχείρησης" [ref=e82]
+                  - cell "123456789" [ref=e83]
+                - row "Email Κύριο email info@company.gr" [ref=e84]:
+                  - cell "Email" [ref=e85]:
+                    - code [ref=e86]: Email
+                  - cell "Κύριο email" [ref=e87]
+                  - cell "info@company.gr" [ref=e88]:
+                    - link "info@company.gr" [ref=e89]:
+                      - /url: mailto:info@company.gr
+            - heading "Προαιρετικές στήλες" [level=3] [ref=e90]
+            - list [ref=e91]:
+              - listitem [ref=e92]: Τηλέφωνο
+              - listitem [ref=e93]: Διεύθυνση, Πόλη, ΤΚ
+              - listitem [ref=e94]: Κατηγορία πελάτη
+              - listitem [ref=e95]: Υπεύθυνος πωλητής
+            - heading "Διαδικασία Εισαγωγής" [level=2] [ref=e96]
+            - list [ref=e97]:
+              - listitem [ref=e98]:
+                - text: Μεταβείτε στο
+                - strong [ref=e99]: Επαφές → Εισαγωγή
+              - listitem [ref=e100]:
+                - text: Επιλέξτε αρχείο
+                - code [ref=e101]: .xlsx
+                - text: ή
+                - code [ref=e102]: .csv
+              - listitem [ref=e103]: Αντιστοιχίστε τις στήλες με τα πεδία του CRM
+              - listitem [ref=e104]:
+                - text: "Επιλέξτε τι θα γίνει αν υπάρχει ήδη η επαφή:"
+                - list [ref=e105]:
+                  - listitem [ref=e106]:
+                    - strong [ref=e107]: Skip
+                    - text: — παρακάμψτε τη
+                  - listitem [ref=e108]:
+                    - strong [ref=e109]: Update
+                    - text: — ενημερώστε τα στοιχεία
+                  - listitem [ref=e110]:
+                    - strong [ref=e111]: Duplicate
+                    - text: — δημιουργήστε νέα
+              - listitem [ref=e112]:
+                - text: Κάντε Preview και στη συνέχεια
+                - strong [ref=e113]: Εισαγωγή
+            - heading "Tips" [level=2] [ref=e114]
+            - list [ref=e115]:
+              - listitem [ref=e116]: Αφαιρέστε κενές γραμμές από το Excel πριν την εισαγωγή
+              - listitem [ref=e117]: Χρησιμοποιήστε UTF-8 encoding για ελληνικούς χαρακτήρες
+              - listitem [ref=e118]: Για μεγάλα αρχεία (>1000 επαφές) χρησιμοποιήστε CSV
+            - heading "Υποστήριξη" [level=2] [ref=e119]
+          - paragraph [ref=e120]:
+            - link "Χρειάζεστε βοήθεια;" [ref=e121] [cursor=pointer]:
+              - /url: /odigies-nea/result-crm-eisagogi-epafon/
+            - link "Επικοινωνήστε μαζί μας" [ref=e122] [cursor=pointer]:
+              - /url: /epikoinonia/
+            - text: .
+          - paragraph
+        - generic [ref=e123]: →
+        - 'link "1 September 2024 Νέα Νέα έκδοση Plano 8.5 — Τι νέο υπάρχει Plano 8.5 — Κύριες αλλαγές Η νέα έκδοση 8.5 του Plano είναι διαθέσιμη από 1 Σεπτεμβρίου 2024. Περιλαμβάνει σημαντικές βελτιώσεις σε τρεις βασικές περιοχές. 1. Νέο POS Interface Το Plano Retail αποκτά εντελώς νέο interface για το POS terminal: Touch-first σχεδιασμός — βελτιωμένη εμπειρία σε tablet και touch screen Γρηγορότερη αναζήτηση προϊόντων με fuzzy search Split payment — διαχωρισμός πληρωμής σε πολλαπλούς τρόπους Offline mode — λειτουργία χωρίς internet connection 2. B2B Portal v2 Ο B2B Portal αναβαθμίζεται με: →" [ref=e124] [cursor=pointer]':
+          - /url: /odigies-nea/nea-ekdosi-plano-2024/
+          - generic [ref=e125]:
+            - time [ref=e126]: 1 September 2024
+            - generic [ref=e127]: Νέα
+          - generic [ref=e128]:
+            - heading "Νέα έκδοση Plano 8.5 — Τι νέο υπάρχει" [level=2] [ref=e129]
+            - paragraph
+            - heading "Plano 8.5 — Κύριες αλλαγές" [level=2] [ref=e130]
+            - paragraph [ref=e131]:
+              - text: Η νέα έκδοση
+              - strong [ref=e132]: "8.5"
+              - text: του Plano είναι διαθέσιμη από
+              - strong [ref=e133]: 1 Σεπτεμβρίου 2024
+              - text: . Περιλαμβάνει σημαντικές βελτιώσεις σε τρεις βασικές περιοχές.
+            - heading "1. Νέο POS Interface" [level=2] [ref=e134]
+            - paragraph [ref=e135]: "Το Plano Retail αποκτά εντελώς νέο interface για το POS terminal:"
+            - list [ref=e136]:
+              - listitem [ref=e137]:
+                - strong [ref=e138]: Touch-first σχεδιασμός
+                - text: — βελτιωμένη εμπειρία σε tablet και touch screen
+              - listitem [ref=e139]:
+                - strong [ref=e140]: Γρηγορότερη αναζήτηση
+                - text: προϊόντων με fuzzy search
+              - listitem [ref=e141]:
+                - strong [ref=e142]: Split payment
+                - text: — διαχωρισμός πληρωμής σε πολλαπλούς τρόπους
+              - listitem [ref=e143]:
+                - strong [ref=e144]: Offline mode
+                - text: — λειτουργία χωρίς internet connection
+            - heading "2. B2B Portal v2" [level=2] [ref=e145]
+            - paragraph [ref=e146]: "Ο B2B Portal αναβαθμίζεται με:"
+            - paragraph
+          - generic [ref=e147]: →
+  - contentinfo [ref=e148]:
+    - generic [ref=e149]:
+      - generic [ref=e150]:
+        - generic [ref=e151]:
+          - link "A2Labs - Αρχική" [ref=e152] [cursor=pointer]:
+            - /url: /
+            - img "A2Labs" [ref=e153]
+          - paragraph [ref=e154]: A2 Labs
+        - generic [ref=e155]:
+          - heading "Σύνδεσμοι" [level=4] [ref=e156]
+          - generic [ref=e157]:
+            - link "Αρχική" [ref=e158] [cursor=pointer]:
+              - /url: /
+            - link "Προγράμματα" [ref=e159] [cursor=pointer]:
+              - /url: "#"
+            - link "Υπολογιστές" [ref=e160] [cursor=pointer]:
+              - /url: /ypologistes/
+            - link "Σχετικά" [ref=e161] [cursor=pointer]:
+              - /url: /sxetika/
+            - link "Νέα & Οδηγίες" [ref=e162] [cursor=pointer]:
+              - /url: /odigies-nea/
+            - link "Επικοινωνία" [ref=e163] [cursor=pointer]:
+              - /url: /epikoinonia/
+        - generic [ref=e164]:
+          - heading "Προϊόντα" [level=4] [ref=e165]
+          - generic [ref=e166]:
+            - link "Entersoftone" [ref=e167] [cursor=pointer]:
+              - /url: /entersoftone/
+            - link "Dynasoft — Result CRM" [ref=e168] [cursor=pointer]:
+              - /url: /result-crm/
+            - link "Megasoft PRISMA Win" [ref=e169] [cursor=pointer]:
+              - /url: /megasoft/
+            - link "Plano ERP / Retail / Web" [ref=e170] [cursor=pointer]:
+              - /url: /plano/
+            - link "Υπολογιστές" [ref=e171] [cursor=pointer]:
+              - /url: /ypologistes/
+        - generic [ref=e172]:
+          - heading "Επικοινωνία" [level=4] [ref=e173]
+          - paragraph [ref=e174]:
+            - text: 📞
+            - link "210 224 1787" [ref=e175] [cursor=pointer]:
+              - /url: tel:+302102241787
+          - paragraph [ref=e176]:
+            - text: ✉️
+            - link "info@a2l.gr" [ref=e177] [cursor=pointer]:
+              - /url: mailto:info@a2l.gr
+          - paragraph [ref=e178]: 📍 Γ. Παπανδρέου 55, 143 41 Νέα Φιλαδέλφεια
+          - paragraph [ref=e179]: "🕐 Δευ–Παρ: 09:00–17:00"
+      - generic [ref=e180]:
+        - paragraph [ref=e181]: © 2014–2026 A2 Labs. Όλα τα δικαιώματα διατηρούνται.
+        - generic [ref=e182]:
+          - link "Σχετικά με εμάς" [ref=e183] [cursor=pointer]:
+            - /url: /sxetika/
+          - link "Τρόποι Πληρωμής" [ref=e184] [cursor=pointer]:
+            - /url: /tropoi-plirwmis/
+          - link "Επικοινωνία" [ref=e185] [cursor=pointer]:
+            - /url: /epikoinonia/

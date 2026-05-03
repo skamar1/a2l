@@ -1,0 +1,116 @@
+{{ define "main" }}
+<div class="page-content">
+  <div class="container">
+
+    <header class="section-header">
+      <span class="section-label">Επικοινωνία</span>
+      <h1 class="section-title">{{ .Title }}</h1>
+      <p class="section-subtitle">{{ .Description }}</p>
+    </header>
+
+    <div class="contact-grid">
+
+      {{/* Contact info */}}
+      <div class="contact-info">
+        <div class="contact-info__item">
+          <div class="contact-info__icon">📞</div>
+          <div>
+            <div class="contact-info__label">Τηλέφωνο</div>
+            <div class="contact-info__value">
+              <a href="tel:+302102241787" style="color:inherit;">{{ site.Params.phone }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-info__item">
+          <div class="contact-info__icon">✉️</div>
+          <div>
+            <div class="contact-info__label">Email</div>
+            <div class="contact-info__value">
+              <a href="mailto:{{ site.Params.email }}" style="color:inherit;">{{ site.Params.email }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-info__item">
+          <div class="contact-info__icon">📍</div>
+          <div>
+            <div class="contact-info__label">Διεύθυνση</div>
+            <div class="contact-info__value">{{ site.Params.address }}</div>
+          </div>
+        </div>
+        <div class="contact-info__item">
+          <div class="contact-info__icon">🕐</div>
+          <div>
+            <div class="contact-info__label">Ωράριο</div>
+            <div class="contact-info__value">{{ site.Params.hours }}</div>
+          </div>
+        </div>
+
+        {{/* Map */}}
+        <div class="contact-map">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=23.7303%2C38.0338%2C23.7403%2C38.0398&layer=mapnik&marker=38.03681%2C23.73525"
+            title="Χάρτης A2Labs — Γ. Παπανδρέου 55, Νέα Φιλαδέλφεια"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+          <a href="https://www.openstreetmap.org/?mlat=38.03681&mlon=23.73525#map=17/38.03681/23.73525"
+             target="_blank" rel="noopener" class="contact-map__link">
+            Άνοιγμα στον χάρτη →
+          </a>
+        </div>
+      </div>
+
+      {{/* Contact form (Netlify Forms) */}}
+      <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/epikoinonia/success/">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Μη συμπληρώσετε: <input name="bot-field"></label></p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Όνομα *</label>
+            <input type="text" id="name" name="name" placeholder="Το όνομά σας" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Εταιρεία</label>
+            <input type="text" id="company" name="company" placeholder="Η εταιρεία σας">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="email@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Τηλέφωνο</label>
+            <input type="tel" id="phone" name="phone" placeholder="+30 210...">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Θέμα *</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Επιλέξτε θέμα...</option>
+            <option value="demo">Αίτημα Demo</option>
+            <option value="plano">Πληροφορίες Plano ERP</option>
+            <option value="crm">Πληροφορίες Result CRM</option>
+            <option value="hardware">Προσφορά Hardware</option>
+            <option value="support">Τεχνική Υποστήριξη</option>
+            <option value="other">Άλλο</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Μήνυμα *</label>
+          <textarea id="message" name="message" placeholder="Περιγράψτε τις ανάγκες σας..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--lg" style="align-self: flex-start;">
+          Αποστολή Μηνύματος →
+        </button>
+      </form>
+
+    </div>
+  </div>
+</div>
+{{ end }}
