@@ -1,43 +1,228 @@
 {{ define "main" }}
 {{ $d := .Params }}
 
-{{/* ── HERO ─────────────────────────────────────────────────── */}}
-<section class="hero">
-  <div class="hero__blob hero__blob--tl" aria-hidden="true"></div>
-  <div class="hero__blob hero__blob--tr" aria-hidden="true"></div>
-  <div class="hero__blob hero__blob--sm" aria-hidden="true"></div>
-  <div class="hero__blob hero__blob--sm2" aria-hidden="true"></div>
+{{/* ── HERO CAROUSEL ──────────────────────────────────────── */}}
+<section class="hero-carousel" id="hero">
 
-  <div class="container">
-    <div class="hero__center">
-      <div class="hero__eyebrow">{{ $d.hero.eyebrow | default "Λογισμικό & Τεχνολογία" }}</div>
-      <h1 class="hero__title">
-        {{ $d.hero.title_line1 | default "Λύσεις που" }}<br>
-        <span class="gradient-text">{{ $d.hero.title_line2 | default "αναπτύσσουν επιχειρήσεις" }}</span>
-      </h1>
-      <p class="hero__subtitle">{{ $d.hero.subtitle | default "ERP, CRM και τεχνολογική υποδομή για σύγχρονες ελληνικές επιχειρήσεις. Από το 2014." }}</p>
-      <div class="hero__actions">
-        <a href="{{ $d.hero.cta_primary_url | default "/plano/" }}" class="btn btn--primary btn--lg">
-          {{ $d.hero.cta_primary | default "Τα Προγράμματά μας" }}
-        </a>
-        <a href="{{ $d.hero.cta_secondary_url | default "/epikoinonia/" }}" class="btn btn--outline btn--lg">
-          {{ $d.hero.cta_secondary | default "Επικοινωνία" }}
-        </a>
-      </div>
+  {{/* Slide 1 */}}
+  <div class="carousel-slide" data-slide="0">
+    <div class="carousel-slide__bg">
+      <img src="/images/hero-banner.png" alt="Υποστήριξη Επιχειρήσεων" loading="eager">
+      <div class="carousel-slide__overlay"></div>
     </div>
-
-    <div class="hero__visual">
-      <div class="hero__screenshot-card">
-        <div class="hero__screenshot-bar">
-          <div class="hero__screenshot-dot"></div>
-          <div class="hero__screenshot-dot"></div>
-          <div class="hero__screenshot-dot"></div>
+    <div class="carousel-slide__content">
+      <div class="carousel-slide__inner">
+        <div class="carousel-badge">
+          <span class="carousel-badge__dot"></span>
+          <span>Υποστήριξη Επιχειρήσεων · Αθήνα, Ελλάδα</span>
         </div>
-        <img src="/images/a2crm-hero.jpg" alt="A2CRM — Dashboard" loading="eager">
+        <h1 class="carousel-slide__title">
+          Στηρίζουμε την<br>
+          <span style="color:#818cf8;">Επιχείρησή</span><br>
+          Σας
+        </h1>
+        <p class="carousel-slide__desc">Υποστήριξη στα εμπορικά σας προγράμματα, κατασκευή ιστοσελίδων και ολοκληρωμένες λύσεις πληροφορικής. Είμαστε δίπλα σας σε κάθε βήμα.</p>
+        <div class="carousel-slide__actions">
+          <a href="/epikoinonia/" class="btn btn--primary btn--lg">Επικοινωνήστε μαζί μας</a>
+          <a href="/programata/" class="btn btn--ghost-white btn--lg">Οι υπηρεσίες μας</a>
+        </div>
       </div>
     </div>
   </div>
+
+  {{/* Slide 2 */}}
+  <div class="carousel-slide" data-slide="1">
+    <div class="carousel-slide__bg">
+      <img src="/images/hero-banner-2.png" alt="Εμπορικά Προγράμματα" loading="lazy">
+      <div class="carousel-slide__overlay"></div>
+    </div>
+    <div class="carousel-slide__content">
+      <div class="carousel-slide__inner">
+        <div class="carousel-badge carousel-badge--accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          <span>Κύρια Υπηρεσία</span>
+        </div>
+        <h1 class="carousel-slide__title">
+          Υποστήριξη<br>
+          <span style="color:#818cf8;">Εμπορικών</span><br>
+          Προγραμμάτων
+        </h1>
+        <p class="carousel-slide__desc">ERP, CRM, λογιστικά συστήματα — αναλαμβάνουμε εγκατάσταση, ρύθμιση, επιμόρφωση και συνεχή υποστήριξη. Η επιχείρησή σας σε αξιόπιστα χέρια.</p>
+        <div class="carousel-slide__actions">
+          <a href="/epikoinonia/" class="btn btn--primary btn--lg">Ξεκινήστε τώρα</a>
+          <a href="/programata/" class="btn btn--ghost-white btn--lg">Μάθετε περισσότερα</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* Slide 3 */}}
+  <div class="carousel-slide" data-slide="2">
+    <div class="carousel-slide__bg">
+      <img src="/images/hero-banner-3.png" alt="Κατασκευή Ιστοσελίδων" loading="lazy">
+      <div class="carousel-slide__overlay"></div>
+    </div>
+    <div class="carousel-slide__content">
+      <div class="carousel-slide__inner">
+        <div class="carousel-badge carousel-badge--pink">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>Web &amp; E-Shop</span>
+        </div>
+        <h1 class="carousel-slide__title">
+          Κατασκευή<br>
+          <span style="color:#f472b6;">Ιστοσελίδων</span><br>
+          &amp; E-Shop
+        </h1>
+        <p class="carousel-slide__desc">Σύγχρονες, γρήγορες και responsive ιστοσελίδες. WordPress, e-commerce, SEO — όλα σε ένα πακέτο για την ψηφιακή σας παρουσία.</p>
+        <div class="carousel-slide__actions">
+          <a href="/epikoinonia/" class="btn btn--pink btn--lg">Ζητήστε προσφορά</a>
+          <a href="/epikoinonia/" class="btn btn--ghost-white btn--lg">Επικοινωνήστε μας</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* Slide 4 */}}
+  <div class="carousel-slide" data-slide="3">
+    <div class="carousel-slide__bg">
+      <img src="/images/entersoftone-hero.jpg" alt="IT Υποδομή και Ασφάλεια" loading="lazy">
+      <div class="carousel-slide__overlay"></div>
+    </div>
+    <div class="carousel-slide__content">
+      <div class="carousel-slide__inner">
+        <div class="carousel-badge carousel-badge--amber">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>IT &amp; Security</span>
+        </div>
+        <h1 class="carousel-slide__title">
+          IT Υποδομή<br>
+          &amp; <span style="color:#fbbf24;">Ασφάλεια</span><br>
+          Δεδομένων
+        </h1>
+        <p class="carousel-slide__desc">Δίκτυα, servers, backups, αντιϊκή προστασία. Διασφαλίζουμε τη συνέχεια της επιχείρησής σας με αξιόπιστες λύσεις ασφαλείας.</p>
+        <div class="carousel-slide__actions">
+          <a href="/epikoinonia/" class="btn btn--amber btn--lg">Προστατέψτε τα δεδομένα σας</a>
+          <a href="/ypologistes/" class="btn btn--ghost-white btn--lg">Όλες οι υπηρεσίες</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* Navigation arrows */}}
+  <button class="carousel-arrow carousel-arrow--prev" id="carouselPrev" aria-label="Προηγούμενο slide">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="carousel-arrow carousel-arrow--next" id="carouselNext" aria-label="Επόμενο slide">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+
+  {{/* Dots */}}
+  <div class="carousel-dots" id="carouselDots" aria-label="Επιλογή slide">
+    <button class="carousel-dot" data-dot="0" aria-label="Slide 1"></button>
+    <button class="carousel-dot" data-dot="1" aria-label="Slide 2"></button>
+    <button class="carousel-dot" data-dot="2" aria-label="Slide 3"></button>
+    <button class="carousel-dot" data-dot="3" aria-label="Slide 4"></button>
+  </div>
+
+  {{/* Progress bar */}}
+  <div class="carousel-progress" id="carouselProgress">
+    <div class="carousel-progress__bar" id="progressBar"></div>
+  </div>
+
+  {{/* Stats bar */}}
+  <div class="carousel-stats">
+    <div class="carousel-stats__grid" style="max-width:var(--max-width);margin:0 auto;">
+      <div class="carousel-stat">
+        <div class="carousel-stat__value"><span class="counter" data-target="200">0</span>+</div>
+        <div class="carousel-stat__label">Επιχειρήσεις</div>
+      </div>
+      <div class="carousel-stat">
+        <div class="carousel-stat__value"><span class="counter" data-target="98">0</span>%</div>
+        <div class="carousel-stat__label">Ικανοποίηση</div>
+      </div>
+      <div class="carousel-stat">
+        <div class="carousel-stat__value"><span class="counter" data-target="20">0</span>+</div>
+        <div class="carousel-stat__label">Χρόνια Εμπειρίας</div>
+      </div>
+      <div class="carousel-stat">
+        <div class="carousel-stat__value">&lt;2<span style="font-size:1rem;font-weight:500;">h</span></div>
+        <div class="carousel-stat__label">Απόκριση</div>
+      </div>
+    </div>
+  </div>
+
 </section>
+
+<script>
+(function () {
+  var slides = document.querySelectorAll('.carousel-slide');
+  var dots   = document.querySelectorAll('.carousel-dot');
+  var prev   = document.getElementById('carouselPrev');
+  var next   = document.getElementById('carouselNext');
+  var prog   = document.getElementById('carouselProgress');
+  var hero   = document.getElementById('hero');
+  var cur    = 0;
+  var timer;
+  var paused = false;
+  var DUR    = 6000;
+
+  function goTo(i) {
+    slides.forEach(function(s) { s.classList.remove('active-slide'); });
+    dots.forEach(function(d)   { d.classList.remove('active-dot'); });
+    cur = ((i % slides.length) + slides.length) % slides.length;
+    slides[cur].classList.add('active-slide');
+    dots[cur].classList.add('active-dot');
+    prog.classList.remove('running', 'paused');
+    void prog.offsetWidth;
+    if (!paused) prog.classList.add('running');
+  }
+
+  function autoplay() {
+    clearInterval(timer);
+    timer = setInterval(function() { if (!paused) goTo(cur + 1); }, DUR);
+  }
+
+  goTo(0);
+  autoplay();
+
+  next.addEventListener('click', function() { goTo(cur + 1); autoplay(); });
+  prev.addEventListener('click', function() { goTo(cur - 1); autoplay(); });
+  dots.forEach(function(d) {
+    d.addEventListener('click', function() { goTo(parseInt(d.dataset.dot)); autoplay(); });
+  });
+
+  hero.addEventListener('mouseenter', function() { paused = true;  prog.classList.add('paused'); });
+  hero.addEventListener('mouseleave', function() { paused = false; prog.classList.remove('paused'); autoplay(); });
+
+  var tx = 0;
+  hero.addEventListener('touchstart', function(e) { tx = e.changedTouches[0].screenX; }, { passive: true });
+  hero.addEventListener('touchend',   function(e) {
+    var diff = tx - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) { diff > 0 ? goTo(cur + 1) : goTo(cur - 1); autoplay(); }
+  }, { passive: true });
+
+  var counters = document.querySelectorAll('.counter');
+  var counted  = false;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !counted) {
+        counted = true;
+        counters.forEach(function(c) {
+          var target = parseInt(c.getAttribute('data-target'));
+          var step   = target / (2000 / 16);
+          var val    = 0;
+          (function tick() {
+            val += step;
+            if (val < target) { c.textContent = Math.ceil(val); requestAnimationFrame(tick); }
+            else { c.textContent = target; }
+          })();
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(function(c) { observer.observe(c); });
+})();
+</script>
 
 {{/* ── CLIENTS ─────────────────────────────────────────────── */}}
 {{ with $d.clients }}

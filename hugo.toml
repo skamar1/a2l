@@ -15,6 +15,7 @@ title = "A2Labs"
   doy = "ΚΕ.ΦΟ.ΔΕ ΑΤΤΙΚΗΣ"
   gemi = "164754803000"
   company_full = "A2 Labs"
+  turnstile_key = "0x4AAAAAAAA62OLbaIhLXmje"
 
 [menus]
   [[menus.main]]

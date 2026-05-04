@@ -60,10 +60,13 @@
         </div>
       </div>
 
-      {{/* Contact form (Netlify Forms) */}}
-      <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/epikoinonia/success/">
-        <input type="hidden" name="form-name" value="contact">
-        <p style="display:none"><label>Μη συμπληρώσετε: <input name="bot-field"></label></p>
+      {{/* Contact form */}}
+      <form class="form" id="contactForm" method="POST" action="/api/contact" novalidate>
+
+        <div id="form-success" style="display:none;" class="form-feedback form-feedback--success">
+          ✅ Το μήνυμά σας στάλθηκε! Θα επικοινωνήσουμε μαζί σας σύντομα.
+        </div>
+        <div id="form-error" style="display:none;" class="form-feedback form-feedback--error"></div>
 
         <div class="form-row">
           <div class="form-group">
@@ -91,11 +94,15 @@
           <label for="subject">Θέμα *</label>
           <select id="subject" name="subject" required>
             <option value="" disabled selected>Επιλέξτε θέμα...</option>
-            <option value="demo">Αίτημα Demo</option>
-            <option value="plano">Πληροφορίες Plano ERP</option>
-            <option value="crm">Πληροφορίες Result CRM</option>
-            <option value="hardware">Προσφορά Hardware</option>
             <option value="support">Τεχνική Υποστήριξη</option>
+            <option value="demo">Αίτημα Demo</option>
+            <option value="a2crm">Πληροφορίες A2 CRM</option>
+            <option value="soft1">Πληροφορίες EntersoftOne</option>
+            <option value="result-crm">Πληροφορίες Dynasoft (Result CRM)</option>
+            <option value="megasoft">Πληροφορίες Megasoft</option>
+            <option value="plano">Πληροφορίες Qorrect (Plano ERP)</option>
+            <option value="hardware">Προσφορά Υπολογιστών / Hardware</option>
+            <option value="website">Κατασκευή Ιστοσελίδας</option>
             <option value="other">Άλλο</option>
           </select>
         </div>
@@ -105,10 +112,48 @@
           <textarea id="message" name="message" placeholder="Περιγράψτε τις ανάγκες σας..." required></textarea>
         </div>
 
-        <button type="submit" class="btn btn--primary btn--lg" style="align-self: flex-start;">
+        {{ with site.Params.turnstile_key }}
+        <div class="cf-turnstile" data-sitekey="{{ . }}" data-theme="light"></div>
+        {{ end }}
+
+        <button type="submit" id="submitBtn" class="btn btn--primary btn--lg" style="align-self: flex-start;">
           Αποστολή Μηνύματος →
         </button>
       </form>
+
+      <script>
+      document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        var btn     = document.getElementById('submitBtn');
+        var success = document.getElementById('form-success');
+        var error   = document.getElementById('form-error');
+
+        btn.disabled    = true;
+        btn.textContent = 'Αποστολή…';
+        success.style.display = 'none';
+        error.style.display   = 'none';
+
+        try {
+          var res  = await fetch('/api/contact', { method: 'POST', body: new FormData(this) });
+          var data = await res.json();
+
+          if (data.success) {
+            success.style.display = 'block';
+            this.reset();
+            if (window.turnstile) window.turnstile.reset();
+          } else {
+            error.textContent     = data.error || 'Παρουσιάστηκε σφάλμα.';
+            error.style.display   = 'block';
+          }
+        } catch {
+          error.textContent   = 'Σφάλμα σύνδεσης. Παρακαλώ δοκιμάστε ξανά.';
+          error.style.display = 'block';
+        }
+
+        btn.disabled    = false;
+        btn.textContent = 'Αποστολή Μηνύματος →';
+      });
+      </script>
 
     </div>
   </div>

@@ -34,3 +34,8 @@
 
 {{/* Favicon placeholder */}}
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+{{/* Cloudflare Turnstile — μόνο στη σελίδα επικοινωνίας */}}
+{{ if eq .Layout "contact" }}
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+{{ end }}
