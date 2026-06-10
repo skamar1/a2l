@@ -201,26 +201,24 @@
     if (Math.abs(diff) > 50) { diff > 0 ? goTo(cur + 1) : goTo(cur - 1); autoplay(); }
   }, { passive: true });
 
-  var counters = document.querySelectorAll('.counter');
-  var counted  = false;
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting && !counted) {
-        counted = true;
-        counters.forEach(function(c) {
-          var target = parseInt(c.getAttribute('data-target'));
-          var step   = target / (2000 / 16);
-          var val    = 0;
-          (function tick() {
-            val += step;
-            if (val < target) { c.textContent = Math.ceil(val); requestAnimationFrame(tick); }
-            else { c.textContent = target; }
-          })();
-        });
-      }
+  // Counters — run after first paint so CSS (display:none → block) is applied
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      var stats = document.querySelector('.carousel-stats');
+      if (!stats || getComputedStyle(stats).display === 'none') return;
+      var counters = document.querySelectorAll('.counter');
+      counters.forEach(function(c) {
+        var target = parseInt(c.getAttribute('data-target'));
+        var step   = target / (2000 / 16);
+        var val    = 0;
+        (function tick() {
+          val += step;
+          if (val < target) { c.textContent = Math.ceil(val); requestAnimationFrame(tick); }
+          else { c.textContent = target; }
+        })();
+      });
     });
-  }, { threshold: 0.5 });
-  counters.forEach(function(c) { observer.observe(c); });
+  });
 })();
 </script>
 
@@ -286,6 +284,31 @@
           <h3 class="step-card__title">{{ $s.title }}</h3>
           <p class="step-card__desc">{{ $s.desc }}</p>
         </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── TESTIMONIALS ──────────────────────────────────────── */}}
+{{ with $d.testimonials }}
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-label">Τι λένε οι πελάτες μας</span>
+      <h2 class="section-title">{{ .title | default "Μιλάνε για εμάς" }}</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="testimonials-grid">
+      {{ range .items }}
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">★★★★★</div>
+        <blockquote class="testimonial-card__quote">{{ .quote }}</blockquote>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__name">{{ .name }}</div>
+          <div class="testimonial-card__company">{{ .company }}</div>
+        </div>
+      </div>
       {{ end }}
     </div>
   </div>

@@ -32,8 +32,52 @@
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
 
-{{/* Favicon placeholder */}}
+{{/* Favicon & PWA manifest */}}
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#4f46e5">
+
+{{/* LocalBusiness JSON-LD — μόνο στην αρχική */}}
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "A2 Labs",
+  "url": "https://a2l.gr",
+  "logo": "https://a2l.gr/images/logo.png",
+  "image": "https://a2l.gr/images/hero-banner.png",
+  "description": "Μηχανογράφηση επιχειρήσεων — ERP, CRM, υποστήριξη λογισμικού, κατασκευή ιστοσελίδων και λύσεις πληροφορικής.",
+  "telephone": "+302102241787",
+  "email": "info@a2l.gr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Γ. Παπανδρέου 55",
+    "addressLocality": "Νέα Φιλαδέλφεια",
+    "postalCode": "14341",
+    "addressCountry": "GR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.03681,
+    "longitude": 23.73525
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "priceRange": "€€",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Greece"
+  },
+  "sameAs": []
+}
+</script>
+{{ end }}
 
 {{/* Cloudflare Turnstile — μόνο στη σελίδα επικοινωνίας */}}
 {{ if eq .Layout "contact" }}

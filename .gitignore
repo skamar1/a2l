@@ -1,0 +1,15 @@
+# Hugo build output — δεν χρειάζεται στο git, το Netlify το φτιάχνει
+public/
+resources/
+.hugo_build.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Playwright logs
+.playwright-mcp/
+
+# Editor
+.vscode/
+*.swp
