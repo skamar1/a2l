@@ -2671,47 +2671,40 @@ p { color: var(--text-secondary); }
 
 /* ── Promo Blocks (Megasoft promotions) ───────────────────── */
 .page-content--promos {
-  padding-top: 0;
+  padding: 0;
 }
 
 .promo-block {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border-radius: 20px;
+  border-bottom: 1px solid var(--border);
   overflow: hidden;
-  border: 1px solid var(--border);
-  margin-bottom: 32px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-}
-
-.promo-block:nth-child(even) {
-  direction: rtl;
-}
-.promo-block:nth-child(even) > * {
-  direction: ltr;
+  margin-bottom: 0;
 }
 
 .promo-block__image {
-  position: relative;
-  min-height: 300px;
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
 }
 
 .promo-block__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   display: block;
 }
 
 .promo-block__body {
-  padding: 40px 36px;
+  background: var(--surface);
+  padding: 48px 24px 56px;
+}
+
+.promo-block__inner {
+  max-width: 860px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  justify-content: center;
-  background: var(--surface);
 }
 
 .promo-block__header {
@@ -2732,17 +2725,17 @@ p { color: var(--text-secondary); }
 }
 
 .promo-block__title {
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-primary);
-  line-height: 1.35;
+  line-height: 1.3;
   margin: 0;
 }
 
 .promo-block__text {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.75;
   margin: 0;
 }
 
@@ -2756,11 +2749,11 @@ p { color: var(--text-secondary); }
 }
 
 .promo-block__list li {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  padding-left: 20px;
+  padding-left: 22px;
   position: relative;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .promo-block__list li::before {
@@ -2772,17 +2765,13 @@ p { color: var(--text-secondary); }
 }
 
 @media (max-width: 768px) {
-  .promo-block {
-    grid-template-columns: 1fr;
-    direction: ltr !important;
-  }
-  .promo-block:nth-child(even) {
-    direction: ltr;
-  }
   .promo-block__image {
-    min-height: 220px;
+    height: 240px;
   }
   .promo-block__body {
-    padding: 28px 24px;
+    padding: 32px 20px 40px;
+  }
+  .promo-block__title {
+    font-size: 1.25rem;
   }
 }
