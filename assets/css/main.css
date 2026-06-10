@@ -2668,3 +2668,121 @@ p { color: var(--text-secondary); }
   color: var(--text-muted);
   margin-top: 2px;
 }
+
+/* ── Promo Blocks (Megasoft promotions) ───────────────────── */
+.page-content--promos {
+  padding-top: 0;
+}
+
+.promo-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.promo-block:nth-child(even) {
+  direction: rtl;
+}
+.promo-block:nth-child(even) > * {
+  direction: ltr;
+}
+
+.promo-block__image {
+  position: relative;
+  min-height: 300px;
+}
+
+.promo-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.promo-block__body {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  background: var(--surface);
+}
+
+.promo-block__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.promo-block__deadline {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #f59e0b;
+  background: rgba(245,158,11,0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(245,158,11,0.25);
+}
+
+.promo-block__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.promo-block__text {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.promo-block__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.promo-block__list li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.promo-block__list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .promo-block {
+    grid-template-columns: 1fr;
+    direction: ltr !important;
+  }
+  .promo-block:nth-child(even) {
+    direction: ltr;
+  }
+  .promo-block__image {
+    min-height: 220px;
+  }
+  .promo-block__body {
+    padding: 28px 24px;
+  }
+}

@@ -42,6 +42,35 @@
   </div>
   {{ end }}
 
+  {{/* ── PROMOS ─────────────────────────────────────────────── */}}
+  {{ with .Params.promos }}
+  <div class="page-content page-content--promos">
+    <div class="container">
+      {{ range . }}
+      <div class="promo-block">
+        <div class="promo-block__image">
+          <img src="{{ .image }}" alt="{{ .title }}" loading="lazy">
+        </div>
+        <div class="promo-block__body">
+          <div class="promo-block__header">
+            <span class="section-label">{{ .label }}</span>
+            {{ with .deadline }}<span class="promo-block__deadline">⏰ {{ . }}</span>{{ end }}
+          </div>
+          <h2 class="promo-block__title">{{ .title }}</h2>
+          <p class="promo-block__text">{{ .text }}</p>
+          {{ with .bullets }}
+          <ul class="promo-block__list">
+            {{ range . }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          {{ end }}
+          <a href="{{ .cta_url | default "/epikoinonia/" }}" class="btn btn--primary">{{ .cta | default "Ζητήστε Πληροφορίες" }}</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
   {{/* Sections & CTA */}}
   <div class="page-content">
     <div class="container">
