@@ -129,7 +129,8 @@ testimonials:
       logo: "/images/clients/logo.png"
     - quote: "Είμαστε πολύ ευχαριστημένοι από τη συνεργασία μας. Είναι πάντα πρόθυμοι κι ευγενικοί και απαντούν στα τηλεφωνήματά μας άμεσα. Είναι γνώστες των προγραμμάτων και πολύ εξυπηρετικοί. Τους ευχαριστούμε και τους συστήνουμε ανεπιφύλακτα."
       name: "Βασιλείου Γεώργιος"
-      company: "elfor.gr"
+      company: "elfor.gr — FORD Ελφόρ"
+      logo: "/images/clients/elfor-logo.jpg"
 
 promo_banner:
   label: "ICS VCR — Άυλη Ταμειακή"
