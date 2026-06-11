@@ -290,6 +290,30 @@
 </section>
 {{ end }}
 
+{{/* ── PROMO BANNER ──────────────────────────────────────── */}}
+{{ with $d.promo_banner }}
+<section class="promo-banner">
+  <div class="container">
+    <div class="promo-banner__inner">
+      <div class="promo-banner__body">
+        <span class="promo-banner__label">{{ .label }}</span>
+        <h2 class="promo-banner__title">{{ .title }}</h2>
+        <p class="promo-banner__text">{{ .text }}</p>
+        {{ with .bullets }}
+        <ul class="promo-banner__list">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        <a href="{{ .url }}" class="btn btn--primary btn--lg">{{ .cta }}</a>
+      </div>
+      <div class="promo-banner__visual">
+        <img src="{{ .image }}" alt="{{ .title }}" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
 {{/* ── TESTIMONIALS ──────────────────────────────────────── */}}
 {{ with $d.testimonials }}
 <section class="section section--surface">

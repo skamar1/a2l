@@ -133,6 +133,19 @@ testimonials:
       name: "Όνομα Πελάτη"
       company: "Εταιρεία"
 
+promo_banner:
+  label: "ICS VCR — Άυλη Ταμειακή"
+  title: "Ταμειακή, POS και myDATA σε μία συσκευή"
+  text: "Η ICS VCR All in One είναι η πλήρης λύση για σύγχρονα ταμεία. Φορητή, έτοιμη από την πρώτη μέρα, πλήρως συμβατή με ΑΑΔΕ."
+  bullets:
+    - "Άυλη cloud ταμειακή μηχανή (ΑΑΔΕ)"
+    - "SoftPOS — ανέπαφες πληρωμές χωρίς εξτρά POS"
+    - "Αυτόματη διαβίβαση στο myDATA"
+    - "Εγγύηση & υποστήριξη από A2 Labs"
+  image: "https://www.ics.gr/image/cache/catalog/tamiakes-mixanes/tameiakes-ics/ics-vcr-ayli-tameiaki-mixani-v3h-1b-550x550.jpg"
+  url: "/ics-vcr/"
+  cta: "Δείτε την ICS VCR"
+
 cta:
   title: "Ξεκινήστε σήμερα"
   subtitle: "Επικοινωνήστε μαζί μας για δωρεάν demo και αξιολόγηση των αναγκών σας."
