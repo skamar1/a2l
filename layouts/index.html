@@ -329,8 +329,11 @@
         <div class="testimonial-card__stars">★★★★★</div>
         <blockquote class="testimonial-card__quote">{{ .quote }}</blockquote>
         <div class="testimonial-card__author">
-          <div class="testimonial-card__name">{{ .name }}</div>
-          <div class="testimonial-card__company">{{ .company }}</div>
+          {{ with .logo }}<img src="{{ . }}" alt="{{ $.name }}" class="testimonial-card__logo">{{ end }}
+          <div>
+            <div class="testimonial-card__name">{{ .name }}</div>
+            <div class="testimonial-card__company">{{ .company }}</div>
+          </div>
         </div>
       </div>
       {{ end }}

@@ -2870,3 +2870,18 @@ p { color: var(--text-secondary); }
     font-size: 1.5rem;
   }
 }
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.testimonial-card__logo {
+  height: 36px;
+  width: auto;
+  max-width: 80px;
+  object-fit: contain;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
