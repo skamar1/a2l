@@ -50,6 +50,11 @@ title = "A2Labs"
     parent = "programata"
     weight = 5
   [[menus.main]]
+    name = "ICS VCR — Ταμειακή"
+    url = "/ics-vcr/"
+    parent = "programata"
+    weight = 8
+  [[menus.main]]
     name = "Εφαρμογές Qorrect"
     url = "/plano/"
     parent = "programata"

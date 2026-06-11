@@ -71,6 +71,15 @@ products:
         - "Διαχείριση επαφών"
         - "Αναφορές & KPIs"
         - "Ενσωμάτωση email"
+    - tag: "Ταμειακή / SoftPOS"
+      title: "ICS VCR All in One"
+      desc: "Άυλη cloud ταμειακή μηχανή, SoftPOS και myDATA σε μία φορητή συσκευή."
+      url: "/ics-vcr/"
+      features:
+        - "Άυλη ταμειακή ΑΑΔΕ"
+        - "SoftPOS — ανέπαφες πληρωμές"
+        - "Αυτόματη διαβίβαση myDATA"
+        - "Φορητή — χωρίς εξτρά εξοπλισμό"
 
 clients:
   label: "Μας εμπιστεύονται"
