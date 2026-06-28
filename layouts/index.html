@@ -42,11 +42,11 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
           <span>Κύρια Υπηρεσία</span>
         </div>
-        <h1 class="carousel-slide__title">
+        <h2 class="carousel-slide__title">
           Υποστήριξη<br>
           <span style="color:#818cf8;">Εμπορικών</span><br>
           Προγραμμάτων
-        </h1>
+        </h2>
         <p class="carousel-slide__desc">ERP, CRM, λογιστικά συστήματα — αναλαμβάνουμε εγκατάσταση, ρύθμιση, επιμόρφωση και συνεχή υποστήριξη. Η επιχείρησή σας σε αξιόπιστα χέρια.</p>
         <div class="carousel-slide__actions">
           <a href="/epikoinonia/" class="btn btn--primary btn--lg">Ξεκινήστε τώρα</a>
@@ -68,11 +68,11 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           <span>Web &amp; E-Shop</span>
         </div>
-        <h1 class="carousel-slide__title">
+        <h2 class="carousel-slide__title">
           Κατασκευή<br>
           <span style="color:#f472b6;">Ιστοσελίδων</span><br>
           &amp; E-Shop
-        </h1>
+        </h2>
         <p class="carousel-slide__desc">Σύγχρονες, γρήγορες και responsive ιστοσελίδες. WordPress, e-commerce, SEO — όλα σε ένα πακέτο για την ψηφιακή σας παρουσία.</p>
         <div class="carousel-slide__actions">
           <a href="/epikoinonia/" class="btn btn--pink btn--lg">Ζητήστε προσφορά</a>
@@ -94,11 +94,11 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <span>IT &amp; Security</span>
         </div>
-        <h1 class="carousel-slide__title">
+        <h2 class="carousel-slide__title">
           IT Υποδομή<br>
           &amp; <span style="color:#fbbf24;">Ασφάλεια</span><br>
           Δεδομένων
-        </h1>
+        </h2>
         <p class="carousel-slide__desc">Δίκτυα, servers, backups, αντιϊκή προστασία. Διασφαλίζουμε τη συνέχεια της επιχείρησής σας με αξιόπιστες λύσεις ασφαλείας.</p>
         <div class="carousel-slide__actions">
           <a href="/epikoinonia/" class="btn btn--amber btn--lg">Προστατέψτε τα δεδομένα σας</a>
@@ -133,15 +133,15 @@
   <div class="carousel-stats">
     <div class="carousel-stats__grid" style="max-width:var(--max-width);margin:0 auto;">
       <div class="carousel-stat">
-        <div class="carousel-stat__value"><span class="counter" data-target="200">0</span>+</div>
+        <div class="carousel-stat__value"><span class="counter" data-target="200">200</span>+</div>
         <div class="carousel-stat__label">Επιχειρήσεις</div>
       </div>
       <div class="carousel-stat">
-        <div class="carousel-stat__value"><span class="counter" data-target="98">0</span>%</div>
+        <div class="carousel-stat__value"><span class="counter" data-target="98">98</span>%</div>
         <div class="carousel-stat__label">Ικανοποίηση</div>
       </div>
       <div class="carousel-stat">
-        <div class="carousel-stat__value"><span class="counter" data-target="20">0</span>+</div>
+        <div class="carousel-stat__value"><span class="counter" data-target="20">20</span>+</div>
         <div class="carousel-stat__label">Χρόνια Εμπειρίας</div>
       </div>
       <div class="carousel-stat">
@@ -211,6 +211,7 @@
         var target = parseInt(c.getAttribute('data-target'));
         var step   = target / (2000 / 16);
         var val    = 0;
+        c.textContent = '0';
         (function tick() {
           val += step;
           if (val < target) { c.textContent = Math.ceil(val); requestAnimationFrame(tick); }

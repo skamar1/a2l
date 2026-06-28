@@ -2,19 +2,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>{{ if .IsHome }}{{ site.Title }} — {{ site.Params.description }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+{{/* Computed page title / description / share image — reused below */}}
+{{ $pageTitle := cond .IsHome (printf "%s — %s" site.Title site.Params.description) (printf "%s | %s" .Title site.Title) }}
+{{ $desc := or .Description site.Params.description }}
+{{ $ogImage := "" }}
+{{ with .Params.image }}{{ $ogImage = . | absURL }}{{ else }}{{ $ogImage = "images/og-image.png" | absURL }}{{ end }}
+
+<title>{{ $pageTitle }}</title>
+<meta name="description" content="{{ $desc }}">
 <meta name="author" content="{{ site.Params.author }}">
 
 {{/* Canonical */}}
 <link rel="canonical" href="{{ .Permalink }}">
 
 {{/* Open Graph */}}
-<meta property="og:title" content="{{ .Title }}">
-<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+<meta property="og:title" content="{{ $pageTitle }}">
+<meta property="og:description" content="{{ $desc }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:locale" content="el_GR">
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ site.Title }} — {{ site.Params.description }}">
+
+{{/* Twitter Card */}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $pageTitle }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
 
 {{/* Fonts — Inter self-hosted, no external requests */}}
 <style>

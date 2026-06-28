@@ -1,5 +1,5 @@
 baseURL = "https://a2l.gr/"
-languageCode = "el"
+locale = "el"
 defaultContentLanguage = "el"
 title = "A2Labs"
 
