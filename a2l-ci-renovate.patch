@@ -1,0 +1,139 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+new file mode 100644
+index 0000000..1f9c82b
+--- /dev/null
++++ b/.github/workflows/build.yml
+@@ -0,0 +1,28 @@
++name: Build
++
++on:
++  push:
++    branches: [master]
++  pull_request:
++
++permissions:
++  contents: read
++
++concurrency:
++  group: build-${{ github.ref }}
++  cancel-in-progress: true
++
++jobs:
++  build:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++        with:
++          submodules: recursive
++
++      # Builds with the EXACT Hugo version from .tool-versions and treats every
++      # warning (incl. deprecations) as an error. If a Renovate PR bumps Hugo to
++      # a version that introduces a deprecation, this job goes red and blocks the
++      # merge — the bug is caught here, never in production.
++      - name: Build (strict — warnings as errors)
++        run: HUGO_EXTRA_FLAGS="--panicOnWarning" bash build.sh
+diff --git a/.tool-versions b/.tool-versions
+new file mode 100644
+index 0000000..6fd09ab
+--- /dev/null
++++ b/.tool-versions
+@@ -0,0 +1 @@
++hugo 0.161.1
+diff --git a/build.sh b/build.sh
+new file mode 100755
+index 0000000..a53c43d
+--- /dev/null
++++ b/build.sh
+@@ -0,0 +1,44 @@
++#!/usr/bin/env bash
++#
++# Builds the a2l.gr Hugo site with the EXACT Hugo version pinned in
++# .tool-versions — the single source of truth shared by local, CI and
++# Cloudflare Pages. This guarantees dev/prod parity: the version can never
++# drift between environments.
++#
++# Cloudflare Pages build command:  bash build.sh
++# CI (strict):                     HUGO_EXTRA_FLAGS="--panicOnWarning" bash build.sh
++#
++set -euo pipefail
++
++# --- read pinned version from the single source of truth ---------------------
++HUGO_VERSION="$(awk '/^hugo[[:space:]]/ {print $2; exit}' .tool-versions)"
++if [ -z "${HUGO_VERSION:-}" ]; then
++  echo "ERROR: no 'hugo <version>' line found in .tool-versions" >&2
++  exit 1
++fi
++HUGO_EXTRA_FLAGS="${HUGO_EXTRA_FLAGS:-}"
++echo "==> Hugo ${HUGO_VERSION} (extended)"
++
++# --- resolve platform --------------------------------------------------------
++OS="$(uname -s)"; ARCH="$(uname -m)"
++case "${OS}-${ARCH}" in
++  Linux-x86_64|Linux-amd64)   PLAT="linux-amd64" ;;
++  Linux-aarch64|Linux-arm64)  PLAT="linux-arm64" ;;
++  Darwin-arm64|Darwin-x86_64) PLAT="darwin-universal" ;;
++  *) echo "ERROR: unsupported platform ${OS}-${ARCH}" >&2; exit 1 ;;
++esac
++
++# --- download that exact extended build --------------------------------------
++TMP="$(mktemp -d)"
++trap 'rm -rf "${TMP}"' EXIT
++URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_${PLAT}.tar.gz"
++echo "==> Downloading ${URL}"
++curl -fsSL "${URL}" -o "${TMP}/hugo.tar.gz"
++tar -xzf "${TMP}/hugo.tar.gz" -C "${TMP}" hugo
++HUGO_BIN="${TMP}/hugo"
++"${HUGO_BIN}" version
++
++# --- build -------------------------------------------------------------------
++# shellcheck disable=SC2086
++"${HUGO_BIN}" --gc --minify ${HUGO_EXTRA_FLAGS}
++echo "==> Build complete -> public/"
+diff --git a/renovate.json b/renovate.json
+new file mode 100644
+index 0000000..c8bdf12
+--- /dev/null
++++ b/renovate.json
+@@ -0,0 +1,42 @@
++{
++  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
++  "extends": [
++    "config:recommended",
++    ":dependencyDashboard",
++    ":semanticCommits"
++  ],
++  "timezone": "Europe/Athens",
++  "schedule": ["before 9am on monday"],
++  "labels": ["dependencies"],
++
++  "//": "Disable the built-in asdf manager and track the Hugo line ourselves via a regex custom manager. This is version-format agnostic and always resolves against gohugoio/hugo GitHub releases.",
++  "asdf": { "enabled": false },
++
++  "customManagers": [
++    {
++      "customType": "regex",
++      "description": "Track the pinned Hugo version in .tool-versions",
++      "managerFilePatterns": ["/^\\.tool-versions$/"],
++      "matchStrings": ["hugo\\s+(?<currentValue>\\S+)"],
++      "depNameTemplate": "gohugoio/hugo",
++      "datasourceTemplate": "github-releases",
++      "extractVersionTemplate": "^v(?<version>.+)$"
++    }
++  ],
++
++  "packageRules": [
++    {
++      "description": "Hugo: auto-merge patch & minor once the strict CI build passes; hold majors for manual review.",
++      "matchDepNames": ["gohugoio/hugo"],
++      "matchUpdateTypes": ["minor", "patch"],
++      "automerge": true
++    },
++    {
++      "description": "Keep GitHub Actions current too (replaces needing Dependabot).",
++      "matchManagers": ["github-actions"],
++      "automerge": true
++    }
++  ],
++
++  "platformAutomerge": true
++}

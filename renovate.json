@@ -1,0 +1,42 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommits"
+  ],
+  "timezone": "Europe/Athens",
+  "schedule": ["before 9am on monday"],
+  "labels": ["dependencies"],
+
+  "//": "Disable the built-in asdf manager and track the Hugo line ourselves via a regex custom manager. This is version-format agnostic and always resolves against gohugoio/hugo GitHub releases.",
+  "asdf": { "enabled": false },
+
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Track the pinned Hugo version in .tool-versions",
+      "managerFilePatterns": ["/^\\.tool-versions$/"],
+      "matchStrings": ["hugo\\s+(?<currentValue>\\S+)"],
+      "depNameTemplate": "gohugoio/hugo",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.+)$"
+    }
+  ],
+
+  "packageRules": [
+    {
+      "description": "Hugo: auto-merge patch & minor once the strict CI build passes; hold majors for manual review.",
+      "matchDepNames": ["gohugoio/hugo"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "description": "Keep GitHub Actions current too (replaces needing Dependabot).",
+      "matchManagers": ["github-actions"],
+      "automerge": true
+    }
+  ],
+
+  "platformAutomerge": true
+}

@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      # Builds with the EXACT Hugo version from .tool-versions and treats every
+      # warning (incl. deprecations) as an error. If a Renovate PR bumps Hugo to
+      # a version that introduces a deprecation, this job goes red and blocks the
+      # merge — the bug is caught here, never in production.
+      - name: Build (strict — warnings as errors)
+        run: HUGO_EXTRA_FLAGS="--panicOnWarning" bash build.sh
