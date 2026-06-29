@@ -16,6 +16,7 @@ title = "A2Labs"
   gemi = "164754803000"
   company_full = "A2 Labs"
   turnstile_key = "0x4AAAAAAAA62OLbaIhLXmje"
+  keywords = ["μηχανογράφηση επιχειρήσεων", "ERP", "CRM", "SoftOne", "Entersoft", "Megasoft", "υποστήριξη εμπορικών προγραμμάτων", "κατασκευή ιστοσελίδων", "e-shop", "λύσεις πληροφορικής", "Αθήνα", "Νέα Φιλαδέλφεια"]
 
 [menus]
   [[menus.main]]
