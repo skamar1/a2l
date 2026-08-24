@@ -2963,3 +2963,334 @@ p { color: var(--text-secondary); }
   .faq__q { padding: 16px 18px; font-size: 0.97rem; }
   .faq__a { padding: 0 18px 18px; font-size: 0.95rem; }
 }
+
+/* ==========================================================================
+   Δωρεάν έλεγχος ιστοσελίδας (/elegxos)
+   ========================================================================== */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.check-form {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.check-form__row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.check-form__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.9rem 1.1rem;
+  font-size: 1.05rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.check-form__input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.check-form__note {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .check-form__row { flex-direction: column; }
+}
+
+/* Πρόοδος ---------------------------------------------------------------- */
+
+.check-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 3rem 1rem;
+}
+
+.check-progress__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: check-spin 0.9s linear infinite;
+}
+
+.check-progress__label { margin: 0.5rem 0 0; font-weight: 600; }
+.check-progress__hint  { margin: 0; font-size: 0.875rem; color: var(--text-muted); }
+
+@keyframes check-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .check-progress__spinner { animation-duration: 3s; }
+}
+
+/* Βαθμός ----------------------------------------------------------------- */
+
+.score {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.score__ring {
+  flex: 0 0 auto;
+  width: 128px;
+  height: 128px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+  padding-top: 2.4rem;
+  border-radius: 50%;
+  border: 6px solid var(--border);
+  background: var(--bg-primary);
+}
+
+.score__ring--excellent  { border-color: #16a34a; }
+.score__ring--good       { border-color: #65a30d; }
+.score__ring--needs-work { border-color: #d97706; }
+.score__ring--critical   { border-color: #dc2626; }
+
+.score__number { font-size: 2.75rem; font-weight: 800; line-height: 1; }
+.score__max    { font-size: 1rem; color: var(--text-muted); }
+
+.score__meta    { min-width: 0; }
+.score__grade   { margin: 0 0 0.35rem; font-size: 1.5rem; }
+.score__summary { margin: 0 0 0.75rem; color: var(--text-secondary); }
+.score__target  { margin: 0 0 0.25rem; font-size: 0.9rem; color: var(--text-muted); word-break: break-all; }
+.score__counts  { margin: 0; font-size: 0.875rem; color: var(--text-muted); }
+
+@media (max-width: 640px) {
+  .score { flex-direction: column; text-align: center; gap: 1.25rem; }
+}
+
+/* Προτεραιότητες --------------------------------------------------------- */
+
+.priorities { margin-bottom: 2.5rem; }
+.priorities__intro { color: var(--text-secondary); margin-bottom: 1.25rem; }
+
+.priorities__list {
+  list-style: none;
+  counter-reset: priority;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.priorities__item {
+  counter-increment: priority;
+  padding: 1.1rem 1.25rem 1.1rem 3.25rem;
+  position: relative;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--text-muted);
+  border-radius: var(--radius);
+}
+
+.priorities__item::before {
+  content: counter(priority);
+  position: absolute;
+  left: 1.15rem;
+  top: 1.1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+
+.priorities__item--fail    { border-left-color: #dc2626; }
+.priorities__item--partial { border-left-color: #d97706; }
+
+.priorities__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.priorities__title  { font-weight: 700; }
+.priorities__impact { flex: 0 0 auto; font-variant-numeric: tabular-nums; color: var(--accent-bright); font-weight: 700; }
+.priorities__measured { margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--text-secondary); }
+.priorities__fix      { margin: 0; font-size: 0.9rem; color: var(--text-primary); }
+
+/* Κατηγορίες ------------------------------------------------------------- */
+
+.cats > h2 { margin-bottom: 1rem; }
+
+.cat {
+  margin-bottom: 0.75rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.cat__summary {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-areas: "name weight score" "bar bar bar";
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.cat__summary::-webkit-details-marker { display: none; }
+.cat__summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+.cat__name   { grid-area: name;   font-weight: 700; }
+.cat__weight { grid-area: weight; font-size: 0.8rem; color: var(--text-muted); }
+.cat__score  { grid-area: score;  font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.cat__bar {
+  grid-area: bar;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.cat__bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+/* Κανόνες ---------------------------------------------------------------- */
+
+.rules { border-top: 1px solid var(--border); }
+
+.rule {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.rule:last-child { border-bottom: none; }
+.rule--na { opacity: 0.65; }
+
+.rule__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.rule__state {
+  flex: 0 0 auto;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 1px solid;
+}
+
+.rule--pass    .rule__state { color: #15803d; border-color: #86efac; background: #f0fdf4; }
+.rule--partial .rule__state { color: #b45309; border-color: #fcd34d; background: #fffbeb; }
+.rule--fail    .rule__state { color: #b91c1c; border-color: #fca5a5; background: #fef2f2; }
+.rule--na      .rule__state { color: var(--text-muted); border-color: var(--border); background: var(--bg-surface); }
+
+.rule__title { font-weight: 600; }
+.rule__id    { font-size: 0.72rem; color: var(--text-muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.rule__measured { margin: 0; font-size: 0.9rem; color: var(--text-secondary); }
+.rule__note,
+.rule__meaning  { margin: 0.4rem 0 0; font-size: 0.875rem; color: var(--text-muted); }
+.rule__fix      { margin: 0.4rem 0 0; font-size: 0.875rem; }
+
+/* Ουρά ------------------------------------------------------------------- */
+
+.permalink {
+  margin: 2rem 0 0;
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  background: var(--bg-surface);
+  border-radius: var(--radius);
+  word-break: break-all;
+}
+
+.permalink__note { color: var(--text-muted); }
+
+.check-cta {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  text-align: center;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+}
+
+.check-cta h2 { margin-top: 0; }
+.check-cta p  { color: var(--text-secondary); }
+
+/* Επεξήγηση -------------------------------------------------------------- */
+
+.check-explainer {
+  max-width: 900px;
+  margin: 4rem auto 0;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+}
+
+.check-explainer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.check-explainer__item {
+  padding: 1.25rem;
+  background: var(--bg-surface);
+  border-radius: var(--radius);
+}
+
+.check-explainer__item h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.check-explainer__item h3 span { color: var(--accent-bright); font-variant-numeric: tabular-nums; }
+.check-explainer__item p { margin: 0; font-size: 0.9rem; color: var(--text-secondary); }

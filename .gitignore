@@ -13,3 +13,6 @@ Thumbs.db
 # Editor
 .vscode/
 *.swp
+
+# Wrangler local dev cache (KV, state)
+.wrangler/
