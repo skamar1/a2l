@@ -1,0 +1,179 @@
+{{/* ============================================================
+     schema.html — ενιαίο JSON-LD @graph για κάθε σελίδα.
+
+     Αντικατέστησε το μεμονωμένο LocalBusiness block που ήταν inline στο
+     head.html και το οποίο κάλυπτε μόνο 4 τύπους. Τώρα βγαίνουν:
+
+       Organization / LocalBusiness / ProfessionalService  (κάθε σελίδα)
+         └─ ContactPoint (πωλήσεις + υποστήριξη), sameAs, address, geo,
+            openingHours, vatID, identifier
+       WebSite                                              (κάθε σελίδα)
+       WebPage                                              (κάθε σελίδα)
+       BreadcrumbList                                       (εκτός αρχικής)
+       FAQPage                                              (όπου υπάρχει .Params.faq)
+       BlogPosting                                          (Νέα & Οδηγίες)
+
+     Το SearchAction ΔΕΝ μπαίνει: δεν υπάρχει λειτουργία αναζήτησης στο site
+     και το schema.org/SearchAction χωρίς πραγματικό /search endpoint είναι
+     ψευδής δήλωση που τιμωρείται από τους validators.
+     ============================================================ */}}
+
+{{- $base    := strings.TrimSuffix "/" site.BaseURL -}}
+{{- $orgID   := printf "%s/#organization" $base -}}
+{{- $siteID  := printf "%s/#website" $base -}}
+{{- $pageID  := printf "%s#webpage" .Permalink -}}
+{{- $crumbID := printf "%s#breadcrumb" .Permalink -}}
+{{- $faqID   := printf "%s#faq" .Permalink -}}
+
+{{/* ---------- 1. Organization / LocalBusiness ---------- */}}
+{{- $contactPoints := slice
+      (dict
+        "@type"             "ContactPoint"
+        "@id"               (printf "%s/#contact-sales" $base)
+        "contactType"       "sales"
+        "name"              "Πωλήσεις & Προσφορές"
+        "telephone"         "+30-210-224-1787"
+        "email"             site.Params.email
+        "areaServed"        "GR"
+        "availableLanguage" (slice "el" "en")
+      )
+      (dict
+        "@type"             "ContactPoint"
+        "@id"               (printf "%s/#contact-support" $base)
+        "contactType"       "customer support"
+        "name"              "Τεχνική Υποστήριξη"
+        "telephone"         "+30-210-224-1787"
+        "email"             site.Params.email
+        "areaServed"        "GR"
+        "availableLanguage" (slice "el" "en")
+      )
+-}}
+
+{{- $org := dict
+      "@type"       (slice "Organization" "LocalBusiness" "ProfessionalService")
+      "@id"         $orgID
+      "name"        (site.Params.company_full | default site.Title)
+      "legalName"   (site.Params.company_full | default site.Title)
+      "alternateName" site.Title
+      "url"         (printf "%s/" $base)
+      "logo"        (dict "@type" "ImageObject" "@id" (printf "%s/#logo" $base) "url" (absURL site.Params.logo) "contentUrl" (absURL site.Params.logo) "caption" (site.Params.company_full | default site.Title))
+      "image"       (dict "@id" (printf "%s/#logo" $base))
+      "description" site.Params.description
+      "telephone"   "+302102241787"
+      "email"       site.Params.email
+      "foundingDate" "2014"
+      "priceRange"  "€€"
+      "currenciesAccepted" "EUR"
+      "address"     (dict
+                      "@type"           "PostalAddress"
+                      "streetAddress"   "Γ. Παπανδρέου 55"
+                      "addressLocality" "Νέα Φιλαδέλφεια"
+                      "addressRegion"   "Αττική"
+                      "postalCode"      "14341"
+                      "addressCountry"  "GR")
+      "geo"         (dict "@type" "GeoCoordinates" "latitude" 38.03681 "longitude" 23.73525)
+      "areaServed"  (dict "@type" "Country" "name" "Greece")
+      "openingHoursSpecification" (slice (dict
+                      "@type"     "OpeningHoursSpecification"
+                      "dayOfWeek" (slice "Monday" "Tuesday" "Wednesday" "Thursday" "Friday")
+                      "opens"     "09:00"
+                      "closes"    "17:00"))
+      "contactPoint" $contactPoints
+-}}
+
+{{/* ΑΦΜ / ΓΕΜΗ — βοηθούν σημαντικά το entity recognition */}}
+{{- with site.Params.vat }}{{ $org = merge $org (dict "vatID" (printf "EL%s" .) "taxID" .) }}{{ end -}}
+{{- with site.Params.gemi }}{{ $org = merge $org (dict "identifier" (dict "@type" "PropertyValue" "name" "ΓΕΜΗ" "value" .)) }}{{ end -}}
+
+{{/* sameAs — μόνο αν έχουν οριστεί πραγματικά προφίλ στο hugo.toml.
+     ΠΟΤΕ placeholder URLs: ένα σπασμένο sameAs βλάπτει περισσότερο απ' ό,τι η απουσία του. */}}
+{{- $sameAs := slice -}}
+{{- range site.Params.social }}{{ with . }}{{ $sameAs = $sameAs | append . }}{{ end }}{{ end -}}
+{{- with $sameAs }}{{ $org = merge $org (dict "sameAs" .) }}{{ end -}}
+
+{{/* ---------- 2. WebSite ---------- */}}
+{{- $website := dict
+      "@type"      "WebSite"
+      "@id"        $siteID
+      "url"        (printf "%s/" $base)
+      "name"       site.Title
+      "description" site.Params.description
+      "inLanguage" "el-GR"
+      "publisher"  (dict "@id" $orgID)
+-}}
+
+{{/* ---------- 3. WebPage ---------- */}}
+{{- $pageDesc := cond (ne "" (string .Description)) (string .Description) site.Params.description -}}
+{{- $webpage := dict
+      "@type"      "WebPage"
+      "@id"        $pageID
+      "url"        .Permalink
+      "name"       (cond .IsHome (printf "%s — %s" site.Title site.Params.description) .Title)
+      "description" $pageDesc
+      "inLanguage" "el-GR"
+      "isPartOf"   (dict "@id" $siteID)
+      "about"      (dict "@id" $orgID)
+-}}
+{{- if not .Date.IsZero }}{{ $webpage = merge $webpage (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end -}}
+{{- if not .Lastmod.IsZero }}{{ $webpage = merge $webpage (dict "dateModified" (.Lastmod.Format "2006-01-02")) }}{{ end -}}
+
+{{- $graph := slice $org $website -}}
+
+{{/* ---------- 4. BreadcrumbList (εκτός αρχικής και 404) ---------- */}}
+{{- if and (not .IsHome) (ne .RelPermalink "/404.html") -}}
+  {{- $items := slice -}}
+  {{- $i := 0 -}}
+  {{- range .Ancestors.Reverse -}}
+    {{- $i = add $i 1 -}}
+    {{- $items = $items | append (dict "@type" "ListItem" "position" $i "name" (cond .IsHome "Αρχική" .Title) "item" .Permalink) -}}
+  {{- end -}}
+  {{- $i = add $i 1 -}}
+  {{- $items = $items | append (dict "@type" "ListItem" "position" $i "name" .Title "item" .Permalink) -}}
+  {{- $webpage = merge $webpage (dict "breadcrumb" (dict "@id" $crumbID)) -}}
+  {{- $graph = $graph | append (dict "@type" "BreadcrumbList" "@id" $crumbID "itemListElement" $items) -}}
+{{- end -}}
+
+{{/* ---------- 5. BlogPosting για Νέα & Οδηγίες ---------- */}}
+{{- if and .IsPage (eq .Section "odigies-nea") -}}
+  {{- $post := dict
+        "@type"            "BlogPosting"
+        "@id"              (printf "%s#article" .Permalink)
+        "headline"         .Title
+        "description"      $pageDesc
+        "mainEntityOfPage" (dict "@id" $pageID)
+        "isPartOf"         (dict "@id" $pageID)
+        "inLanguage"       "el-GR"
+        "author"           (dict "@id" $orgID)
+        "publisher"        (dict "@id" $orgID)
+  -}}
+  {{- if not .Date.IsZero }}{{ $post = merge $post (dict "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")) }}{{ end -}}
+  {{- if not .Lastmod.IsZero }}{{ $post = merge $post (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) }}{{ end -}}
+  {{- with .Params.image }}{{ $post = merge $post (dict "image" (absURL .)) }}{{ end -}}
+  {{- with .Params.tags }}{{ $post = merge $post (dict "keywords" (delimit . ", ")) }}{{ end -}}
+  {{- $graph = $graph | append $post -}}
+{{- end -}}
+
+{{/* ---------- 6. FAQPage ---------- */}}
+{{- with .Params.faq -}}
+  {{- with .items -}}
+    {{- $qa := slice -}}
+    {{- range . -}}
+      {{- $qa = $qa | append (dict
+            "@type"          "Question"
+            "name"           .q
+            "acceptedAnswer" (dict "@type" "Answer" "text" .a)) -}}
+    {{- end -}}
+    {{- $graph = $graph | append (dict
+          "@type"      "FAQPage"
+          "@id"        $faqID
+          "inLanguage" "el-GR"
+          "isPartOf"   (dict "@id" $pageID)
+          "mainEntity" $qa) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $graph = $graph | append $webpage -}}
+{{/* safeJS: χωρίς αυτό το html/template τυλίγει το JSON σε εισαγωγικά και
+     βγαίνει διπλο-κωδικοποιημένο (string αντί για object). Το jsonify ήδη
+     κάνει escape τα < > & σε \u003c κ.λπ., οπότε δεν υπάρχει κίνδυνος. */}}
+<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@graph" $graph) | jsonify | safeJS }}</script>

@@ -1,0 +1,57 @@
+# ============================================================
+# a2l.gr — HTTP response headers (Cloudflare Pages)
+#
+# Το Hugo αντιγράφει το static/ αυτούσιο στο public/, οπότε αυτό το αρχείο
+# καταλήγει ως public/_headers και το διαβάζει το Cloudflare Pages.
+#
+# Έλεγχος μετά το deploy:
+#   curl -sSI https://a2l.gr/ | grep -iE 'content-security|strict-transport|permissions-policy'
+# ============================================================
+
+/*
+  # --- Μεταφορά ---------------------------------------------------------
+  # 2 χρόνια. Χωρίς `preload`: το preload list είναι πρακτικά μη αναστρέψιμο,
+  # οπότε προσθέτουμε το keyword μόνο αφού το site τρέξει σταθερά σε HTTPS
+  # και υποβληθεί στο hstspreload.org.
+  Strict-Transport-Security: max-age=63072000; includeSubDomains
+
+  # --- Content Security Policy ------------------------------------------
+  # script-src: ΧΩΡΙΣ 'unsafe-inline'. Δεν υπάρχει κανένα inline <script>
+  #   στο site — όλα περνούν από το layouts/partials/script.html.
+  #   challenges.cloudflare.com = Turnstile στη σελίδα επικοινωνίας.
+  # style-src: με 'unsafe-inline' επειδή τα layouts έχουν ~42 style="..."
+  #   attributes (και ένα δυναμικό background-image στο single.html).
+  #   Το inline style attribute είναι πολύ μικρότερος κίνδυνος από inline
+  #   script· αν θέλουμε 'self' σκέτο, πρέπει πρώτα να φύγουν όλα.
+  # img-src: www.ics.gr = εικόνα promo banner (αρχική)· play.google.com και
+  #   tools.applemediaservices.com (+ toolbox.marketingtools.apple.com, όπου
+  #   κάνει redirect) = τα badges App Store / Google Play στη σελίδα
+  #   /panesgiaolous-app/.
+  # frame-src: openstreetmap.org = ο χάρτης στη σελίδα /epikoinonia/.
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.ics.gr https://play.google.com https://tools.applemediaservices.com https://toolbox.marketingtools.apple.com; font-src 'self'; connect-src 'self' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com https://www.openstreetmap.org; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests
+
+  # --- Permissions-Policy ------------------------------------------------
+  # Το site δεν χρησιμοποιεί καμία από αυτές τις APIs· τις κλείνουμε ρητά.
+  Permissions-Policy: accelerometer=(), autoplay=(), browsing-topics=(), camera=(), display-capture=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), usb=(), xr-spatial-tracking=()
+
+  # --- Υπόλοιπα ----------------------------------------------------------
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  X-Permitted-Cross-Domain-Policies: none
+
+# --- Cache ---------------------------------------------------------------
+# CSS/JS έχουν fingerprint στο όνομα (Hugo) -> immutable για 1 χρόνο.
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts & εικόνες: χωρίς fingerprint, οπότε 30 μέρες.
+/fonts/*
+  Cache-Control: public, max-age=2592000
+  Cross-Origin-Resource-Policy: same-origin
+/images/*
+  Cache-Control: public, max-age=2592000

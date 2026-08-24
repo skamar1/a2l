@@ -1,0 +1,34 @@
+{{/* 404.html — παράγει public/404.html.
+     Το Cloudflare Pages το σερβίρει με πραγματικό status 404 σε κάθε
+     άγνωστο URL. Πριν υπάρξει αυτό το αρχείο, κάθε ανύπαρκτη διεύθυνση
+     επέστρεφε 200 + την αρχική (soft 404), που είναι πρόβλημα indexing. */}}
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <div class="cta-section">
+      <span class="section-label">Σφάλμα 404</span>
+      <h1 class="cta-section__title gradient-text">Η σελίδα δεν βρέθηκε</h1>
+      <p class="cta-section__sub">
+        Η διεύθυνση που ζητήσατε δεν υπάρχει ή έχει μετακινηθεί.
+        Δοκιμάστε από την αρχική ή επικοινωνήστε μαζί μας στο {{ site.Params.phone }}.
+      </p>
+      <div class="cta-section__actions">
+        <a href="/" class="btn btn--primary btn--lg">Αρχική σελίδα</a>
+        <a href="/epikoinonia/" class="btn btn--outline btn--lg">Επικοινωνία</a>
+      </div>
+    </div>
+
+    <div class="section-header section-header--center">
+      <h2 class="section-title">Δημοφιλείς σελίδες</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="footer__links" style="justify-content:center;display:flex;flex-wrap:wrap;gap:20px;">
+      <a href="/programata/">Προγράμματα</a>
+      <a href="/ypologistes/">Υπολογιστές</a>
+      <a href="/odigies-nea/">Νέα &amp; Οδηγίες</a>
+      <a href="/sxetika/">Σχετικά</a>
+      <a href="/tropoi-plirwmis/">Τρόποι Πληρωμής</a>
+    </div>
+  </div>
+</section>
+{{ end }}

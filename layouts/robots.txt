@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Τα crawlers των μηχανών αναζήτησης AI (GPTBot, ClaudeBot, PerplexityBot,
+# Google-Extended κ.λπ.) επιτρέπονται ρητά μέσω του παραπάνω `Allow: /`.
+# Αν κάποτε θέλουμε να τα αποκλείσουμε, προστίθεται block της μορφής:
+#   User-agent: GPTBot
+#   Disallow: /
+
+Sitemap: {{ "sitemap.xml" | absURL }}

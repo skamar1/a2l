@@ -3,7 +3,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 {{/* ---- PBS 186: μεταδεδομένα με ιεραρχία fallback (page → summary → site) ---- */}}
+{{/* Το 404 χρειάζεται ξεχωριστή μεταχείριση: ελληνικός τίτλος, noindex,
+     χωρίς canonical (δεν πρέπει να ευρετηριάζεται ούτε να δείχνει αλλού). */}}
+{{ $is404 := eq .RelPermalink "/404.html" }}
 {{ $pageTitle := cond .IsHome (printf "%s — %s" site.Title site.Params.description) (printf "%s | %s" .Title site.Title) }}
+{{ if $is404 }}{{ $pageTitle = printf "Η σελίδα δεν βρέθηκε (404) | %s" site.Title }}{{ end }}
 
 {{/* description: front matter → summary του άρθρου → site default */}}
 {{ $desc := "" }}
@@ -39,8 +43,12 @@
 {{ with $keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
 {{ hugo.Generator }}
 
-{{/* Canonical */}}
+{{/* Canonical + indexing */}}
+{{ if $is404 }}
+<meta name="robots" content="noindex, follow">
+{{ else }}
 <link rel="canonical" href="{{ .Permalink }}">
+{{ end }}
 
 {{/* Open Graph */}}
 <meta property="og:title" content="{{ $ogTitle }}">
@@ -67,17 +75,8 @@
 <meta name="twitter:description" content="{{ $desc }}">
 <meta name="twitter:image" content="{{ $ogImage }}">
 
-{{/* Fonts — Inter self-hosted, no external requests */}}
-<style>
-  @font-face {
-    font-family: InterVariable;
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url('/fonts/InterVariable.woff2') format('woff2');
-  }
-  :root { font-family: InterVariable, Inter, sans-serif; }
-</style>
+{{/* Fonts — Inter self-hosted· το @font-face ζει πλέον στο assets/css/main.css
+     (όχι inline, ώστε το CSP να μη χρειάζεται nonce/hash για style) */}}
 
 {{/* CSS */}}
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
@@ -89,46 +88,9 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#4f46e5">
 
-{{/* LocalBusiness JSON-LD — μόνο στην αρχική */}}
-{{ if .IsHome }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "A2 Labs",
-  "url": "https://a2l.gr",
-  "logo": "https://a2l.gr/images/logo.png",
-  "image": "https://a2l.gr/images/hero-banner.png",
-  "description": "Μηχανογράφηση επιχειρήσεων — ERP, CRM, υποστήριξη λογισμικού, κατασκευή ιστοσελίδων και λύσεις πληροφορικής.",
-  "telephone": "+302102241787",
-  "email": "info@a2l.gr",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Γ. Παπανδρέου 55",
-    "addressLocality": "Νέα Φιλαδέλφεια",
-    "postalCode": "14341",
-    "addressCountry": "GR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 38.03681,
-    "longitude": 23.73525
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "09:00",
-    "closes": "17:00"
-  },
-  "priceRange": "€€",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Greece"
-  },
-  "sameAs": []
-}
-</script>
-{{ end }}
+{{/* Structured data — ενιαίο @graph (Organization/LocalBusiness, WebSite,
+     WebPage, ContactPoint, BreadcrumbList, FAQPage, BlogPosting) */}}
+{{ partial "schema.html" . }}
 
 {{/* Cloudflare Turnstile — μόνο στη σελίδα επικοινωνίας */}}
 {{ if eq .Layout "contact" }}
