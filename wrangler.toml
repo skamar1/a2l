@@ -1,19 +1,21 @@
-# Ρυθμίσεις Cloudflare Pages Functions.
+# Ρυθμίσεις για ΤΟΠΙΚΗ ανάπτυξη μόνο (`wrangler pages dev`).
 #
-# Το Pages χτίζει με το build.sh· εδώ δηλώνονται μόνο όσα χρειάζονται οι
-# functions/. Το ίδιο αρχείο χρησιμεύει και για `wrangler pages dev`.
+# ΠΡΟΣΟΧΗ — μην προσθέσεις `pages_build_output_dir` εδώ.
+#
+# Η παρουσία εκείνου του κλειδιού είναι ο διακόπτης που κάνει το Cloudflare
+# Pages να διαβάζει αυτό το αρχείο ως τη μοναδική πηγή αλήθειας. Από εκείνη τη
+# στιγμή τα αντίστοιχα πεδία στο dashboard γίνονται read-only, οπότε τα secrets
+# που είναι ήδη περασμένα εκεί (TURNSTILE_SECRET_KEY, SMTP2GO_API_KEY — τα
+# χρησιμοποιεί η φόρμα επικοινωνίας στο functions/api/contact.js) θα έπρεπε να
+# ξαναδηλωθούν με το χέρι. Δεν αξίζει το ρίσκο σε ζωντανό site.
+#
+# Το binding του KV μπαίνει από το dashboard:
+#   Workers & Pages → a2l → Settings → Bindings → Add → KV namespace
+#   Variable name: CHECKS
+# (και μετά redeploy, αλλιώς το binding δεν ενεργοποιείται)
+#
+# Τοπικά, το namespace προσομοιώνεται με τη σημαία --kv (δεν χρειάζεται id):
+#   npx wrangler pages dev public --kv CHECKS
 
 name = "a2l"
-pages_build_output_dir = "public"
 compatibility_date = "2026-01-01"
-
-# Αποτελέσματα ελέγχου (μόνιμοι σύνδεσμοι) + μετρητής ορίου ανά IP.
-#
-# ΠΡΟΣΟΧΗ: το id πρέπει να αντικατασταθεί με το πραγματικό namespace id από το
-# Cloudflare dashboard (Workers & Pages → KV → Create namespace "a2l-checks"),
-# και το binding να προστεθεί και στο Pages project (Settings → Functions → KV).
-# Χωρίς αυτό ο έλεγχος δουλεύει κανονικά, απλώς χωρίς μόνιμο σύνδεσμο και χωρίς
-# όριο συχνότητας — βλ. functions/api/check.js.
-[[kv_namespaces]]
-binding = "CHECKS"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
