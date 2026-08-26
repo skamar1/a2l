@@ -182,9 +182,13 @@ function randomSlug() {
 
 async function verifyTurnstile(token, ip, env) {
   if (!env.TURNSTILE_SECRET_KEY) {
-    // Σε τοπική ανάπτυξη χωρίς μυστικό, δεν μπλοκάρουμε — αλλά το λέμε στα logs.
-    console.warn("TURNSTILE_SECRET_KEY missing — skipping verification");
-    return { ok: true };
+    // Fail-closed: χωρίς μυστικό δεν περνάει κανένα αίτημα, ώστε ένα ξεχασμένο
+    // secret σε νέο environment να μη μας αφήνει εκτεθειμένους σε bots.
+    // Τοπικά: τρέξε με το δοκιμαστικό κλειδί του Turnstile (περνάει πάντα):
+    //   npx wrangler pages dev public --kv CHECKS \
+    //     --binding TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+    console.error("TURNSTILE_SECRET_KEY missing — rejecting request");
+    return { ok: false, message: "Η υπηρεσία δεν είναι διαθέσιμη αυτή τη στιγμή. Δοκιμάστε ξανά αργότερα." };
   }
   if (!token) return { ok: false, message: "Ολοκληρώστε την επαλήθευση και δοκιμάστε ξανά." };
 

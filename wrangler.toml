@@ -15,8 +15,11 @@
 #   Namespace:     a2l-checks — id f43ce70f9c8d4120b9a59439e67644e3
 # (και μετά redeploy, αλλιώς το binding δεν ενεργοποιείται)
 #
-# Τοπικά, το namespace προσομοιώνεται με τη σημαία --kv (δεν χρειάζεται id):
-#   npx wrangler pages dev public --kv CHECKS
+# Τοπικά, το namespace προσομοιώνεται με τη σημαία --kv (δεν χρειάζεται id).
+# Το Turnstile είναι fail-closed, οπότε χρειάζεται και το δοκιμαστικό κλειδί
+# της Cloudflare (περνάει πάντα την επαλήθευση):
+#   npx wrangler pages dev public --kv CHECKS \
+#     --binding TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
 
 name = "a2l"
 compatibility_date = "2026-01-01"
