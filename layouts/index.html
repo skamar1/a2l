@@ -223,6 +223,74 @@
 })();
 </script>
 
+{{/* ── ΕΝ ΟΨΕΙ ─────────────────────────────────────────────
+     Δική μας εφαρμογή, γι' αυτό ανοίγει σε νέα καρτέλα αντί να φύγει ο
+     επισκέπτης από το site. Το «παράθυρο» δεξιά είναι φτιαγμένο σε
+     HTML/CSS αντί για screenshot: δεν παλιώνει όταν αλλάξει το UI της
+     εφαρμογής και δεν φορτώνει εικόνα. Τα νούμερα είναι ενδεικτικά. */}}
+{{ with $d.enopsi_banner }}
+<section class="enopsi-banner">
+  <div class="container">
+    <div class="enopsi-banner__inner">
+      <div class="enopsi-banner__body">
+        <span class="enopsi-banner__label">{{ .label }}</span>
+        <h2 class="enopsi-banner__title">{{ .title }}</h2>
+        <p class="enopsi-banner__text">{{ .text }}</p>
+        {{ with .bullets }}
+        <ul class="enopsi-banner__list">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        <div class="enopsi-banner__actions">
+          <a href="{{ .url }}" target="_blank" rel="noopener" class="btn btn--lg enopsi-banner__cta">{{ .cta }} →</a>
+          {{ with .trial }}<span class="enopsi-banner__trial">{{ . }}</span>{{ end }}
+        </div>
+      </div>
+      {{/* Διακοσμητικό: ο screen reader παίρνει την ίδια πληροφορία από το κείμενο. */}}
+      <a href="{{ .url }}" target="_blank" rel="noopener" class="enopsi-banner__visual" aria-hidden="true" tabindex="-1">
+        <div class="enopsi-app">
+          <div class="enopsi-app__bar">
+            <img src="/images/enopsi/mark.svg" alt="" width="22" height="22">
+            <strong>Εν Όψει</strong>
+            <span>Τρέχουσα χρήση</span>
+          </div>
+          <div class="enopsi-app__kpis">
+            <div class="enopsi-app__kpi">
+              <span>Έσοδα</span>
+              <strong>84.320 €</strong>
+              <em class="up">+12%</em>
+            </div>
+            <div class="enopsi-app__kpi">
+              <span>Έξοδα</span>
+              <strong>61.470 €</strong>
+              <em>+4%</em>
+            </div>
+            <div class="enopsi-app__kpi">
+              <span>Μικτό αποτέλεσμα</span>
+              <strong>22.850 €</strong>
+              <em class="up">+18%</em>
+            </div>
+          </div>
+          <div class="enopsi-app__chart">
+            <div class="enopsi-app__bars">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="enopsi-app__months">
+              <span>Ιαν</span><span>Φεβ</span><span>Μαρ</span><span>Απρ</span><span>Μαϊ</span><span>Ιουν</span><span>Ιουλ</span><span>Αυγ</span>
+            </div>
+          </div>
+          <div class="enopsi-app__score">
+            <span>Δείκτης πορείας</span>
+            <div class="enopsi-app__track"><div class="enopsi-app__fill"></div></div>
+            <strong>78</strong>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
 {{/* ── CLIENTS ─────────────────────────────────────────────── */}}
 {{ with $d.clients }}
 <section class="section--sm clients">

@@ -2776,6 +2776,223 @@ p { color: var(--text-secondary); }
   }
 }
 
+/* ── Εν Όψει banner ─────────────────────────────────────────
+   Τα χρώματα είναι της ίδιας της εφαρμογής (enopsi.gr), όχι του site —
+   σκόπιμα: η ζώνη διαβάζεται ως «δείγμα του προϊόντος». */
+.enopsi-banner {
+  background: #0e1116;
+  border-top: 1px solid #2a323d;
+  border-bottom: 1px solid #2a323d;
+  padding: 76px 0;
+}
+
+.enopsi-banner__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.enopsi-banner__label {
+  display: inline-block;
+  color: #2dd4a7;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+.enopsi-banner__title {
+  color: #e6edf3;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.enopsi-banner__text {
+  color: #9aa7b4;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.enopsi-banner__list {
+  list-style: none;
+  margin-bottom: 28px;
+  display: grid;
+  gap: 10px;
+}
+
+.enopsi-banner__list li {
+  position: relative;
+  padding-left: 26px;
+  color: #c4cdd6;
+  font-size: 0.95rem;
+}
+
+.enopsi-banner__list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #2dd4a7;
+  font-weight: 700;
+}
+
+.enopsi-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.enopsi-banner__cta {
+  background: #2dd4a7;
+  color: #06231c;
+  font-weight: 700;
+}
+
+.enopsi-banner__cta:hover {
+  background: #3ce4b7;
+  color: #06231c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 28px rgba(45, 212, 167, 0.35);
+}
+
+.enopsi-banner__trial {
+  color: #9aa7b4;
+  font-size: 0.85rem;
+}
+
+/* Το «παράθυρο» της εφαρμογής */
+.enopsi-banner__visual { text-decoration: none; }
+
+.enopsi-app {
+  background: #161b22;
+  border: 1px solid #2a323d;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.enopsi-banner__visual:hover .enopsi-app {
+  transform: translateY(-3px);
+  border-color: rgba(45, 212, 167, 0.45);
+}
+
+.enopsi-app__bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #2a323d;
+  margin-bottom: 16px;
+}
+
+.enopsi-app__bar img { border-radius: 6px; }
+
+.enopsi-app__bar strong {
+  color: #e6edf3;
+  font-size: 0.9rem;
+}
+
+.enopsi-app__bar span {
+  margin-left: auto;
+  color: #9aa7b4;
+  font-size: 0.75rem;
+  border: 1px solid #2a323d;
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.enopsi-app__kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.enopsi-app__kpi {
+  background: #1c232c;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: grid;
+  gap: 2px;
+}
+
+.enopsi-app__kpi span { color: #9aa7b4; font-size: 0.68rem; }
+.enopsi-app__kpi strong { color: #e6edf3; font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+.enopsi-app__kpi em { color: #9aa7b4; font-size: 0.7rem; font-style: normal; }
+.enopsi-app__kpi em.up { color: #2dd4a7; }
+
+.enopsi-app__bars {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  align-items: end;
+  height: 88px;
+}
+
+.enopsi-app__bars i {
+  background: rgba(45, 212, 167, 0.75);
+  border-radius: 4px 4px 2px 2px;
+}
+
+.enopsi-app__bars i:nth-child(1) { height: 42%; }
+.enopsi-app__bars i:nth-child(2) { height: 58%; }
+.enopsi-app__bars i:nth-child(3) { height: 47%; }
+.enopsi-app__bars i:nth-child(4) { height: 66%; }
+.enopsi-app__bars i:nth-child(5) { height: 54%; }
+.enopsi-app__bars i:nth-child(6) { height: 78%; }
+.enopsi-app__bars i:nth-child(7) { height: 70%; }
+.enopsi-app__bars i:nth-child(8) { height: 92%; background: #2dd4a7; }
+
+.enopsi-app__months {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.enopsi-app__months span {
+  color: #9aa7b4;
+  font-size: 0.62rem;
+  text-align: center;
+}
+
+.enopsi-app__score {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1c232c;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.enopsi-app__score > span { color: #9aa7b4; font-size: 0.75rem; white-space: nowrap; }
+.enopsi-app__score > strong { color: #2dd4a7; font-size: 1rem; font-variant-numeric: tabular-nums; }
+
+.enopsi-app__track {
+  flex: 1;
+  height: 6px;
+  background: #2a323d;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.enopsi-app__fill {
+  width: 78%;
+  height: 100%;
+  background: #2dd4a7;
+  border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+  .enopsi-banner { padding: 56px 0; }
+  .enopsi-banner__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
 /* ── Homepage Promo Banner ────────────────────────────────── */
 .promo-banner {
   background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 60%, #312e81 100%);
