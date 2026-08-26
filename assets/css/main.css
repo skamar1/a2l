@@ -460,6 +460,14 @@ p { color: var(--text-secondary); }
   color: #fde68a;
 }
 
+.carousel-badge--teal {
+  border-color: rgba(45,212,167,0.4);
+  background: rgba(45,212,167,0.12);
+  color: #7ee8cd;
+}
+
+.carousel-badge--teal img { border-radius: 4px; }
+
 .carousel-badge__dot {
   width: 8px;
   height: 8px;
@@ -718,6 +726,19 @@ p { color: var(--text-secondary); }
 .btn--amber:hover {
   background: #b45309;
   box-shadow: 0 4px 24px rgba(217,119,6,0.35);
+  transform: translateY(-1px);
+}
+
+.btn--teal {
+  background: #2dd4a7;
+  color: #06231c;
+  font-weight: 700;
+}
+
+.btn--teal:hover {
+  background: #3ce4b7;
+  color: #06231c;
+  box-shadow: 0 4px 24px rgba(45,212,167,0.35);
   transform: translateY(-1px);
 }
 

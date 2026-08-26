@@ -4,10 +4,37 @@
 {{/* ── HERO CAROUSEL ──────────────────────────────────────── */}}
 <section class="hero-carousel" id="hero">
 
-  {{/* Slide 1 */}}
+  {{/* Slide 1 — Εν Όψει. Φόντο το πραγματικό dashboard της εφαρμογής· το
+       overlay του carousel το σκουραίνει όσο χρειάζεται για το κείμενο. */}}
   <div class="carousel-slide" data-slide="0">
     <div class="carousel-slide__bg">
-      <img src="/images/hero-banner.png" alt="Υποστήριξη Επιχειρήσεων" loading="eager">
+      <img src="/images/enopsi/pinakas-elegxou.jpg" alt="Εν Όψει — Πίνακας ελέγχου" loading="eager">
+      <div class="carousel-slide__overlay"></div>
+    </div>
+    <div class="carousel-slide__content">
+      <div class="carousel-slide__inner">
+        <div class="carousel-badge carousel-badge--teal">
+          <img src="/images/enopsi/mark.svg" width="16" height="16" alt="">
+          <span>Νέο · Εν Όψει by A2L</span>
+        </div>
+        <h2 class="carousel-slide__title">
+          Η εικόνα της<br>
+          <span style="color:#2dd4a7;">Επιχείρησής</span><br>
+          Σας
+        </h2>
+        <p class="carousel-slide__desc">Η νέα μας εφαρμογή διαβάζει τα δεδομένα του myDATA και σας δείχνει έσοδα, έξοδα, πελάτες και πορεία χρονιάς — χωρίς καμία αλλαγή στα προγράμματά σας.</p>
+        <div class="carousel-slide__actions">
+          <a href="https://enopsi.gr" target="_blank" rel="noopener" class="btn btn--teal btn--lg">Δοκιμάστε το δωρεάν</a>
+          <a href="#enopsi" class="btn btn--ghost-white btn--lg">Μάθετε περισσότερα</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* Slide 2 */}}
+  <div class="carousel-slide" data-slide="1">
+    <div class="carousel-slide__bg">
+      <img src="/images/hero-banner.png" alt="Υποστήριξη Επιχειρήσεων" loading="lazy">
       <div class="carousel-slide__overlay"></div>
     </div>
     <div class="carousel-slide__content">
@@ -30,8 +57,8 @@
     </div>
   </div>
 
-  {{/* Slide 2 */}}
-  <div class="carousel-slide" data-slide="1">
+  {{/* Slide 3 */}}
+  <div class="carousel-slide" data-slide="2">
     <div class="carousel-slide__bg">
       <img src="/images/hero-banner-2.png" alt="Εμπορικά Προγράμματα" loading="lazy">
       <div class="carousel-slide__overlay"></div>
@@ -56,8 +83,8 @@
     </div>
   </div>
 
-  {{/* Slide 3 */}}
-  <div class="carousel-slide" data-slide="2">
+  {{/* Slide 4 */}}
+  <div class="carousel-slide" data-slide="3">
     <div class="carousel-slide__bg">
       <img src="/images/hero-banner-3.png" alt="Κατασκευή Ιστοσελίδων" loading="lazy">
       <div class="carousel-slide__overlay"></div>
@@ -82,8 +109,8 @@
     </div>
   </div>
 
-  {{/* Slide 4 */}}
-  <div class="carousel-slide" data-slide="3">
+  {{/* Slide 5 */}}
+  <div class="carousel-slide" data-slide="4">
     <div class="carousel-slide__bg">
       <img src="/images/entersoftone-hero.jpg" alt="IT Υποδομή και Ασφάλεια" loading="lazy">
       <div class="carousel-slide__overlay"></div>
@@ -122,6 +149,7 @@
     <button class="carousel-dot" data-dot="1" aria-label="Slide 2"></button>
     <button class="carousel-dot" data-dot="2" aria-label="Slide 3"></button>
     <button class="carousel-dot" data-dot="3" aria-label="Slide 4"></button>
+    <button class="carousel-dot" data-dot="4" aria-label="Slide 5"></button>
   </div>
 
   {{/* Progress bar */}}
@@ -229,7 +257,7 @@
      HTML/CSS αντί για screenshot: δεν παλιώνει όταν αλλάξει το UI της
      εφαρμογής και δεν φορτώνει εικόνα. Τα νούμερα είναι ενδεικτικά. */}}
 {{ with $d.enopsi_banner }}
-<section class="enopsi-banner">
+<section class="enopsi-banner" id="enopsi">
   <div class="container">
     <div class="enopsi-banner__inner">
       <div class="enopsi-banner__body">
