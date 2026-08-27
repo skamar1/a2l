@@ -10,7 +10,7 @@
 
 import { validateTarget, validateUrlSyntax } from "../../lib/checker/guard.js";
 import { probe, probeStatus } from "../../lib/checker/probe.js";
-import { extractFacts } from "../../lib/checker/extract.js";
+import { extractFacts, htmlToText } from "../../lib/checker/extract.js";
 import { runRules } from "../../lib/checker/rules.js";
 import { score } from "../../lib/checker/score.js";
 
@@ -90,15 +90,31 @@ export async function runCheck(url) {
   // Οι βοηθητικές λήψεις μαζί. Το `settle` κρατά ό,τι πέτυχε και μετατρέπει τις
   // αποτυχίες σε null — ο αντίστοιχος κανόνας θα βγει `na` αντί να ρίξει το πάντα.
   const assetUrls = pickAssets(facts, origin);
-  const [httpRedirect, robots, sitemap, notFound, ttfbA, ttfbB, ...assets] = await Promise.all([
+  // Σελίδες «Επικοινωνία / Σχετικά / Όροι»: το ΑΦΜ/ΓΕΜΗ σπάνια ζει στην αρχική
+  // — είναι φυσιολογικό να βρίσκεται εκεί, οπότε ο κανόνας TRUST-02 τις κοιτάζει.
+  const companyUrls = pickCompanyPages(facts, main.url);
+  const [httpRedirect, robots, sitemap, notFound, ttfbA, ttfbB, ...rest] = await Promise.all([
     settle(probeStatus(`http://${url.host}${url.pathname}`)),
     settle(probe(`${origin}/robots.txt`, { maxBytes: 256 * 1024, timeoutMs: 6000 })),
     settle(probe(`${origin}/sitemap.xml`, { maxBytes: 1024 * 1024, timeoutMs: 6000 })),
     settle(probeStatus(`${origin}/a2l-elegxos-anyparkto-${randomSlug()}/`)),
     settle(probeStatus(url.toString(), { timeoutMs: 8000 })),
     settle(probeStatus(url.toString(), { timeoutMs: 8000 })),
+    ...companyUrls.map((pageUrl) =>
+      settle(probe(pageUrl, { maxBytes: 1024 * 1024, timeoutMs: 6000 }))
+    ),
     ...assetUrls.map((assetUrl) => settle(probeStatus(assetUrl, { timeoutMs: 6000 }))),
   ]);
+  const companyResults = rest.slice(0, companyUrls.length);
+  const assets = rest.slice(companyUrls.length);
+
+  const companyPages = companyResults
+    .map((result, index) => {
+      if (!result || !result.ok || result.status >= 400) return null;
+      if (!/text\/html/i.test(result.headers.get("content-type") || "")) return null;
+      return { url: companyUrls[index], text: htmlToText(result.body).slice(0, 200_000) };
+    })
+    .filter(Boolean);
 
   // Διάμεσος αντί για μέσο όρο: μία αργή μέτρηση από στιγμιαία συμφόρηση δεν
   // πρέπει να χαρακτηρίσει έναν server ως αργό.
@@ -126,6 +142,7 @@ export async function runCheck(url) {
       sitemap,
       notFound,
       assets: assets.filter((asset) => asset && asset.ok),
+      companyPages,
     },
   };
 
@@ -160,6 +177,38 @@ function pickAssets(facts, origin) {
     if (sameOrigin.length === 3) break;
   }
   return sameOrigin;
+}
+
+/**
+ * Οι υποψήφιες σελίδες με στοιχεία επιχείρησης — το φιλτράρισμα με το
+ * COMPANY_PAGE_RE έχει ήδη γίνει στο extract.js (companyHrefs), χωρίς το όριο
+ * των 400 πρώτων συνδέσμων. Εδώ μένει η επίλυση σε απόλυτο URL, ο περιορισμός
+ * σε ίδια προέλευση και το ταβάνι των 3 — δεν θέλουμε ο έλεγχος να γίνει crawler.
+ */
+function pickCompanyPages(facts, mainUrl) {
+  let base;
+  try {
+    base = new URL(mainUrl);
+  } catch {
+    return [];
+  }
+  const picked = [];
+  for (const href of facts.links.companyHrefs) {
+    if (!href || href.startsWith("#") || /^(tel:|mailto:|javascript:)/i.test(href)) continue;
+    let resolved;
+    try {
+      resolved = new URL(href, base);
+    } catch {
+      continue;
+    }
+    if (resolved.origin !== base.origin) continue;
+    resolved.hash = "";
+    const asString = resolved.toString();
+    if (asString === base.toString() || picked.includes(asString)) continue;
+    picked.push(asString);
+    if (picked.length === 3) break;
+  }
+  return picked;
 }
 
 // Ο probe δεν κάνει ποτέ reject — γυρνά {ok:false, code}. Το catch είναι για το
