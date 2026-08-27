@@ -39,5 +39,5 @@ products:
     url: "/skroutz-fbs-softone/"
     tag: "Διασύνδεση e-shop ↔ ERP"
     image: "/images/skroutz-fbs/karta.svg"
-    desc: "Αυτόματα παραστατικά, myDATA, πιστωτικά, ταμιακά και έλεγχος αποθέματος για κάθε παραγγελία Skroutz FBS."
+    desc: "Αυτόματα παραστατικά, myDATA, πιστωτικά, ταμειακά και έλεγχος αποθέματος για κάθε παραγγελία Skroutz FBS."
 ---

@@ -80,7 +80,7 @@
 
     <rect x="592" y="302" width="376" height="42" rx="12" fill="#eef2ff" stroke="#e0e7ff"/>
     <path d="M611 323 l4 4 l8 -9" stroke="#4f46e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <text class="t rw" x="640" y="328">Έλεγχος αποθέματος και ταμιακά</text>
+    <text class="t rw" x="640" y="328">Έλεγχος αποθέματος και ταμειακά</text>
   </g>
   <text class="t ft" x="592" y="368" fill="#4f46e5" font-weight="700">Καμία ενέργεια από εσάς.</text>
 </svg>
