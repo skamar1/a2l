@@ -427,6 +427,36 @@
 </section>
 {{ end }}
 
+{{/* ── ΕΛΕΓΧΟΣ ΙΣΤΟΣΕΛΙΔΑΣ ─────────────────────────────────
+     Τελευταίο μπάνερ, ακριβώς πριν το CTA επικοινωνίας: ο επισκέπτης έχει
+     ήδη δει προϊόντα, κριτικές και απαντήσεις — εδώ του δίνουμε κάτι δωρεάν
+     να δοκιμάσει τώρα, και η επικοινωνία από κάτω έρχεται μόνη της.
+     Παραλλαγή «tint», όχι σκούρα: πιο πάνω υπάρχουν ήδη δύο σκούρες ζώνες.
+     ──────────────────────────────────────────────────────── */}}
+{{ with $d.check_banner }}
+<section class="promo-banner promo-banner--tint" id="elegxos">
+  <div class="container">
+    <div class="promo-banner__inner">
+      <div class="promo-banner__body">
+        <span class="promo-banner__label">{{ .label }}</span>
+        <h2 class="promo-banner__title">{{ .title }}</h2>
+        <p class="promo-banner__text">{{ .text }}</p>
+        {{ with .bullets }}
+        <ul class="promo-banner__list">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        <a href="{{ .url }}" class="btn btn--primary btn--lg">{{ .cta }}</a>
+        {{ with .note }}<p class="promo-banner__note">{{ . }}</p>{{ end }}
+      </div>
+      <div class="promo-banner__visual">
+        <img src="{{ .image }}" alt="Ενδεικτική απεικόνιση της αναφοράς: συνολικός βαθμός στα 100 και επιμέρους βαθμολογία στις έξι κατηγορίες ελέγχου" loading="lazy" width="560" height="560">
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
 {{/* ── CTA ─────────────────────────────────────────────────── */}}
 <section class="section section--surface">
   <div class="container">
