@@ -2684,6 +2684,12 @@ p { color: var(--text-secondary); }
   color: var(--text-primary);
 }
 
+.testimonial-card__role {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
 .testimonial-card__company {
   font-size: 0.8rem;
   color: var(--text-muted);

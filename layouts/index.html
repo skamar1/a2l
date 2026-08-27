@@ -429,6 +429,7 @@
           {{ $tname := .name }}{{ with .logo }}<img src="{{ . }}" alt="{{ $tname }}" class="testimonial-card__logo">{{ end }}
           <div>
             <div class="testimonial-card__name">{{ .name }}</div>
+            {{ with .role }}<div class="testimonial-card__role">{{ . }}</div>{{ end }}
             <div class="testimonial-card__company">{{ .company }}</div>
           </div>
         </div>
