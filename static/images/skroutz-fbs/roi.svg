@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" width="560" height="560" role="img" aria-label="Η ροή: παραγγελία στο Skroutz FBS, αυτόματη διασύνδεση, παραστατικό στο SoftOne, διαβίβαση myDATA και ανέβασμα του PDF πίσω στην παραγγελία">
+  <defs>
+    <linearGradient id="fbsAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="fbsShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#111827" flood-opacity="0.07"/>
+    </filter>
+    <marker id="fbsArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#c7cbd6"/>
+    </marker>
+  </defs>
+
+  <style>
+    .t  { font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    .h  { font-size: 17px; font-weight: 700; fill: #111827; }
+    .s  { font-size: 12.5px; font-weight: 500; fill: #9ca3af; }
+    .hn { font-size: 14px; font-weight: 700; fill: #111827; }
+    .hw { font-size: 17px; font-weight: 700; fill: #ffffff; }
+    .sw { font-size: 12.5px; font-weight: 500; fill: #ffffff; opacity: .82; }
+    .c  { font-size: 12.5px; font-weight: 700; fill: #4f46e5; }
+    .ln { stroke: #c7cbd6; stroke-width: 2; fill: none; }
+  </style>
+
+  <!-- 1. Η παραγγελία -->
+  <g filter="url(#fbsShadow)">
+    <rect x="20" y="20" width="520" height="88" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  </g>
+  <rect x="44" y="48" width="32" height="32" rx="9" fill="#eef2ff"/>
+  <path d="M53 60 h14 M53 66 h14 M53 72 h8" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"/>
+  <text class="t h" x="92" y="58">Παραγγελία στο Skroutz FBS</text>
+  <text class="t s" x="92" y="80">Ο πελάτης αγοράζει, η αποθήκη στέλνει</text>
+
+  <path class="ln" d="M280 108 V130" marker-end="url(#fbsArrow)"/>
+
+  <!-- 2. Η διασύνδεση -->
+  <g filter="url(#fbsShadow)">
+    <rect x="20" y="140" width="520" height="92" rx="16" fill="url(#fbsAccent)"/>
+  </g>
+  <rect x="44" y="170" width="32" height="32" rx="9" fill="#ffffff" opacity=".2"/>
+  <path d="M52 186 h13 M60 180 l6 6 l-6 6" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text class="t hw" x="92" y="180">Αυτόματη διασύνδεση</text>
+  <text class="t sw" x="92" y="202">Μέσα σε λίγα λεπτά, χωρίς ενέργεια από εσάς</text>
+
+  <path class="ln" d="M280 232 V252"/>
+  <path class="ln" d="M145 252 H415"/>
+  <path class="ln" d="M145 252 V274" marker-end="url(#fbsArrow)"/>
+  <path class="ln" d="M415 252 V274" marker-end="url(#fbsArrow)"/>
+
+  <!-- 3. Παραστατικό + myDATA -->
+  <g filter="url(#fbsShadow)">
+    <rect x="20" y="284" width="250" height="88" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="290" y="284" width="250" height="88" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  </g>
+  <rect x="44" y="302" width="26" height="26" rx="8" fill="#eef2ff"/>
+  <path d="M51 315 l4 4 l8 -9" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text class="t hn" x="44" y="345">Παραστατικό στο SoftOne</text>
+  <text class="t s" x="44" y="364">απόδειξη ή τιμολόγιο</text>
+
+  <rect x="314" y="302" width="26" height="26" rx="8" fill="#eef2ff"/>
+  <circle cx="327" cy="315" r="6" stroke="#6366f1" stroke-width="2.5" fill="none"/>
+  <path d="M327 311 v4 l3 2" stroke="#6366f1" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <text class="t hn" x="314" y="345">Διαβίβαση myDATA</text>
+  <text class="t s" x="314" y="364">αυτόματα, με λήψη MARK</text>
+
+  <path class="ln" d="M145 372 V392"/>
+  <path class="ln" d="M415 372 V392"/>
+  <path class="ln" d="M145 392 H415"/>
+  <path class="ln" d="M280 392 V414" marker-end="url(#fbsArrow)"/>
+
+  <!-- 4. Πίσω στην παραγγελία -->
+  <g filter="url(#fbsShadow)">
+    <rect x="20" y="424" width="520" height="76" rx="16" fill="#ffffff" stroke="#e5e7eb"/>
+  </g>
+  <rect x="44" y="446" width="32" height="32" rx="9" fill="#eef2ff"/>
+  <path d="M60 471 V453 M53 460 l7 -7 l7 7" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text class="t h" x="92" y="458">Το PDF ανεβαίνει στην παραγγελία</text>
+  <text class="t s" x="92" y="479">Η παραγγελία στο Skroutz κλείνει σωστά</text>
+
+  <!-- 5. Και όσα τρέχουν από πίσω -->
+  <rect x="20" y="516" width="163" height="34" rx="17" fill="#f8f9fa" stroke="#e5e7eb"/>
+  <text class="t c" x="101.5" y="538" text-anchor="middle">Πιστωτικά</text>
+  <rect x="198" y="516" width="164" height="34" rx="17" fill="#f8f9fa" stroke="#e5e7eb"/>
+  <text class="t c" x="280" y="538" text-anchor="middle">Έλεγχος αποθέματος</text>
+  <rect x="377" y="516" width="163" height="34" rx="17" fill="#f8f9fa" stroke="#e5e7eb"/>
+  <text class="t c" x="458.5" y="538" text-anchor="middle">Εκκαθαρίσεις</text>
+</svg>

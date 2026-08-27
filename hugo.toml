@@ -65,6 +65,11 @@ title = "A2Labs"
     url = "/panesgiaolous-app/"
     parent = "programata"
     weight = 7
+  [[menus.main]]
+    name = "Διασύνδεση Skroutz FBS"
+    url = "/skroutz-fbs-softone/"
+    parent = "programata"
+    weight = 9
 
   [[menus.main]]
     name = "Υπολογιστές"

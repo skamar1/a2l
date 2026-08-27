@@ -251,6 +251,77 @@
 })();
 </script>
 
+{{/* ── SKROUTZ FBS ────────────────────────────────────────
+     Πρώτο μπάνερ μετά το carousel: είναι το νέο προϊόν. Ανοιχτή παραλλαγή,
+     γιατί πιο κάτω ακολουθούν το σκούρο «Εν Όψει» και το σκούρο της ICS —
+     τρεις σκούρες ζώνες μαζί θα βάραιναν τη σελίδα. */}}
+{{ with $d.fbs_banner }}
+<section class="promo-banner promo-banner--light" id="skroutz-fbs">
+  <div class="container">
+    <div class="promo-banner__inner">
+      <div class="promo-banner__body">
+        <span class="promo-banner__label">{{ .label }}</span>
+        <h2 class="promo-banner__title">{{ .title }}</h2>
+        <p class="promo-banner__text">{{ .text }}</p>
+        {{ with .bullets }}
+        <ul class="promo-banner__list">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        <a href="{{ .url }}" class="btn btn--primary btn--lg">{{ .cta }}</a>
+      </div>
+      <div class="promo-banner__visual">
+        <img src="{{ .image }}" alt="Η ροή της διασύνδεσης: παραγγελία στο Skroutz FBS, αυτόματο παραστατικό στο SoftOne και διαβίβαση myDATA" loading="lazy" width="560" height="560">
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── CLIENTS ─────────────────────────────────────────────── */}}
+{{ with $d.clients }}
+<section class="section--sm clients">
+  <div class="container">
+    <p class="clients__label">{{ .label | default "Μας εμπιστεύονται" }}</p>
+    <div class="clients__track-wrapper">
+      <div class="clients__track">
+        {{ range .items }}
+          <div class="clients__item">
+            <img src="{{ .img }}" alt="{{ .alt }}" loading="lazy">
+          </div>
+        {{ end }}
+        {{ range .items }}
+          <div class="clients__item" aria-hidden="true">
+            <img src="{{ .img }}" alt="" loading="lazy">
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── FEATURES ───────────────────────────────────────────── */}}
+<section class="section section--surface">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-label">Γιατί A2Labs</span>
+      <h2 class="section-title">{{ $d.features.title | default "Γιατί διαφέρουμε;" }}</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">{{ $d.features.subtitle | default "Δουλεύουμε με αξιοπιστία, υπευθυνότητα και αγάπη για αυτό που κάνουμε." }}</p>
+    </div>
+    <div class="features-grid">
+      {{ range $d.features.items }}
+        <div class="feature-card">
+          <div class="feature-card__icon">{{ .icon }}</div>
+          <h3 class="feature-card__title">{{ .title }}</h3>
+          <p class="feature-card__desc">{{ .desc }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
 {{/* ── ΕΝ ΟΨΕΙ ─────────────────────────────────────────────
      Δική μας εφαρμογή, γι' αυτό ανοίγει σε νέα καρτέλα αντί να φύγει ο
      επισκέπτης από το site. Το «παράθυρο» δεξιά είναι φτιαγμένο σε
@@ -318,50 +389,6 @@
   </div>
 </section>
 {{ end }}
-
-{{/* ── CLIENTS ─────────────────────────────────────────────── */}}
-{{ with $d.clients }}
-<section class="section--sm clients">
-  <div class="container">
-    <p class="clients__label">{{ .label | default "Μας εμπιστεύονται" }}</p>
-    <div class="clients__track-wrapper">
-      <div class="clients__track">
-        {{ range .items }}
-          <div class="clients__item">
-            <img src="{{ .img }}" alt="{{ .alt }}" loading="lazy">
-          </div>
-        {{ end }}
-        {{ range .items }}
-          <div class="clients__item" aria-hidden="true">
-            <img src="{{ .img }}" alt="" loading="lazy">
-          </div>
-        {{ end }}
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
-
-{{/* ── FEATURES ───────────────────────────────────────────── */}}
-<section class="section section--surface">
-  <div class="container">
-    <div class="section-header section-header--center">
-      <span class="section-label">Γιατί A2Labs</span>
-      <h2 class="section-title">{{ $d.features.title | default "Γιατί διαφέρουμε;" }}</h2>
-      <div class="section-divider"></div>
-      <p class="section-subtitle">{{ $d.features.subtitle | default "Δουλεύουμε με αξιοπιστία, υπευθυνότητα και αγάπη για αυτό που κάνουμε." }}</p>
-    </div>
-    <div class="features-grid">
-      {{ range $d.features.items }}
-        <div class="feature-card">
-          <div class="feature-card__icon">{{ .icon }}</div>
-          <h3 class="feature-card__title">{{ .title }}</h3>
-          <p class="feature-card__desc">{{ .desc }}</p>
-        </div>
-      {{ end }}
-    </div>
-  </div>
-</section>
 
 {{/* ── STEPS ─────────────────────────────────────────────── */}}
 {{ with $d.steps }}

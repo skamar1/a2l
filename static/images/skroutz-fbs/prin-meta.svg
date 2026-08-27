@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 396" width="1000" height="396" role="img" aria-label="Σύγκριση: χωρίς διασύνδεση όλα γίνονται με το χέρι για κάθε παραγγελία, με τη διασύνδεση γίνονται αυτόματα">
+  <defs>
+    <linearGradient id="paGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="paShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#111827" flood-opacity="0.08"/>
+    </filter>
+    <style>
+      .t  { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .lb { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; }
+      .rw { font-size: 14px; font-weight: 600; fill: #374151; }
+      .rwd{ font-size: 14px; font-weight: 600; fill: #4b5563; }
+      .ft { font-size: 12.5px; font-weight: 500; }
+    </style>
+  </defs>
+
+  <!-- ── ΧΩΡΙΣ ΔΙΑΣΥΝΔΕΣΗ ───────────────────────────────── -->
+  <g filter="url(#paShadow)">
+    <rect x="8" y="8" width="424" height="380" rx="20" fill="#ffffff" stroke="#e5e7eb"/>
+  </g>
+  <rect x="8" y="8" width="424" height="52" rx="20" fill="#f3f4f6"/>
+  <rect x="8" y="44" width="424" height="16" fill="#f3f4f6"/>
+  <text class="t lb" x="32" y="41" fill="#6b7280">ΧΩΡΙΣ ΔΙΑΣΥΝΔΕΣΗ</text>
+  <text class="t ft" x="32" y="86" fill="#9ca3af">Για κάθε μία παραγγελία, με το χέρι:</text>
+
+  <g>
+    <rect x="32" y="102" width="376" height="42" rx="12" fill="#f9fafb" stroke="#e5e7eb"/>
+    <circle cx="56" cy="123" r="11" fill="#e5e7eb"/>
+    <text class="t rwd" x="80" y="128">Κόψιμο παραστατικού στο ERP</text>
+
+    <rect x="32" y="152" width="376" height="42" rx="12" fill="#f9fafb" stroke="#e5e7eb"/>
+    <circle cx="56" cy="173" r="11" fill="#e5e7eb"/>
+    <text class="t rwd" x="80" y="178">Διαβίβαση στο myDATA</text>
+
+    <rect x="32" y="202" width="376" height="42" rx="12" fill="#f9fafb" stroke="#e5e7eb"/>
+    <circle cx="56" cy="223" r="11" fill="#e5e7eb"/>
+    <text class="t rwd" x="80" y="228">Ανέβασμα του PDF στο Skroutz</text>
+
+    <rect x="32" y="252" width="376" height="42" rx="12" fill="#f9fafb" stroke="#e5e7eb"/>
+    <circle cx="56" cy="273" r="11" fill="#e5e7eb"/>
+    <text class="t rwd" x="80" y="278">Πιστωτικό σε κάθε επιστροφή</text>
+
+    <rect x="32" y="302" width="376" height="42" rx="12" fill="#f9fafb" stroke="#e5e7eb"/>
+    <circle cx="56" cy="323" r="11" fill="#e5e7eb"/>
+    <text class="t rwd" x="80" y="328">Έλεγχος αποθέματος με το χέρι</text>
+  </g>
+  <text class="t ft" x="32" y="368" fill="#9ca3af">Χρόνος και λάθη που πληθαίνουν με τον όγκο.</text>
+
+  <!-- ── ΒΕΛΟΣ ──────────────────────────────────────────── -->
+  <circle cx="500" cy="198" r="26" fill="url(#paGrad)"/>
+  <path d="M490 198 h18 m-6 -6 l6 6 l-6 6" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- ── ΜΕ ΤΗ ΔΙΑΣΥΝΔΕΣΗ ───────────────────────────────── -->
+  <g filter="url(#paShadow)">
+    <rect x="568" y="8" width="424" height="380" rx="20" fill="#ffffff" stroke="#c7d2fe"/>
+  </g>
+  <rect x="568" y="8" width="424" height="52" rx="20" fill="url(#paGrad)"/>
+  <rect x="568" y="44" width="424" height="16" fill="#4f46e5"/>
+  <text class="t lb" x="592" y="41" fill="#ffffff">ΜΕ ΤΗ ΔΙΑΣΥΝΔΕΣΗ</text>
+  <text class="t ft" x="592" y="86" fill="#9ca3af">Για κάθε παραγγελία, μόνο του:</text>
+
+  <g>
+    <rect x="592" y="102" width="376" height="42" rx="12" fill="#eef2ff" stroke="#e0e7ff"/>
+    <path d="M611 123 l4 4 l8 -9" stroke="#4f46e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text class="t rw" x="640" y="128">Παραστατικό στο SoftOne</text>
+
+    <rect x="592" y="152" width="376" height="42" rx="12" fill="#eef2ff" stroke="#e0e7ff"/>
+    <path d="M611 173 l4 4 l8 -9" stroke="#4f46e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text class="t rw" x="640" y="178">Διαβίβαση myDATA και λήψη MARK</text>
+
+    <rect x="592" y="202" width="376" height="42" rx="12" fill="#eef2ff" stroke="#e0e7ff"/>
+    <path d="M611 223 l4 4 l8 -9" stroke="#4f46e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text class="t rw" x="640" y="228">Το PDF στην παραγγελία Skroutz</text>
+
+    <rect x="592" y="252" width="376" height="42" rx="12" fill="#eef2ff" stroke="#e0e7ff"/>
+    <path d="M611 273 l4 4 l8 -9" stroke="#4f46e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text class="t rw" x="640" y="278">Πιστωτικά σε ακυρώσεις</text>
+
+    <rect x="592" y="302" width="376" height="42" rx="12" fill="#eef2ff" stroke="#e0e7ff"/>
+    <path d="M611 323 l4 4 l8 -9" stroke="#4f46e5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text class="t rw" x="640" y="328">Έλεγχος αποθέματος και ταμιακά</text>
+  </g>
+  <text class="t ft" x="592" y="368" fill="#4f46e5" font-weight="700">Καμία ενέργεια από εσάς.</text>
+</svg>
