@@ -34,4 +34,10 @@ products:
     tag: "ERP / Retail / Web"
     image: "/images/plano-hero.png"
     desc: "Ολοκληρωμένο λογισμικό ERP, Retail και Web για κάθε επιχείρηση."
+
+  - name: "Διασύνδεση SoftOne ↔ Skroutz FBS"
+    url: "/skroutz-fbs-softone/"
+    tag: "Διασύνδεση e-shop ↔ ERP"
+    image: "/images/skroutz-fbs/karta.svg"
+    desc: "Αυτόματα παραστατικά, myDATA, πιστωτικά, ταμιακά και έλεγχος αποθέματος για κάθε παραγγελία Skroutz FBS."
 ---

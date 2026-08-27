@@ -42,6 +42,29 @@
   </div>
   {{ end }}
 
+  {{/* ── SHOWCASE: στιγμιότυπο σε κορνίζα browser ───────────── */}}
+  {{ with .Params.showcase }}
+  <section class="showcase">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">{{ .label }}</span>
+        <h2 class="section-title">{{ .title }}</h2>
+        {{ with .text }}<p class="section-subtitle">{{ . }}</p>{{ end }}
+      </div>
+      <figure class="browser-frame" data-animate>
+        <div class="browser-frame__bar" aria-hidden="true">
+          <span class="browser-frame__dot"></span>
+          <span class="browser-frame__dot"></span>
+          <span class="browser-frame__dot"></span>
+          <span class="browser-frame__url">{{ .url_label | default "FBS Integration" }}</span>
+        </div>
+        <img src="{{ .image }}" alt="{{ .alt }}" loading="lazy" width="1160" height="722">
+        {{ with .caption }}<figcaption class="browser-frame__caption">{{ . }}</figcaption>{{ end }}
+      </figure>
+    </div>
+  </section>
+  {{ end }}
+
   {{/* ── PROMOS ─────────────────────────────────────────────── */}}
   {{ with .Params.promos }}
   <div class="page-content page-content--promos">
@@ -97,7 +120,11 @@
             <div class="modules">
               {{ range . }}
                 <div class="module-card">
-                  <div class="module-card__icon">{{ .icon }}</div>
+                  {{ if hasPrefix .icon "i:" }}
+                    <div class="module-card__icon module-card__icon--svg">{{ partial "icon.html" (strings.TrimPrefix "i:" .icon) }}</div>
+                  {{ else }}
+                    <div class="module-card__icon">{{ .icon }}</div>
+                  {{ end }}
                   <h3 class="module-card__title">{{ .title }}</h3>
                   <p class="module-card__desc">{{ .desc }}</p>
                   {{ with .features }}
@@ -113,6 +140,51 @@
         <div class="divider"></div>
       {{ end }}
 
+      {{/* ── ΛΕΠΤΟΜΕΡΕΙΕΣ ΟΘΟΝΗΣ (crops του διαχειριστικού) ──────── */}}
+      {{ with .Params.shots }}
+      <section class="section">
+        <div class="section-header">
+          <span class="section-label">{{ .label }}</span>
+          <h2 class="section-title">{{ .title }}</h2>
+          {{ with .subtitle }}<p class="section-subtitle">{{ . }}</p>{{ end }}
+        </div>
+        <div class="shots">
+          {{ range .items }}
+          <figure class="shot{{ if .wide }} shot--wide{{ end }}{{ if .narrow }} shot--narrow{{ end }}" data-animate>
+            <div class="shot__img"><img src="{{ .image }}" alt="{{ .alt }}" loading="lazy"></div>
+            <figcaption class="shot__cap"><strong>{{ .title }}</strong> {{ .desc }}</figcaption>
+          </figure>
+          {{ end }}
+        </div>
+        {{ with .note }}<p class="shots__note">{{ . }}</p>{{ end }}
+      </section>
+      <div class="divider"></div>
+      {{ end }}
+
+      {{/* ── FAQ (προαιρετικό ανά σελίδα προϊόντος) ─────────────── */}}
+      {{ with .Params.faq }}
+      {{ $entities := slice }}
+      {{ range .items }}
+        {{ $entities = $entities | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}
+      {{ end }}
+      <script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $entities) | jsonify }}</script>
+      <section class="section" id="faq">
+        <div class="section-header">
+          <span class="section-label">{{ .label | default "Συχνές ερωτήσεις" }}</span>
+          <h2 class="section-title">{{ .title | default "Συχνές ερωτήσεις" }}</h2>
+        </div>
+        <div class="faq-list">
+          {{ range .items }}
+          <details class="faq-item">
+            <summary class="faq-item__q">{{ .q }}</summary>
+            <div class="faq-item__a"><p>{{ .a }}</p></div>
+          </details>
+          {{ end }}
+        </div>
+      </section>
+      <div class="divider"></div>
+      {{ end }}
+
       {{ with .Params.cta_bottom }}
         <div class="cta-section">
           <h2 class="cta-section__title gradient-text">{{ .title }}</h2>
@@ -121,6 +193,10 @@
             <a href="{{ .primary_url | default "/epikoinonia/" }}" class="btn btn--primary btn--lg">{{ .primary }}</a>
           </div>
         </div>
+      {{ end }}
+
+      {{ with .Params.disclaimer }}
+      <p class="product-disclaimer">{{ . }}</p>
       {{ end }}
     </div>
   </div>

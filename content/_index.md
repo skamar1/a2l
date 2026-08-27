@@ -146,6 +146,19 @@ testimonials:
       company: "elfor.gr — FORD Ελφόρ"
       logo: "/images/clients/elfor-logo.jpg"
 
+fbs_banner:
+  label: "Νέο — Διασύνδεση για e-shop"
+  title: "Skroutz FBS και SoftOne, χωρίς χειρωνακτική δουλειά"
+  text: "Αναπτύξαμε τη διασύνδεση που κόβει αυτόματα το παραστατικό στο SoftOne για κάθε παραγγελία Skroutz FBS, το διαβιβάζει στο myDATA και ανεβάζει το PDF πίσω στην παραγγελία."
+  bullets:
+    - "Αυτόματα παραστατικά & διαβίβαση myDATA"
+    - "Πιστωτικά σε ακυρώσεις και επιστροφές"
+    - "Έλεγχος αποθέματος Skroutz ↔ SoftOne, κίνηση-κίνηση"
+    - "Ταμιακά, εκκαθαρίσεις και τιμολόγια προμήθειας στο ERP"
+  image: "/images/skroutz-fbs/roi.svg"
+  url: "/skroutz-fbs-softone/"
+  cta: "Δείτε τη διασύνδεση"
+
 promo_banner:
   label: "ICS VCR — Άυλη Ταμειακή"
   title: "Ταμειακή, POS και myDATA σε μία συσκευή"

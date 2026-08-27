@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Παραγγελία Skroutz FBS, αυτόματο παραστατικό στο SoftOne με myDATA, και το PDF πίσω στην παραγγελία">
+  <defs>
+    <linearGradient id="kBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8f9fa"/>
+      <stop offset="1" stop-color="#eef2ff"/>
+    </linearGradient>
+    <filter id="kShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#111827" flood-opacity="0.08"/>
+    </filter>
+    <marker id="kArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#a5b4fc"/>
+    </marker>
+  </defs>
+
+  <style>
+    .t { font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    .h { font-size: 16px; font-weight: 700; fill: #111827; }
+    .s { font-size: 12px; font-weight: 500; fill: #9ca3af; }
+    .cap { font-size: 13px; font-weight: 700; fill: #4f46e5; letter-spacing: .04em; }
+  </style>
+
+  <rect width="800" height="420" fill="url(#kBg)"/>
+
+  <g filter="url(#kShadow)">
+    <rect x="50" y="125" width="210" height="170" rx="18" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="295" y="125" width="210" height="170" rx="18" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="540" y="125" width="210" height="170" rx="18" fill="#ffffff" stroke="#e5e7eb"/>
+  </g>
+
+  <!-- 1 -->
+  <circle cx="155" cy="175" r="22" fill="#eef2ff"/>
+  <path d="M145 170 h20 M145 177 h20 M145 184 h11" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"/>
+  <text class="t h" x="155" y="228" text-anchor="middle">Παραγγελία</text>
+  <text class="t h" x="155" y="248" text-anchor="middle">Skroutz FBS</text>
+  <text class="t s" x="155" y="272" text-anchor="middle">όπως και σήμερα</text>
+
+  <path d="M264 210 H288" stroke="#a5b4fc" stroke-width="2.5" fill="none" marker-end="url(#kArrow)"/>
+
+  <!-- 2 -->
+  <circle cx="400" cy="175" r="22" fill="#6366f1"/>
+  <path d="M390 175 h13 M398 169 l6 6 l-6 6" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text class="t h" x="400" y="228" text-anchor="middle">Παραστατικό</text>
+  <text class="t h" x="400" y="248" text-anchor="middle">SoftOne + myDATA</text>
+  <text class="t s" x="400" y="272" text-anchor="middle">αυτόματα, με λήψη MARK</text>
+
+  <path d="M509 210 H533" stroke="#a5b4fc" stroke-width="2.5" fill="none" marker-end="url(#kArrow)"/>
+
+  <!-- 3 -->
+  <circle cx="645" cy="175" r="22" fill="#eef2ff"/>
+  <path d="M645 187 V163 M636 172 l9 -9 l9 9" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text class="t h" x="645" y="228" text-anchor="middle">Το PDF πίσω</text>
+  <text class="t h" x="645" y="248" text-anchor="middle">στην παραγγελία</text>
+  <text class="t s" x="645" y="272" text-anchor="middle">η παραγγελία κλείνει σωστά</text>
+
+  <text class="t cap" x="400" y="345" text-anchor="middle">ΑΥΤΟΜΑΤΑ, ΜΕΣΑ ΣΕ ΛΙΓΑ ΛΕΠΤΑ</text>
+</svg>

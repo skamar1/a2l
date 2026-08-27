@@ -104,6 +104,9 @@
 
   // --- Animate elements on scroll ---
   if ('IntersectionObserver' in window) {
+    // Το CSS κρύβει τα [data-animate] μόνο όταν υπάρχει αυτή η κλάση, ώστε
+    // χωρίς JS να μη μείνει τίποτα αόρατο.
+    document.documentElement.classList.add('has-anim');
     const observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
