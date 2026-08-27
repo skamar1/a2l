@@ -92,7 +92,13 @@ enableRobotsTXT = true
     name = "Νέα & Οδηγίες"
     url = "/odigies-nea/"
     weight = 5
+  # Δωρεάν εργαλείο, άρα μαγνήτης: του αξίζει μόνιμη θέση στο μενού και όχι
+  # μόνο μπάνερ στην αρχική.
+  [[menus.main]]
+    name = "Δωρεάν έλεγχος"
+    url = "/elegxos/"
+    weight = 6
   [[menus.main]]
     name = "Επικοινωνία"
     url = "/epikoinonia/"
-    weight = 6
+    weight = 7
