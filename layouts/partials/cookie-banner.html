@@ -6,13 +6,4 @@
   <button id="cookie-accept" class="cookie-banner__btn">Εντάξει</button>
 </div>
 
-<script>
-  (function() {
-    if (localStorage.getItem('cookies-ok')) return;
-    document.getElementById('cookie-banner').classList.add('cookie-banner--visible');
-    document.getElementById('cookie-accept').addEventListener('click', function() {
-      localStorage.setItem('cookies-ok', '1');
-      document.getElementById('cookie-banner').classList.remove('cookie-banner--visible');
-    });
-  })();
-</script>
+{{ partial "script.html" "js/cookie-banner.js" }}

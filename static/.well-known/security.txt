@@ -1,0 +1,8 @@
+# https://a2l.gr/.well-known/security.txt — RFC 9116
+# Αν εντοπίσετε θέμα ασφαλείας στο a2l.gr, επικοινωνήστε μαζί μας.
+
+Contact: mailto:info@a2l.gr
+Contact: tel:+30-210-224-1787
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: el, en
+Canonical: https://a2l.gr/.well-known/security.txt

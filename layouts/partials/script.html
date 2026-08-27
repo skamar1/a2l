@@ -1,0 +1,12 @@
+{{/*
+  script.html — εξωτερικό <script> με fingerprint + SRI.
+
+  Χρήση:  {{ partial "script.html" "js/carousel.js" }}
+
+  Υπάρχει ώστε κανένα inline <script> να μη χρειάζεται στο site: έτσι το
+  Content-Security-Policy (static/_headers) μένει `script-src 'self'` χωρίς
+  'unsafe-inline'. Κάθε νέο script μπαίνει στο assets/js/ και φορτώνεται
+  από εδώ — ποτέ inline.
+*/}}
+{{- $js := resources.Get . | minify | fingerprint -}}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous" defer></script>
