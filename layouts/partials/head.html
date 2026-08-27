@@ -92,7 +92,7 @@
      WebPage, ContactPoint, BreadcrumbList, FAQPage, BlogPosting) */}}
 {{ partial "schema.html" . }}
 
-{{/* Cloudflare Turnstile — μόνο στη σελίδα επικοινωνίας */}}
-{{ if eq .Layout "contact" }}
+{{/* Cloudflare Turnstile — μόνο όπου υπάρχει widget (επικοινωνία, έλεγχος site) */}}
+{{ if in (slice "contact" "site-check") .Layout }}
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 {{ end }}

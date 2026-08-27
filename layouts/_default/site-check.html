@@ -1,0 +1,100 @@
+{{ define "main" }}
+<div class="page-content">
+  <div class="container">
+
+    <header class="section-header">
+      <span class="section-label">Δωρεάν εργαλείο</span>
+      <h1 class="section-title">{{ .Title }}</h1>
+      <p class="section-subtitle">
+        44 αυτόματοι έλεγχοι σε ασφάλεια, SEO, δομημένα δεδομένα, ταχύτητα,
+        προσβασιμότητα και συμμόρφωση. Χωρίς εγγραφή, χωρίς email.
+      </p>
+    </header>
+
+    <form class="check-form" id="checkForm" novalidate>
+      <div class="check-form__row">
+        <label class="visually-hidden" for="checkUrl">Διεύθυνση ιστοσελίδας</label>
+        <input
+          type="url"
+          id="checkUrl"
+          name="url"
+          class="check-form__input"
+          placeholder="π.χ. mysite.gr"
+          autocomplete="url"
+          inputmode="url"
+          spellcheck="false"
+          required>
+        <button type="submit" id="checkSubmit" class="btn btn--primary btn--lg">
+          Έλεγχος →
+        </button>
+      </div>
+
+      {{ with site.Params.turnstile_key }}
+      <div class="cf-turnstile" data-sitekey="{{ . }}" data-theme="light"></div>
+      {{ end }}
+
+      <p class="check-form__note">
+        Διαβάζουμε μόνο τη δημόσια σελίδα, όπως θα έκανε η Google. Δεν αποθηκεύουμε
+        τίποτα δικό σας πέρα από το ίδιο το αποτέλεσμα.
+      </p>
+
+      <div id="checkError" class="form-feedback form-feedback--error" style="display:none;" role="alert"></div>
+    </form>
+
+    {{/* Το JS το δείχνει· χωρίς JS ο χρήστης δεν φτάνει ποτέ εδώ. */}}
+    <div id="checkProgress" class="check-progress" style="display:none;" role="status" aria-live="polite">
+      <div class="check-progress__spinner" aria-hidden="true"></div>
+      <p class="check-progress__label">Ελέγχουμε τη σελίδα…</p>
+      <p class="check-progress__hint">Συνήθως παίρνει 10–20 δευτερόλεπτα.</p>
+    </div>
+
+    <div id="checkResult" class="check-result" style="display:none;"></div>
+
+    <section class="check-explainer">
+      <h2>Τι ακριβώς ελέγχουμε</h2>
+      <div class="check-explainer__grid">
+        <div class="check-explainer__item">
+          <h3>Ασφάλεια <span>25%</span></h3>
+          <p>HTTPS, HSTS, Content-Security-Policy, προστασία από clickjacking, mixed content, διαρροή έκδοσης server.</p>
+        </div>
+        <div class="check-explainer__item">
+          <h3>SEO &amp; ευρετηρίαση <span>20%</span></h3>
+          <p>Τίτλος, περιγραφή, canonical, robots.txt, sitemap, πραγματικά 404, Open Graph, alt σε εικόνες.</p>
+        </div>
+        <div class="check-explainer__item">
+          <h3>Δομημένα δεδομένα &amp; AI <span>20%</span></h3>
+          <p>JSON-LD, οντότητες επιχείρησης, διαδρομές πλοήγησης, FAQ schema — τι καταλαβαίνουν Google και AI για εσάς.</p>
+        </div>
+        <div class="check-explainer__item">
+          <h3>Απόδοση <span>20%</span></h3>
+          <p>Χρόνος πρώτου byte, συμπίεση, μέγεθος HTML, cache, μορφές εικόνας, scripts που μπλοκάρουν.</p>
+        </div>
+        <div class="check-explainer__item">
+          <h3>Προσβασιμότητα <span>10%</span></h3>
+          <p>Γλώσσα σελίδας, δυνατότητα μεγέθυνσης, ετικέτες σε φόρμες, ονόματα σε συνδέσμους, σημασιολογική δομή.</p>
+        </div>
+        <div class="check-explainer__item">
+          <h3>Εμπιστοσύνη <span>5%</span></h3>
+          <p>Στοιχεία επικοινωνίας, ΑΦΜ και ΓΕΜΗ, πολιτική απορρήτου, trackers πριν τη συγκατάθεση.</p>
+        </div>
+      </div>
+
+      <h2>Πώς βγαίνει ο βαθμός</h2>
+      <p>
+        Κάθε κανόνας επιστρέφει «περνάει», «μερικώς» ή «αποτυγχάνει» — ποτέ ελεύθερη
+        κρίση. Ένας κανόνας που δεν μπορεί να ελεγχθεί (π.χ. σελίδα χωρίς εικόνες)
+        <strong>βγαίνει από τη βαθμολογία</strong> αντί να μετρήσει ως αποτυχία. Γι' αυτό
+        το ίδιο site δίνει το ίδιο νούμερο κάθε φορά, και μπορείτε να δείτε ακριβώς
+        ποια μέτρηση οδήγησε σε κάθε βαθμό.
+      </p>
+      <p>
+        Ο έλεγχος αφορά τη μία σελίδα που θα δώσετε. Δεν αντικαθιστά πλήρη τεχνικό
+        έλεγχο ολόκληρου του site — δείχνει όμως αξιόπιστα πού βρίσκεστε.
+      </p>
+    </section>
+
+  </div>
+</div>
+
+{{ partial "script.html" "js/site-check.js" }}
+{{ end }}
