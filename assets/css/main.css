@@ -2670,7 +2670,12 @@ p { color: var(--text-secondary); }
   color: var(--text-secondary);
   margin: 0;
   font-style: italic;
+  /* Η πιο σύντομη κριτική άφηνε όλο το κενό μαζεμένο από κάτω· κεντραρισμένη,
+     το κενό μοιράζεται πάνω και κάτω και η κάρτα δείχνει γεμάτη. */
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .testimonial-card__author {
@@ -3400,9 +3405,15 @@ p { color: var(--text-secondary); }
 
 .testimonial-card__author {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   margin-top: 20px;
+  /* Οι υπογραφές πιάνουν από δύο έως τέσσερις γραμμές: άλλες εταιρείες
+     τυλίγονται, άλλοι έχουν και θέση. Το grid ισοϋψώνει τις κάρτες, οπότε
+     χωρίς κοινό ύψος εδώ οι διαχωριστικές γραμμές έβγαιναν σε τρία
+     διαφορετικά σημεία. Το ύψος καλύπτει όνομα + τρεις γραμμές από κάτω·
+     ό,τι περισσεύει το παίρνει πίσω η κριτική, που είναι κεντραρισμένη. */
+  min-height: 6.5rem;
 }
 .testimonial-card__logo {
   height: 36px;
