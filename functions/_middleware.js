@@ -1,22 +1,32 @@
 /**
- * _middleware.js — ΒΗΜΑ 1 (προσωρινό): μόνο παρατήρηση, καμία ανακατεύθυνση.
+ * _middleware.js — μόνιμη ανακατεύθυνση http → https μέσα στην εφαρμογή.
  *
- * Θέλουμε να προσθέσουμε ανακατεύθυνση http → https μέσα στην εφαρμογή, γιατί
- * σήμερα γίνεται μόνο στο edge («Always Use HTTPS») και ο εσωτερικός δρόμος
- * (subrequest προς το ίδιο hostname) δεν την περνάει.
+ * Η Cloudflare κάνει ήδη την ίδια ανακατεύθυνση στο edge («Always Use HTTPS»),
+ * αλλά αυτή κρέμεται αποκλειστικά από έναν διακόπτη στο dashboard: αν σβηστεί,
+ * το site αρχίζει να σερβίρεται σε http χωρίς να το πάρει κανείς είδηση. Εδώ
+ * είναι δεύτερη γραμμή άμυνας, στον κώδικα και στο git.
  *
- * Πριν όμως βάλουμε 301, πρέπει να είμαστε ΣΙΓΟΥΡΟΙ ότι ένα κανονικό αίτημα
- * https φτάνει εδώ με url.protocol === "https:". Αν δεν ίσχυε αυτό, το 301 θα
- * έστελνε κάθε επισκέπτη σε ατέρμονο βρόχο και θα έριχνε όλο το site.
- * Γι' αυτό αυτή η έκδοση απλώς γράφει την παρατήρηση σε header.
+ * Υπάρχει και μετρήσιμος λόγος: όταν ένας Worker ζητάει το ΙΔΙΟ hostname στο
+ * οποίο είναι δεμένο το Pages project, το αίτημα γυρνάει εσωτερικά στο project
+ * και προσπερνάει τελείως το edge — άρα και τον κανόνα «Always Use HTTPS».
+ * Έτσι ο δικός μας ελεγκτής (/api/check) έβλεπε το http://a2l.gr/ να απαντά 200
+ * χωρίς ανακατεύθυνση, ενώ από έξω με curl έπαιρνε κανονικά 301. Με το
+ * middleware η ανακατεύθυνση υπάρχει και σε αυτόν τον εσωτερικό δρόμο.
+ *
+ * Ασφάλεια από ατέρμονο βρόχο: μετρήθηκε live ότι ένα κανονικό αίτημα https
+ * φτάνει εδώ με url.protocol === "https:" (και cf-visitor scheme=https,
+ * x-forwarded-proto=https). Άρα η συνθήκη πιάνει μόνο πραγματικό http.
  */
 export async function onRequest({ request, next }) {
-  const response = await next();
   const url = new URL(request.url);
 
-  const observed = new Response(response.body, response);
-  observed.headers.set("X-Observed-Protocol", url.protocol);
-  observed.headers.set("X-Observed-CF-Visitor", request.headers.get("cf-visitor") || "-");
-  observed.headers.set("X-Observed-XFP", request.headers.get("x-forwarded-proto") || "-");
-  return observed;
+  if (url.protocol === "http:") {
+    url.protocol = "https:";
+    return new Response(null, {
+      status: 301,
+      headers: { Location: url.toString() },
+    });
+  }
+
+  return next();
 }
