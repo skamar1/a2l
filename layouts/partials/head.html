@@ -30,8 +30,46 @@
 
 {{/* og:title & og:image: override από front matter (PBS: decoupled titles/images) */}}
 {{ $ogTitle := or .Params.og_title $pageTitle }}
-{{ $ogImage := "" }}
-{{ with .Params.image }}{{ $ogImage = . | absURL }}{{ else }}{{ $ogImage = "images/og-image.png" | absURL }}{{ end }}
+
+{{/* og:image. Το `image` στο front matter δίνει εικόνα ανά σελίδα· χωρίς αυτό
+     ισχύει το γενικό banner του site.
+     Η εικόνα της σελίδας ΔΕΝ μπαίνει ως έχει. Δύο λόγοι:
+     1. Ο crawler του Facebook και του LinkedIn δεν διαβάζει WebP — ένα .webp
+        og:image απλώς δεν εμφανίζει προεπισκόπηση. Άρα βγαίνει πάντα JPEG.
+     2. Οι διαστάσεις ήταν καρφωτές 1200x630 ενώ η εικόνα μπορεί να έχει άλλη
+        αναλογία. Λάθος width/height οδηγεί σε στραβό crop στην προεπισκόπηση.
+     Οπότε: Fit μέσα στο 1200x630 (τίποτα δεν κόβεται) και μετά padding με
+     λευκό ως το ακριβές μέγεθος. Το static/ είναι mounted και ως assets
+     (hugo.toml) ώστε το resources.Get να τη βρίσκει. */}}
+{{ $ogImage := "images/og-image.png" | absURL }}
+{{ $ogW := "1200" }}
+{{ $ogH := "630" }}
+{{ $ogAlt := printf "%s — %s" site.Title site.Params.description }}
+{{ with .Params.image }}
+  {{ $src := strings.TrimPrefix "/" . }}
+  {{ with resources.Get $src }}
+    {{ if ne .MediaType.MainType "image" }}
+      {{ warnf "og:image: το %q δεν είναι εικόνα (%s)" $src $.RelPermalink }}
+    {{ else if eq .MediaType.SubType "svg" }}
+      {{/* SVG ούτε επεξεργάζεται από το Hugo ούτε το δέχονται οι crawlers
+           των social. Μένει το γενικό banner — μια σπασμένη προεπισκόπηση
+           είναι χειρότερη από μια γενική. */}}
+    {{ else }}
+      {{ $fit := .Fit "1200x630 jpeg q85" }}
+      {{ $left := math.Floor (div (sub 1200 $fit.Width) 2) | int }}
+      {{ $top := math.Floor (div (sub 630 $fit.Height) 2) | int }}
+      {{ $banner := $fit.Filter (images.Padding $top (sub (sub 1200 $fit.Width) $left) (sub (sub 630 $fit.Height) $top) $left "#ffffff") }}
+      {{ $ogImage = $banner.Permalink }}
+      {{ $ogW = string $banner.Width }}
+      {{ $ogH = string $banner.Height }}
+    {{ end }}
+  {{ else }}
+    {{/* Δηλωμένη εικόνα που δεν υπάρχει: καλύτερα το γενικό banner παρά
+         σπασμένο og:image. Φαίνεται στο build με --panicOnWarning. */}}
+    {{ warnf "og:image: δεν βρέθηκε το %q (%s)" . $.RelPermalink }}
+  {{ end }}
+{{ end }}
+{{ with .Params.image_alt }}{{ $ogAlt = . }}{{ end }}
 
 {{/* og:type: article ΜΟΝΟ για Νέα/Οδηγίες, αλλιώς website (override με og_type) */}}
 {{ $ogType := "website" }}
@@ -67,9 +105,9 @@
 <meta property="og:type" content="{{ $ogType }}">
 <meta property="og:locale" content="el_GR">
 <meta property="og:image" content="{{ $ogImage }}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{{ site.Title }} — {{ site.Params.description }}">
+<meta property="og:image:width" content="{{ $ogW }}">
+<meta property="og:image:height" content="{{ $ogH }}">
+<meta property="og:image:alt" content="{{ $ogAlt }}">
 {{ if eq $ogType "article" }}
 <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
 {{ if .Lastmod.After .Date }}<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">{{ end }}

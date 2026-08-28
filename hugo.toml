@@ -16,6 +16,23 @@ disableKinds = ["taxonomy", "term"]
 # το αφαιρέσαμε από το head.html. Διαφημίζει έκδοση σε επίδοξο επιτιθέμενο.
 disableHugoGeneratorInject = true
 
+# Το static/ είναι mounted ΚΑΙ ως assets, ώστε οι εικόνες του να είναι
+# resources και να μπορεί το head.html να φτιάξει από αυτές πραγματικό
+# OG banner (διαστάσεις, μετατροπή σε JPEG). Οι εικόνες μένουν εκεί που
+# ήταν — το mount δεν τις μετακινεί, απλώς τις κάνει και επεξεργάσιμες.
+# Μόλις δηλωθεί έστω ένα mount για ένα component, τα προεπιλεγμένα του
+# χάνονται· γι' αυτό δηλώνονται ρητά και τα assets->assets, static->static.
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
 [params]
   description = "Μηχανογράφηση Επιχειρήσεων. ERP, CRM, Υπολογιστές."
   author = "Σταματάκη Ειρήνη — A2Labs"

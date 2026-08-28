@@ -6,6 +6,11 @@ slug: "enopsi"
 product: true
 tag: "Επιχειρηματική εικόνα από το myDATA"
 
+# Εικόνα για τις προεπισκοπήσεις σε Facebook/LinkedIn. Το head.html τη
+# μετατρέπει μόνο του σε OG banner 1200x630 JPEG.
+image: "/images/enopsi/pinakas-elegxou.webp"
+image_alt: "Ο πίνακας ελέγχου του Εν Όψει: τζίρος, έξοδα και μικτό αποτέλεσμα από τα δεδομένα του myDATA."
+
 keywords:
   - "Εν Όψει"
   - "myDATA αναφορές"
