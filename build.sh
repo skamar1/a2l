@@ -19,23 +19,53 @@ fi
 HUGO_EXTRA_FLAGS="${HUGO_EXTRA_FLAGS:-}"
 echo "==> Hugo ${HUGO_VERSION} (extended)"
 
-# --- resolve platform --------------------------------------------------------
 OS="$(uname -s)"; ARCH="$(uname -m)"
-case "${OS}-${ARCH}" in
-  Linux-x86_64|Linux-amd64)   PLAT="linux-amd64" ;;
-  Linux-aarch64|Linux-arm64)  PLAT="linux-arm64" ;;
-  Darwin-arm64|Darwin-x86_64) PLAT="darwin-universal" ;;
-  *) echo "ERROR: unsupported platform ${OS}-${ARCH}" >&2; exit 1 ;;
-esac
 
-# --- download that exact extended build --------------------------------------
-TMP="$(mktemp -d)"
-trap 'rm -rf "${TMP}"' EXIT
-URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_${PLAT}.tar.gz"
-echo "==> Downloading ${URL}"
-curl -fsSL "${URL}" -o "${TMP}/hugo.tar.gz"
-tar -xzf "${TMP}/hugo.tar.gz" -C "${TMP}" hugo
-HUGO_BIN="${TMP}/hugo"
+if [ "${OS}" = "Darwin" ]; then
+  # Το επίσημο release δίνει tarball μόνο για Linux και Windows· για macOS
+  # υπάρχει ΜΟΝΟ .pkg (hugo_extended_<ver>_darwin-universal.pkg). Δηλαδή το
+  # κατέβασμα binary εδώ είναι αδύνατο, όχι απλώς άβολο.
+  #
+  # Άρα σε macOS χρησιμοποιούμε το τοπικά εγκατεστημένο hugo — αλλά μόνο αν
+  # είναι ακριβώς η καρφιτσωμένη έκδοση και extended. Αν δεν είναι, ο έλεγχος
+  # σταματάει με σαφές μήνυμα: καλύτερα να μη χτίσει, παρά να χτίσει με άλλη
+  # έκδοση από αυτήν που θα τρέξει στην παραγωγή.
+  if ! command -v hugo >/dev/null 2>&1; then
+    echo "ERROR: δεν βρέθηκε hugo στο PATH." >&2
+    echo "       Σε macOS δεν κατεβάζουμε binary (δεν υπάρχει tarball)." >&2
+    echo "       Εγκατάστησε: brew install hugo   (χρειάζεται ${HUGO_VERSION} extended)" >&2
+    exit 1
+  fi
+  HUGO_BIN="$(command -v hugo)"
+  INSTALLED="$("${HUGO_BIN}" version)"
+  case "${INSTALLED}" in
+    *"v${HUGO_VERSION}+extended"*) ;;
+    *)
+      echo "ERROR: λάθος έκδοση Hugo." >&2
+      echo "       Απαιτείται: v${HUGO_VERSION}+extended  (από το .tool-versions)" >&2
+      echo "       Βρέθηκε:    ${INSTALLED}" >&2
+      exit 1
+      ;;
+  esac
+  echo "==> Τοπικό Hugo: ${HUGO_BIN}"
+else
+  # --- resolve platform ------------------------------------------------------
+  case "${OS}-${ARCH}" in
+    Linux-x86_64|Linux-amd64)   PLAT="linux-amd64" ;;
+    Linux-aarch64|Linux-arm64)  PLAT="linux-arm64" ;;
+    *) echo "ERROR: unsupported platform ${OS}-${ARCH}" >&2; exit 1 ;;
+  esac
+
+  # --- download that exact extended build ------------------------------------
+  TMP="$(mktemp -d)"
+  trap 'rm -rf "${TMP}"' EXIT
+  URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_${PLAT}.tar.gz"
+  echo "==> Downloading ${URL}"
+  curl -fsSL "${URL}" -o "${TMP}/hugo.tar.gz"
+  tar -xzf "${TMP}/hugo.tar.gz" -C "${TMP}" hugo
+  HUGO_BIN="${TMP}/hugo"
+fi
+
 "${HUGO_BIN}" version
 
 # --- build -------------------------------------------------------------------
