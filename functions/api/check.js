@@ -54,7 +54,7 @@ export async function onRequestPost(context) {
 
   let report;
   try {
-    report = await runCheck(target.url);
+    report = await runCheck(target.url, { selfHost: new URL(request.url).host });
   } catch (error) {
     console.error("check failed:", error?.stack || error);
     return json({ error: "Ο έλεγχος δεν ολοκληρώθηκε. Δοκιμάστε ξανά σε λίγο." }, 500);
@@ -66,7 +66,7 @@ export async function onRequestPost(context) {
 }
 
 /** Ο πυρήνας — χωρίς Turnstile/KV, ώστε να μπορεί να δοκιμαστεί απομονωμένος. */
-export async function runCheck(url) {
+export async function runCheck(url, options = {}) {
   const origin = url.origin;
 
   const main = await probe(url.toString());
@@ -126,6 +126,9 @@ export async function runCheck(url) {
 
   const ctx = {
     url: url.toString(),
+    // Το hostname στο οποίο τρέχει ο ίδιος ο ελεγκτής. Χρειάζεται στον SEC-01:
+    // δεν μπορούμε να ζητήσουμε http από τον εαυτό μας (βλ. σχόλιο εκεί).
+    selfHost: options.selfHost || null,
     finalUrl: main.url,
     status: main.status,
     headers: main.headers,
