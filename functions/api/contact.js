@@ -1,3 +1,5 @@
+import { isLocalRequest } from "../../lib/local.js";
+
 const SUBJECT_LABELS = {
   support:    "Τεχνική Υποστήριξη",
   demo:       "Αίτημα Demo",
@@ -35,24 +37,26 @@ export async function onRequestPost(context) {
     return json({ error: "Συμπληρώστε τα υποχρεωτικά πεδία." }, 400);
   }
 
-  // Verify Turnstile
+  // Verify Turnstile — τοπικά παρακάμπτεται (βλ. lib/local.js)
   const ip = request.headers.get("CF-Connecting-IP") || "";
-  const verify = await fetch(
-    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        secret: env.TURNSTILE_SECRET_KEY,
-        response: token,
-        remoteip: ip,
-      }),
-    }
-  );
-  const verifyData = await verify.json();
+  if (!isLocalRequest(request)) {
+    const verify = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          secret: env.TURNSTILE_SECRET_KEY,
+          response: token,
+          remoteip: ip,
+        }),
+      }
+    );
+    const verifyData = await verify.json();
 
-  if (!verifyData.success) {
-    return json({ error: "Η επαλήθευση Turnstile απέτυχε. Δοκιμάστε ξανά." }, 400);
+    if (!verifyData.success) {
+      return json({ error: "Η επαλήθευση Turnstile απέτυχε. Δοκιμάστε ξανά." }, 400);
+    }
   }
 
   // Build email body

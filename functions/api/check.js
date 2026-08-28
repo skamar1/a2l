@@ -13,6 +13,7 @@ import { probe, probeStatus } from "../../lib/checker/probe.js";
 import { extractFacts, htmlToText } from "../../lib/checker/extract.js";
 import { runRules } from "../../lib/checker/rules.js";
 import { score } from "../../lib/checker/score.js";
+import { isLocalRequest } from "../../lib/local.js";
 
 const RESULT_TTL_SECONDS = 60 * 60 * 24 * 90; // 90 ημέρες
 const RATE_LIMIT = { max: 12, windowSeconds: 3600 };
@@ -37,7 +38,7 @@ export async function onRequestPost(context) {
 
   const ip = request.headers.get("CF-Connecting-IP") || "";
 
-  const turnstile = await verifyTurnstile(token, ip, env);
+  const turnstile = await verifyTurnstile(token, ip, env, request);
   if (!turnstile.ok) return json({ error: turnstile.message }, 400);
 
   const limit = await checkRateLimit(env, ip);
@@ -229,7 +230,11 @@ function randomSlug() {
     .join("");
 }
 
-async function verifyTurnstile(token, ip, env) {
+async function verifyTurnstile(token, ip, env, request) {
+  // Τοπικά δεν υπάρχει έγκυρο domain για το widget, άρα ούτε token. Βλ. lib/local.js
+  // για το γιατί ο έλεγχος δεν πλαστογραφείται από την παραγωγή.
+  if (isLocalRequest(request)) return { ok: true, skipped: "local" };
+
   if (!env.TURNSTILE_SECRET_KEY) {
     // Fail-closed: χωρίς μυστικό δεν περνάει κανένα αίτημα, ώστε ένα ξεχασμένο
     // secret σε νέο environment να μη μας αφήνει εκτεθειμένους σε bots.
