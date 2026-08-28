@@ -13,14 +13,14 @@
       </header>
 
       {{ with .Params.image }}
-        <img src="{{ . }}" alt="{{ $.Title }}" style="width:100%; border-radius: var(--radius-lg); margin-bottom: 48px; border: 1px solid var(--border);" loading="lazy">
+        <img src="{{ . }}" alt="{{ $.Title }}" class="post__hero-img" loading="lazy">
       {{ end }}
 
       <div class="article__body">
         {{ .Content }}
       </div>
 
-      <div style="margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+      <div class="post__nav">
         <a href="/odigies-nea/" class="btn btn--outline">← Πίσω στα Νέα</a>
         <a href="/epikoinonia/" class="btn btn--primary">Επικοινωνία</a>
       </div>

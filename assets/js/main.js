@@ -102,6 +102,15 @@
     }, { passive: true });
   }
 
+  // --- Δυναμικό background από data-bg ---
+  // Το URL της εικόνας είναι διαφορετικό ανά σελίδα, οπότε δεν μπορεί να ζει
+  // σε κλάση του CSS. Μπαίνει μέσω CSSOM και όχι ως style="..." attribute:
+  // το CSP του site δεν επιτρέπει 'unsafe-inline' στο style-src.
+  document.querySelectorAll('[data-bg]').forEach(function (el) {
+    var url = el.getAttribute('data-bg');
+    if (url) el.style.backgroundImage = 'url("' + url.replace(/"/g, '%22') + '")';
+  });
+
   // --- Animate elements on scroll ---
   if ('IntersectionObserver' in window) {
     // Το CSS κρύβει τα [data-animate] μόνο όταν υπάρχει αυτή η κλάση, ώστε

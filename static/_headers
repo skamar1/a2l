@@ -19,16 +19,16 @@
   # script-src: ΧΩΡΙΣ 'unsafe-inline'. Δεν υπάρχει κανένα inline <script>
   #   στο site — όλα περνούν από το layouts/partials/script.html.
   #   challenges.cloudflare.com = Turnstile στη σελίδα επικοινωνίας.
-  # style-src: με 'unsafe-inline' επειδή τα layouts έχουν ~42 style="..."
-  #   attributes (και ένα δυναμικό background-image στο single.html).
-  #   Το inline style attribute είναι πολύ μικρότερος κίνδυνος από inline
-  #   script· αν θέλουμε 'self' σκέτο, πρέπει πρώτα να φύγουν όλα.
+  # style-src: 'self' σκέτο. Δεν υπάρχει ούτε ένα style="..." attribute ούτε
+  #   <style> block στο site — όλα έγιναν κλάσεις στο assets/css/main.css.
+  #   Το μοναδικό δυναμικό στυλ (background-image ανά σελίδα) μπαίνει μέσω
+  #   CSSOM στο main.js (data-bg), που το CSP δεν το περιορίζει.
   # img-src: www.ics.gr = εικόνα promo banner (αρχική)· play.google.com και
   #   tools.applemediaservices.com (+ toolbox.marketingtools.apple.com, όπου
   #   κάνει redirect) = τα badges App Store / Google Play στη σελίδα
   #   /panesgiaolous-app/.
   # frame-src: openstreetmap.org = ο χάρτης στη σελίδα /epikoinonia/.
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.ics.gr https://play.google.com https://tools.applemediaservices.com https://toolbox.marketingtools.apple.com; font-src 'self'; connect-src 'self' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com https://www.openstreetmap.org; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; img-src 'self' data: https://www.ics.gr https://play.google.com https://tools.applemediaservices.com https://toolbox.marketingtools.apple.com; font-src 'self'; connect-src 'self' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com https://www.openstreetmap.org; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests
 
   # --- Permissions-Policy ------------------------------------------------
   # Το site δεν χρησιμοποιεί καμία από αυτές τις APIs· τις κλείνουμε ρητά.

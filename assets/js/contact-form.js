@@ -8,24 +8,24 @@ document.getElementById('contactForm').addEventListener('submit', async function
 
   btn.disabled    = true;
   btn.textContent = 'Αποστολή…';
-  success.style.display = 'none';
-  error.style.display   = 'none';
+  success.classList.add('is-hidden');
+  error.classList.add('is-hidden');
 
   try {
     var res  = await fetch('/api/contact', { method: 'POST', body: new FormData(this) });
     var data = await res.json();
 
     if (data.success) {
-      success.style.display = 'block';
+      success.classList.remove('is-hidden');
       this.reset();
       if (window.turnstile) window.turnstile.reset();
     } else {
       error.textContent     = data.error || 'Παρουσιάστηκε σφάλμα.';
-      error.style.display   = 'block';
+      error.classList.remove('is-hidden');
     }
   } catch {
     error.textContent   = 'Σφάλμα σύνδεσης. Παρακαλώ δοκιμάστε ξανά.';
-    error.style.display = 'block';
+    error.classList.remove('is-hidden');
   }
 
   btn.disabled    = false;

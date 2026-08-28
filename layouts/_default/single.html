@@ -14,7 +14,7 @@
           <h1 class="product-split-hero__title"><span class="gradient-text">{{ .Title }}</span></h1>
           <p class="product-split-hero__desc">{{ .Params.description }}</p>
           {{ with .Params.cta }}
-            <div class="hero__actions" style="justify-content:flex-start;">
+            <div class="hero__actions hero__actions--start">
               <a href="{{ .url | default "/epikoinonia/" }}" class="btn btn--primary btn--lg">{{ .text | default "Ζητήστε Demo" }}</a>
             </div>
           {{ end }}
@@ -99,7 +99,7 @@
     <div class="container">
       {{ range .Params.sections }}
         {{ with .hero_image }}
-        <section class="section-banner" style="background-image:url('{{ . }}')">
+        <section class="section-banner" data-bg="{{ . }}">
           <div class="section-banner__content">
             <span class="section-label">{{ $.Params.tag | default "Λογισμικό" }}</span>
           </div>

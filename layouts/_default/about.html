@@ -10,7 +10,7 @@
 </div>
 
 {{/* ── STATS ── */}}
-<section class="section--sm" style="background: var(--bg-surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<section class="section--sm section--surface">
   <div class="container">
     <div class="stat-grid">
       {{ range .Params.stats }}
@@ -30,35 +30,35 @@
       <div>
         <span class="section-label">Η αποστολή μας</span>
         <h2 class="section-title">Τεχνολογία στην υπηρεσία της επιχείρησής σας</h2>
-        <p style="color: var(--text-secondary); margin-bottom: 20px; line-height: 1.85; font-size: 1.05rem;">
-          Από το <strong style="color: var(--text-primary);">2014</strong>, η <strong style="color: var(--text-primary);">A2 Labs</strong>
+        <p class="about__text about__text--lead">
+          Από το <strong class="about__emph">2014</strong>, η <strong class="about__emph">A2 Labs</strong>
           υποστηρίζει επιχειρήσεις στη Νέα Φιλαδέλφεια και σε όλη την Ελλάδα με ολοκληρωμένες λύσεις λογισμικού και τεχνολογίας.
         </p>
-        <p style="color: var(--text-secondary); margin-bottom: 20px; line-height: 1.85;">
+        <p class="about__text">
           Πιστεύουμε ότι κάθε επιχείρηση — μικρή ή μεγάλη — αξίζει να έχει πρόσβαση στα κατάλληλα εργαλεία.
-          Γι' αυτό προσφέρουμε τόσο <strong style="color: var(--text-primary);">έτοιμες λύσεις</strong> κορυφαίων εταιρειών,
-          όσο και <strong style="color: var(--text-primary);">custom ανάπτυξη</strong> εφαρμογών προσαρμοσμένων ακριβώς στις ανάγκες σας.
+          Γι' αυτό προσφέρουμε τόσο <strong class="about__emph">έτοιμες λύσεις</strong> κορυφαίων εταιρειών,
+          όσο και <strong class="about__emph">custom ανάπτυξη</strong> εφαρμογών προσαρμοσμένων ακριβώς στις ανάγκες σας.
         </p>
-        <p style="color: var(--text-secondary); margin-bottom: 36px; line-height: 1.85;">
+        <p class="about__text about__text--last">
           Δεν πουλάμε απλώς λογισμικό — γινόμαστε ο τεχνολογικός σας συνεργάτης, από την πρώτη εγκατάσταση
           έως τη συνεχή υποστήριξη και εξέλιξη.
         </p>
         <a href="/epikoinonia/" class="btn btn--primary btn--lg">Μιλήστε μαζί μας →</a>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-        <div style="background: var(--bg-surface); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 28px; background: var(--accent-glow);">
-          <div style="font-size: 1.6rem; margin-bottom: 12px;">🎯</div>
-          <h3 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Το όραμά μας</h3>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">
+      <div class="about__cards">
+        <div class="about-card about-card--accent">
+          <div class="about-card__icon">🎯</div>
+          <h3 class="about-card__title">Το όραμά μας</h3>
+          <p class="about-card__text">
             Να δώσουμε σε κάθε επιχείρηση την τεχνολογία που χρειάζεται για να αναπτυχθεί —
             χωρίς περιττή πολυπλοκότητα, με πρακτικές λύσεις που αποδίδουν άμεσα.
           </p>
         </div>
-        <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px;">
-          <div style="font-size: 1.6rem; margin-bottom: 12px;">🤝</div>
-          <h3 style="font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Η προσέγγισή μας</h3>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin: 0;">
+        <div class="about-card">
+          <div class="about-card__icon">🤝</div>
+          <h3 class="about-card__title">Η προσέγγισή μας</h3>
+          <p class="about-card__text">
             Ακούμε πρώτα, προτείνουμε μετά. Κάθε λύση ξεκινά από κατανόηση των αναγκών σας —
             όχι από μια τυποποιημένη προσφορά.
           </p>
@@ -95,7 +95,7 @@
 </section>
 
 {{/* ── CTA ── */}}
-<section class="section" style="background: var(--bg-surface); border-top: 1px solid var(--border);">
+<section class="section section--surface-top">
   <div class="container">
     <div class="cta-section">
       <h2 class="cta-section__title gradient-text">Έτοιμοι να ξεκινήσουμε;</h2>

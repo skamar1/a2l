@@ -3879,3 +3879,118 @@ p { color: var(--text-secondary); }
 
 .check-explainer__item h3 span { color: var(--accent-bright); font-variant-numeric: tabular-nums; }
 .check-explainer__item p { margin: 0; font-size: 0.9rem; color: var(--text-secondary); }
+
+/* ── Τοπική ανάπτυξη ────────────────────────────────────────────────────────
+   Σε localhost το Turnstile δεν φορτώνεται (βλ. partials/head.html): το widget
+   μένει άδειο. Το σημαδεύουμε για να φαίνεται ότι παρακάμπτεται επίτηδες και
+   να μην ψάχνει κανείς γιατί «λείπει» το captcha. Στην παραγωγή δεν εμφανίζεται
+   ποτέ — η κλάση μπαίνει μόνο από τοπικό hostname. */
+.is-local-dev .cf-turnstile::before {
+  content: "Turnstile: παρακάμπτεται τοπικά";
+  display: inline-block;
+  padding: 0.35rem 0.65rem;
+  border: 1px dashed var(--border, #ccc);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--text-secondary, #666);
+}
+
+/* ── Κλάσεις αντί για inline styles ─────────────────────────────────────────
+   Αυτή η ενότητα αντικατέστησε τα style="..." attributes των layouts. Χωρίς
+   αυτά, το Content-Security-Policy (static/_headers) δεν χρειάζεται πλέον
+   'unsafe-inline' στο style-src: μια XSS που καταφέρει να περάσει markup δεν
+   μπορεί ούτε να αλλοιώσει την εμφάνιση της σελίδας.
+   Κανόνας: ό,τι αφορά εμφάνιση μπαίνει εδώ, ποτέ στο HTML. */
+
+/* Τονισμένες λέξεις στους τίτλους του καρουζέλ (αρχική) */
+.hl-teal   { color: #2dd4a7; }
+.hl-indigo { color: #818cf8; }
+.hl-pink   { color: #f472b6; }
+.hl-amber  { color: #fbbf24; }
+
+.carousel-stat__unit { font-size: 1rem; font-weight: 500; }
+.carousel-stats__grid { max-width: var(--max-width); margin-inline: auto; }
+
+.hero__actions--start { justify-content: flex-start; }
+.btn--self-start { align-self: flex-start; }
+.footer__links--center { justify-content: center; }
+
+/* Σύνδεσμος που δανείζεται το χρώμα του κειμένου γύρω του (τηλέφωνο, email) */
+.link-inherit { color: inherit; }
+
+/* Στοιχεία που ξεκινούν κρυφά και τα εμφανίζει η JavaScript */
+.is-hidden { display: none; }
+
+/* Άρθρα — Οδηγίες & Νέα */
+.post__hero-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  margin-bottom: 48px;
+  border: 1px solid var(--border);
+}
+.post__nav {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post-list__empty { padding: 64px 0; }
+
+/* Τρόποι πληρωμής */
+.section-header--gap-lg { margin-bottom: 80px; }
+.qr-placeholder {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 16px;
+}
+.qr-placeholder__file { font-size: 0.75rem; }
+.payment__footer {
+  text-align: center;
+  margin-top: 80px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+.payment__footer-note { color: var(--text-muted); margin-bottom: 24px; }
+
+/* Σχετικά με εμάς */
+.about__text {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.85;
+}
+.about__text--lead { font-size: 1.05rem; }
+.about__text--last { margin-bottom: 36px; }
+.about__emph { color: var(--text-primary); }
+.about__cards { display: flex; flex-direction: column; gap: 16px; }
+.about-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+.about-card--accent {
+  border-color: var(--border-accent);
+  background: var(--accent-glow);
+}
+.about-card__icon { font-size: 1.6rem; margin-bottom: 12px; }
+.about-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.about-card__text {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Ενότητα με φόντο και διαχωριστικό μόνο από πάνω */
+.section--surface-top {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+}

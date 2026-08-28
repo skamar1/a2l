@@ -171,7 +171,7 @@
     cta.appendChild(ctaLink);
     resultBox.appendChild(cta);
 
-    resultBox.style.display = "";
+    resultBox.classList.remove("is-hidden");
   }
 
   // ── Βοηθητικά ─────────────────────────────────────────────────────────────
@@ -196,21 +196,21 @@
 
   function showError(message) {
     errorBox.textContent = message;
-    errorBox.style.display = "";
+    errorBox.classList.remove("is-hidden");
   }
 
   function setBusy(busy) {
     submit.disabled = busy;
     submit.textContent = busy ? "Ελέγχουμε…" : "Έλεγχος →";
-    progress.style.display = busy ? "" : "none";
+    progress.classList.toggle("is-hidden", !busy);
   }
 
   // ── Υποβολή ───────────────────────────────────────────────────────────────
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-    errorBox.style.display = "none";
-    resultBox.style.display = "none";
+    errorBox.classList.add("is-hidden");
+    resultBox.classList.add("is-hidden");
 
     var url = input.value.trim();
     if (!url) {
