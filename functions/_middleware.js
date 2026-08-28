@@ -28,5 +28,9 @@ export async function onRequest({ request, next }) {
     });
   }
 
-  return next();
+  // Προσωρινό: σημάδι ότι το middleware όντως έτρεξε γι' αυτό το αίτημα.
+  const response = await next();
+  const marked = new Response(response.body, response);
+  marked.headers.set("X-Mw", "1");
+  return marked;
 }
