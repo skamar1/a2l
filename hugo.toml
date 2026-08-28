@@ -51,6 +51,12 @@ disableHugoGeneratorInject = true
     identifier = "programata"
     url = "/programata/"
     weight = 2
+  # Δική μας εφαρμογή και το πιο πρόσφατο προϊόν — πρώτη στο dropdown.
+  [[menus.main]]
+    name = "Εν Όψει — myDATA"
+    url = "/enopsi/"
+    parent = "programata"
+    weight = 0
   [[menus.main]]
     name = "A2 CRM"
     url = "/a2crm/"

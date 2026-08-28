@@ -25,7 +25,7 @@
         <p class="carousel-slide__desc">Η νέα μας εφαρμογή διαβάζει τα δεδομένα του myDATA και σας δείχνει έσοδα, έξοδα, πελάτες και πορεία χρονιάς — χωρίς καμία αλλαγή στα προγράμματά σας.</p>
         <div class="carousel-slide__actions">
           <a href="https://app.enopsi.gr/eggrafi" target="_blank" rel="noopener" class="btn btn--teal btn--lg">Δοκιμάστε το δωρεάν</a>
-          <a href="#enopsi" class="btn btn--ghost-white btn--lg">Μάθετε περισσότερα</a>
+          <a href="/enopsi/" class="btn btn--ghost-white btn--lg">Μάθετε περισσότερα</a>
         </div>
       </div>
     </div>
@@ -255,11 +255,17 @@
 </section>
 
 {{/* ── ΕΝ ΟΨΕΙ ─────────────────────────────────────────────
-     Δική μας εφαρμογή, γι' αυτό ανοίγει σε νέα καρτέλα αντί να φύγει ο
-     επισκέπτης από το site. Το «παράθυρο» δεξιά είναι φτιαγμένο σε
-     HTML/CSS αντί για screenshot: δεν παλιώνει όταν αλλάξει το UI της
-     εφαρμογής και δεν φορτώνει εικόνα. Τα νούμερα είναι ενδεικτικά. */}}
+     Το «παράθυρο» δεξιά είναι φτιαγμένο σε HTML/CSS αντί για screenshot:
+     δεν παλιώνει όταν αλλάξει το UI της εφαρμογής και δεν φορτώνει εικόνα.
+     Τα νούμερα είναι ενδεικτικά.
+
+     Το url δείχνει πλέον στη σελίδα /enopsi/ του site, όχι στο enopsi.gr:
+     θέλουμε ο επισκέπτης να μείνει εδώ. Το target="_blank" μπαίνει μόνο
+     αν κάποιος ξαναβάλει εξωτερικό link — εσωτερική σελίδα σε νέα
+     καρτέλα είναι σκέτη ενόχληση. */}}
 {{ with $d.enopsi_banner }}
+{{ $ext := hasPrefix .url "http" }}
+{{ $tgt := cond $ext (safeHTMLAttr `target="_blank" rel="noopener"`) (safeHTMLAttr "") }}
 <section class="enopsi-banner" id="enopsi">
   <div class="container">
     <div class="enopsi-banner__inner">
@@ -273,12 +279,12 @@
         </ul>
         {{ end }}
         <div class="enopsi-banner__actions">
-          <a href="{{ .url }}" target="_blank" rel="noopener" class="btn btn--lg enopsi-banner__cta">{{ .cta }} →</a>
+          <a href="{{ .url }}" {{ $tgt }} class="btn btn--lg enopsi-banner__cta">{{ .cta }} →</a>
           {{ with .trial }}<span class="enopsi-banner__trial">{{ . }}</span>{{ end }}
         </div>
       </div>
       {{/* Διακοσμητικό: ο screen reader παίρνει την ίδια πληροφορία από το κείμενο. */}}
-      <a href="{{ .url }}" target="_blank" rel="noopener" class="enopsi-banner__visual" aria-hidden="true" tabindex="-1">
+      <a href="{{ .url }}" {{ $tgt }} class="enopsi-banner__visual" aria-hidden="true" tabindex="-1">
         <div class="enopsi-app">
           <div class="enopsi-app__bar">
             <img src="/images/enopsi/mark.svg" alt="" width="22" height="22">
