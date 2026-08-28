@@ -7,18 +7,30 @@ title = "A2Labs"
 # Pages σέρβιρε το HTML της αρχικής στο /robots.txt με status 200.
 enableRobotsTXT = true
 
+# Κανένα άρθρο δεν έχει tags ή categories, οπότε το Hugo παρήγαγε δύο άδειες
+# σελίδες (/tags/, /categories/) που έμπαιναν στο sitemap χωρίς περιεχόμενο.
+disableKinds = ["taxonomy", "term"]
+
+# Το Hugo προσθέτει μόνο του <meta name="generator" content="Hugo x.y"> στην
+# αρχική όταν το template δεν καλεί το hugo.Generator — δηλαδή ακριβώς επειδή
+# το αφαιρέσαμε από το head.html. Διαφημίζει έκδοση σε επίδοξο επιτιθέμενο.
+disableHugoGeneratorInject = true
+
 [params]
   description = "Μηχανογράφηση Επιχειρήσεων. ERP, CRM, Υπολογιστές."
   author = "Σταματάκη Ειρήνη — A2Labs"
-  logo = "/images/logo.png"
+  logo = "/images/logo.webp"
   phone = "210 224 1787"
   email = "info@a2l.gr"
   address = "Γ. Παπανδρέου 55, 143 41 Νέα Φιλαδέλφεια"
   hours = "Δευ–Παρ: 09:00–17:00"
   vat = "050747890"
-  doy = "ΚΕ.ΦΟ.ΔΕ ΑΤΤΙΚΗΣ"
   gemi = "164754803000"
   company_full = "A2 Labs"
+  # Η νομική επωνυμία (ατομική επιχείρηση). Το «A2 Labs» είναι διακριτικός
+  # τίτλος — δεν είναι κατοχυρωμένη επωνυμία, οπότε στα στοιχεία μητρώου
+  # (Επικοινωνία, JSON-LD legalName) εμφανίζεται η πραγματική.
+  legal_name = "Σταματάκη Ειρήνη"
   # sameAs για το JSON-LD (partials/schema.html). Βάλε ΜΟΝΟ πραγματικά,
   # ενεργά προφίλ — σπασμένο sameAs βλάπτει περισσότερο από την απουσία του.
   # Παράδειγμα: social = ["https://www.facebook.com/...", "https://www.linkedin.com/company/..."]

@@ -1,10 +1,11 @@
 ---
 title: "Megasoft e-Ergani: Ετεροχρονισμένη Είσοδος ή Έξοδος Εργαζομένου"
+seo_title: "e-Ergani: Ετεροχρονισμένη Είσοδος & Έξοδος"
 date: 2026-06-29
 description: "Βήμα-βήμα οδηγός για την καταχώρηση ετεροχρονισμένης (αναδρομικής) εισόδου ή εξόδου εργαζομένου στην εφαρμογή Megasoft e-Ergani (PRISMA Win eErgani)."
 category: "Οδηγοί"
 author: "A2Labs"
-image: "/images/eergani-eterochronismeni-eisodos.png"
+image: "/images/eergani-eterochronismeni-eisodos.webp"
 keywords: ["Megasoft", "e-Ergani", "PRISMA Win", "Εργάνη", "ετεροχρονισμένη είσοδος", "ψηφιακή κάρτα εργασίας", "αποχώρηση"]
 ---
 

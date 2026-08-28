@@ -1,9 +1,10 @@
 ---
 title: "Εφαρμογές Qorrect"
+seo_title: "Εφαρμογές Qorrect — ERP, Retail & Restaurant"
 description: "Ολοκληρωμένο λογισμικό ERP, Retail, Web και Restaurant για κάθε επιχείρηση."
 slug: "plano"
 product: true
-hero_image: "/images/plano-hero.png"
+hero_image: "/images/plano-hero.webp"
 tag: "ERP / Retail / Web / Restaurant"
 
 cta:
@@ -14,7 +15,7 @@ sections:
   - label: "ERP"
     title: "Plano ERP"
     subtitle: "Πλήρης εμπορική διαχείριση σε 7 εκδόσεις για όλες τις επιχειρήσεις της Ελληνικής αγοράς. Κύκλωμα Πωλήσεων, Αγορών, Παραγγελιών & Προσφορών, διαχείριση δαπανών, serial numbers, παρτίδες και Cloud περιβάλλον για εύκολη πρόσβαση από παντού."
-    image: "/images/plano-erp-screenshot.jpg"
+    image: "/images/plano-erp-screenshot.webp"
     modules:
       - icon: "📦"
         title: "Αποθήκη"
@@ -41,7 +42,7 @@ sections:
   - label: "RETAIL"
     title: "Plano Retail"
     subtitle: "Εφαρμογή Λιανικής σε 5 εκδόσεις για όλα τα καταστήματα. Γρήγορη καταχώρηση πωλήσεων με barcode scanner & οθόνη αφής συμβατή με Windows, Mac & Android, έκδοση ηλεκτρονικών τιμολογίων και προβολή αναφορών από το κινητό."
-    image: "/images/plano-retail-screenshot.jpg"
+    image: "/images/plano-retail-screenshot.webp"
     modules:
       - icon: "🏪"
         title: "POS Terminal"
@@ -68,7 +69,7 @@ sections:
   - label: "WEB"
     title: "Plano Web"
     subtitle: "E-Commerce & διαχείριση εταιρικής παρουσίας στο διαδίκτυο με 7 εκδόσεις. Από απλή σελίδα προβολής έως πλήρες e-commerce, συμβατό με τα περισσότερα marketplaces και σε live διασύνδεση με το εμπορικό πρόγραμμα."
-    image: "/images/plano-web-screenshot.jpg"
+    image: "/images/plano-web-screenshot.webp"
     modules:
       - icon: "🌐"
         title: "B2B Portal"
@@ -95,7 +96,7 @@ sections:
   - label: "RESTAURANT"
     title: "Plano Restaurant"
     subtitle: "Ολοκληρωμένο σύστημα διαχείρισης εστιατορίου, καφετέριας και bar. Διαχείριση τραπεζιών, παραγγελιών κουζίνας, delivery και ηλεκτρονική τιμολόγηση σε ένα σύστημα."
-    image: "/images/plano-restaurant-screenshot.jpg"
+    image: "/images/plano-restaurant-screenshot.webp"
     modules:
       - icon: "🍽️"
         title: "Διαχείριση Τραπεζιών"

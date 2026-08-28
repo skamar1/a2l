@@ -1,9 +1,10 @@
 ---
 title: "Εφαρμογές Dynasoft"
+seo_title: "Εφαρμογές Dynasoft — Result CRM & ERP"
 description: "Πρωτοποριακό και πλήρες Πληροφοριακό Σύστημα Διαχείρισης Σχέσεων Πελατών (C.R.M.) και Αξιοποίησης Επιχειρησιακών Πόρων (E.R.P.) για τη σύγχρονη επιχείρηση."
 slug: "result-crm"
 product: true
-hero_image: "/images/pexels-photomix-company-106344.jpg"
+hero_image: "/images/pexels-photomix-company-106344.webp"
 tag: "Dynasoft CRM / ERP"
 
 cta:
@@ -14,7 +15,7 @@ sections:
   - label: "RESULT C.R.M. – E.R.P."
     title: "Πλήρες CRM & ERP σε ένα σύστημα"
     subtitle: "Το Result C.R.M. – E.R.P. είναι πρωτοποριακό και πλήρες Πληροφοριακό Σύστημα Διαχείρισης Σχέσεων Πελατών (C.R.M.) και Αξιοποίησης Επιχειρησιακών Πόρων (E.R.P.), ένα δυναμικό μοντέλο μηχανογράφησης με ουσιαστικά οφέλη και πλεονεκτήματα για τη σύγχρονη επιχείρηση. Αποδεδειγμένα αξιόπιστη επιλογή για εμπορικές, μεταποιητικές και επιχειρήσεις παροχής υπηρεσιών."
-    image: "/images/result-crm-main.png"
+    image: "/images/result-crm-main.webp"
     modules:
       - icon: "🤝"
         title: "Διαχείριση Πελατών (CRM)"
@@ -44,7 +45,7 @@ sections:
   - label: "ΣΥΝΟΔΕΥΤΙΚΑ ΠΡΟΪΟΝΤΑ & ΕΠΕΚΤΑΣΕΙΣ"
     title: "Πλήρης Οικογένεια Προϊόντων"
     subtitle: "Εκτός από το κεντρικό σύστημα, η Dynasoft προσφέρει συνοδευτικά προϊόντα και επεκτάσεις που καλύπτουν εξειδικευμένες ανάγκες κάθε κλάδου."
-    image: "/images/result-crm-people.png"
+    image: "/images/result-crm-people.webp"
     modules:
       - icon: "🏬"
         title: "Dynasoft Retail System (DRS)"

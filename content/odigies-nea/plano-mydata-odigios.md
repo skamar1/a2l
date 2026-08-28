@@ -1,10 +1,11 @@
 ---
 title: "Οδηγός myDATA: Ηλεκτρονική Διαβίβαση Παραστατικών με το Plano"
+seo_title: "Οδηγός myDATA: Διαβίβαση με το Plano ERP"
 date: 2024-11-15
 description: "Βήμα προς βήμα οδηγός για τη σύνδεση του Plano ERP με το myDATA της ΑΑΔΕ."
 category: "Οδηγοί"
 author: "A2Labs"
-image: "/images/pexels-lukas-574071-1.jpg"
+image: "/images/pexels-lukas-574071-1.webp"
 ---
 
 ## Τι είναι το myDATA

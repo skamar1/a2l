@@ -1,6 +1,7 @@
 ---
 title: "Πολιτική Cookies"
-description: "Πληροφορίες για τη χρήση cookies στο a2l.gr."
+seo_title: "Πολιτική Cookies — Ποια cookies χρησιμοποιούμε"
+description: "Ποια cookies χρησιμοποιεί το a2l.gr, σε τι χρησιμεύουν και πώς μπορείτε να τα διαχειριστείτε ή να τα απενεργοποιήσετε από τον browser σας."
 slug: "politiki-cookies"
 ---
 

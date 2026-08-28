@@ -1,6 +1,7 @@
 ---
 title: "Τρόποι Πληρωμής"
-description: "Για την διευκόλυνσή σας, διαθέτουμε τους ακόλουθους τρόπους πληρωμής."
+seo_title: "Τρόποι Πληρωμής — IRIS & Τραπεζική Κατάθεση"
+description: "Πληρώστε την παραγγελία σας με IRIS Payments σαρώνοντας το QR code ή με κατάθεση σε έναν από τους τραπεζικούς μας λογαριασμούς."
 slug: "tropoi-plirwmis"
 layout: "payment"
 
@@ -9,7 +10,7 @@ methods:
     icon: "📱"
     title: "IRIS Payments"
     desc: "Σαρώστε το παρακάτω QR Code με την φωτογραφική μηχανή του κινητού σας ή χρησιμοποιήστε το ΑΦΜ της εταιρείας μας."
-    qr: "/images/iris-gr.png"
+    qr: "/images/iris-gr.webp"
     vat_label: "ΑΦΜ για IRIS"
     vat: "050747890"
 

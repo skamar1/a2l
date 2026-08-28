@@ -1,10 +1,11 @@
 ---
 title: "A2 CRM"
+seo_title: "A2 CRM — Πελάτες, Συμβόλαια & Σέρβις"
 description: "Σύστημα διαχείρισης πελατών, συμβολαίων, σέρβις και χρόνου εργασίας για μικρομεσαίες επιχειρήσεις πληροφορικής."
 slug: "a2crm"
 product: true
 tag: "CRM / Σέρβις / Τιμολόγηση Ωρών"
-hero_image: "/images/a2crm-hero.jpg"
+hero_image: "/images/a2crm-hero.webp"
 
 cta:
   text: "Ζητήστε Πληροφορίες"
@@ -38,7 +39,7 @@ sections:
           - "Σύνδεση με δελτία σέρβις"
 
   - label: "ΣΕΡΒΙΣ"
-    hero_image: "/images/a2crm-servis-hero.jpg"
+    hero_image: "/images/a2crm-servis-hero.webp"
     title: "ΔΕΛΤΙΑ ΣΕΡΒΙΣ"
     subtitle: "Πλήρης διαχείριση αιτημάτων τεχνικής υποστήριξης — από την παραλαβή έως την παράδοση."
     modules:
@@ -65,7 +66,7 @@ sections:
           - "Τρόποι παραλαβής / αποστολής"
 
   - label: "ΧΡΟΝΟΧΡΕΩΣΗ"
-    hero_image: "/images/a2crm-timer-hero.jpg"
+    hero_image: "/images/a2crm-timer-hero.webp"
     title: "ΚΑΤΑΓΡΑΦΗ ΧΡΟΝΟΥ"
     subtitle: "Αυτόματη και χειροκίνητη καταγραφή χρόνου εργασίας ανά πελάτη — με ενσωματωμένο χρονόμετρο και ενσωμάτωση IP phone."
     modules:

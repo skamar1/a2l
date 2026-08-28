@@ -4,7 +4,7 @@ date: 2024-09-01
 description: "Η έκδοση 8.5 του Plano φέρνει βελτιώσεις στο POS, νέο module B2B portal και πλήρη υποστήριξη myDATA 2024."
 category: "Νέα"
 author: "A2Labs"
-image: "/images/plano-hero.png"
+image: "/images/plano-hero.webp"
 ---
 
 ## Plano 8.5 — Κύριες αλλαγές

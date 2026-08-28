@@ -6,8 +6,13 @@
 {{/* Το 404 χρειάζεται ξεχωριστή μεταχείριση: ελληνικός τίτλος, noindex,
      χωρίς canonical (δεν πρέπει να ευρετηριάζεται ούτε να δείχνει αλλού). */}}
 {{ $is404 := eq .RelPermalink "/404.html" }}
-{{ $pageTitle := cond .IsHome (printf "%s — %s" site.Title site.Params.description) (printf "%s | %s" .Title site.Title) }}
-{{ if $is404 }}{{ $pageTitle = printf "Η σελίδα δεν βρέθηκε (404) | %s" site.Title }}{{ end }}
+{{/* Ο <title> θέλει 30–60 χαρακτήρες για να μην κοπεί ούτε να λέει τίποτα στα
+     αποτελέσματα αναζήτησης· ο ορατός H1 θέλει να είναι σύντομος («Επικοινωνία»).
+     Είναι δύο διαφορετικές δουλειές, οπότε το `seo_title` στο front matter
+     αποσυνδέει τα δύο: αν λείπει, ισχύει ο τίτλος της σελίδας όπως πάντα. */}}
+{{ $titleBase := or .Params.seo_title .Title }}
+{{ $pageTitle := cond .IsHome (printf "%s — %s" site.Title site.Params.description) (printf "%s | %s" $titleBase site.Title) }}
+{{ if $is404 }}{{ $pageTitle = printf "Η σελίδα δεν βρέθηκε (404) — Πού να ψάξετε | %s" site.Title }}{{ end }}
 
 {{/* description: front matter → summary του άρθρου → site default */}}
 {{ $desc := "" }}
@@ -20,6 +25,8 @@
     {{ $desc = site.Params.description }}
   {{ end }}
 {{ end }}
+
+{{ if $is404 }}{{ $desc = "Η διεύθυνση που ζητήσατε δεν υπάρχει ή άλλαξε. Δείτε τα προγράμματα, τις οδηγίες και τα στοιχεία επικοινωνίας της A2Labs." }}{{ end }}
 
 {{/* og:title & og:image: override από front matter (PBS: decoupled titles/images) */}}
 {{ $ogTitle := or .Params.og_title $pageTitle }}
@@ -41,7 +48,9 @@
 <meta name="author" content="{{ site.Params.author }}">
 <meta name="creator" content="{{ site.Params.company_full | default site.Title }}">
 {{ with $keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
-{{ hugo.Generator }}
+{{/* Το <meta name="generator"> του Hugo δηλώνει και την ακριβή έκδοση. Δεν
+     προσφέρει τίποτα στον επισκέπτη και δίνει σε σαρωτή έτοιμη απάντηση στο
+     «ποια έκδοση τρέχει», οπότε δεν το εκπέμπουμε. */}}
 
 {{/* Canonical + indexing */}}
 {{ if $is404 }}
@@ -92,7 +101,9 @@
      WebPage, ContactPoint, BreadcrumbList, FAQPage, BlogPosting) */}}
 {{ partial "schema.html" . }}
 
-{{/* Cloudflare Turnstile — μόνο όπου υπάρχει widget (επικοινωνία, έλεγχος site) */}}
+{{/* Cloudflare Turnstile — μόνο όπου υπάρχει widget (επικοινωνία, έλεγχος site).
+     Ο loader αποφασίζει αν θα το φορτώσει: σε localhost το παρακάμπτει, γιατί
+     το domain δεν είναι δηλωμένο στο Turnstile και το widget θα έβγαζε λάθος. */}}
 {{ if in (slice "contact" "site-check") .Layout }}
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+{{ partial "script.html" "js/turnstile-loader.js" }}
 {{ end }}

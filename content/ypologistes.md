@@ -1,9 +1,10 @@
 ---
 title: "Υπολογιστές"
+seo_title: "Υπολογιστές & Servers για Επιχειρήσεις"
 description: "Επαγγελματικοί υπολογιστές και server infrastructure για επιχειρήσεις."
 slug: "ypologistes"
 product: true
-hero_image: "/images/pexels-lukas-574071-1.jpg"
+hero_image: "/images/pexels-lukas-574071-1.webp"
 tag: "Hardware"
 
 cta:

@@ -53,7 +53,7 @@
       "@type"       (slice "Organization" "LocalBusiness" "ProfessionalService")
       "@id"         $orgID
       "name"        (site.Params.company_full | default site.Title)
-      "legalName"   (site.Params.company_full | default site.Title)
+      "legalName"   (site.Params.legal_name | default site.Params.company_full | default site.Title)
       "alternateName" site.Title
       "url"         (printf "%s/" $base)
       "logo"        (dict "@type" "ImageObject" "@id" (printf "%s/#logo" $base) "url" (absURL site.Params.logo) "contentUrl" (absURL site.Params.logo) "caption" (site.Params.company_full | default site.Title))

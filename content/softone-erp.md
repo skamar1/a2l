@@ -3,7 +3,7 @@ title: "Εφαρμογές EntersoftOne"
 description: "Ολοκληρωμένη σουίτα cloud ERP, CRM, HR, mobile και κλαδικών λύσεων για επιχειρήσεις κάθε μεγέθους — από start-up έως μεγάλες επιχειρήσεις."
 slug: "soft1"
 product: true
-hero_image: "/images/pexels-fauxels-3183150.jpg"
+hero_image: "/images/pexels-fauxels-3183150.webp"
 tag: "SOFT1 Series 6"
 
 cta:
@@ -14,7 +14,7 @@ sections:
   - label: "ERP, CRM & ΑΥΤΟΜΑΤΙΣΜΟΣ"
     title: "SOFT1 Series 6 — Cloud ERP & CRM"
     subtitle: "Πρωτοποριακό cloud ERP που συνδυάζει ευφυή αυτοματισμό διεργασιών, πλήρη εμπορική διαχείριση και CRM σε μία ενιαία πλατφόρμα. Πάνω από 8.000 εγκαταστάσεις σε Ελλάδα και Κύπρο."
-    image: "/images/soft1-erp-screenshot.png"
+    image: "/images/soft1-erp-screenshot.webp"
     modules:
       - icon: "🏭"
         title: "SOFT1 Cloud ERP Series 6"
@@ -52,7 +52,7 @@ sections:
   - label: "MOBILE, ΑΠΟΘΗΚΗ & FINTECH"
     title: "Mobile Εφαρμογές & Χρηματοοικονομικά"
     subtitle: "Από ασύρματη διαχείριση αποθήκης και mobile πωλήσεις έως τραπεζικές συναλλαγές μέσα από το ERP — η EntersoftOne καλύπτει κάθε λειτουργική ανάγκη."
-    image: "/images/soft1-mobile-screenshot.png"
+    image: "/images/soft1-mobile-screenshot.webp"
     modules:
       - icon: "📱"
         title: "SOFT1 360 — Enterprise Mobility"
@@ -106,7 +106,7 @@ sections:
   - label: "HR, ΜΙΣΘΟΔΟΣΙΑ & ΚΛΑΔΙΚΕΣ ΛΥΣΕΙΣ"
     title: "HR Suite & Λύσεις ανά Κλάδο"
     subtitle: "Πλήρες οικοσύστημα διαχείρισης ανθρώπινου δυναμικού, μισθοδοσίας και ψηφιακής κάρτας εργασίας — συνδυασμένο με εξειδικευμένες κλαδικές λύσεις για λιανική, χονδρική, παραγωγή και υπηρεσίες."
-    image: "/images/soft1-hr-screenshot.jpg"
+    image: "/images/soft1-hr-screenshot.webp"
     modules:
       - icon: "👥"
         title: "SOFT1 HRMS & myWorkplace"

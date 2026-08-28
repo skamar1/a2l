@@ -1,9 +1,10 @@
 ---
 title: "Εφαρμογές Megasoft"
-description: "Ολοκληρωμένη οικογένεια εφαρμογών για κάθε ανάγκη της επιχείρησης — από τιμολόγηση και εμπορική διαχείριση έως POS, λογιστικές εφαρμογές και Business Intelligence."
+seo_title: "Εφαρμογές Megasoft — ERP, POS & Λογιστικά"
+description: "Ολοκληρωμένη οικογένεια εφαρμογών για κάθε ανάγκη της επιχείρησης — από τιμολόγηση και εμπορική διαχείριση έως POS, λογιστικά και Business Intelligence."
 slug: "megasoft"
 product: true
-hero_image: "/images/pexels-yan-krukov-8867435.jpg"
+hero_image: "/images/pexels-yan-krukov-8867435.webp"
 tag: "Megasoft PRISMA Win"
 
 cta:
@@ -13,7 +14,7 @@ cta:
 promos:
   - label: "InvoiceLink — Νέο"
     title: "Η Ηλεκτρονική Τιμολόγηση έρχεται. Είστε έτοιμοι;"
-    image: "/images/megasoft-invoicelink-banner.jpg"
+    image: "/images/megasoft-invoicelink-banner.webp"
     deadline: "Έως 03/08/2026"
     text: "Η μετάβαση στην Ηλεκτρονική Τιμολόγηση μέσω myDATA δεν είναι πλέον μελλοντική υποχρέωση. Επιλέγοντας το InvoiceLink δύο μήνες νωρίτερα από την προθεσμία, η επιχείρησή σας επωφελείται άμεσα από σημαντικά φορολογικά κίνητρα."
     bullets:
@@ -26,7 +27,7 @@ promos:
 
   - label: "PRISMA Win — Εστίαση"
     title: "Η σεζόν ξεκίνησε. Είναι η επιχείρησή σας έτοιμη;"
-    image: "/images/megasoft-prismawin-banner.jpg"
+    image: "/images/megasoft-prismawin-banner.webp"
     text: "Στον χώρο της εστίασης, η ταχύτητα και η σωστή εξυπηρέτηση κάνουν τη διαφορά. Με τις λύσεις παραγγελιοληψίας PRISMA Win, η διαχείριση γίνεται πιο εύκολη, πιο γρήγορη και πιο οργανωμένη από ποτέ."
     bullets:
       - "Γρηγορότερη παραγγελιοληψία"
@@ -38,7 +39,7 @@ promos:
 
   - label: "eErgani — Ψηφιακή Κάρτα Εργασίας"
     title: "Μήπως η επιχείρησή σας εντάσσεται πλέον στην Ψηφιακή Κάρτα Εργασίας;"
-    image: "/images/megasoft-eergani-banner.jpg"
+    image: "/images/megasoft-eergani-banner.webp"
     text: "Η εφαρμογή επεκτείνεται συνεχώς και αφορά πλέον όλο και περισσότερους κλάδους: Υγεία, Τηλεπικοινωνίες, Καθαριότητα, Κομμωτήρια, Γραφεία Τελετών και πολλές ακόμη επιχειρήσεις."
     bullets:
       - "Γρήγορη σήμανση εισόδου & εξόδου"

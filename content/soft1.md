@@ -1,10 +1,11 @@
 ---
 title: "Entersoftone"
+seo_title: "EntersoftOne — Cloud Τιμολόγηση & Ψηφιακή Κάρτα"
 description: "Σύγχρονες cloud λύσεις τιμολόγησης, διαχείρισης επιχείρησης και ψηφιακής κάρτας εργασίας."
 slug: "entersoftone"
 product: true
 tag: "Cloud ERP / Εργασία"
-hero_image: "/images/entersoftone-hero.jpg"
+hero_image: "/images/entersoftone-hero.webp"
 
 cta:
   text: "Ζητήστε Πληροφορίες"
@@ -38,7 +39,7 @@ sections:
           - "Φοροαπαλλαγές & κίνητρα"
 
   - label: "ΕΡΓΑΣΙΑ"
-    hero_image: "/images/entersoftone-ergani-hero.jpg"
+    hero_image: "/images/entersoftone-ergani-hero.webp"
     title: "ENTERSOFTONE ERGANI"
     subtitle: "Ψηφιακή Κάρτα Εργασίας — πλήρης συμμόρφωση με την υποχρεωτική νομοθεσία."
     modules:

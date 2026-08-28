@@ -4,7 +4,7 @@ date: 2024-10-08
 description: "Πώς να εισάγετε μαζικά επαφές και πελάτες από αρχείο Excel στο Result CRM."
 category: "Οδηγοί"
 author: "A2Labs"
-image: "/images/a2crm-hero.jpg"
+image: "/images/a2crm-hero.webp"
 ---
 
 ## Προετοιμασία αρχείου Excel
