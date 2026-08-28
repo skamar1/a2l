@@ -34,7 +34,7 @@ disableHugoGeneratorInject = true
   # sameAs για το JSON-LD (partials/schema.html). Βάλε ΜΟΝΟ πραγματικά,
   # ενεργά προφίλ — σπασμένο sameAs βλάπτει περισσότερο από την απουσία του.
   # Παράδειγμα: social = ["https://www.facebook.com/...", "https://www.linkedin.com/company/..."]
-  social = []
+  social = ["https://www.facebook.com/a2labsgr"]
 
   turnstile_key = "0x4AAAAAAAA62OLbaIhLXmje"
   keywords = ["μηχανογράφηση επιχειρήσεων", "ERP", "CRM", "SoftOne", "Entersoft", "Megasoft", "υποστήριξη εμπορικών προγραμμάτων", "κατασκευή ιστοσελίδων", "e-shop", "λύσεις πληροφορικής", "Αθήνα", "Νέα Φιλαδέλφεια"]
