@@ -265,11 +265,30 @@ async function verifyTurnstile(token, ip, env, request) {
 }
 
 /**
+ * IP που εξαιρούνται από το όριο — δικές μας, για δοκιμές και επιδείξεις.
+ *
+ * Διαβάζονται από μεταβλητή περιβάλλοντος και ΟΧΙ από τον κώδικα: το repo είναι
+ * δημόσιο και μια IP στο git είναι πληροφορία που δεν χρειάζεται να δίνουμε.
+ * Μορφή: μία ή περισσότερες IP χωρισμένες με κόμμα (IPv4 ή IPv6, γιατί η ίδια
+ * σύνδεση μπορεί να βγει και με τα δύο).
+ */
+function isExemptIp(env, ip) {
+  const raw = env.RATE_LIMIT_EXEMPT_IPS;
+  if (!raw || !ip) return false;
+  return String(raw)
+    .split(",")
+    .map((entry) => entry.trim().toLowerCase())
+    .filter(Boolean)
+    .includes(ip.toLowerCase());
+}
+
+/**
  * Όριο ανά IP. Χωρίς KV το εργαλείο εξακολουθεί να δουλεύει — προτιμούμε να
  * λειτουργεί χωρίς όριο παρά να μη λειτουργεί καθόλου επειδή λείπει ένα binding.
  */
 async function checkRateLimit(env, ip) {
   if (!env.CHECKS || !ip) return { ok: true };
+  if (isExemptIp(env, ip)) return { ok: true };
   const key = `rl:${ip}`;
   try {
     const current = Number((await env.CHECKS.get(key)) || 0);
