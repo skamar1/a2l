@@ -1,0 +1,33 @@
+# Ξεχωριστός Worker, όχι Pages Function.
+#
+# Οι Pages Functions του a2l (functions/) δεν έχουν cron trigger — τρέχουν μόνο
+# όταν κάποιος ζητήσει μια διεύθυνση. Ο poster πρέπει να ξυπνάει μόνος του,
+# άρα είναι Worker με δικό του deploy.
+
+name = "a2l-fb-poster"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+account_id = "75e1b7891b322b975569a4a7befebab1"
+
+# Το workers.dev URL είναι δημόσιο και δεν το χρειαζόμαστε: η μόνη κανονική
+# είσοδος είναι το cron. Ο fetch handler μένει για χειροκίνητη δοκιμή και
+# προστατεύεται με το TRIGGER_KEY, αλλά δεν εκτίθεται χωρίς λόγο.
+workers_dev = false
+
+# Το cron της Cloudflare είναι UTC. Στέλνει και στις 07:00 και στις 08:00 UTC
+# κάθε Τρίτη· ο κώδικας κρατάει μόνο εκείνο που είναι 10:00 στην Αθήνα, ώστε
+# η ώρα να μη μετακινείται με τη θερινή/χειμερινή αλλαγή.
+[triggers]
+crons = ["0 7,8 * * 2"]
+
+[[kv_namespaces]]
+binding = "POSTED"
+id = "b2d4341ef46346ca9bed0d20c1d5737b"
+
+# Μυστικά (μπαίνουν με `wrangler secret put`, ποτέ σε αυτό το αρχείο —
+# το repo είναι δημόσιο):
+#   FB_SYSTEM_TOKEN   το token του χρήστη συστήματος (1Password)
+#   SMTP2GO_API_KEY   για τα email ειδοποίησης σε αποτυχία
+#   TRIGGER_KEY       για τη χειροκίνητη δοκιμή μέσω HTTP
+[observability]
+enabled = true
