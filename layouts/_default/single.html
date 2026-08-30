@@ -162,12 +162,10 @@
       {{ end }}
 
       {{/* ── FAQ (προαιρετικό ανά σελίδα προϊόντος) ─────────────── */}}
+      {{/* Το JSON-LD του FAQ το παράγει το partials/schema.html μέσα στο ενιαίο
+           @graph του <head>. Εδώ έμπαινε δεύτερο, διπλότυπο — και χωρίς safeJS,
+           οπότε έβγαινε διπλο-κωδικοποιημένο ως string και ήταν άκυρο. */}}
       {{ with .Params.faq }}
-      {{ $entities := slice }}
-      {{ range .items }}
-        {{ $entities = $entities | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}
-      {{ end }}
-      <script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $entities) | jsonify }}</script>
       <section class="section" id="faq">
         <div class="section-header">
           <span class="section-label">{{ .label | default "Συχνές ερωτήσεις" }}</span>

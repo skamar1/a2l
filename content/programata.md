@@ -6,17 +6,29 @@ slug: "programata"
 layout: "programata"
 
 products:
+  - name: "Εν Όψει — myDATA"
+    url: "/enopsi/"
+    tag: "Επιχειρηματική εικόνα από το myDATA"
+    image: "/images/enopsi/pinakas-elegxou.webp"
+    desc: "Δική μας εφαρμογή: διαβάζει τα δεδομένα που στέλνει ήδη η επιχείρησή σας στο myDATA και τα κάνει τζίρο, έξοδα, ΦΠΑ και σύγκριση ετών."
+
   - name: "A2 CRM"
     url: "/a2crm/"
     tag: "CRM / Σέρβις / Τιμολόγηση Ωρών"
     image: "/images/a2crm-hero.webp"
     desc: "Σύστημα διαχείρισης πελατών, συμβολαίων, σέρβις και χρόνου εργασίας για μικρομεσαίες επιχειρήσεις πληροφορικής."
 
-  - name: "Εφαρμογές EntersoftOne"
+  - name: "Εφαρμογές SoftOne ERP"
     url: "/soft1/"
     tag: "Cloud ERP / CRM / HR"
     image: "/images/pexels-fauxels-3183150.webp"
     desc: "Cloud ERP, CRM, HR, mobile και κλαδικές λύσεις για επιχειρήσεις κάθε μεγέθους."
+
+  - name: "Εφαρμογές EntersoftOne"
+    url: "/entersoftone/"
+    tag: "Cloud Τιμολόγηση / Ψηφιακή Κάρτα"
+    image: "/images/entersoftone-hero.webp"
+    desc: "Cloud τιμολόγηση χωρίς φορολογικό μηχανισμό και Ψηφιακή Κάρτα Εργασίας με πλήρη συμμόρφωση στην Εργάνη."
 
   - name: "Εφαρμογές Dynasoft"
     url: "/result-crm/"
@@ -36,9 +48,21 @@ products:
     image: "/images/plano-hero.webp"
     desc: "Ολοκληρωμένο λογισμικό ERP, Retail και Web για κάθε επιχείρηση."
 
+  - name: "ICS VCR — Άυλη Ταμειακή"
+    url: "/ics-vcr/"
+    tag: "Ταμειακή / SoftPOS / myDATA"
+    image: "/images/ics-vcr.webp"
+    desc: "Άυλη cloud ταμειακή, τερματικό SoftPOS και Πάροχος myDATA σε μία φορητή συσκευή, χωρίς επιπλέον εξοπλισμό."
+
   - name: "Διασύνδεση SoftOne ↔ Skroutz FBS"
     url: "/skroutz-fbs-softone/"
     tag: "Διασύνδεση e-shop ↔ ERP"
     image: "/images/skroutz-fbs/karta.svg"
     desc: "Αυτόματα παραστατικά, myDATA, πιστωτικά, ταμειακά και έλεγχος αποθέματος για κάθε παραγγελία Skroutz FBS."
+
+  - name: "Πάνες για Όλους — Mobile App"
+    url: "/panesgiaolous-app/"
+    tag: "Mobile App / iOS & Android"
+    image: "/images/panesgiaolous-screen-main.webp"
+    desc: "Εφαρμογή παραγγελιών για iOS και Android που αναπτύξαμε και συντηρούμε — από τη σχεδίαση έως τα δύο stores."
 ---

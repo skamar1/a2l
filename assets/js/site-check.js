@@ -144,6 +144,87 @@
     return box;
   }
 
+  /**
+   * Οι δύο ενέργειες πάνω στο έτοιμο αποτέλεσμα: αντιγραφή του μόνιμου
+   * συνδέσμου και εκτύπωση / αποθήκευση σε PDF. Ο μόνιμος σύνδεσμος υπάρχει
+   * ήδη ως κείμενο· χωρίς κουμπί ο χρήστης πρέπει να τον διαλέξει με το χέρι.
+   */
+  function renderActions(report) {
+    var target = report.permalink ? location.origin + report.permalink : location.href;
+
+    var box = el("div", "check-actions");
+
+    var copyBtn = el("button", "btn btn--outline", "Αντιγραφή συνδέσμου αναφοράς");
+    copyBtn.type = "button";
+    copyBtn.addEventListener("click", function () {
+      copyText(target, function (ok) {
+        copyBtn.textContent = ok ? "Αντιγράφηκε!" : "Δεν έγινε αντιγραφή";
+        announce(ok ? "Ο σύνδεσμος αντιγράφηκε." : "Η αντιγραφή δεν ήταν δυνατή.");
+        setTimeout(function () {
+          copyBtn.textContent = "Αντιγραφή συνδέσμου αναφοράς";
+        }, 2000);
+      });
+    });
+    box.appendChild(copyBtn);
+
+    var printBtn = el("button", "btn btn--outline", "Εκτύπωση / Αποθήκευση PDF");
+    printBtn.type = "button";
+    printBtn.addEventListener("click", function () {
+      // Οι κατηγορίες είναι <details>: ό,τι είναι κλειστό δεν τυπώνεται.
+      // Ανοίγουν όλες πριν το print, ώστε το PDF να έχει ολόκληρη την αναφορά.
+      var closed = [];
+      Array.prototype.forEach.call(resultBox.querySelectorAll("details"), function (d) {
+        if (!d.open) { d.open = true; closed.push(d); }
+      });
+      window.print();
+      closed.forEach(function (d) { d.open = false; });
+    });
+    box.appendChild(printBtn);
+
+    return box;
+  }
+
+  /** Πρόχειρο: το Clipboard API όπου υπάρχει, αλλιώς textarea + execCommand. */
+  function copyText(text, done) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        function () { done(true); },
+        function () { done(legacyCopy(text)); }
+      );
+      return;
+    }
+    done(legacyCopy(text));
+  }
+
+  function legacyCopy(text) {
+    try {
+      var field = document.createElement("textarea");
+      field.className = "copy-proxy";
+      field.value = text;
+      field.setAttribute("readonly", "readonly");
+      document.body.appendChild(field);
+      field.select();
+      var ok = document.execCommand("copy");
+      document.body.removeChild(field);
+      return ok;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  var announcer = null;
+
+  /** Το κείμενο του κουμπιού αλλάζει σιωπηλά για τον αναγνώστη οθόνης. */
+  function announce(message) {
+    if (!announcer) {
+      announcer = el("span", "visually-hidden");
+      announcer.setAttribute("role", "status");
+      announcer.setAttribute("aria-live", "polite");
+      document.body.appendChild(announcer);
+    }
+    announcer.textContent = message;
+  }
+
   function render(report) {
     resultBox.textContent = "";
     resultBox.appendChild(renderScore(report));
@@ -160,6 +241,8 @@
 
     var permalink = renderPermalink(report);
     if (permalink) resultBox.appendChild(permalink);
+
+    resultBox.appendChild(renderActions(report));
 
     var cta = el("div", "check-cta");
     cta.appendChild(el("h2", null, "Θέλετε να τα διορθώσουμε εμείς;"));

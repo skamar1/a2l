@@ -3,7 +3,7 @@ title: "ICS VCR — Άυλη Ταμειακή All in One"
 description: "Άυλη cloud ταμειακή μηχανή, τερματικό SoftPOS και Πάροχος myDATA σε μία φορητή συσκευή. Πλήρης συμμόρφωση με την ΑΑΔΕ, χωρίς επιπλέον εξοπλισμό."
 slug: "ics-vcr"
 product: true
-hero_image: "https://www.ics.gr/image/cache/catalog/tamiakes-mixanes/tameiakes-ics/ics-vcr-ayli-tameiaki-mixani-v3h-1b-550x550.jpg"
+hero_image: "/images/ics-vcr.webp"
 tag: "ICS VCR"
 
 cta:

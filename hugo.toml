@@ -80,10 +80,15 @@ disableHugoGeneratorInject = true
     parent = "programata"
     weight = 1
   [[menus.main]]
-    name = "Εφαρμογές EntersoftOne"
+    name = "Εφαρμογές SoftOne ERP"
     url = "/soft1/"
     parent = "programata"
     weight = 2
+  [[menus.main]]
+    name = "Εφαρμογές EntersoftOne"
+    url = "/entersoftone/"
+    parent = "programata"
+    weight = 3
   [[menus.main]]
     name = "Εφαρμογές Dynasoft"
     url = "/result-crm/"

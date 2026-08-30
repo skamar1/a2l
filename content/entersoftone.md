@@ -1,5 +1,5 @@
 ---
-title: "Entersoftone"
+title: "Εφαρμογές EntersoftOne"
 seo_title: "EntersoftOne — Cloud Τιμολόγηση & Ψηφιακή Κάρτα"
 description: "Σύγχρονες cloud λύσεις τιμολόγησης, διαχείρισης επιχείρησης και ψηφιακής κάρτας εργασίας."
 slug: "entersoftone"

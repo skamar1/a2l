@@ -4,6 +4,11 @@
   {{ partial "head.html" . }}
 </head>
 <body>
+  {{/* Πρώτο εστιάσιμο στοιχείο της σελίδας: με ένα Tab ο χρήστης πληκτρολογίου
+       προσπερνάει ολόκληρο το μενού και πάει στο περιεχόμενο. Φαίνεται μόνο
+       όταν πάρει εστίαση (βλ. .skip-link στο main.css). */}}
+  <a class="skip-link" href="#main-content">Μετάβαση στο περιεχόμενο</a>
+
   {{ partial "header.html" . }}
 
   <main id="main-content">

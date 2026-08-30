@@ -83,22 +83,22 @@
         <div class="form-row">
           <div class="form-group">
             <label for="name">Όνομα *</label>
-            <input type="text" id="name" name="name" placeholder="Το όνομά σας" required>
+            <input type="text" id="name" name="name" placeholder="Το όνομά σας" maxlength="100" required>
           </div>
           <div class="form-group">
             <label for="company">Εταιρεία</label>
-            <input type="text" id="company" name="company" placeholder="Η εταιρεία σας">
+            <input type="text" id="company" name="company" placeholder="Η εταιρεία σας" maxlength="120">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="email@example.com" required>
+            <input type="email" id="email" name="email" placeholder="email@example.com" maxlength="254" required>
           </div>
           <div class="form-group">
             <label for="phone">Τηλέφωνο</label>
-            <input type="tel" id="phone" name="phone" placeholder="+30 210...">
+            <input type="tel" id="phone" name="phone" placeholder="+30 210..." maxlength="40">
           </div>
         </div>
 
@@ -109,7 +109,8 @@
             <option value="support">Τεχνική Υποστήριξη</option>
             <option value="demo">Αίτημα Demo</option>
             <option value="a2crm">Πληροφορίες A2 CRM</option>
-            <option value="soft1">Πληροφορίες EntersoftOne</option>
+            <option value="soft1">Πληροφορίες SoftOne ERP</option>
+            <option value="entersoftone">Πληροφορίες EntersoftOne</option>
             <option value="result-crm">Πληροφορίες Dynasoft (Result CRM)</option>
             <option value="megasoft">Πληροφορίες Megasoft</option>
             <option value="plano">Πληροφορίες Qorrect (Plano ERP)</option>
@@ -121,12 +122,18 @@
 
         <div class="form-group">
           <label for="message">Μήνυμα *</label>
-          <textarea id="message" name="message" placeholder="Περιγράψτε τις ανάγκες σας..." required></textarea>
+          <textarea id="message" name="message" placeholder="Περιγράψτε τις ανάγκες σας..." maxlength="5000" required></textarea>
         </div>
 
         {{ with site.Params.turnstile_key }}
         <div class="cf-turnstile" data-sitekey="{{ . }}" data-theme="light"></div>
         {{ end }}
+
+        <p class="form-note">
+          Τα στοιχεία σας χρησιμοποιούνται αποκλειστικά για να απαντήσουμε στο μήνυμά σας
+          και δεν αποθηκεύονται στον ιστότοπο. Δείτε την
+          <a href="/politiki-aporritou/">Πολιτική Απορρήτου</a>.
+        </p>
 
         <button type="submit" id="submitBtn" class="btn btn--primary btn--lg btn--self-start">
           Αποστολή Μηνύματος →

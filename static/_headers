@@ -23,12 +23,12 @@
   #   <style> block στο site — όλα έγιναν κλάσεις στο assets/css/main.css.
   #   Το μοναδικό δυναμικό στυλ (background-image ανά σελίδα) μπαίνει μέσω
   #   CSSOM στο main.js (data-bg), που το CSP δεν το περιορίζει.
-  # img-src: www.ics.gr = εικόνα promo banner (αρχική)· play.google.com και
-  #   tools.applemediaservices.com (+ toolbox.marketingtools.apple.com, όπου
-  #   κάνει redirect) = τα badges App Store / Google Play στη σελίδα
-  #   /panesgiaolous-app/.
+  # img-src: 'self' data: και τίποτα άλλο. Η εικόνα της ICS VCR και τα badges
+  #   App Store / Google Play φιλοξενούνται τοπικά (static/images/): μια εικόνα
+  #   από ξένο server σπάει όταν αλλάξει διεύθυνση ή πέσει ο server, και δίνει
+  #   την IP του επισκέπτη σε τρίτους χωρίς λόγο.
   # frame-src: openstreetmap.org = ο χάρτης στη σελίδα /epikoinonia/.
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; img-src 'self' data: https://www.ics.gr https://play.google.com https://tools.applemediaservices.com https://toolbox.marketingtools.apple.com; font-src 'self'; connect-src 'self' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com https://www.openstreetmap.org; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com https://www.openstreetmap.org; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests
 
   # --- Permissions-Policy ------------------------------------------------
   # Το site δεν χρησιμοποιεί καμία από αυτές τις APIs· τις κλείνουμε ρητά.

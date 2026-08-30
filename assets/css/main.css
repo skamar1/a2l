@@ -105,6 +105,29 @@ p { color: var(--text-secondary); }
   border-bottom: 1px solid var(--border);
 }
 
+/* --- Skip link -------------------------------------------- */
+/* Κρυμμένος πάνω από το πάνω άκρο· κατεβαίνει μόλις πάρει εστίαση με Tab.
+   Δεν χρησιμοποιείται display:none — έτσι δεν θα τον έβρισκε το πληκτρολόγιο. */
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 16px;
+  z-index: 2000;
+  transform: translateY(-120%);
+  padding: 10px 18px;
+  background: var(--accent-bright);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 /* --- Header ----------------------------------------------- */
 .header {
   position: fixed;
@@ -1792,6 +1815,14 @@ p { color: var(--text-secondary); }
   gap: 20px;
 }
 
+/* Ενημέρωση GDPR πάνω από το κουμπί αποστολής — διακριτική αλλά αναγνώσιμη. */
+.form-note {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
 .form label {
   font-size: 0.85rem;
   font-weight: 600;
@@ -2303,6 +2334,7 @@ p { color: var(--text-secondary); }
 }
 
 .bank-row__copy {
+  position: relative;
   width: 32px; height: 32px;
   border-radius: 6px;
   background: var(--bg-primary);
@@ -2322,6 +2354,49 @@ p { color: var(--text-secondary); }
 .bank-row__copy.copied {
   color: #16a34a;
   border-color: rgba(22, 163, 74, 0.3);
+}
+
+.bank-row__copy.copy-failed {
+  color: #dc2626;
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+/* Το εικονίδιο που αλλάζει χρώμα είναι εύκολο να μη γίνει αντιληπτό· η ετικέτα
+   λέει ρητά τι έγινε. Το κείμενο μπαίνει από CSS ώστε να μην απαιτείται style
+   attribute (CSP: style-src 'self'). */
+.bank-row__copy.copied::after,
+.bank-row__copy.copy-failed::after {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: #fff;
+  pointer-events: none;
+}
+
+.bank-row__copy.copied::after {
+  content: "Αντιγράφηκε!";
+  background: #16a34a;
+}
+
+.bank-row__copy.copy-failed::after {
+  content: "Δεν έγινε αντιγραφή";
+  background: #dc2626;
+}
+
+/* Κρυφό πεδίο του εφεδρικού execCommand: εκτός οθόνης αλλά επιλέξιμο —
+   η .visually-hidden με clip() δεν είναι αξιόπιστη για select(). */
+.copy-proxy {
+  position: fixed;
+  top: 0;
+  left: -9999px;
+  opacity: 0;
 }
 
 .bank-beneficiary {
@@ -3836,6 +3911,14 @@ p { color: var(--text-secondary); }
 
 .permalink__note { color: var(--text-muted); }
 
+/* Οι δύο ενέργειες κάτω από την αναφορά (αντιγραφή συνδέσμου / εκτύπωση). */
+.check-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 32px;
+}
+
 .check-cta {
   margin-top: 2.5rem;
   padding: 2rem;
@@ -3993,4 +4076,50 @@ p { color: var(--text-secondary); }
 .section--surface-top {
   background: var(--bg-surface);
   border-top: 1px solid var(--border);
+}
+
+
+/* ==========================================================================
+   Εκτύπωση
+   --------------------------------------------------------------------------
+   Ο έλεγχος του /elegxos αποθηκεύεται συχνά ως PDF και προωθείται. Φεύγει ό,τι
+   δεν έχει νόημα στο χαρτί (πλοήγηση, φόρμες, κουμπιά, banner) και μένει η
+   αναφορά, με τους συνδέσμους να τυπώνουν τη διεύθυνσή τους δίπλα τους.
+   ========================================================================== */
+
+@media print {
+  .header,
+  .footer,
+  .cookie-banner,
+  .skip-link,
+  .check-form,
+  .check-progress,
+  .check-actions,
+  .check-cta,
+  .check-explainer {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .page-content { padding: 0; }
+
+  .cat,
+  .rule,
+  .score {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .cat[open] > .rules { display: block; }
+
+  /* Σε χαρτί ο σύνδεσμος χωρίς τη διεύθυνσή του είναι απλώς μπλε κείμενο. */
+  .permalink a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #555;
+  }
 }
