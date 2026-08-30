@@ -10,6 +10,10 @@ Thumbs.db
 # Playwright logs — στιγμιότυπα και traces από τοπικές δοκιμές, όχι πηγαίος κώδικας
 .playwright-mcp/
 
+# Cache του Claude Code — χρονοσφραγίδες και απόλυτες διαδρομές του μηχανήματος,
+# τίποτα που να αφορά το site. Το repo είναι δημόσιο.
+.claude/tsc-cache/
+
 # Editor
 .vscode/
 *.swp
