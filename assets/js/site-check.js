@@ -167,6 +167,13 @@
     });
     box.appendChild(copyBtn);
 
+    var jsonBtn = el("button", "btn btn--outline", "Λήψη JSON");
+    jsonBtn.type = "button";
+    jsonBtn.addEventListener("click", function () {
+      downloadJson(report);
+    });
+    box.appendChild(jsonBtn);
+
     var printBtn = el("button", "btn btn--outline", "Εκτύπωση / Αποθήκευση PDF");
     printBtn.type = "button";
     printBtn.addEventListener("click", function () {
@@ -182,6 +189,34 @@
     box.appendChild(printBtn);
 
     return box;
+  }
+
+  /**
+   * Τα ωμά δεδομένα της αναφοράς, για όποιον θέλει να τα επεξεργαστεί ή να τα
+   * κρατήσει: το ίδιο αντικείμενο που γύρισε το /api/check, χωρίς μετατροπές.
+   */
+  function downloadJson(report) {
+    var name =
+      "elegxos-" +
+      String(hostOf(report.finalUrl || report.url) || "site").replace(/[^a-z0-9.-]+/gi, "-") +
+      "-" +
+      String(report.checkedAt || "").slice(0, 10) +
+      ".json";
+
+    var url = URL.createObjectURL(
+      new Blob([JSON.stringify(report, null, 2)], { type: "application/json" })
+    );
+    var link = document.createElement("a");
+    link.href = url;
+    link.download = name;
+    // Ο Firefox αγνοεί το click() σε στοιχείο εκτός εγγράφου.
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    // Η ανάκληση αμέσως μετά το click ακυρώνει τη λήψη σε μερικούς browsers.
+    setTimeout(function () {
+      URL.revokeObjectURL(url);
+    }, 30000);
   }
 
   /** Πρόχειρο: το Clipboard API όπου υπάρχει, αλλιώς textarea + execCommand. */

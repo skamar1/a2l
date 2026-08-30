@@ -94,11 +94,15 @@ export async function runCheck(url, options = {}) {
   // Σελίδες «Επικοινωνία / Σχετικά / Όροι»: το ΑΦΜ/ΓΕΜΗ σπάνια ζει στην αρχική
   // — είναι φυσιολογικό να βρίσκεται εκεί, οπότε ο κανόνας TRUST-02 τις κοιτάζει.
   const companyUrls = pickCompanyPages(facts, main.url);
-  const [httpRedirect, robots, sitemap, notFound, ttfbA, ttfbB, ...rest] = await Promise.all([
+  const [httpRedirect, robots, sitemap, notFound, favicon, ttfbA, ttfbB, ...rest] = await Promise.all([
     settle(probeStatus(`http://${url.host}${url.pathname}`)),
     settle(probe(`${origin}/robots.txt`, { maxBytes: 256 * 1024, timeoutMs: 6000 })),
     settle(probe(`${origin}/sitemap.xml`, { maxBytes: 1024 * 1024, timeoutMs: 6000 })),
     settle(probeStatus(`${origin}/a2l-elegxos-anyparkto-${randomSlug()}/`)),
+    // Οι browsers ζητούν το /favicon.ico μόνοι τους ακόμη κι όταν δεν δηλώνεται
+    // πουθενά· χωρίς αυτόν τον έλεγχο ο SEO-10 θα έβγαζε αποτυχία σε site που
+    // δείχνουν κανονικά εικονίδιο.
+    settle(probeStatus(`${origin}/favicon.ico`, { timeoutMs: 5000 })),
     settle(probeStatus(url.toString(), { timeoutMs: 8000 })),
     settle(probeStatus(url.toString(), { timeoutMs: 8000 })),
     ...companyUrls.map((pageUrl) =>
@@ -145,6 +149,7 @@ export async function runCheck(url, options = {}) {
       robots,
       sitemap,
       notFound,
+      favicon,
       assets: assets.filter((asset) => asset && asset.ok),
       companyPages,
     },
