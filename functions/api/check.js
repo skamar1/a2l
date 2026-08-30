@@ -169,7 +169,16 @@ export async function runCheck(url, options = {}) {
 
 // ── Βοηθητικά ────────────────────────────────────────────────────────────────
 
-/** Δείγμα στατικών αρχείων ίδιας προέλευσης, για τον έλεγχο Cache-Control. */
+/**
+ * Δείγμα στατικών αρχείων ίδιας προέλευσης, για τον έλεγχο Cache-Control.
+ *
+ * Το /cdn-cgi/ μένει απ' έξω: εκεί μέσα δεν υπάρχει αρχείο του site. Είναι ο
+ * χώρος που κρατάει για τον εαυτό της η Cloudflare και μέσα του σερβίρει δικά
+ * της scripts που τα εμφυτεύει μόνη της στη σελίδα — π.χ. το email-decode.min.js
+ * του Email Obfuscation, με Cache-Control τεσσάρων ωρών. Ο ιδιοκτήτης του site
+ * ούτε το ζήτησε ούτε μπορεί να αλλάξει τα header του, οπότε το να χάνει βαθμούς
+ * γι' αυτό θα ήταν να τιμωρούμε κάθε site που τρέχει πίσω από Cloudflare.
+ */
 function pickAssets(facts, origin) {
   const candidates = [...facts.stylesheets, ...facts.scripts.external];
   const sameOrigin = [];
@@ -181,6 +190,7 @@ function pickAssets(facts, origin) {
       continue;
     }
     if (resolved.origin !== origin) continue;
+    if (resolved.pathname.startsWith("/cdn-cgi/")) continue;
     if (sameOrigin.includes(resolved.toString())) continue;
     sameOrigin.push(resolved.toString());
     if (sameOrigin.length === 3) break;
