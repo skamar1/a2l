@@ -6,16 +6,16 @@
 
 | Τεχνολογία | Χρήση |
 |---|---|
-| [Hugo](https://gohugo.io/) v0.145.0 | Static site generator |
+| [Hugo](https://gohugo.io/) v0.161.1 extended | Static site generator |
 | Custom theme | Σχεδιασμός από το μηδέν (no Tailwind, no framework) |
 | CSS custom properties | Design system (dark/tech aesthetic) |
-| Inter (Google Fonts) | Typography με πλήρη Greek Unicode support |
+| Inter (self-hosted) | `static/fonts/InterVariable.woff2` — κανένα αίτημα σε Google Fonts |
 | Cloudflare Pages | Hosting & CDN |
 
 ## Τοπική εκτέλεση
 
 ```bash
-# Προαπαιτούμενο: Hugo extended v0.145.0+
+# Προαπαιτούμενο: Hugo extended v0.161.1 (η έκδοση ορίζεται στο .tool-versions)
 hugo server
 ```
 
@@ -24,8 +24,12 @@ hugo server
 ## Build
 
 ```bash
-hugo --minify
+bash build.sh
 ```
+
+Το `build.sh` διαβάζει την έκδοση του Hugo από το `.tool-versions` — την ίδια
+που τρέχει και το Cloudflare Pages και το CI, ώστε να μη χτίζει ο καθένας με
+δική του.
 
 Το αποτέλεσμα βγαίνει στον φάκελο `public/`.
 
@@ -35,8 +39,9 @@ hugo --minify
 content/          # Σελίδες σε Markdown
 layouts/          # Hugo templates
 assets/           # CSS, JS (processed by Hugo pipeline)
-static/           # Εικόνες, favicon, fonts
-data/             # Δεδομένα YAML/JSON
+static/           # Εικόνες, favicon, fonts, _headers
+functions/        # Cloudflare Pages Functions (φόρμα, /elegxos/)
+lib/checker/      # Οι κανόνες του ελεγκτή, καθαρή JS χωρίς build
 ```
 
 ## Σελίδες
