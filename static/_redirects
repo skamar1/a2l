@@ -4,43 +4,47 @@
 # greeklish. Ο Google θυμάται ακόμα τις παλιές και τις χτυπάει — στην αναφορά
 # κάλυψης της Search Console εμφανίζονταν ως «Not found (404)».
 #
-# Κάθε γραμμή γράφεται ΔΥΟ φορές: μία με τους ελληνικούς χαρακτήρες όπως τους
-# διαβάζει άνθρωπος και μία percent-encoded, γιατί έτσι ταξιδεύει πραγματικά
-# το URL στο δίκτυο. Ποια από τις δύο ταιριάζει εξαρτάται από το αν η
-# Cloudflare έχει αποκωδικοποιήσει τη διαδρομή πριν φτάσει εδώ, και δεν
-# υπάρχει λόγος να στοιχηματίσουμε: κοστίζουν μία γραμμή η καθεμία.
+# ΓΙΑΤΙ ΟΙ ΕΛΛΗΝΙΚΕΣ ΔΙΕΥΘΥΝΣΕΙΣ ΓΡΑΦΟΝΤΑΙ PERCENT-ENCODED
+# Δοκιμάστηκε ζωντανά: γραμμή με ελληνικούς χαρακτήρες ΔΕΝ ταιριάζει ποτέ —
+# η Cloudflare εγκωδικοποιεί τη διαδρομή πριν την αντιπαραβάλει με αυτό το
+# αρχείο. Η encoded μορφή ταιριάζει πάντα. Δεν είναι περιορισμός στην πράξη:
+# κάθε browser και το Googlebot έτσι κι αλλιώς στέλνουν percent-encoded ό,τι
+# δεν είναι ASCII. Πάνω από κάθε κανόνα μπαίνει η αναγνώσιμη μορφή σε σχόλιο,
+# γιατί αλλιώς το αρχείο γίνεται αδιάβαστο.
 #
-# ΔΕΝ ανακατευθύνονται όσα δεν έχουν σημερινό αντίστοιχο — τα παλιά
-# /product/ του WooCommerce, τα /category/, οι δοκιμαστικές σελίδες του
-# Elementor και το άρθρο για το DNS-over-HTTPS που δεν μεταφέρθηκε. Μια
-# ανακατεύθυνση προς άσχετη σελίδα δεν λύνει το 404: ο Google τη λέει soft
-# 404 και τη μετράει χειρότερα από ένα τίμιο 404.
+# ΤΙ ΔΕΝ ΑΝΑΚΑΤΕΥΘΥΝΕΤΑΙ
+# Όσα δεν έχουν σημερινό αντίστοιχο: τα παλιά /product/ του WooCommerce, τα
+# /category/, οι δοκιμαστικές σελίδες του Elementor, το /test/ και το άρθρο
+# για το DNS-over-HTTPS που δεν μεταφέρθηκε. Ανακατεύθυνση προς άσχετη σελίδα
+# δεν λύνει το 404: ο Google τη λέει soft 404 και τη μετράει χειρότερα.
+#
+# Το /qzone/ επίσης δεν ανακατευθύνεται — έχει δική του σελίδα στο content/.
 
-/αρχική/  /  301
+# /αρχική/
 /%CE%B1%CF%81%CF%87%CE%B9%CE%BA%CE%AE/  /  301
-/επικοινωνία/  /epikoinonia/  301
+# /επικοινωνία/
 /%CE%B5%CF%80%CE%B9%CE%BA%CE%BF%CE%B9%CE%BD%CF%89%CE%BD%CE%AF%CE%B1/  /epikoinonia/  301
-/σχετικά-με-εμάς/  /sxetika/  301
+# /σχετικά-με-εμάς/
 /%CF%83%CF%87%CE%B5%CF%84%CE%B9%CE%BA%CE%AC-%CE%BC%CE%B5-%CE%B5%CE%BC%CE%AC%CF%82/  /sxetika/  301
-/υπηρεσίες/  /programata/  301
+# /υπηρεσίες/
 /%CF%85%CF%80%CE%B7%CF%81%CE%B5%CF%83%CE%AF%CE%B5%CF%82/  /programata/  301
-/υπολογιστές/  /ypologistes/  301
+# /υπολογιστές/
 /%CF%85%CF%80%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CF%83%CF%84%CE%AD%CF%82/  /ypologistes/  301
-/πωλήσεις-επισκευές-υπολογιστών/  /ypologistes/  301
+# /πωλήσεις-επισκευές-υπολογιστών/
 /%CF%80%CF%89%CE%BB%CE%AE%CF%83%CE%B5%CE%B9%CF%82-%CE%B5%CF%80%CE%B9%CF%83%CE%BA%CE%B5%CF%85%CE%AD%CF%82-%CF%85%CF%80%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CF%83%CF%84%CF%8E%CE%BD/  /ypologistes/  301
-/πληρωμές/  /tropoi-plirwmis/  301
+# /πληρωμές/
 /%CF%80%CE%BB%CE%B7%CF%81%CF%89%CE%BC%CE%AD%CF%82/  /tropoi-plirwmis/  301
-/τρόποι-πληρωμής/  /tropoi-plirwmis/  301
+# /τρόποι-πληρωμής/
 /%CF%84%CF%81%CF%8C%CF%80%CE%BF%CE%B9-%CF%80%CE%BB%CE%B7%CF%81%CF%89%CE%BC%CE%AE%CF%82/  /tropoi-plirwmis/  301
-/πολιτική-απορρήτου/  /politiki-aporritou/  301
+# /πολιτική-απορρήτου/
 /%CF%80%CE%BF%CE%BB%CE%B9%CF%84%CE%B9%CE%BA%CE%AE-%CE%B1%CF%80%CE%BF%CF%81%CF%81%CE%AE%CF%84%CE%BF%CF%85/  /politiki-aporritou/  301
-/πολιτική-cookies/  /politiki-cookies/  301
+# /πολιτική-cookies/
 /%CF%80%CE%BF%CE%BB%CE%B9%CF%84%CE%B9%CE%BA%CE%AE-cookies/  /politiki-cookies/  301
-/πολιτικη-cookies/  /politiki-cookies/  301
+# /πολιτικη-cookies/
 /%CF%80%CE%BF%CE%BB%CE%B9%CF%84%CE%B9%CE%BA%CE%B7-cookies/  /politiki-cookies/  301
-/οδηγιες-νεα/  /odigies-nea/  301
+# /οδηγιες-νεα/
 /%CE%BF%CE%B4%CE%B7%CE%B3%CE%B9%CE%B5%CF%82-%CE%BD%CE%B5%CE%B1/  /odigies-nea/  301
-/home/  /  301
 /2024/12/12/plano_change_fiscal_year/  /odigies-nea/plano-change-fiscal-year/  301
-/2025/07/27/νέα-δήλωση-προσωρινής-βλάβης-στο-esend/  /odigies-nea/esend-vlavi/  301
+# /2025/07/27/νέα-δήλωση-προσωρινής-βλάβης-στο-esend/
 /2025/07/27/%CE%BD%CE%AD%CE%B1-%CE%B4%CE%AE%CE%BB%CF%89%CF%83%CE%B7-%CF%80%CF%81%CE%BF%CF%83%CF%89%CF%81%CE%B9%CE%BD%CE%AE%CF%82-%CE%B2%CE%BB%CE%AC%CE%B2%CE%B7%CF%82-%CF%83%CF%84%CE%BF-esend/  /odigies-nea/esend-vlavi/  301
+/home/  /  301
