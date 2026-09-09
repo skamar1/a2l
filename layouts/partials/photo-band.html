@@ -1,0 +1,30 @@
+{{/*
+  photo-band.html — φωτογραφία σε όλο το πλάτος με parallax και μία πρόταση.
+
+  Το parallax το κάνει το main.js: γράφει το --p στην ενότητα και το CSS
+  μετακινεί το layer της εικόνας πιο αργά από τη σελίδα. Χωρίς JS όλα
+  κάθονται στη θέση τους.
+
+  Η εικόνα είναι διακοσμητική (stock): alt κενό, aria-hidden. Το νόημα το
+  δίνει το κείμενο.
+
+  Χρήση:  {{ with .Params.photo_band }}{{ partial "photo-band.html" . }}{{ end }}
+  Πεδία:  image, label, title, text, cta, url
+*/}}
+<section class="photo-band" data-parallax>
+  <div class="photo-band__media" aria-hidden="true">
+    <img class="photo-band__img" src="{{ .image }}" alt="" loading="lazy" width="1200" height="800">
+  </div>
+  <div class="photo-band__overlay" aria-hidden="true"></div>
+
+  <div class="container photo-band__inner">
+    <div class="photo-band__body" data-animate>
+      {{ with .label }}<span class="photo-band__label">{{ . }}</span>{{ end }}
+      <h2 class="photo-band__title">{{ .title }}</h2>
+      {{ with .text }}<p class="photo-band__text">{{ . }}</p>{{ end }}
+      {{ with .cta }}
+      <a href="{{ $.url | default "/epikoinonia/" }}" class="btn btn--primary btn--lg">{{ . }}</a>
+      {{ end }}
+    </div>
+  </div>
+</section>

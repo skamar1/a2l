@@ -102,7 +102,8 @@
     <div class="container">
       {{ range .Params.sections }}
         {{ with .hero_image }}
-        <section class="section-banner" data-bg="{{ . }}">
+        <section class="section-banner" data-parallax>
+          <div class="section-banner__bg" data-bg="{{ . }}" aria-hidden="true"></div>
           <div class="section-banner__content">
             <span class="section-label">{{ $.Params.tag | default "Λογισμικό" }}</span>
           </div>

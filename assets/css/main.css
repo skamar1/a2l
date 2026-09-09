@@ -387,6 +387,7 @@ p { color: var(--text-secondary); }
 
 /* --- Hero Carousel ----------------------------------------- */
 .hero-carousel {
+  --p: 0;
   position: relative;
   width: 100%;
   height: 100vh;
@@ -409,9 +410,16 @@ p { color: var(--text-secondary); }
   z-index: 1;
 }
 
+/* Parallax: το --p το γράφει το main.js (0 στην κορυφή, 1 όταν το hero έχει
+   φύγει ολόκληρο). Το φόντο κατεβαίνει στο 40% της ταχύτητας του scroll και
+   μένει «πίσω» από το περιεχόμενο. Η μετακίνηση γίνεται στο wrapper, όχι
+   στην <img>, γιατί εκεί τρέχει ήδη το kenBurns (transform) — δύο transform
+   στο ίδιο στοιχείο ακυρώνονται. */
 .carousel-slide__bg {
   position: absolute;
   inset: 0;
+  transform: translate3d(0, calc(var(--p) * 40%), 0);
+  will-change: transform;
 }
 
 .carousel-slide__bg img {
@@ -1240,20 +1248,33 @@ p { color: var(--text-secondary); }
 
 /* --- Section banner --------------------------------------- */
 .section-banner {
+  --p: 0;
   width: 100%;
   height: 320px;
-  background-size: cover;
-  background-position: center;
   position: relative;
+  overflow: hidden;
   display: flex;
   align-items: flex-end;
   padding: 32px 0;
+}
+
+/* Η φωτογραφία ζει σε δικό της layer, 40% ψηλότερο από το banner, ώστε να
+   μετακινείται με parallax χωρίς να αφήνει κενό στις άκρες. Το URL μπαίνει
+   από το data-bg (main.js). */
+.section-banner__bg {
+  position: absolute;
+  inset: -20% 0;
+  background-size: cover;
+  background-position: center;
+  transform: translate3d(0, calc(var(--p) * -10%), 0);
+  will-change: transform;
 }
 
 .section-banner::before {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.40) 50%, rgba(0,0,0,0.10) 100%);
 }
 
@@ -4126,7 +4147,7 @@ p { color: var(--text-secondary); }
 
 /* ── Ενότητα βίντεο: facade + parallax ─────────────────────── */
 /*
-   Το --p το γράφει το assets/js/video-embed.js σε κάθε scroll: -1 όταν η
+   Το --p το γράφει το assets/js/main.js σε κάθε scroll: -1 όταν η
    ενότητα μπαίνει από κάτω, 0 στο κέντρο της οθόνης, +1 όταν βγαίνει από
    πάνω. Χωρίς JS μένει 0, οπότε όλα κάθονται στη θέση τους και τίποτα δεν
    χάνεται. Κάθε layer πολλαπλασιάζει το --p με δικό του συντελεστή — από
@@ -4268,4 +4289,94 @@ p { color: var(--text-secondary); }
   .video-embed__poster,
   .video-embed__icon { transition: none; }
   .video-embed__card:hover .video-embed__poster { transform: none; }
+}
+
+/* ── Ζώνη φωτογραφίας (photo-band) ────────────────────────
+   Φωτογραφία σε όλο το πλάτος με parallax και μία πρόταση επάνω της.
+   Το layer της εικόνας είναι 40% ψηλότερο από την ενότητα και μετακινείται
+   κατά ±14% του ύψους της — μένει πάντα περιθώριο, δεν φαίνεται ποτέ κενό.
+   Το --p το γράφει το main.js ([data-parallax]).
+*/
+.photo-band {
+  --p: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+  padding: 96px 0;
+  color: #fff;
+  background: #0b1020;
+}
+
+.photo-band__media {
+  position: absolute;
+  inset: -20% 0;
+  transform: translate3d(0, calc(var(--p) * -10%), 0);
+  will-change: transform;
+}
+
+.photo-band__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.photo-band__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(11,16,32,0.90) 0%, rgba(11,16,32,0.66) 50%, rgba(11,16,32,0.28) 100%);
+}
+
+.photo-band__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.photo-band__body {
+  max-width: 580px;
+}
+
+.photo-band__label {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a5b4fc;
+}
+
+.photo-band__title {
+  margin: 0 0 16px;
+  color: #fff; /* το γενικό h2 είναι σκούρο — πάνω στη φωτογραφία χάνεται */
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.photo-band__text {
+  margin: 0 0 28px;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.84);
+}
+
+@media (max-width: 768px) {
+  .photo-band { min-height: 420px; padding: 64px 0; }
+  .photo-band__overlay {
+    background: linear-gradient(to bottom, rgba(11,16,32,0.78) 0%, rgba(11,16,32,0.86) 100%);
+  }
+  .photo-band__text { font-size: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide__bg,
+  .section-banner__bg,
+  .photo-band__media { transform: none; }
 }

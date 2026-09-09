@@ -129,4 +129,66 @@
       observer.observe(el);
     });
   }
+
+  // --- Parallax ---
+  // Γράφει τη μεταβλητή --p σε κάθε [data-parallax] και το CSS μετακινεί τα
+  // layers με διαφορετικό συντελεστή. Δύο τρόποι μέτρησης:
+  //   (προεπιλογή)  -1 όταν η ενότητα μπαίνει από κάτω, 0 στο κέντρο της
+  //                 οθόνης, +1 όταν βγαίνει από πάνω.
+  //   "top"         0 όσο η ενότητα είναι στην κορυφή, 1 όταν έχει φύγει
+  //                 ολόκληρη — για το hero, που δεν «μπαίνει» ποτέ από κάτω.
+  // Η εγγραφή γίνεται μέσω CSSOM, όχι με style="..." attribute: το CSP του
+  // site δεν έχει 'unsafe-inline'. Χωρίς JS το --p μένει 0 και όλα κάθονται
+  // στη θέση τους.
+  (function () {
+    var sections = document.querySelectorAll('[data-parallax]');
+    if (!sections.length) return;
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var visible = [];
+    var queued = false;
+
+    function progress(el, box, vh) {
+      if (el.getAttribute('data-parallax') === 'top') {
+        return Math.min(1, Math.max(0, -box.top / box.height));
+      }
+      return ((vh - box.top) / (vh + box.height)) * 2 - 1;
+    }
+
+    function paint() {
+      queued = false;
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      visible.forEach(function (el) {
+        var p = progress(el, el.getBoundingClientRect(), vh);
+        el.style.setProperty('--p', p.toFixed(4));
+      });
+    }
+
+    function schedule() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(paint);
+    }
+
+    // Ο listener του scroll μπαίνει μόνο όσο μια ενότητα είναι στην οθόνη.
+    var watcher = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var i = visible.indexOf(entry.target);
+        if (entry.isIntersecting && i === -1) visible.push(entry.target);
+        else if (!entry.isIntersecting && i !== -1) visible.splice(i, 1);
+      });
+
+      if (visible.length) {
+        window.addEventListener('scroll', schedule, { passive: true });
+        window.addEventListener('resize', schedule, { passive: true });
+        schedule();
+      } else {
+        window.removeEventListener('scroll', schedule);
+        window.removeEventListener('resize', schedule);
+      }
+    }, { rootMargin: '120px 0px' });
+
+    sections.forEach(function (el) { watcher.observe(el); });
+  })();
 })();

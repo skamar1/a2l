@@ -151,6 +151,16 @@ testimonials:
       company: "Glochem — glochem.gr"
       logo: "/images/clients/glochem.webp"
 
+# Ζώνη φωτογραφίας με parallax, ανάμεσα στο «Μιλάνε για εμάς» και τις
+# Συχνές Ερωτήσεις — layouts/partials/photo-band.html.
+photo_band:
+  image: "/images/pexels-fauxels-3183150.webp"
+  label: "Από το 2014"
+  title: "Άνθρωποι που σηκώνουν το τηλέφωνο"
+  text: "Δώδεκα χρόνια δίπλα σε επιχειρήσεις της Αθήνας: εμπορικά προγράμματα, ιστοσελίδες, υπολογιστές. Όταν κάτι σταματήσει, μιλάτε με κάποιον που ξέρει την εγκατάστασή σας — όχι με ένα ticket."
+  cta: "Γνωρίστε μας"
+  url: "/sxetika/"
+
 fbs_banner:
   label: "Νέο — Διασύνδεση για e-shop"
   title: "Skroutz FBS και SoftOne, χωρίς χειρωνακτική δουλειά"

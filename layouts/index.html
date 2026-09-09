@@ -2,7 +2,7 @@
 {{ $d := .Params }}
 
 {{/* ── HERO CAROUSEL ──────────────────────────────────────── */}}
-<section class="hero-carousel" id="hero">
+<section class="hero-carousel" id="hero" data-parallax="top">
 
   {{/* Slide 1 — Εν Όψει. Φόντο το πραγματικό dashboard της εφαρμογής· το
        overlay του carousel το σκουραίνει όσο χρειάζεται για το κείμενο. */}}
@@ -404,6 +404,9 @@
   </div>
 </section>
 {{ end }}
+
+{{/* ── ΖΩΝΗ ΦΩΤΟΓΡΑΦΙΑΣ (parallax) ───────────────────────── */}}
+{{ with $d.photo_band }}{{ partial "photo-band.html" . }}{{ end }}
 
 {{/* ── FAQ ─────────────────────────────────────────────────
      Χωρίς JS: native <details>/<summary>. Το ίδιο περιεχόμενο τροφοδοτεί
