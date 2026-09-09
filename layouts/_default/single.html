@@ -72,7 +72,7 @@
   {{ with .Params.promos }}
   <div class="page-content page-content--promos">
     {{ range . }}
-    <div class="promo-block">
+    <div class="promo-block" data-animate>
       <div class="promo-block__image">
         <img src="{{ .image }}" alt="{{ .title }}" loading="lazy">
       </div>
@@ -121,9 +121,9 @@
             </div>
           {{ end }}
           {{ with .modules }}
-            <div class="modules">
+            <div class="modules" data-animate-stagger>
               {{ range . }}
-                <div class="module-card">
+                <div class="module-card" data-animate>
                   {{ if hasPrefix .icon "i:" }}
                     <div class="module-card__icon module-card__icon--svg">{{ partial "icon.html" (strings.TrimPrefix "i:" .icon) }}</div>
                   {{ else }}
@@ -152,7 +152,7 @@
           <h2 class="section-title">{{ .title }}</h2>
           {{ with .subtitle }}<p class="section-subtitle">{{ . }}</p>{{ end }}
         </div>
-        <div class="shots">
+        <div class="shots" data-animate-stagger>
           {{ range .items }}
           <figure class="shot{{ if .wide }} shot--wide{{ end }}{{ if .narrow }} shot--narrow{{ end }}" data-animate>
             <div class="shot__img"><img src="{{ .image }}" alt="{{ .alt }}" loading="lazy"></div>

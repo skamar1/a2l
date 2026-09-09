@@ -4424,3 +4424,38 @@ p { color: var(--text-secondary); }
   .has-anim .enopsi-banner__visual .enopsi-app__bars i { transform: none; transition: none; }
   .has-anim .enopsi-banner__visual .enopsi-app__fill { width: 78%; transition: none; }
 }
+
+/* ── Header στο scroll ──────────────────────────────────────
+   Η κλάση .header--scrolled μπαίνει από το main.js μετά τα 20px. */
+.header {
+  transition: box-shadow var(--transition), background-color var(--transition);
+}
+.header__logo-img {
+  transform-origin: left center;
+  transition: transform .3s ease;
+}
+.header--scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+}
+.header--scrolled .header__logo-img { transform: scale(0.86); }
+
+/* ── Μετρητές (/sxetika/) ─────────────────────────────────── */
+.stat-item__number { font-variant-numeric: tabular-nums; }
+
+/* ── Μετάβαση ανάμεσα σε σελίδες (View Transitions API) ────
+   Το header έχει δικό του όνομα και μένει στη θέση του· το υπόλοιπο
+   κάνει ένα σύντομο cross-fade. Όπου δεν υποστηρίζεται, απλώς αγνοείται. */
+@view-transition { navigation: auto; }
+.header { view-transition-name: site-header; }
+@keyframes vt-out { to { opacity: 0; } }
+@keyframes vt-in  { from { opacity: 0; transform: translateY(8px); } }
+::view-transition-old(root) { animation: 140ms ease-out both vt-out; }
+::view-transition-new(root) { animation: 220ms ease-out both vt-in; }
+::view-transition-old(site-header),
+::view-transition-new(site-header) { animation: none; mix-blend-mode: normal; }
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  .header__logo-img { transition: none; }
+}

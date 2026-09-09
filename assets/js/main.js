@@ -191,4 +191,42 @@
 
     sections.forEach(function (el) { watcher.observe(el); });
   })();
+
+  // --- Μετρητές ---
+  // Κάθε [data-count] με κείμενο «120+» μετράει από το 0 ως το 120 όταν
+  // μπει στην οθόνη· ό,τι ακολουθεί τον αριθμό (+, %) μένει ως έχει.
+  // Μη αριθμητικά («Custom») δεν αγγίζονται.
+  (function () {
+    var els = document.querySelectorAll('[data-count]');
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    function run(el) {
+      var m = /^(\d+)(.*)$/.exec(el.textContent.trim());
+      if (!m) return;
+      var target = parseInt(m[1], 10);
+      var suffix = m[2];
+      var start = null;
+      var duration = 1400;
+      function tick(ts) {
+        if (start === null) start = ts;
+        var k = Math.min(1, (ts - start) / duration);
+        var eased = 1 - Math.pow(1 - k, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        io.unobserve(entry.target);
+        run(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    els.forEach(function (el) { io.observe(el); });
+  })();
 })();

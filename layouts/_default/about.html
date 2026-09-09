@@ -12,10 +12,10 @@
 {{/* ── STATS ── */}}
 <section class="section--sm section--surface">
   <div class="container">
-    <div class="stat-grid">
+    <div class="stat-grid" data-animate-stagger>
       {{ range .Params.stats }}
-        <div class="stat-item">
-          <div class="stat-item__number">{{ .number }}</div>
+        <div class="stat-item" data-animate>
+          <div class="stat-item__number" data-count>{{ .number }}</div>
           <div class="stat-item__label">{{ .label }}</div>
         </div>
       {{ end }}
@@ -77,9 +77,9 @@
       <p class="section-subtitle">Από έτοιμα προγράμματα έως custom ανάπτυξη — καλύπτουμε κάθε τεχνολογική ανάγκη.</p>
     </div>
 
-    <div class="about-services">
+    <div class="about-services" data-animate-stagger>
       {{ range .Params.services }}
-        <div class="about-service-card">
+        <div class="about-service-card" data-animate>
           <div class="about-service-card__icon">{{ .icon }}</div>
           <h3 class="about-service-card__title">{{ .title }}</h3>
           <p class="about-service-card__desc">{{ .desc }}</p>
