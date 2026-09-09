@@ -172,6 +172,30 @@
   {{- end -}}
 {{- end -}}
 
+{{/* ---------- 7. VideoObject ---------- */}}
+{{/* Δηλώνει το βίντεο της σελίδας στη Google, ώστε να μπορεί να εμφανιστεί
+     ως αποτέλεσμα βίντεο. Το thumbnail δείχνει στη δική μας εικόνα, όχι στο
+     i.ytimg.com — την ίδια που βλέπει ο επισκέπτης πριν πατήσει play. */}}
+{{- with .Params.video -}}
+  {{- if .youtube_id -}}
+    {{- $video := dict
+          "@type"        "VideoObject"
+          "@id"          (printf "%s#video" $.Permalink)
+          "name"         (.video_title | default .title)
+          "description"  (.text | default $pageDesc)
+          "inLanguage"   "el-GR"
+          "isPartOf"     (dict "@id" $pageID)
+          "thumbnailUrl" (absURL .poster)
+          "embedUrl"     (printf "https://www.youtube-nocookie.com/embed/%s" .youtube_id)
+          "url"          (printf "https://www.youtube.com/watch?v=%s" .youtube_id)
+          "publisher"    (dict "@id" $orgID)
+    -}}
+    {{- with .upload_date }}{{ $video = merge $video (dict "uploadDate" .) }}{{ end -}}
+    {{- with .duration_iso }}{{ $video = merge $video (dict "duration" .) }}{{ end -}}
+    {{- $graph = $graph | append $video -}}
+  {{- end -}}
+{{- end -}}
+
 {{- $graph = $graph | append $webpage -}}
 {{/* safeJS: χωρίς αυτό το html/template τυλίγει το JSON σε εισαγωγικά και
      βγαίνει διπλο-κωδικοποιημένο (string αντί για object). Το jsonify ήδη

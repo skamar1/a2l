@@ -1,0 +1,56 @@
+{{/*
+  video-embed.html — βίντεο YouTube χωρίς να φορτώνει YouTube.
+
+  Δείχνει δική μας εικόνα με ένα κουμπί αναπαραγωγής. Το <iframe> του
+  YouTube το φτιάχνει το assets/js/video-embed.js ΜΟΝΟ όταν πατηθεί το
+  κουμπί. Όποιος δεν παίξει το βίντεο δεν στέλνει κανένα αίτημα στην
+  Google — το ίδιο σκεπτικό με τα self-hosted fonts.
+
+  Η ενότητα κινείται με parallax: το JS γράφει τη μεταβλητή --p και τα
+  layers μετακινούνται με διαφορετική ταχύτητα. Χωρίς JS το --p μένει 0
+  και όλα κάθονται στη θέση τους.
+
+  Χρήση:  {{ with .Params.video }}{{ partial "video-embed.html" . }}{{ end }}
+
+  Πεδία: label, title, text, youtube_id, video_title, poster, poster_alt,
+         duration (προαιρετικό).
+*/}}
+<section class="video-section" data-parallax>
+  <div class="video-section__glow video-section__glow--a" aria-hidden="true"></div>
+  <div class="video-section__glow video-section__glow--b" aria-hidden="true"></div>
+
+  <div class="container video-section__inner">
+    <div class="section-header section-header--center video-section__header">
+      {{ with .label }}<span class="section-label video-section__label">{{ . }}</span>{{ end }}
+      <h2 class="section-title video-section__title">{{ .title }}</h2>
+      {{ with .text }}<p class="section-subtitle video-section__text">{{ . }}</p>{{ end }}
+    </div>
+
+    <div class="video-embed">
+      <div class="video-embed__inner" data-animate>
+        <div class="video-embed__card"
+             data-video-id="{{ .youtube_id }}"
+             data-video-title="{{ .video_title | default .title }}">
+          <img class="video-embed__poster" src="{{ .poster }}" alt="{{ .poster_alt }}"
+               loading="lazy" width="1160" height="722">
+          <button type="button" class="video-embed__btn">
+            <span class="video-embed__icon" aria-hidden="true">
+              <svg width="26" height="30" viewBox="0 0 26 30" fill="currentColor" role="presentation">
+                <path d="M25 13.3 3 .4A2 2 0 0 0 0 2.1v25.8a2 2 0 0 0 3 1.7l22-12.9a2 2 0 0 0 0-3.4Z"/>
+              </svg>
+            </span>
+            <span class="video-embed__label">Αναπαραγωγή{{ with .duration }} — {{ . }}{{ end }}</span>
+          </button>
+        </div>
+      </div>
+
+      <p class="video-embed__note">
+        Το βίντεο φορτώνει από το YouTube μόνο όταν πατήσετε αναπαραγωγή. Μέχρι τότε
+        δεν φεύγει κανένα αίτημα προς την Google.
+        <a href="/politiki-cookies/">Πολιτική Cookies</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+{{ partial "script.html" "js/video-embed.js" }}

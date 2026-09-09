@@ -4123,3 +4123,149 @@ p { color: var(--text-secondary); }
     color: #555;
   }
 }
+
+/* ── Ενότητα βίντεο: facade + parallax ─────────────────────── */
+/*
+   Το --p το γράφει το assets/js/video-embed.js σε κάθε scroll: -1 όταν η
+   ενότητα μπαίνει από κάτω, 0 στο κέντρο της οθόνης, +1 όταν βγαίνει από
+   πάνω. Χωρίς JS μένει 0, οπότε όλα κάθονται στη θέση τους και τίποτα δεν
+   χάνεται. Κάθε layer πολλαπλασιάζει το --p με δικό του συντελεστή — από
+   εκεί βγαίνει το βάθος.
+*/
+.video-section {
+  --p: 0;
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0 104px;
+  background: linear-gradient(160deg, #0b1020 0%, #131a35 55%, #1b1b46 100%);
+  color: #fff;
+}
+
+.video-section__glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+}
+.video-section__glow--a {
+  top: -180px;
+  left: -140px;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.40) 0%, transparent 70%);
+  transform: translate3d(0, calc(var(--p) * 80px), 0);
+}
+.video-section__glow--b {
+  bottom: -240px;
+  right: -170px;
+  width: 740px;
+  height: 740px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, transparent 70%);
+  transform: translate3d(0, calc(var(--p) * -100px), 0);
+}
+
+.video-section__inner { position: relative; z-index: 1; }
+
+.video-section__header { margin-bottom: 44px; text-align: center; }
+.video-section__label  { color: #a5b4fc; }
+.video-section__title  { color: #fff; }
+.video-section__text   { color: rgba(255, 255, 255, 0.72); max-width: 720px; margin: 0 auto; }
+
+/* Η κάρτα κινείται αντίθετα από τα glows, πιο λίγο — αλλιώς ζαλίζει. */
+.video-embed {
+  max-width: 960px;
+  margin: 0 auto;
+  transform: translate3d(0, calc(var(--p) * -20px), 0);
+  will-change: transform;
+}
+
+.video-embed__card {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.09);
+}
+
+.video-embed__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.video-embed__card:hover .video-embed__poster { transform: scale(1.04); }
+
+.video-embed__btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(6, 10, 25, 0.28) 0%, rgba(6, 10, 25, 0.66) 100%);
+}
+.video-embed__btn:focus-visible { outline: 3px solid #fff; outline-offset: -6px; }
+
+.video-embed__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  padding-left: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.55);
+  transition: transform var(--transition), background var(--transition);
+}
+.video-embed__card:hover .video-embed__icon,
+.video-embed__btn:focus-visible .video-embed__icon {
+  transform: scale(1.08);
+  background: var(--accent-bright);
+}
+
+.video-embed__label { font-weight: 600; }
+
+/* Μόλις πατηθεί το play, poster και κουμπί φεύγουν και μένει το iframe. */
+.video-embed__card.is-playing .video-embed__poster,
+.video-embed__card.is-playing .video-embed__btn { display: none; }
+
+.video-embed__iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-embed__note {
+  max-width: 640px;
+  margin: 22px auto 0;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.62);
+}
+.video-embed__note a { color: #a5b4fc; text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .video-section { padding: 64px 0 72px; }
+  .video-embed__icon { width: 68px; height: 68px; }
+  .video-section__glow--a, .video-section__glow--b { opacity: 0.7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-section__glow,
+  .video-embed { transform: none; }
+  .video-embed__poster,
+  .video-embed__icon { transition: none; }
+  .video-embed__card:hover .video-embed__poster { transform: none; }
+}

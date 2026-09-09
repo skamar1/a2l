@@ -35,6 +35,21 @@ showcase:
   url_label: "app.enopsi.gr — Πίνακας ελέγχου"
   caption: "Ενδεικτικά δεδομένα επίδειξης."
 
+# Το βίντεο δεν φορτώνει YouTube μέχρι να πατηθεί το play — δείτε το
+# layouts/partials/video-embed.html.
+video:
+  label: "ΞΕΝΑΓΗΣΗ"
+  title: "ΔΕΙΤΕ ΤΟ ΣΕ ΛΕΙΤΟΥΡΓΙΑ"
+  text: "Μια σύντομη παρουσίαση της εφαρμογής, σε λιγότερο από ένα λεπτό."
+  youtube_id: "kqNKPQDDAKk"
+  # Τα δύο παρακάτω πάνε στο VideoObject (schema.html) — από το YouTube.
+  upload_date: "2026-09-09T00:02:28-07:00"
+  duration_iso: "PT1M9S"
+  video_title: "Εν Όψει — σύντομη παρουσίαση"
+  duration: "1 λεπτό"
+  poster: "/images/enopsi/pinakas-elegxou.webp"
+  poster_alt: "Ο πίνακας ελέγχου του Εν Όψει — εικόνα προεπισκόπησης του βίντεο παρουσίασης."
+
 sections:
   - label: "ΤΟ ΠΡΟΒΛΗΜΑ"
     title: "ΤΑ ΔΕΔΟΜΕΝΑ ΥΠΑΡΧΟΥΝ ΗΔΗ. ΛΕΙΠΕΙ Η ΕΙΚΟΝΑ."

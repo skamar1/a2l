@@ -65,6 +65,9 @@
   </section>
   {{ end }}
 
+  {{/* ── ΒΙΝΤΕΟ ─────────────────────────────────────────────── */}}
+  {{ with .Params.video }}{{ partial "video-embed.html" . }}{{ end }}
+
   {{/* ── PROMOS ─────────────────────────────────────────────── */}}
   {{ with .Params.promos }}
   <div class="page-content page-content--promos">
