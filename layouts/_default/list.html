@@ -18,7 +18,7 @@
             {{ end }}
             <div class="post-card__body">
               <div class="post-card__meta">
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "date-el.html" .Date }}</time>
                 {{ with .Params.category }}<span>{{ . }}</span>{{ end }}
               </div>
               <h2 class="post-card__title">

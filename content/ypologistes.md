@@ -16,7 +16,7 @@ sections:
     title: "Επαγγελματικό Hardware"
     subtitle: "Επιλεγμένα συστήματα για επιχειρηματική χρήση με εγγύηση και υποστήριξη."
     modules:
-      - icon: "🖥️"
+      - icon: "i:monitor"
         title: "Desktop Workstations"
         desc: "Επαγγελματικοί σταθεροί υπολογιστές για γραφείο και βαρύ φορτίο."
         features:
@@ -24,7 +24,7 @@ sections:
           - "16–64GB RAM"
           - "SSD NVMe storage"
           - "Windows 11 Pro"
-      - icon: "💻"
+      - icon: "i:laptop"
         title: "Laptops"
         desc: "Φορητοί υπολογιστές για πωλητές, στελέχη και mobile εργασία."
         features:
@@ -32,7 +32,7 @@ sections:
           - "Business grade κατασκευή"
           - "Μεγάλη αυτονομία"
           - "Docking station support"
-      - icon: "🖨️"
+      - icon: "i:printer"
         title: "Περιφερειακά"
         desc: "Εκτυπωτές, scanners, barcode readers και POS peripherals."
         features:
@@ -45,21 +45,21 @@ sections:
     title: "Server & Δίκτυα"
     subtitle: "Υποδομή που εξασφαλίζει αξιοπιστία και ασφάλεια των δεδομένων σας."
     modules:
-      - icon: "🗄️"
+      - icon: "i:database"
         title: "File & App Servers"
         desc: "Servers για hosting εφαρμογών, αρχείων και βάσεων δεδομένων."
         features:
           - "Tower & rack-mount"
           - "RAID storage"
           - "Windows Server / Linux"
-      - icon: "🌐"
+      - icon: "i:globe"
         title: "Δικτυακός Εξοπλισμός"
         desc: "Routers, switches, WiFi και VPN για ασφαλή επιχειρηματική σύνδεση."
         features:
           - "Managed switches"
           - "Business WiFi (Ubiquiti/Cisco)"
           - "Site-to-site VPN"
-      - icon: "🔒"
+      - icon: "i:lock"
         title: "Backup & Security"
         desc: "Λύσεις backup και κυβερνοασφάλειας για προστασία των δεδομένων."
         features:

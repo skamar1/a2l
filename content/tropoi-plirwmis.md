@@ -7,7 +7,7 @@ layout: "payment"
 
 methods:
   - id: "iris"
-    icon: "📱"
+    icon: "i:phone"
     title: "IRIS Payments"
     desc: "Σαρώστε το παρακάτω QR Code με την φωτογραφική μηχανή του κινητού σας ή χρησιμοποιήστε το ΑΦΜ της εταιρείας μας."
     qr: "/images/iris-gr.webp"
@@ -15,7 +15,7 @@ methods:
     vat: "050747890"
 
   - id: "bank"
-    icon: "🏦"
+    icon: "i:bank"
     title: "Κατάθεση σε Τραπεζικό Λογαριασμό"
     desc: "Επιλέξτε την τράπεζα που σας διευκολύνει για την κατάθεση του ποσού της παραγγελίας σας."
     accounts:

@@ -17,21 +17,21 @@ sections:
     subtitle: "Πλήρης εμπορική διαχείριση σε 7 εκδόσεις για όλες τις επιχειρήσεις της Ελληνικής αγοράς. Κύκλωμα Πωλήσεων, Αγορών, Παραγγελιών & Προσφορών, διαχείριση δαπανών, serial numbers, παρτίδες και Cloud περιβάλλον για εύκολη πρόσβαση από παντού."
     image: "/images/plano-erp-screenshot.webp"
     modules:
-      - icon: "📦"
+      - icon: "i:box"
         title: "Αποθήκη"
         desc: "Πλήρης διαχείριση αποθέματος με barcodes, σειριακούς αριθμούς και τοποθεσίες."
         features:
           - "Εισαγωγές / Εξαγωγές"
           - "Αποτίμηση αποθέματος"
           - "Min/Max αναπαραγγελίες"
-      - icon: "🛒"
+      - icon: "i:cart"
         title: "Αγορές"
         desc: "Διαχείριση προμηθευτών, παραγγελιών αγοράς και παραλαβών."
         features:
           - "Προσφορές προμηθευτών"
           - "Εγκρίσεις παραγγελιών"
           - "Αντιπαραβολή τιμολογίων"
-      - icon: "💼"
+      - icon: "i:briefcase"
         title: "Πωλήσεις"
         desc: "Από προσφορά έως τιμολόγιο με ηλεκτρονική διαβίβαση myDATA."
         features:
@@ -44,21 +44,21 @@ sections:
     subtitle: "Εφαρμογή Λιανικής σε 5 εκδόσεις για όλα τα καταστήματα. Γρήγορη καταχώρηση πωλήσεων με barcode scanner & οθόνη αφής συμβατή με Windows, Mac & Android, έκδοση ηλεκτρονικών τιμολογίων και προβολή αναφορών από το κινητό."
     image: "/images/plano-retail-screenshot.webp"
     modules:
-      - icon: "🏪"
+      - icon: "i:shop"
         title: "POS Terminal"
         desc: "Γρήγορη ταμειακή με touch screen, barcodes και κάρτες πελατών."
         features:
           - "Όλοι οι τρόποι πληρωμής"
           - "Loyalty & δωροκάρτες"
           - "Split payments"
-      - icon: "📊"
+      - icon: "i:chart"
         title: "Back Office"
         desc: "Κεντρική διαχείριση τιμών, αποθέματος και αναφορών πωλήσεων."
         features:
           - "Κεντρική τιμολόγηση"
           - "Αναφορές ανά κατάστημα"
           - "Σύγκριση περιόδων"
-      - icon: "🔗"
+      - icon: "i:link"
         title: "Multi-Store"
         desc: "Διαχείριση αλυσίδας καταστημάτων από ένα κεντρικό σύστημα."
         features:
@@ -71,21 +71,21 @@ sections:
     subtitle: "E-Commerce & διαχείριση εταιρικής παρουσίας στο διαδίκτυο με 7 εκδόσεις. Από απλή σελίδα προβολής έως πλήρες e-commerce, συμβατό με τα περισσότερα marketplaces και σε live διασύνδεση με το εμπορικό πρόγραμμα."
     image: "/images/plano-web-screenshot.webp"
     modules:
-      - icon: "🌐"
+      - icon: "i:globe"
         title: "B2B Portal"
         desc: "Online παραγγελίες από επαγγελματίες πελάτες με εξατομικευμένες τιμές."
         features:
           - "Ατομικά τιμολόγια"
           - "Ιστορικό παραγγελιών"
           - "Online πληρωμές"
-      - icon: "🛍️"
+      - icon: "i:bag"
         title: "B2C E-shop"
         desc: "Πλήρες ηλεκτρονικό κατάστημα συνδεδεμένο με την αποθήκη σας."
         features:
           - "Αυτόματος συγχρονισμός stock"
           - "Skroutz / BestPrice feeds"
           - "Courier integrations"
-      - icon: "📱"
+      - icon: "i:phone"
         title: "Mobile App"
         desc: "Native mobile εφαρμογή για Android και iOS για πωλητές και αποθηκάριους."
         features:
@@ -98,21 +98,21 @@ sections:
     subtitle: "Ολοκληρωμένο σύστημα διαχείρισης εστιατορίου, καφετέριας και bar. Διαχείριση τραπεζιών, παραγγελιών κουζίνας, delivery και ηλεκτρονική τιμολόγηση σε ένα σύστημα."
     image: "/images/plano-restaurant-screenshot.webp"
     modules:
-      - icon: "🍽️"
+      - icon: "i:utensils"
         title: "Διαχείριση Τραπεζιών"
         desc: "Γραφική απεικόνιση πλάνου τραπεζιών με real-time κατάσταση και γρήγορη μεταφορά παραγγελιών."
         features:
           - "Visual floor plan"
           - "Μεταφορά τραπεζιών"
           - "Διαχωρισμός λογαριασμών"
-      - icon: "👨‍🍳"
+      - icon: "i:chef"
         title: "Kitchen Display"
         desc: "Αυτόματη αποστολή παραγγελιών στην κουζίνα με οθόνη KDS και εκτυπωτή."
         features:
           - "KDS οθόνη κουζίνας"
           - "Χρόνοι παρασκευής"
           - "Ιεράρχηση παραγγελιών"
-      - icon: "🛵"
+      - icon: "i:bike"
         title: "Delivery & Takeaway"
         desc: "Διαχείριση παραγγελιών delivery με online ενσωμάτωση και παρακολούθηση."
         features:

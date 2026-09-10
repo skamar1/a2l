@@ -80,7 +80,7 @@
         <div class="promo-block__inner">
           <div class="promo-block__header">
             <span class="section-label">{{ .label }}</span>
-            {{ with .deadline }}<span class="promo-block__deadline">⏰ {{ . }}</span>{{ end }}
+            {{ with .deadline }}<span class="promo-block__deadline">{{ partial "icon.html" "clock" }} {{ . }}</span>{{ end }}
           </div>
           <h2 class="promo-block__title">{{ .title }}</h2>
           <p class="promo-block__text">{{ .text }}</p>
@@ -124,11 +124,7 @@
             <div class="modules" data-animate-stagger>
               {{ range . }}
                 <div class="module-card" data-animate>
-                  {{ if hasPrefix .icon "i:" }}
-                    <div class="module-card__icon module-card__icon--svg">{{ partial "icon.html" (strings.TrimPrefix "i:" .icon) }}</div>
-                  {{ else }}
-                    <div class="module-card__icon">{{ .icon }}</div>
-                  {{ end }}
+                  {{ partial "card-icon.html" (dict "icon" .icon "class" "module-card__icon") }}
                   <h3 class="module-card__title">{{ .title }}</h3>
                   <p class="module-card__desc">{{ .desc }}</p>
                   {{ with .features }}
@@ -187,6 +183,14 @@
       <div class="divider"></div>
       {{ end }}
 
+    </div>
+  </div>
+
+  {{/* ── ΤΙ ΓΙΝΕΤΑΙ ΟΤΑΝ ΜΑΣ ΠΑΡΕΤΕ (σκούρα ζώνη, full-bleed) ── */}}
+  {{ if ne .Params.next_steps false }}{{ partial "next-steps.html" . }}{{ end }}
+
+  <div class="page-content">
+    <div class="container">
       {{ with .Params.cta_bottom }}
         <div class="cta-section">
           <h2 class="cta-section__title gradient-text">{{ .title }}</h2>

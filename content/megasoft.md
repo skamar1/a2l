@@ -54,7 +54,7 @@ sections:
     title: "PRISMA Win — Εμπορικές Εφαρμογές"
     subtitle: "Συγκεντρώστε όλα τα δεδομένα σας σε ένα σύστημα και διαχειριστείτε τα πάντα με ευκολία και ευελιξία — από την πιο απλή μέχρι την πιο σύνθετη εργασία της επιχείρησής σας."
     modules:
-      - icon: "🧾"
+      - icon: "i:receipt"
         title: "InvoiceLink"
         desc: "Πιστοποιημένος πάροχος ηλεκτρονικής τιμολόγησης με αυτόματη αποστολή παραστατικών στην ΑΑΔΕ μέσω myDATA. Εναρμονισμένος με το ευρωπαϊκό πρότυπο ΕΝ 16931-1:2017 και PEPPOL CIUS."
         features:
@@ -62,7 +62,7 @@ sections:
           - "Αυτόματη ηλεκτρονική μεταβίβαση παραστατικών"
           - "Έλεγχος γνησιότητας & αποδοχή από αποδέκτες"
           - "Πλήρης συμμόρφωση με υποχρεωτική ηλεκτρονική τιμολόγηση"
-      - icon: "📦"
+      - icon: "i:box"
         title: "Εμπορικές Εφαρμογές PRISMA Win"
         desc: "Ολοκληρωμένη σειρά εμπορικών εφαρμογών σε 7 εκδόσεις — από απλή τιμολόγηση έως πλήρη ERP λειτουργία με mobility και e-commerce."
         features:
@@ -70,7 +70,7 @@ sections:
           - "Maximum & Maximum Plus — μικρομεσαίες & μεγάλες"
           - "PICK & PACKAGE — συλλογή & αποστολή παραγγελιών"
           - "ERP, Mobility & e-Commerce"
-      - icon: "🏭"
+      - icon: "i:factory"
         title: "PrismaNET"
         desc: "Προηγμένο επιχειρησιακό λογισμικό για πλήρη διαχείριση της επιχείρησης σε δικτυακό περιβάλλον. Υβριδική λειτουργία on-premise και cloud, με MIS & BI εργαλεία."
         features:
@@ -78,7 +78,7 @@ sections:
           - "Υβριδικό μοντέλο (On-premise & Cloud)"
           - "PrismaNET BI, Pivots, Report Designer"
           - "Real-time πληροφορία & οπτικοποίηση δεδομένων"
-      - icon: "🏪"
+      - icon: "i:shop"
         title: "Λύσεις ανά Κλάδο"
         desc: "Εξειδικευμένες εκδόσεις PRISMA Win για κάθε κλάδο — ένδυση/υπόδηση, auto-moto, βιβλιοπωλεία, μεταφορικές, πρατήρια καυσίμων, κομμωτήρια, κέντρα αισθητικής και άλλα."
         features:
@@ -91,7 +91,7 @@ sections:
     title: "Εξειδικευμένες Εφαρμογές & Ολοκληρώσεις"
     subtitle: "Από POS εστίασης και λιανικής έως λογιστικές εφαρμογές, Business Intelligence και διασύνδεση με ταμειακά — η Megasoft καλύπτει κάθε ανάγκη της σύγχρονης επιχείρησης."
     modules:
-      - icon: "🍽️"
+      - icon: "i:utensils"
         title: "Εφαρμογές Εστίασης"
         desc: "Ολοκληρωμένο POS για εστιατόρια, καφέ, delivery και takeaway. Ασύρματη παραγγελιοληψία Android, KDS, eMenu μέσω QR, Loyalty Card και γέφυρες με eFood, Wolt, Box."
         features:
@@ -99,7 +99,7 @@ sections:
           - "Ασύρματη παραγγελιοληψία (Android, offline)"
           - "Kitchen Display System (KDS) & eMenu"
           - "Γέφυρες eFood, Wolt, Box"
-      - icon: "🛒"
+      - icon: "i:cart"
         title: "Εφαρμογές Λιανικής (POS)"
         desc: "Γρήγορη εξυπηρέτηση στο ταμείο, διαχείριση αποθήκης, loyalty programs και ηλεκτρονικές πωλήσεις. Λύσεις Retail και Kiosk για κάθε μέγεθος καταστήματος."
         features:
@@ -107,7 +107,7 @@ sections:
           - "Loyalty Card & προγράμματα επιβράβευσης"
           - "Ωρομέτρηση προσωπικού & back office"
           - "Διασύνδεση με e-commerce"
-      - icon: "📊"
+      - icon: "i:chart"
         title: "Λογιστικές Εφαρμογές"
         desc: "Πλήρης σουίτα για λογιστές και λογιστικά γραφεία: eErgani, Μισθοδοσία, Έσοδα-Έξοδα και Γενική Λογιστική. Πλήρης εναρμόνιση με Ε.Λ.Π. (ν. 4308/2014) και ΕΡΓΑΝΗ."
         features:
@@ -115,7 +115,7 @@ sections:
           - "Μισθοδοσία PRISMA Win"
           - "Έσοδα-Έξοδα (απλογραφικά βιβλία)"
           - "Γενική Λογιστική (διπλογραφικά βιβλία)"
-      - icon: "📈"
+      - icon: "i:trending"
         title: "BI — Business Intelligence"
         desc: "Το ευφυές σύστημα υποστήριξης επιχειρηματικού σχεδιασμού. Αντλεί real-time δεδομένα από εμπορικές, λογιστικές εφαρμογές και POS για διορατικά στατιστικά και αναφορές."
         features:
@@ -123,7 +123,7 @@ sections:
           - "PRISMA Win BI Designer (custom αναφορές)"
           - "Διαγράμματα, Pivots, Χάρτες, Μετρητές"
           - "Συσχετίσεις από πολλαπλά τμήματα/υποκαταστήματα"
-      - icon: "🖨️"
+      - icon: "i:printer"
         title: "Σύνδεση με Ταμειακά & Ζυγιστικά"
         desc: "Άμεση συνεργασία με όλα τα γνωστά ταμειακά συστήματα (ICS, RBS, SAM4S, Datasign, Elzab κ.ά.) και ζυγιστικά (DIGI, ICS TEC, BIZERBA). Υποστήριξη POS terminals πολλαπλών NSPs."
         features:
@@ -131,7 +131,7 @@ sections:
           - "Ζυγιστικά DIGI, ICS TEC, BIZERBA"
           - "POS terminals: Cardlink, Viva, EDPS, Nexi, MyPOS"
           - "SoftPOS (Viva Terminal App, Tap on Mobile)"
-      - icon: "🔒"
+      - icon: "i:lock"
         title: "ΦΗΜΑΣ"
         desc: "Πλήρης υποστήριξη για πιστοποιημένες Φορολογικές Ηλεκτρονικές Μηχανές Αποδείξεων Συναλλαγών. Διαθέσιμοι drivers για όλες τις εφαρμογές PRISMA Win και PrismaNET."
         features:

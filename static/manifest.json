@@ -4,8 +4,8 @@
   "description": "ERP, CRM, υποστήριξη λογισμικού και λύσεις πληροφορικής για επιχειρήσεις",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#0f172a",
-  "theme_color": "#4f46e5",
+  "background_color": "#150f1c",
+  "theme_color": "#8d225b",
   "lang": "el",
   "icons": [
     {

@@ -1,0 +1,9 @@
+{{- /* Εικονίδιο κάρτας. icon: "i:box" → SVG μέσα σε πλακίδιο (.icon-tile),
+       οτιδήποτε άλλο (π.χ. emoji) τυπώνεται ως έχει, όπως πριν.
+       Κλήση: {{ partial "card-icon.html" (dict "icon" .icon "class" "feature-card__icon") }} */ -}}
+{{- $icon := .icon | default "" -}}
+{{- if hasPrefix $icon "i:" -}}
+<div class="{{ .class }} icon-tile">{{ partial "icon.html" (strings.TrimPrefix "i:" $icon) }}</div>
+{{- else -}}
+<div class="{{ .class }}">{{ $icon }}</div>
+{{- end -}}

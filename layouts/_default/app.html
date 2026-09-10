@@ -71,7 +71,7 @@
           <div class="modules">
             {{ range . }}
               <div class="module-card">
-                <div class="module-card__icon">{{ .icon }}</div>
+                {{ partial "card-icon.html" (dict "icon" .icon "class" "module-card__icon") }}
                 <h3 class="module-card__title">{{ .title }}</h3>
                 <p class="module-card__desc">{{ .desc }}</p>
                 {{ with .features }}

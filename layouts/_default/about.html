@@ -48,7 +48,7 @@
 
       <div class="about__cards">
         <div class="about-card about-card--accent">
-          <div class="about-card__icon">🎯</div>
+          <div class="about-card__icon icon-tile">{{ partial "icon.html" "target" }}</div>
           <h3 class="about-card__title">Το όραμά μας</h3>
           <p class="about-card__text">
             Να δώσουμε σε κάθε επιχείρηση την τεχνολογία που χρειάζεται για να αναπτυχθεί —
@@ -56,7 +56,7 @@
           </p>
         </div>
         <div class="about-card">
-          <div class="about-card__icon">🤝</div>
+          <div class="about-card__icon icon-tile">{{ partial "icon.html" "handshake" }}</div>
           <h3 class="about-card__title">Η προσέγγισή μας</h3>
           <p class="about-card__text">
             Ακούμε πρώτα, προτείνουμε μετά. Κάθε λύση ξεκινά από κατανόηση των αναγκών σας —
@@ -80,7 +80,7 @@
     <div class="about-services" data-animate-stagger>
       {{ range .Params.services }}
         <div class="about-service-card" data-animate>
-          <div class="about-service-card__icon">{{ .icon }}</div>
+          {{ partial "card-icon.html" (dict "icon" .icon "class" "about-service-card__icon") }}
           <h3 class="about-service-card__title">{{ .title }}</h3>
           <p class="about-service-card__desc">{{ .desc }}</p>
           <ul class="about-service-card__list">

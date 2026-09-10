@@ -13,7 +13,7 @@
       {{/* Contact info */}}
       <div class="contact-info">
         <div class="contact-info__item">
-          <div class="contact-info__icon">📞</div>
+          <div class="contact-info__icon">{{ partial "icon.html" "phone-call" }}</div>
           <div>
             <div class="contact-info__label">Τηλέφωνο</div>
             <div class="contact-info__value">
@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="contact-info__item">
-          <div class="contact-info__icon">✉️</div>
+          <div class="contact-info__icon">{{ partial "icon.html" "mail" }}</div>
           <div>
             <div class="contact-info__label">Email</div>
             <div class="contact-info__value">
@@ -31,14 +31,14 @@
           </div>
         </div>
         <div class="contact-info__item">
-          <div class="contact-info__icon">📍</div>
+          <div class="contact-info__icon">{{ partial "icon.html" "map-pin" }}</div>
           <div>
             <div class="contact-info__label">Διεύθυνση</div>
             <div class="contact-info__value">{{ site.Params.address }}</div>
           </div>
         </div>
         <div class="contact-info__item">
-          <div class="contact-info__icon">🕐</div>
+          <div class="contact-info__icon">{{ partial "icon.html" "clock" }}</div>
           <div>
             <div class="contact-info__label">Ωράριο</div>
             <div class="contact-info__value">{{ site.Params.hours }}</div>
@@ -48,7 +48,7 @@
         {{/* Στοιχεία μητρώου: για τιμολόγηση, και ορατά στη σελίδα — μέχρι
              τώρα υπήρχαν μόνο μέσα στο JSON-LD, που δεν το βλέπει επισκέπτης. */}}
         <div class="contact-info__item">
-          <div class="contact-info__icon">🏢</div>
+          <div class="contact-info__icon">{{ partial "icon.html" "building" }}</div>
           <div>
             <div class="contact-info__label">Στοιχεία επιχείρησης</div>
             <div class="contact-info__value">
@@ -76,7 +76,7 @@
       <form class="form" id="contactForm" method="POST" action="/api/contact" novalidate>
 
         <div id="form-success" class="form-feedback form-feedback--success is-hidden">
-          ✅ Το μήνυμά σας στάλθηκε! Θα επικοινωνήσουμε μαζί σας σύντομα.
+          {{ partial "icon.html" "check" }} Το μήνυμά σας στάλθηκε! Θα επικοινωνήσουμε μαζί σας σύντομα.
         </div>
         <div id="form-error" class="form-feedback form-feedback--error is-hidden"></div>
 

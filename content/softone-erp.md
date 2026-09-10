@@ -16,7 +16,7 @@ sections:
     subtitle: "Πρωτοποριακό cloud ERP που συνδυάζει ευφυή αυτοματισμό διεργασιών, πλήρη εμπορική διαχείριση και CRM σε μία ενιαία πλατφόρμα. Πάνω από 8.000 εγκαταστάσεις σε Ελλάδα και Κύπρο."
     image: "/images/soft1-erp-screenshot.webp"
     modules:
-      - icon: "🏭"
+      - icon: "i:factory"
         title: "SOFT1 Cloud ERP Series 6"
         desc: "Ολοκληρωμένο cloud ERP για εμπορική διαχείριση, παραγωγή, αποθήκη, χρηματοοικονομικά και myDATA. Λειτουργεί on-premise, cloud (Azure) ή υβριδικά."
         features:
@@ -24,7 +24,7 @@ sections:
           - "Χρηματοοικονομική διαχείριση & λογιστική"
           - "Παραγωγή & κοστολόγηση"
           - "Πλήρης myDATA & ηλεκτρονική τιμολόγηση"
-      - icon: "🤝"
+      - icon: "i:handshake"
         title: "SOFT1 Cloud CRM"
         desc: "SaaS CRM για πωλήσεις, marketing και υποστήριξη πελατών. Διαχείριση leads, ευκαιριών, campaigns και έργων από οποιαδήποτε συσκευή."
         features:
@@ -32,7 +32,7 @@ sections:
           - "Marketing campaigns & SMS"
           - "Διαχείριση έργων & τεχνικών"
           - "Πλήρης mobility μέσω SOFT1 360"
-      - icon: "🤖"
+      - icon: "i:bot"
         title: "Smart Automation"
         desc: "Τρία εργαλεία αυτοματισμού: Business Robotics (no-code RPA), B.A.M. (ορχήστρωση διεργασιών) και EVA (conversational AI assistant μέσω Azure Cognitive Services)."
         features:
@@ -40,7 +40,7 @@ sections:
           - "B.A.M. — ορχήστρωση & monitoring ροών"
           - "EVA — AI assistant (Skype, Messenger, mobile)"
           - "No-code, cross-team flows"
-      - icon: "📊"
+      - icon: "i:chart"
         title: "SOFT1 BI Data Lake"
         desc: "Subscription υπηρεσία επιχειρηματικής ευφυΐας ενσωματωμένη με Microsoft Power BI. Real-time dashboards, predictive analytics και έτοιμα templates πωλήσεων & οικονομικών."
         features:
@@ -54,7 +54,7 @@ sections:
     subtitle: "Από ασύρματη διαχείριση αποθήκης και mobile πωλήσεις έως τραπεζικές συναλλαγές μέσα από το ERP — το SOFT1 καλύπτει κάθε λειτουργική ανάγκη."
     image: "/images/soft1-mobile-screenshot.webp"
     modules:
-      - icon: "📱"
+      - icon: "i:phone"
         title: "SOFT1 360 — Enterprise Mobility"
         desc: "Πλήρης πρόσβαση σε κάθε λειτουργία του SOFT1 από smartphone, tablet ή laptop (iOS, Android, web). Role-based παραμετροποίηση, BYOD και αυστηρός έλεγχος ασφαλείας."
         features:
@@ -62,7 +62,7 @@ sections:
           - "Role-based διαμόρφωση ανά χρήστη"
           - "SSL + OAuth + geolocation logging"
           - "Online & offline λειτουργία"
-      - icon: "📦"
+      - icon: "i:box"
         title: "SOFT1 WMS Lite"
         desc: "Mobile εφαρμογή διαχείρισης αποθήκης για παραλαβές, picking, φυσική απογραφή, packing και ενδοδιακίνηση. Υποστήριξη Bluetooth scanners και printers."
         features:
@@ -70,7 +70,7 @@ sections:
           - "Φυσική απογραφή με scanner"
           - "Packing & ετικέτες Bluetooth"
           - "Ενδοδιακίνηση μεταξύ αποθηκών"
-      - icon: "🚗"
+      - icon: "i:car"
         title: "SFA Lite — Sales Force Automation"
         desc: "Mobile εφαρμογή πωλητών για iOS & Android. Παραγγελιοληψία, είσπραξη, διαχείριση πελατών και reporting — online και offline."
         features:
@@ -78,7 +78,7 @@ sections:
           - "Εισπράξεις & αποδείξεις PDF"
           - "Real-time σύνδεση με SOFT1 ERP"
           - "Οργάνωση επισκέψεων & δρομολόγια"
-      - icon: "🏦"
+      - icon: "i:bank"
         title: "SOFT1 FinTech & PayHub"
         desc: "Τραπεζικές συναλλαγές μέσα από το ERP. Αυτόματη είσπραξη μέσω RF κωδικών πληρωμής, real-time ειδοποιήσεις, αυτόματη λογιστικοποίηση και συμφωνία τραπεζών."
         features:
@@ -86,7 +86,7 @@ sections:
           - "RF κωδικοί & payment links"
           - "Αυτόματη συμφωνία τραπεζικών κινήσεων"
           - "Υποστήριξη IRIS (PayHub)"
-      - icon: "🧾"
+      - icon: "i:receipt"
         title: "myDATA Live & Accounting Reconciliation"
         desc: "Μία οθόνη για όλες τις myDATA λειτουργίες: αποστολή συνόψεων, χαρακτηρισμοί, έλεγχος εγκυρότητας. Συνοδεύεται από εργαλείο συμφωνίας Γενικής Λογιστικής–Εμπορικού."
         features:
@@ -94,7 +94,7 @@ sections:
           - "Ηλεκτρονική τιμολόγηση SOFT1"
           - "Συμφωνία GL–Εμπορικού μίας εργασίας"
           - "Drill-down σε ημερήσιο επίπεδο"
-      - icon: "🖨️"
+      - icon: "i:printer"
         title: "GO ΤΑΜΕΙΑΚΗ — ALL IN ONE Ψηφιακή Ταμειακή"
         desc: "Η ταχύτερη ψηφιακή ταμειακή για τη λιανική. Ταμειακή, εκτυπωτής και POS σε μία συσκευή — χωρίς ΦΗΜ, χωρίς Ζ, με άμεση αποστολή αποδείξεων στη myDATA."
         features:
@@ -108,7 +108,7 @@ sections:
     subtitle: "Πλήρες οικοσύστημα διαχείρισης ανθρώπινου δυναμικού, μισθοδοσίας και ψηφιακής κάρτας εργασίας — συνδυασμένο με εξειδικευμένες κλαδικές λύσεις για λιανική, χονδρική, παραγωγή και υπηρεσίες."
     image: "/images/soft1-hr-screenshot.webp"
     modules:
-      - icon: "👥"
+      - icon: "i:users"
         title: "SOFT1 HRMS & myWorkplace"
         desc: "Πλήρες σύστημα διαχείρισης ανθρώπινου δυναμικού: παρουσιολόγιο, βαρδιολόγιο, αξιολογήσεις, εκπαιδεύσεις, recruitment και self-service portal για εργαζόμενους."
         features:
@@ -116,7 +116,7 @@ sections:
           - "Αξιολογήσεις & recruitment"
           - "myWorkplace self-service portal"
           - "CloudShift για προγραμματισμό βαρδιών"
-      - icon: "💰"
+      - icon: "i:coins"
         title: "SOFT1 Μισθοδοσία"
         desc: "Ισχυρή μισθοδοσία για όλα τα είδη εργασιακών σχέσεων, ασφαλιστικά ταμεία (ΕΦΚΑ, συμπληρωματικά, ΟΑΕΔ) και αυτόματη μεταφορά στην τράπεζα μέσω FinTech."
         features:
@@ -124,7 +124,7 @@ sections:
           - "ΕΦΚΑ, ΙΚΑ & συμπληρωματικά ταμεία"
           - "Αυτόματες συλλογικές συμβάσεις"
           - "Σύνδεση με τράπεζες & λογιστική"
-      - icon: "🪪"
+      - icon: "i:id-card"
         title: "Ψηφιακή Κάρτα Εργασίας — myErgani LIVE"
         desc: "Πλήρης συμμόρφωση με την υποχρεωτική Ψηφιακή Κάρτα Εργασίας. Web Check-In/Out, QR scanner app, σύνδεση με ρολόι παρουσίας και αυτόματη αποστολή στο ΕΡΓΑΝΗ ΙΙ."
         features:
@@ -132,7 +132,7 @@ sections:
           - "Αυτόματη αποστολή στο ΕΡΓΑΝΗ ΙΙ"
           - "Απολογιστική δήλωση ωραρίου"
           - "Λειτουργεί ανεξάρτητα ή με μισθοδοσία"
-      - icon: "🏪"
+      - icon: "i:shop"
         title: "SOFT1 Retail & Retail Pro"
         desc: "POS για λιανική πώληση 24x7 — από απλά καταστήματα έως αλυσίδες και franchise. Loyalty, barcode, online/offline, διασύνδεση με POS terminals (Cardlink, Euronet, Worldline)."
         features:
@@ -140,7 +140,7 @@ sections:
           - "SOFT1 Retail Pro — touch POS αλυσίδων"
           - "Loyalty Card & εισιτήρια δώρου"
           - "Διασύνδεση ERP–POS με myDATA"
-      - icon: "🏗️"
+      - icon: "i:hard-hat"
         title: "Κλαδικές Λύσεις"
         desc: "Εξειδικευμένες λύσεις για χονδρικό εμπόριο & διανομή, παραγωγή, υπηρεσίες (service contracts, ticketing) και SMB/start-up cloud-only πακέτα."
         features:

@@ -1,0 +1,36 @@
+{{- /* Σκούρα ζώνη «Τι γίνεται όταν μας πάρετε». Κείμενο: data/next_steps.yaml. */ -}}
+{{- $d := hugo.Data.next_steps -}}
+<section class="next-steps" data-parallax>
+  <div class="next-steps__glow next-steps__glow--a" aria-hidden="true"></div>
+  <div class="next-steps__glow next-steps__glow--b" aria-hidden="true"></div>
+  <div class="container next-steps__inner">
+    <div class="next-steps__head">
+      <span class="next-steps__label">{{ $d.label }}</span>
+      <h2 class="next-steps__title">{{ $d.title }}</h2>
+      <p class="next-steps__text">{{ $d.text }}</p>
+    </div>
+    <ol class="next-steps__list" data-animate-stagger>
+      {{ range $i, $s := $d.steps }}
+      <li class="next-step" data-animate>
+        <div class="next-step__top">
+          <span class="next-step__num">{{ add $i 1 }}</span>
+          <span class="next-step__icon">{{ partial "icon.html" $s.icon }}</span>
+        </div>
+        <h3 class="next-step__title">{{ $s.title }}</h3>
+        <p class="next-step__desc">{{ $s.desc }}</p>
+      </li>
+      {{ end }}
+    </ol>
+    <div class="next-steps__foot">
+      <div class="next-steps__stats">
+        {{ range $d.stats }}
+        <div class="next-steps__stat">
+          <strong data-count>{{ .number }}</strong>
+          <span>{{ .label }}</span>
+        </div>
+        {{ end }}
+      </div>
+      <a href="{{ $d.cta_url }}" class="btn btn--lg next-steps__cta">{{ $d.cta }}</a>
+    </div>
+  </div>
+</section>

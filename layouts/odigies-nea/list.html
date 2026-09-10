@@ -19,13 +19,13 @@
                 <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
               {{ else }}
                 <div class="post-card__placeholder">
-                  {{ if eq .Params.category "Νέα" }}📢{{ else if eq .Params.category "Οδηγοί" }}📖{{ else }}✏️{{ end }}
+                  {{ if eq .Params.category "Νέα" }}{{ partial "icon.html" "megaphone" }}{{ else if eq .Params.category "Οδηγοί" }}{{ partial "icon.html" "book" }}{{ else }}{{ partial "icon.html" "edit" }}{{ end }}
                 </div>
               {{ end }}
             </div>
             <div class="post-card__body">
               <div class="post-card__meta">
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "date-el.html" .Date }}</time>
                 {{ with .Params.category }}<span class="badge">{{ . }}</span>{{ end }}
               </div>
               <h2 class="post-card__title">{{ .Title }}</h2>

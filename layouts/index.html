@@ -245,7 +245,7 @@
     <div class="features-grid" data-animate-stagger>
       {{ range $d.features.items }}
         <div class="feature-card" data-animate>
-          <div class="feature-card__icon">{{ .icon }}</div>
+          {{ partial "card-icon.html" (dict "icon" .icon "class" "feature-card__icon") }}
           <h3 class="feature-card__title">{{ .title }}</h3>
           <p class="feature-card__desc">{{ .desc }}</p>
         </div>
@@ -342,7 +342,7 @@
       {{ range $i, $s := .items }}
         <div class="step-card" data-animate>
           <div class="step-card__number">{{ add $i 1 }}</div>
-          <div class="step-card__icon">{{ $s.icon }}</div>
+          {{ partial "card-icon.html" (dict "icon" $s.icon "class" "step-card__icon") }}
           <h3 class="step-card__title">{{ $s.title }}</h3>
           <p class="step-card__desc">{{ $s.desc }}</p>
         </div>
