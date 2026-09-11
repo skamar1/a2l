@@ -188,5 +188,7 @@
   } catch (error) {
     out.setAttribute("data-result", JSON.stringify({ error: String(error && error.message || error) }));
   }
-  document.documentElement.appendChild(out);
+  // Μέσα στο <body>, όχι στο <html>: ο scraper της Cloudflare ψάχνει τους
+  // selectors μέσα στο body, οπότε στοιχείο κρεμασμένο δίπλα του δεν βρίσκεται.
+  (document.body || document.documentElement).appendChild(out);
 })();
