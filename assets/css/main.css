@@ -34,7 +34,12 @@
   --dark-3:        #4a1a4a;
   --text-primary:  #111827;
   --text-secondary:#374151;
-  --text-muted:    #9ca3af;
+  /* Δευτερεύον κείμενο. Το παλιό #9ca3af έβγαζε 2.5:1 πάνω σε λευκό — κάτω
+     από το 4.5:1 του WCAG AA για κανονικό κείμενο. Το #5f6b7a δίνει 5.4:1 σε
+     λευκό και 4.8:1 στο --bg-elevated. Οι σκούρες ζώνες παίρνουν τη δική
+     τους απόχρωση μέσω --text-muted-on-dark (βλ. τον κανόνα πιο κάτω). */
+  --text-muted:    #5f6b7a;
+  --text-muted-on-dark: #b3abbf;
   --border:        #e5e7eb;
   --border-accent: rgba(141, 34, 91, 0.26);
   --radius:        8px;
@@ -45,6 +50,15 @@
   --transition:    0.2s ease;
   --max-width:     1200px;
   --header-height: 72px;
+}
+
+/* Σκούρες ζώνες: το --text-muted των φωτεινών φόντων θα έπεφτε στο 3.7:1 πάνω
+   στο --dark, οπότε εδώ αντικαθίσταται με την ανοιχτή απόχρωση (8.5:1). */
+.promo-banner:not(.promo-banner--light):not(.promo-banner--tint),
+.enopsi-app,
+.photo-band,
+.next-steps {
+  --text-muted: var(--text-muted-on-dark);
 }
 
 /* --- Reset ------------------------------------------------ */
@@ -771,12 +785,14 @@ p { color: var(--text-secondary); }
 }
 
 .btn--amber {
-  background: #d97706;
+  /* #b45309 και όχι #d97706: το λευκό κείμενο πάνω στο ανοιχτό πορτοκαλί
+     έβγαζε 3.2:1, εδώ 5.0:1. */
+  background: #b45309;
   color: #ffffff;
 }
 
 .btn--amber:hover {
-  background: #b45309;
+  background: #92400e;
   box-shadow: 0 4px 24px rgba(217,119,6,0.35);
   transform: translateY(-1px);
 }
@@ -2613,7 +2629,9 @@ p { color: var(--text-secondary); }
   color: #d1d5db;
 }
 .cookie-banner__link {
-  color: var(--accent);
+  /* Πάνω στο σκούρο φόντο του banner το --accent έβγαζε 2.1:1· η ανοιχτή
+     απόχρωση δίνει 7.5:1. */
+  color: var(--accent-soft);
   text-decoration: underline;
   white-space: nowrap;
 }
@@ -2867,7 +2885,9 @@ p { color: var(--text-secondary); }
 .promo-block__deadline {
   font-size: 0.78rem;
   font-weight: 600;
-  color: #f59e0b;
+  /* #92400e αντί για #f59e0b: το ανοιχτό πορτοκαλί πάνω στο κρεμ φόντο
+     έβγαζε 2:1· εδώ 7:1. */
+  color: #92400e;
   background: rgba(245,158,11,0.1);
   padding: 3px 10px;
   border-radius: 20px;

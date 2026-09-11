@@ -388,7 +388,7 @@
     <div class="testimonials-grid" data-animate-stagger>
       {{ range .items }}
       <div class="testimonial-card" data-animate>
-        <div class="testimonial-card__stars">★★★★★</div>
+        <div class="testimonial-card__stars" role="img" aria-label="5 από 5 αστέρια">★★★★★</div>
         <blockquote class="testimonial-card__quote">{{ .quote }}</blockquote>
         <div class="testimonial-card__author">
           {{ $tname := .name }}{{ with .logo }}<img src="{{ . }}" alt="{{ $tname }}" class="testimonial-card__logo">{{ end }}
