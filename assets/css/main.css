@@ -2795,7 +2795,7 @@ p { color: var(--text-secondary); }
 }
 
 .testimonial-card__stars {
-  color: #f59e0b;
+  color: #b45309; /* 5.02:1 σε λευκό — το #f59e0b έβγαζε 2.15:1 */
   font-size: 1rem;
   letter-spacing: 2px;
 }

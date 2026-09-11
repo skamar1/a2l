@@ -61,3 +61,14 @@
   Cross-Origin-Resource-Policy: same-origin
 /images/*
   Cache-Control: public, max-age=2592000
+
+# Το probe αντίθεσης του ελέγχου site φορτώνεται από τον headless browser
+# ΜΕΣΑ σε ξένες σελίδες (βλ. lib/checker/contrast.js). Το γενικό
+# Cross-Origin-Resource-Policy: same-origin θα το μπλόκαρε εκεί, οπότε μόνο
+# αυτό το αρχείο ανοίγει σε cross-origin. Το «!» αφαιρεί πρώτα το γενικό
+# header — αλλιώς το Pages τα ενώνει σε «same-origin, cross-origin». Cache 1 ώρα — το ?v= της έκδοσης
+# κανόνων καλύπτει τις αλλαγές.
+/elegxos/contrast-probe.js
+  ! Cross-Origin-Resource-Policy
+  Cross-Origin-Resource-Policy: cross-origin
+  Cache-Control: public, max-age=3600

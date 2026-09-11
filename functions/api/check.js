@@ -14,6 +14,7 @@ import { extractFacts, htmlToText } from "../../lib/checker/extract.js";
 import { runRules } from "../../lib/checker/rules.js";
 import { score } from "../../lib/checker/score.js";
 import { isLocalRequest } from "../../lib/local.js";
+import { measureContrast } from "../../lib/checker/contrast.js";
 
 const RESULT_TTL_SECONDS = 60 * 60 * 24 * 90; // 90 ημέρες
 const RATE_LIMIT = { max: 12, windowSeconds: 3600 };
@@ -54,7 +55,7 @@ export async function onRequestPost(context) {
 
   let report;
   try {
-    report = await runCheck(target.url, { selfHost: new URL(request.url).host });
+    report = await runCheck(target.url, { selfHost: new URL(request.url).host, env });
   } catch (error) {
     console.error("check failed:", error?.stack || error);
     return json({ error: "Ο έλεγχος δεν ολοκληρώθηκε. Δοκιμάστε ξανά σε λίγο." }, 500);
@@ -94,7 +95,7 @@ export async function runCheck(url, options = {}) {
   // Σελίδες «Επικοινωνία / Σχετικά / Όροι»: το ΑΦΜ/ΓΕΜΗ σπάνια ζει στην αρχική
   // — είναι φυσιολογικό να βρίσκεται εκεί, οπότε ο κανόνας TRUST-02 τις κοιτάζει.
   const companyUrls = pickCompanyPages(facts, main.url);
-  const [httpRedirect, robots, sitemap, notFound, favicon, ttfbA, ttfbB, ...rest] = await Promise.all([
+  const [httpRedirect, robots, sitemap, notFound, favicon, ttfbA, ttfbB, contrast, ...rest] = await Promise.all([
     settle(probeStatus(`http://${url.host}${url.pathname}`)),
     settle(probe(`${origin}/robots.txt`, { maxBytes: 256 * 1024, timeoutMs: 6000 })),
     settle(probe(`${origin}/sitemap.xml`, { maxBytes: 1024 * 1024, timeoutMs: 6000 })),
@@ -105,6 +106,11 @@ export async function runCheck(url, options = {}) {
     settle(probeStatus(`${origin}/favicon.ico`, { timeoutMs: 5000 })),
     settle(probeStatus(url.toString(), { timeoutMs: 8000 })),
     settle(probeStatus(url.toString(), { timeoutMs: 8000 })),
+    // Η μόνη μέτρηση που περνά από πραγματικό browser (Cloudflare Browser
+    // Rendering). Χωρίς credentials ή με εξαντλημένο όριο γυρνά {available:false}
+    // και ο A11Y-06 βγαίνει `na`. Ζητάμε το τελικό URL (μετά τις ανακατευθύνσεις)
+    // για να μην ξοδέψουμε χρόνο browser σε ένα 301.
+    settle(measureContrast(main.url, options.env)),
     ...companyUrls.map((pageUrl) =>
       settle(probe(pageUrl, { maxBytes: 1024 * 1024, timeoutMs: 6000 }))
     ),
@@ -142,6 +148,7 @@ export async function runCheck(url, options = {}) {
     ttfbMs,
     ttfbSamples: samples,
     facts,
+    contrast,
     probes: {
       httpRedirect: httpRedirect
         ? { ...httpRedirect, finalIsHttps: httpRedirect.url?.startsWith("https://") }

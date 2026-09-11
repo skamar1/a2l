@@ -20,3 +20,6 @@ Thumbs.db
 
 # Wrangler local dev cache (KV, state)
 .wrangler/
+
+# Τοπικά secrets του wrangler (CF_BROWSER_TOKEN κ.λπ.) — ΠΟΤΕ στο git, το repo είναι δημόσιο
+.dev.vars
