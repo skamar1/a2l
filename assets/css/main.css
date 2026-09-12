@@ -301,9 +301,19 @@ p { color: var(--text-secondary); }
   color: var(--accent);
 }
 
-.nav__mobile-child {
-  padding-left: 36px !important;
-  font-size: 0.9rem !important;
+/* Η ομάδα «Προγράμματα»: τα παιδιά της ήταν σκέτα inline <a> μέσα σε div,
+   οπότε στο κινητό έτρεχαν το ένα δίπλα στο άλλο σαν παράγραφος. Στήλη. */
+.nav__mobile-group {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Τρεις κλάσεις: πρέπει να νικήσει το «.nav__mobile .nav__link» πιο κάτω. */
+.nav__mobile .nav__mobile-group .nav__mobile-child {
+  padding: 10px 24px 10px 40px;
+  font-size: 0.95rem;
+  border-bottom: none;
 }
 
 /* Hamburger */
@@ -342,8 +352,14 @@ p { color: var(--text-secondary); }
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
   box-shadow: var(--shadow-md);
-  padding: 16px 0;
+  padding: 8px 0 16px;
   z-index: 999;
+  /* Το body κλειδώνει όταν ανοίγει το μενού (main.js), οπότε η λίστα πρέπει
+     να κάνει scroll μόνη της σε μικρές οθόνες. dvh: χωρίς τη μπάρα του Safari. */
+  max-height: calc(100vh - var(--header-height));
+  max-height: calc(100dvh - var(--header-height));
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .nav__mobile.is-open {
