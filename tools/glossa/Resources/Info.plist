@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>Glossa</string>
+    <key>CFBundleDisplayName</key>
+    <string>Glossa</string>
+    <key>CFBundleIdentifier</key>
+    <string>gr.a2l.glossa</string>
+    <key>CFBundleExecutable</key>
+    <string>Glossa</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>13.0</string>
+
+    <!-- Εφαρμογή μόνο γραμμής μενού: κανένα εικονίδιο στο Dock, κανένα
+         παράθυρο στην εκκίνηση. -->
+    <key>LSUIElement</key>
+    <true/>
+
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Το Glossa ηχογραφεί τη φωνή σου όσο κρατάς πατημένο το πλήκτρο ομιλίας, για να τη μετατρέψει σε κείμενο.</string>
+
+    <key>NSHumanReadableCopyright</key>
+    <string>A2 Labs</string>
+</dict>
+</plist>
