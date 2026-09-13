@@ -94,8 +94,12 @@ struct TranscriptionPipeline {
             }
         }
 
+        // Η χρέωση δεν είναι η διάρκεια: κάποιοι πάροχοι έχουν πάτωμα ανά
+        // αίτημα (το Groq χρεώνει κάθε κλήση σαν 10 δευτερόλεπτα), και μια
+        // διόρθωση από το επίπεδο 3 σημαίνει δύο αιτήματα.
+        let perCall = provider.billedSeconds(forAudio: duration)
         return PipelineResult(text: text, language: language, confidence: confidence,
                               corrected: corrected,
-                              billedSeconds: corrected ? duration * 2 : duration)
+                              billedSeconds: corrected ? perCall * 2 : perCall)
     }
 }

@@ -105,7 +105,7 @@ final class StatusItemController: NSObject, NSMenuDelegate {
         menu.addItem(historyMenuItem())
 
         let minutes = controller.usageMinutesThisMonth
-        let usage = NSMenuItem(title: String(format: "Χρήση μήνα: %.1f λεπτά ήχου", minutes),
+        let usage = NSMenuItem(title: String(format: "Χρήση μήνα: %.1f χρεώσιμα λεπτά", minutes),
                                action: nil, keyEquivalent: "")
         usage.isEnabled = false
         menu.addItem(usage)

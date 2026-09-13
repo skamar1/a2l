@@ -88,12 +88,26 @@ struct Provider: Codable, Identifiable, Hashable {
 
     var isBuiltIn: Bool
 
+    /// Μοντέλα που προτείνονται στο UI — σκέτη διευκόλυνση, το πεδίο
+    /// `model` δέχεται ό,τι θέλεις.
+    var suggestedModels: [String]?
+
+    /// Ελάχιστη χρεώσιμη διάρκεια. Το Groq χρεώνει κάθε αίτημα σαν 10
+    /// δευτερόλεπτα ακόμη κι αν είπες δύο λέξεις· χωρίς αυτό ο μετρητής
+    /// χρήσης θα έλεγε ψέματα.
+    var minimumBilledSeconds: Double?
+
+    /// Μέγιστο μέγεθος ανεβάσματος σε bytes, 0 ή nil = χωρίς όριο.
+    var maxUploadBytes: Int?
+
     init(id: String, name: String, baseURL: String, path: String, model: String,
                 auth: Auth = .bearer, requestStyle: RequestStyle = .multipart,
                 fileField: String = "file", modelField: String = "model",
                 languageField: String = "language", languageStyle: LanguageStyle = .iso639_1,
                 promptField: String = "prompt", extraFields: [String: String] = [:],
-                textPath: String = "text", note: String = "", isBuiltIn: Bool = false) {
+                textPath: String = "text", note: String = "", isBuiltIn: Bool = false,
+                suggestedModels: [String]? = nil, minimumBilledSeconds: Double? = nil,
+                maxUploadBytes: Int? = nil) {
         self.id = id
         self.name = name
         self.baseURL = baseURL
@@ -110,6 +124,18 @@ struct Provider: Codable, Identifiable, Hashable {
         self.textPath = textPath
         self.note = note
         self.isBuiltIn = isBuiltIn
+        self.suggestedModels = suggestedModels
+        self.minimumBilledSeconds = minimumBilledSeconds
+        self.maxUploadBytes = maxUploadBytes
+    }
+
+    var modelSuggestions: [String] { suggestedModels ?? [] }
+    var billingFloorSeconds: Double { minimumBilledSeconds ?? 0 }
+    var uploadLimitBytes: Int { maxUploadBytes ?? 0 }
+
+    /// Πόσα δευτερόλεπτα θα χρεωθούν πραγματικά για μια ηχογράφηση.
+    func billedSeconds(forAudio seconds: Double) -> Double {
+        max(seconds, billingFloorSeconds)
     }
 
     // MARK: Βοηθήματα για το UI
@@ -176,39 +202,35 @@ extension Provider {
     /// πεδίο είναι επεξεργάσιμο στις Ρυθμίσεις.
     static let builtIns: [Provider] = [
         Provider(
+            id: "groq",
+            name: "Groq",
+            baseURL: "https://api.groq.com/openai/v1",
+            path: "/audio/transcriptions",
+            model: "whisper-large-v3",
+            extraFields: ["response_format": "json", "temperature": "0"],
+            note: "Τρέχει τα ίδια βάρη Whisper με το OpenAI — άρα ίδια ελληνικά — "
+                + "σε κλάσμα της τιμής, με γενναιόδωρο δωρεάν επίπεδο. "
+                + "Το whisper-large-v3-turbo είναι φθηνότερο και γρηγορότερο, "
+                + "αλλά είναι αποσταγμένη έκδοση και συνήθως χάνει λίγη ακρίβεια "
+                + "στις μη αγγλικές γλώσσες· δοκίμασε και τα δύο. "
+                + "Κάθε αίτημα χρεώνεται τουλάχιστον σαν 10 δευτερόλεπτα.",
+            isBuiltIn: true,
+            suggestedModels: ["whisper-large-v3", "whisper-large-v3-turbo"],
+            minimumBilledSeconds: 10,
+            maxUploadBytes: 25 * 1024 * 1024
+        ),
+        Provider(
             id: "openai",
             name: "OpenAI",
             baseURL: "https://api.openai.com/v1",
             path: "/audio/transcriptions",
             model: "gpt-4o-transcribe",
             extraFields: ["response_format": "json", "temperature": "0"],
-            note: "Η καλύτερη ακρίβεια στα ελληνικά από όσα δοκιμάζονται εύκολα. "
-                + "Εναλλακτικά μοντέλα: gpt-4o-mini-transcribe, whisper-1.",
-            isBuiltIn: true
-        ),
-        Provider(
-            id: "groq",
-            name: "Groq",
-            baseURL: "https://api.groq.com/openai/v1",
-            path: "/audio/transcriptions",
-            model: "whisper-large-v3-turbo",
-            extraFields: ["response_format": "json", "temperature": "0"],
-            note: "Ίδια βάρη Whisper, ~9 φορές φθηνότερα από το OpenAI και πολύ "
-                + "γρήγορα. Κληρονομεί όμως και τις παραισθήσεις του Whisper στη σιωπή.",
-            isBuiltIn: true
-        ),
-        Provider(
-            id: "siliconflow",
-            name: "SiliconFlow",
-            baseURL: "https://api.siliconflow.cn/v1",
-            path: "/audio/transcriptions",
-            model: "FunAudioLLM/SenseVoiceSmall",
-            languageField: "",
-            promptField: "",
-            note: "ΠΡΟΣΟΧΗ: το SenseVoiceSmall καλύπτει κινέζικα, καντονέζικα, "
-                + "αγγλικά, ιαπωνικά και κορεάτικα — ΟΧΙ ελληνικά. Φθηνό, αλλά "
-                + "άχρηστο για τη μισή σου χρήση.",
-            isBuiltIn: true
+            note: "Ακριβότερο, αλλά το gpt-4o-transcribe είναι νεότερο μοντέλο από "
+                + "το Whisper και σε δύσκολο ήχο συνήθως τα πάει καλύτερα.",
+            isBuiltIn: true,
+            suggestedModels: ["gpt-4o-transcribe", "gpt-4o-mini-transcribe", "whisper-1"],
+            maxUploadBytes: 25 * 1024 * 1024
         ),
         Provider(
             id: "elevenlabs",
@@ -237,6 +259,18 @@ extension Provider {
             textPath: "results.channels.0.alternatives.0.transcript",
             note: "Στέλνει ωμά bytes με παραμέτρους στο URL. Δεν το έχω "
                 + "επαληθεύσει σε ζωντανή κλήση.",
+            isBuiltIn: true
+        ),
+        Provider(
+            id: "siliconflow",
+            name: "SiliconFlow",
+            baseURL: "https://api.siliconflow.cn/v1",
+            path: "/audio/transcriptions",
+            model: "FunAudioLLM/SenseVoiceSmall",
+            languageField: "",
+            promptField: "",
+            note: "ΠΡΟΣΟΧΗ: το SenseVoiceSmall καλύπτει κινέζικα, καντονέζικα, "
+                + "αγγλικά, ιαπωνικά και κορεάτικα — ΟΧΙ ελληνικά.",
             isBuiltIn: true
         ),
         Provider(

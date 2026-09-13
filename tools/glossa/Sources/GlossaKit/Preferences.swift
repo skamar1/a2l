@@ -162,7 +162,7 @@ final class Preferences: ObservableObject {
         ambiguousFallback   = Lang(rawValue: str("ambiguousFallback", "el")) ?? .el
         stickyLanguage      = Lang(rawValue: str("stickyLanguage", "el")) ?? .el
         confidenceThreshold = num("confidenceThreshold", 0.60)
-        providerID          = str("providerID", "openai")
+        providerID          = str("providerID", "groq")
         promptGreek         = str("promptGreek", Preferences.defaultGreekPrompt)
         promptEnglish       = str("promptEnglish", Preferences.defaultEnglishPrompt)
         triggerKey          = TriggerKey(rawValue: str("triggerKey", "rightCommand")) ?? .rightCommand

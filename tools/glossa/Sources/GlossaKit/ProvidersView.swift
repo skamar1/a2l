@@ -93,7 +93,22 @@ struct ProviderEditor: View {
                 TextField("Όνομα", text: $draft.name)
                 TextField("Base URL", text: $draft.baseURL)
                 TextField("Διαδρομή", text: $draft.path)
-                TextField("Μοντέλο", text: $draft.model)
+                HStack {
+                    TextField("Μοντέλο", text: $draft.model)
+                    if !draft.modelSuggestions.isEmpty {
+                        Menu("Προτάσεις") {
+                            ForEach(draft.modelSuggestions, id: \.self) { suggestion in
+                                Button(suggestion) { draft.model = suggestion }
+                            }
+                        }
+                        .fixedSize()
+                    }
+                }
+                if draft.billingFloorSeconds > 0 {
+                    Text(String(format: "Ελάχιστη χρέωση: %.0f δευτερόλεπτα ανά αίτημα.",
+                                draft.billingFloorSeconds))
+                        .font(.caption).foregroundStyle(.secondary)
+                }
             }
 
             Section("Κλειδί") {

@@ -17,7 +17,8 @@ final class ProviderStore: ObservableObject {
         if let data = Defaults.store.data(forKey: ProviderStore.key),
            let stored = try? JSONDecoder().decode([Provider].self, from: data),
            !stored.isEmpty {
-            providers = stored
+            let known = Set(stored.map(\.id))
+            providers = stored + Provider.builtIns.filter { !known.contains($0.id) }
         } else {
             providers = Provider.builtIns
         }

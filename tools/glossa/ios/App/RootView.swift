@@ -155,7 +155,7 @@ struct LanguageSettingsView: View {
                 }
 
                 Section("Χρήση") {
-                    Text(String(format: "%.1f λεπτά ήχου αυτόν τον μήνα",
+                    Text(String(format: "%.1f χρεώσιμα λεπτά αυτόν τον μήνα",
                                 prefs.secondsThisMonth / 60))
                 }
             }

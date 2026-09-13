@@ -16,6 +16,7 @@ final class Transcriber {
         case network(String)
         case emptyResponse
         case unexpectedResponse(String)
+        case tooLarge(Int, Int)
 
         var errorDescription: String? {
             switch self {
@@ -35,6 +36,9 @@ final class Transcriber {
                 return "Δεν επιστράφηκε κείμενο."
             case .unexpectedResponse(let path):
                 return "Η απάντηση δεν έχει κείμενο στο «\(path)». Έλεγξε τη διαδρομή απάντησης στις Ρυθμίσεις."
+            case .tooLarge(let size, let limit):
+                let mb = { (bytes: Int) in String(format: "%.1f MB", Double(bytes) / 1_048_576) }
+                return "Η ηχογράφηση είναι \(mb(size)) και ο πάροχος δέχεται μέχρι \(mb(limit)). Μίλα λιγότερο ή κατέβασε τη μέγιστη διάρκεια."
             }
         }
     }
@@ -52,6 +56,10 @@ final class Transcriber {
         guard let apiKey = Keychain.apiKey(for: provider.id) else {
             throw TranscriberError.missingAPIKey(provider.name)
         }
+        let limit = provider.uploadLimitBytes
+        if limit > 0, wav.count > limit {
+            throw TranscriberError.tooLarge(wav.count, limit)
+        }
 
         // Δύο επαναλήψεις με αυξανόμενη αναμονή. Παραπάνω δεν έχει νόημα: ο
         // χρήστης περιμένει να κολλήσει κείμενο, δεν περιμένει λεπτά.
@@ -66,6 +74,8 @@ final class Transcriber {
             } catch let error as TranscriberError {
                 lastError = error
                 switch error {
+                case .tooLarge:
+                    throw error
                 case .rateLimited, .network, .server:
                     if attempt == delays.count - 1 { throw error }
                     continue        // παροδικό — αξίζει νέα προσπάθεια
