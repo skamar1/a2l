@@ -4,7 +4,7 @@
 #   make app     ξαναχτίζει μόνο την εφαρμογή (το γρήγορο βήμα)
 #   make install αντιγράφει στο /Applications
 #
-.PHONY: setup all lid model app install run clean distclean
+.PHONY: setup all lid model app install run ios clean distclean
 
 setup: lid model app
 all: lid app
@@ -32,8 +32,13 @@ install: app
 run:
 	@swift run -c debug Glossa
 
+## ios — παράγει το Xcode project για iPhone/iPad (θέλει: brew install xcodegen)
+ios:
+	@cd ios && xcodegen generate
+	@echo "==> Έτοιμο: ios/Glossa.xcodeproj  (open ios/Glossa.xcodeproj)"
+
 clean:
-	@rm -rf .build dist/Glossa.app
+	@rm -rf .build dist/Glossa.app ios/Glossa.xcodeproj
 
 ## distclean — σβήνει και το vendored whisper.cpp (~1 GB με το build)
 distclean: clean

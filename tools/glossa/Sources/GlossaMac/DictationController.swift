@@ -154,81 +154,39 @@ final class DictationController: ObservableObject {
 
         // Όλες οι ρυθμίσεις διαβάζονται ΕΔΩ, στο main thread, και ταξιδεύουν
         // σαν απλές τιμές: η εργασία στο παρασκήνιο δεν αγγίζει κοινή κατάσταση.
-        let model = prefs.model
-        let fallback = prefs.ambiguousFallback
-        let threshold = prefs.confidenceThreshold
-        let useGuard = allowGuard && prefs.scriptGuardEnabled
+        let options = TranscriptionPipeline.Options(
+            forced: forced,
+            fallback: prefs.ambiguousFallback,
+            confidenceThreshold: prefs.confidenceThreshold,
+            scriptGuard: allowGuard && prefs.scriptGuardEnabled,
+            provider: prefs.provider,
+            prompts: [.el: prefs.prompt(for: .el), .en: prefs.prompt(for: .en)]
+        )
         let outputMode = prefs.outputMode
-        let prompts: [Lang: String] = [.el: prefs.prompt(for: .el), .en: prefs.prompt(for: .en)]
 
         state = forced.map(State.transcribing) ?? .detecting
         notify()
 
         let detector = self.detector
-        let transcriber = self.transcriber
+        let pipeline = TranscriptionPipeline(transcriber: transcriber)
 
         Task.detached(priority: .userInitiated) { [weak self] in
-            var confidence: Double? = nil
-            var language: Lang
-
-            if let forced {
-                language = forced
-            } else {
-                let detection = detector.detect(samples: samples, among: Lang.allCases)
-                let status = detector.status
-                await MainActor.run { self?.detectorStatus = status }
-
-                if let detection {
-                    // Χαμηλή βεβαιότητα σημαίνει «σχεδόν ισοπαλία». Εκεί η
-                    // δηλωμένη προτίμηση του χρήστη είναι καλύτερος σύμβουλος
-                    // από ένα οριακό argmax.
-                    language = detection.confidence >= threshold ? detection.language : fallback
-                    confidence = detection.confidence
-                } else {
-                    language = fallback
-                }
-            }
-
-            let chosen = language
-            await MainActor.run {
-                self?.state = .transcribing(chosen)
-                self?.notify()
-            }
-
-            let wav = WavWriter.encode(samples: samples)
-
             do {
-                var text = try await transcriber.transcribe(
-                    wav: wav, language: language, model: model, prompt: prompts[language]
+                let result = try await pipeline.run(
+                    samples: samples,
+                    options: options,
+                    decider: forced == nil ? detector : nil,
+                    onLanguageChosen: { language in
+                        Task { @MainActor in
+                            self?.state = .transcribing(language)
+                            self?.notify()
+                        }
+                    }
                 )
-                var corrected = false
-
-                // Δεύτερη ευκαιρία: αν το κείμενο βγήκε σε λάθος αλφάβητο, η
-                // γλώσσα ήταν λάθος — και αυτό το ξέρουμε με βεβαιότητα, χωρίς
-                // μοντέλο, μετρώντας γράμματα.
-                if useGuard, ScriptGuard.contradicts(text, lockedTo: language) {
-                    let flipped = language.other
-                    await MainActor.run {
-                        self?.state = .transcribing(flipped)
-                        self?.notify()
-                    }
-                    if let second = try? await transcriber.transcribe(
-                        wav: wav, language: flipped, model: model, prompt: prompts[flipped]
-                    ), !ScriptGuard.contradicts(second, lockedTo: flipped) {
-                        text = second
-                        language = flipped
-                        corrected = true
-                    }
-                }
-
-                let finalText = text
-                let finalLanguage = language
-                let wasCorrected = corrected
-                let finalConfidence = confidence
-
+                let status = detector.status
                 await MainActor.run {
-                    self?.deliver(finalText, language: finalLanguage, confidence: finalConfidence,
-                                  duration: duration, corrected: wasCorrected, mode: outputMode)
+                    self?.detectorStatus = status
+                    self?.deliver(result, duration: duration, mode: outputMode)
                 }
             } catch {
                 let message = error.localizedDescription
@@ -237,16 +195,14 @@ final class DictationController: ObservableObject {
         }
     }
 
-    private func deliver(_ text: String, language: Lang, confidence: Double?,
-                         duration: Double, corrected: Bool, mode: OutputMode) {
-        lastLanguage = language
-        history.add(Transcript(date: Date(), text: text, language: language,
-                               confidence: confidence, duration: duration, corrected: corrected))
-        // Μια διόρθωση από το ScriptGuard σημαίνει ότι ο ίδιος ήχος στάλθηκε
-        // δύο φορές — και χρεώθηκε δύο φορές.
-        prefs.addUsage(seconds: corrected ? duration * 2 : duration)
+    private func deliver(_ result: PipelineResult, duration: Double, mode: OutputMode) {
+        lastLanguage = result.language
+        history.add(Transcript(date: Date(), text: result.text, language: result.language,
+                               confidence: result.confidence, duration: duration,
+                               corrected: result.corrected))
+        prefs.addUsage(seconds: result.billedSeconds)
 
-        TextInjector.deliver(text, mode: mode)
+        TextInjector.deliver(result.text, mode: mode)
         state = .idle
         play(.done)
         notify()

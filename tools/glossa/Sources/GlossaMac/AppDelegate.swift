@@ -93,7 +93,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             waitForAccessibility()
         }
 
-        if Keychain.readAPIKey() == nil || !ModelStore.isInstalled {
+        if !Keychain.hasAPIKey(for: prefs.providerID) || !ModelStore.isInstalled {
             showSettings()
         }
     }

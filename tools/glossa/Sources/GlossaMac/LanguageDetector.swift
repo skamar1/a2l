@@ -50,15 +50,6 @@ final class LanguageDetector {
 
     // MARK: Διαδρομές
 
-    static var modelDirectory: URL {
-        let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        return base.appendingPathComponent("Glossa", isDirectory: true)
-    }
-
-    static var modelURL: URL {
-        modelDirectory.appendingPathComponent("ggml-tiny.bin")
-    }
-
     /// Ο βοηθός συνοδεύει την εφαρμογή μέσα στο bundle· εκτός bundle (π.χ.
     /// `swift run` κατά την ανάπτυξη) τον ψάχνουμε δίπλα στο εκτελέσιμο.
     static var helperURL: URL? {
@@ -72,10 +63,6 @@ final class LanguageDetector {
                 .appendingPathComponent("glossa-lid"),
         ]
         return candidates.first { FileManager.default.isExecutableFile(atPath: $0.path) }
-    }
-
-    static var modelExists: Bool {
-        FileManager.default.fileExists(atPath: modelURL.path)
     }
 
     var diagnostics: String {
@@ -102,14 +89,14 @@ final class LanguageDetector {
             status = .missingHelper
             return status
         }
-        guard LanguageDetector.modelExists else {
+        guard ModelStore.isInstalled else {
             status = .missingModel
             return status
         }
 
         let task = Process()
         task.executableURL = helper
-        task.arguments = ["--model", LanguageDetector.modelURL.path,
+        task.arguments = ["--model", ModelStore.modelURL.path,
                           "--threads", String(max(2, min(6, ProcessInfo.processInfo.activeProcessorCount / 2)))]
 
         let stdinPipe = Pipe(), stdoutPipe = Pipe(), stderrPipe = Pipe()
@@ -269,4 +256,18 @@ final class LanguageDetector {
     }
 
     deinit { shutdownLocked() }
+}
+
+
+// MARK: - Συμμετοχή στον κοινό αγωγό
+
+extension LanguageDetector: LanguageDecider {
+    /// Ο βοηθός μπλοκάρει όσο περιμένει τη διεργασία, οπότε η κλήση φεύγει
+    /// από το νήμα που την κάλεσε.
+    func decideLanguage(samples: [Float]) async -> (language: Lang, confidence: Double)? {
+        await Task.detached(priority: .userInitiated) { () -> (language: Lang, confidence: Double)? in
+            guard let result = self.detect(samples: samples, among: Lang.allCases) else { return nil }
+            return (language: result.language, confidence: result.confidence)
+        }.value
+    }
 }

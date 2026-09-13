@@ -4,3 +4,7 @@ vendor/
 dist/
 *.o
 *.a
+
+# Παράγεται από το ios/project.yml με xcodegen — δεν έχει νόημα στο git
+ios/*.xcodeproj
+ios/*.xcworkspace

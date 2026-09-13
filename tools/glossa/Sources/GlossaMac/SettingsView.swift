@@ -6,8 +6,6 @@ struct SettingsView: View {
     @ObservedObject private var prefs = Preferences.shared
     @ObservedObject var controller: DictationController
 
-    @State private var apiKey: String = Keychain.readAPIKey() ?? ""
-    @State private var apiKeySaved = Keychain.readAPIKey() != nil
     @State private var downloading = false
     @State private var downloadProgress: Double = 0
     @State private var message: String?
@@ -16,6 +14,7 @@ struct SettingsView: View {
     var body: some View {
         TabView {
             general.tabItem { Label("Γενικά", systemImage: "gearshape") }
+            ProvidersView().tabItem { Label("Πάροχοι", systemImage: "cloud") }
             languageTab.tabItem { Label("Γλώσσα", systemImage: "globe") }
             vocabulary.tabItem { Label("Λεξιλόγιο", systemImage: "text.book.closed") }
             permissions.tabItem { Label("Άδειες", systemImage: "lock.shield") }
@@ -28,31 +27,17 @@ struct SettingsView: View {
 
     private var general: some View {
         Form {
-            Section("OpenAI") {
-                SecureField("Κλειδί API", text: $apiKey)
-                    .textFieldStyle(.roundedBorder)
+            Section("Πάροχος") {
                 HStack {
-                    Button("Αποθήκευση στο Keychain") {
-                        apiKeySaved = Keychain.writeAPIKey(apiKey)
-                        message = apiKeySaved ? "Το κλειδί αποθηκεύτηκε." : "Η αποθήκευση απέτυχε."
-                    }
-                    Button("Διαγραφή") {
-                        Keychain.deleteAPIKey()
-                        apiKey = ""
-                        apiKeySaved = false
-                        message = "Το κλειδί διαγράφηκε."
-                    }
+                    Text(prefs.provider.name)
                     Spacer()
-                    Text(apiKeySaved ? "αποθηκευμένο" : "δεν έχει οριστεί")
-                        .foregroundStyle(apiKeySaved ? .green : .secondary)
-                        .font(.caption)
+                    Text(prefs.provider.model).foregroundStyle(.secondary)
                 }
-                Picker("Μοντέλο", selection: $prefs.model) {
-                    ForEach(Preferences.availableModels, id: \.self) { Text($0).tag($0) }
-                }
-                Text("Το gpt-4o-transcribe δίνει την καλύτερη ακρίβεια στα ελληνικά· "
-                     + "το whisper-1 είναι το φθηνότερο.")
-                    .font(.caption).foregroundStyle(.secondary)
+                Text(Keychain.hasAPIKey(for: prefs.providerID)
+                     ? "Το κλειδί είναι αποθηκευμένο στο Keychain."
+                     : "Δεν έχει οριστεί κλειδί — δες την καρτέλα «Πάροχοι».")
+                    .font(.caption)
+                    .foregroundStyle(Keychain.hasAPIKey(for: prefs.providerID) ? .secondary : .orange)
             }
 
             Section("Πλήκτρα") {

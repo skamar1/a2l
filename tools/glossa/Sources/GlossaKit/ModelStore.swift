@@ -20,24 +20,32 @@ enum ModelStore {
         }
     }
 
-    static var isInstalled: Bool { LanguageDetector.modelExists }
+    static var directory: URL {
+        let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+        return base.appendingPathComponent("Glossa", isDirectory: true)
+    }
+
+    static var modelURL: URL { directory.appendingPathComponent("ggml-tiny.bin") }
+
+    static var isInstalled: Bool {
+        FileManager.default.fileExists(atPath: modelURL.path)
+    }
 
     static var installedSize: String? {
-        guard let attributes = try? FileManager.default.attributesOfItem(atPath: LanguageDetector.modelURL.path),
+        guard let attributes = try? FileManager.default.attributesOfItem(atPath: modelURL.path),
               let bytes = attributes[.size] as? NSNumber
         else { return nil }
         return ByteCountFormatter.string(fromByteCount: bytes.int64Value, countStyle: .file)
     }
 
     static func download(progress: @escaping (Double) -> Void) async throws {
-        try FileManager.default.createDirectory(at: LanguageDetector.modelDirectory,
-                                                withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         let downloader = ModelDownloader(progress: progress)
-        try await downloader.run(from: downloadURL, to: LanguageDetector.modelURL)
+        try await downloader.run(from: downloadURL, to: modelURL)
     }
 
     static func remove() {
-        try? FileManager.default.removeItem(at: LanguageDetector.modelURL)
+        try? FileManager.default.removeItem(at: modelURL)
     }
 }
 

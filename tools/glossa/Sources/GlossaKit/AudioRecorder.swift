@@ -65,6 +65,18 @@ final class AudioRecorder {
         guard !isRecording else { return }
         guard AudioRecorder.microphoneAuthorized() else { throw RecorderError.microphoneDenied }
 
+        #if os(iOS)
+        // Στο iOS η μορφή του input node δεν είναι έγκυρη πριν ενεργοποιηθεί
+        // η συνεδρία ήχου — άρα αυτό πρέπει να προηγείται της ανάγνωσής της.
+        do {
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(.record, mode: .measurement, options: [.allowBluetooth])
+            try session.setActive(true, options: [])
+        } catch {
+            throw RecorderError.engineFailed(error.localizedDescription)
+        }
+        #endif
+
         lock.lock()
         buffer.removeAll(keepingCapacity: true)
         buffer.reserveCapacity(Int(AudioRecorder.sampleRate * min(maxSeconds, 60)))
@@ -107,6 +119,12 @@ final class AudioRecorder {
         engine.inputNode.removeTap(onBus: 0)
         engine.stop()
         converter = nil
+
+        #if os(iOS)
+        // Αφήνουμε τη συνεδρία, αλλιώς η μουσική του χρήστη μένει σε παύση
+        // μετά από κάθε υπαγόρευση.
+        try? AVAudioSession.sharedInstance().setActive(false, options: [.notifyOthersOnDeactivation])
+        #endif
 
         lock.lock()
         let samples = buffer

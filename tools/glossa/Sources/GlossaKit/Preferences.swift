@@ -113,13 +113,19 @@ enum TriggerKey: String, CaseIterable {
 final class Preferences: ObservableObject {
     static let shared = Preferences()
 
-    private let defaults = UserDefaults.standard
+    private var defaults: UserDefaults { Defaults.store }
 
     @Published var languageMode: LanguageMode { didSet { set(languageMode.rawValue, "languageMode") } }
     @Published var ambiguousFallback: Lang    { didSet { set(ambiguousFallback.rawValue, "ambiguousFallback") } }
+    /// Η γλώσσα της τελευταίας επιτυχημένης υπαγόρευσης. Στο iOS, όπου δεν
+    /// τρέχει τοπικός ανιχνευτής, αυτή είναι η αρχική εικασία — και ο έλεγχος
+    /// αλφαβήτου τη διορθώνει, οπότε μετά την πρώτη διόρθωση μένει σωστή.
+    @Published var stickyLanguage: Lang       { didSet { set(stickyLanguage.rawValue, "stickyLanguage") } }
     @Published var confidenceThreshold: Double { didSet { set(confidenceThreshold, "confidenceThreshold") } }
 
-    @Published var model: String              { didSet { set(model, "model") } }
+    /// Ποιος πάροχος χρησιμοποιείται. Το ποιο μοντέλο τρέχει είναι δικό του
+    /// πεδίο — εδώ κρατάμε μόνο την επιλογή.
+    @Published var providerID: String         { didSet { set(providerID, "providerID") } }
     @Published var promptGreek: String        { didSet { set(promptGreek, "promptGreek") } }
     @Published var promptEnglish: String      { didSet { set(promptEnglish, "promptEnglish") } }
 
@@ -136,15 +142,11 @@ final class Preferences: ObservableObject {
     @Published var secondsThisMonth: Double   { didSet { set(secondsThisMonth, "secondsThisMonth") } }
     @Published var usageMonth: String         { didSet { set(usageMonth, "usageMonth") } }
 
-    /// Τα διαθέσιμα μοντέλα απομαγνητοφώνησης του OpenAI, από το πιο ακριβές
-    /// προς το πιο φθηνό.
-    static let availableModels = ["gpt-4o-transcribe", "gpt-4o-mini-transcribe", "whisper-1"]
-
     private init() {
         // Τοπική αναφορά, όχι self.defaults: μέσα στο init το self δεν
         // επιτρέπεται να διαφύγει σε ένθετη συνάρτηση πριν αρχικοποιηθούν
         // όλα τα μέλη.
-        let store = UserDefaults.standard
+        let store = Defaults.store
 
         func str(_ key: String, _ fallback: String) -> String {
             store.string(forKey: key) ?? fallback
@@ -158,8 +160,9 @@ final class Preferences: ObservableObject {
 
         languageMode        = LanguageMode(rawValue: str("languageMode", "auto")) ?? .auto
         ambiguousFallback   = Lang(rawValue: str("ambiguousFallback", "el")) ?? .el
+        stickyLanguage      = Lang(rawValue: str("stickyLanguage", "el")) ?? .el
         confidenceThreshold = num("confidenceThreshold", 0.60)
-        model               = str("model", "gpt-4o-transcribe")
+        providerID          = str("providerID", "openai")
         promptGreek         = str("promptGreek", Preferences.defaultGreekPrompt)
         promptEnglish       = str("promptEnglish", Preferences.defaultEnglishPrompt)
         triggerKey          = TriggerKey(rawValue: str("triggerKey", "rightCommand")) ?? .rightCommand
@@ -198,6 +201,8 @@ final class Preferences: ObservableObject {
         case .en: return promptEnglish
         }
     }
+
+    var provider: Provider { ProviderStore.shared.resolved(id: providerID) }
 
     // MARK: Χρήση
 

@@ -1,0 +1,64 @@
+# Το .xcodeproj παράγεται από αυτό το αρχείο με XcodeGen:
+#
+#     brew install xcodegen
+#     cd ios && xcodegen generate && open Glossa.xcodeproj
+#
+# Γιατί όχι καρφωμένο .xcodeproj στο git: το pbxproj είναι δεκάδες χιλιάδες
+# γραμμές παραγόμενης μορφής που συγκρούεται σε κάθε merge. Εδώ η δομή του
+# project είναι 60 γραμμές που διαβάζονται.
+name: Glossa
+options:
+  bundleIdPrefix: gr.a2l
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    # Βάλε εδώ το Team ID σου (Xcode → Settings → Accounts), ή όρισέ το στο
+    # περιβάλλον πριν τρέξεις το xcodegen:  export DEVELOPMENT_TEAM=XXXXXXXXXX
+    DEVELOPMENT_TEAM: ${DEVELOPMENT_TEAM}
+    TARGETED_DEVICE_FAMILY: "1,2"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+
+targets:
+
+  GlossaApp:
+    type: application
+    platform: iOS
+    sources:
+      # Ο κοινός πυρήνας μπαίνει σαν πηγαία αρχεία και όχι σαν πακέτο: ίδια
+      # αρχεία με το macOS, χωρίς όριο module και χωρίς `public` παντού.
+      - path: ../Sources/GlossaKit
+        name: GlossaKit
+      - path: App
+    settings:
+      base:
+        PRODUCT_NAME: Glossa
+        PRODUCT_BUNDLE_IDENTIFIER: gr.a2l.glossa
+        INFOPLIST_FILE: App/Info.plist
+        CODE_SIGN_ENTITLEMENTS: App/Glossa.entitlements
+        GENERATE_INFOPLIST_FILE: NO
+    dependencies:
+      - target: GlossaKeyboard
+        embed: true
+
+  GlossaKeyboard:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: ../Sources/GlossaKit
+        name: GlossaKit
+      - path: Keyboard
+    settings:
+      base:
+        PRODUCT_NAME: GlossaKeyboard
+        PRODUCT_BUNDLE_IDENTIFIER: gr.a2l.glossa.keyboard
+        INFOPLIST_FILE: Keyboard/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Keyboard/Glossa.entitlements
+        GENERATE_INFOPLIST_FILE: NO
