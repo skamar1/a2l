@@ -16,7 +16,7 @@
       {{ range .Params.products }}
         <a href="{{ .url }}" class="programata-card">
           <div class="programata-card__img">
-            <img src="{{ .image }}" alt="{{ .name }}" loading="lazy">
+            {{ partial "img.html" (dict "src" .image "alt" .name "max" 900) }}
           </div>
           <div class="programata-card__body">
             <span class="badge">{{ .tag }}</span>

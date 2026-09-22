@@ -2,7 +2,10 @@
   <div class="container">
     <div class="header__inner">
       <a href="/" class="header__logo" aria-label="{{ site.Title }} - Αρχική">
-        <img src="{{ site.Params.logo }}" alt="{{ site.Title }}" class="header__logo-img">
+        {{/* Το Lighthouse μετρά αυτό το λογότυπο ως στοιχείο LCP στο κινητό, οπότε
+           παίρνει fetchpriority="high" και βγαίνει στο μέγεθος που πραγματικά
+           εμφανίζεται (48px ύψος, x2 για retina) αντί για 150x150. */}}
+        {{ partial "img.html" (dict "src" site.Params.logo "alt" site.Title "class" "header__logo-img" "loading" "eager" "priority" true "fit" "96x96") }}
       </a>
 
       <nav class="nav" aria-label="Κύρια πλοήγηση">

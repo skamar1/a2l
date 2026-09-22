@@ -627,25 +627,51 @@ p { color: var(--text-secondary); }
 
 .carousel-dots {
   position: absolute;
-  bottom: 28px;
+  /* Το κουτί των τελειών είναι πλέον 24px ψηλό (ήταν 5px), οπότε το bottom
+     κατεβαίνει για να μείνουν οι τελείες οπτικά εκεί που ήταν. Το gap είναι 0
+     επειδή το κενό το δίνουν τα ίδια τα 24x24 κουμπιά γύρω από το μπαστουνάκι
+     των 12px — δηλαδή 12px οπτικό κενό, όσο περίπου και πριν. */
+  bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0;
 }
 
+/* Ο στόχος αφής είναι 24px ύψος και τουλάχιστον 24px πλάτος (WCAG 2.2 — 2.5.8
+   Target Size). Το ορατό «μπαστουνάκι» έμεινε 12x5 όπως ήταν: το ζωγραφίζει το
+   ::before μέσα σε ένα διάφανο κουμπί 24x24. Πριν, το ίδιο το <button> ήταν
+   12x5 και το Lighthouse το έκοβε (target-size) — το δάχτυλο αστοχούσε. */
 .carousel-dot {
+  height: 24px;
+  width: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+.carousel-dot::before {
+  content: "";
+  display: block;
   height: 5px;
   width: 12px;
   border-radius: 3px;
   background: rgba(255,255,255,0.4);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
 
+/* Το ενεργό είναι φαρδύτερο, οπότε μεγαλώνει και ο στόχος του μαζί. */
 .carousel-dot.active-dot {
+  width: 48px;
+}
+
+.carousel-dot.active-dot::before {
   width: 36px;
   background: #ffffff;
 }

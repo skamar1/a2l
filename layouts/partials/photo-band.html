@@ -13,7 +13,7 @@
 */}}
 <section class="photo-band" data-parallax>
   <div class="photo-band__media" aria-hidden="true">
-    <img class="photo-band__img" src="{{ .image }}" alt="" loading="lazy" width="1200" height="800">
+    {{ partial "img.html" (dict "src" .image "alt" "" "class" "photo-band__img" "max" 1600) }}
   </div>
   <div class="photo-band__overlay" aria-hidden="true"></div>
 

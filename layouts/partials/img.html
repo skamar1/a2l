@@ -1,0 +1,118 @@
+{{/* ---------------------------------------------------------------------
+     Εικόνα με ρητές διαστάσεις, σωστό βάρος και srcset.
+
+     Γιατί υπάρχει: οι εικόνες μπαίναν με σκέτο <img src> — χωρίς width/height
+     (ο browser δεν ξέρει τι χώρο να κρατήσει, «Image elements do not have
+     explicit width and height») και στο αρχικό τους μέγεθος (τα banners του
+     carousel ήταν 540–590 KB το καθένα, ~1,9 MB σε μια σελίδα).
+
+     Τι κάνει: περνάει την εικόνα από την επεξεργασία του Hugo (ξανακωδικοποίηση
+     σε WebP με λογική ποιότητα + προαιρετικά πολλαπλά πλάτη για srcset) και
+     βγάζει πάντα width/height. Το όνομα του παραγόμενου αρχείου περιέχει hash
+     του περιεχομένου, οπότε αλλαγή εικόνας = αλλαγή διεύθυνσης.
+
+     Παράμετροι (dict):
+       src       — υποχρεωτικό, π.χ. "/images/hero-banner.webp"
+       alt       — κείμενο εναλλακτικής περιγραφής ("" για διακοσμητική)
+       class     — κλάσεις CSS
+       loading   — "lazy" (προεπιλογή) ή "eager"
+       priority  — true → fetchpriority="high" (μόνο για την εικόνα LCP)
+       widths    — slice με πλάτη για srcset, π.χ. (slice 768 1200 1792)
+       sizes     — το αντίστοιχο sizes, π.χ. "100vw"
+       fit       — "ΠxΥ": η εικόνα χωράει μέσα σε αυτό το κουτί διατηρώντας την
+                   αναλογία της. Για λογότυπα, όπου το CSS δίνει ύψος ΚΑΙ
+                   max-width, βάζουμε το διπλάσιο του κουτιού (retina) και δεν
+                   χρειάζεται srcset.
+       max       — απλό πλαφόν πλάτους χωρίς srcset (για δευτερεύουσες εικόνες)
+       quality   — ποιότητα WebP (προεπιλογή 72)
+       hidden    — true → aria-hidden="true" (διπλότυπο για το marquee)
+
+     SVG: το Hugo δεν τα επεξεργάζεται (είναι ήδη διανυσματικά), αλλά
+     διαβάζουμε το viewBox και βγάζουμε width/height ώστε ο browser να ξέρει
+     την αναλογία τους. Εξωτερικές διευθύνσεις και εικόνες που δεν βρίσκονται
+     βγαίνουν ως έχουν — μια σπασμένη εικόνα είναι χειρότερη από μια
+     αβελτίωτη.
+     --------------------------------------------------------------------- */}}
+
+{{ $src := .src }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+{{ $loading := .loading | default "lazy" }}
+{{ $priority := .priority | default false }}
+{{ $widths := .widths }}
+{{ $sizes := .sizes | default "" }}
+{{ $fit := .fit | default "" }}
+{{ $max := .max | default 0 }}
+{{ $q := .quality | default 72 }}
+{{ $hidden := .hidden | default false }}
+
+{{ $isSVG := hasSuffix (lower $src) ".svg" }}
+{{ $res := "" }}
+{{ if and $src (not (hasPrefix $src "http")) }}
+  {{ $res = resources.Get (strings.TrimPrefix "/" $src) }}
+  {{ if not $res }}
+    {{ warnf "partials/img.html: δεν βρέθηκε η εικόνα %q" $src }}
+  {{ end }}
+{{ end }}
+
+{{ $url := $src }}
+{{ $w := 0 }}
+{{ $h := 0 }}
+{{ $srcset := slice }}
+
+{{ if and $res $isSVG }}
+  {{/* Οι διαστάσεις ενός SVG βγαίνουν από το viewBox· το CSS ούτως ή άλλως
+       ορίζει το τελικό μέγεθος, εδώ δίνουμε μόνο την αναλογία. */}}
+  {{ $vb := findRESubmatch `viewBox="\s*([0-9.]+)[\s,]+([0-9.]+)[\s,]+([0-9.]+)[\s,]+([0-9.]+)` $res.Content 1 }}
+  {{ with $vb }}
+    {{ $w = int (math.Ceil (float (index (index . 0) 3))) }}
+    {{ $h = int (math.Ceil (float (index (index . 0) 4))) }}
+  {{ else }}
+    {{ warnf "partials/img.html: το %q δεν έχει viewBox, βγαίνει χωρίς διαστάσεις" $src }}
+  {{ end }}
+{{ else if and $res $fit }}
+  {{ $main := $res.Fit (printf "%s webp q%d" $fit $q) }}
+  {{ $url = $main.RelPermalink }}
+  {{ $w = $main.Width }}
+  {{ $h = $main.Height }}
+{{ else }}{{ with $res }}
+  {{/* Το μεγαλύτερο ζητούμενο πλάτος — ποτέ πάνω από το πρωτότυπο, γιατί η
+       μεγέθυνση απλώς φουσκώνει το αρχείο χωρίς να προσθέτει λεπτομέρεια. */}}
+  {{ $target := .Width }}
+  {{ $maxReq := $max }}
+  {{ range $widths }}
+    {{ if gt . $maxReq }}{{ $maxReq = . }}{{ end }}
+  {{ end }}
+  {{ if and (gt $maxReq 0) (lt $maxReq .Width) }}
+    {{ $target = $maxReq }}
+  {{ end }}
+
+  {{ $main := .Resize (printf "%dx webp q%d" $target $q) }}
+  {{ $url = $main.RelPermalink }}
+  {{ $w = $main.Width }}
+  {{ $h = $main.Height }}
+
+  {{ range $widths }}
+    {{ if le . $res.Width }}
+      {{ $v := $res.Resize (printf "%dx webp q%d" . $q) }}
+      {{ $srcset = $srcset | append (printf "%s %dw" $v.RelPermalink $v.Width) }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Αν τα ζητούμενα πλάτη ήταν όλα μεγαλύτερα από το πρωτότυπο, το srcset
+       θα έμενε χωρίς τη μεγαλύτερη διαθέσιμη εκδοχή και οι οθόνες retina θα
+       έπαιρναν τη μικρή. Βάζουμε και την κύρια εκδοχή ως υποψήφια. */}}
+  {{ if $srcset }}
+    {{ $cand := printf "%s %dw" $url $w }}
+    {{ if not (in $srcset $cand) }}
+      {{ $srcset = $srcset | append $cand }}
+    {{ end }}
+  {{ end }}
+{{ end }}{{ end }}
+
+<img src="{{ $url }}"{{ with $class }} class="{{ . }}"{{ end }} alt="{{ $alt }}"
+  {{- if $w }} width="{{ $w }}" height="{{ $h }}"{{ end }}
+  {{- if $srcset }} srcset="{{ delimit $srcset ", " }}"{{ with $sizes }} sizes="{{ . }}"{{ end }}{{ end }}
+  {{- if $priority }} fetchpriority="high"{{ end }}
+  {{- if eq $loading "lazy" }} loading="lazy" decoding="async"{{ else }} loading="eager"{{ end }}
+  {{- if $hidden }} aria-hidden="true"{{ end }}>

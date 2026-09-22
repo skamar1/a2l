@@ -20,7 +20,7 @@
           {{ end }}
         </div>
         <div class="product-split-hero__visual">
-          <img src="{{ .Params.hero_image }}" alt="{{ .Title }}" loading="eager">
+          {{ partial "img.html" (dict "src" .Params.hero_image "alt" .Title "loading" "eager" "max" 1200) }}
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@
           <span class="browser-frame__dot"></span>
           <span class="browser-frame__url">{{ .url_label | default "FBS Integration" }}</span>
         </div>
-        <img src="{{ .image }}" alt="{{ .alt }}" loading="lazy" width="1160" height="722">
+        {{ partial "img.html" (dict "src" .image "alt" .alt "max" 1200) }}
         {{ with .caption }}<figcaption class="browser-frame__caption">{{ . }}</figcaption>{{ end }}
       </figure>
     </div>
@@ -74,7 +74,7 @@
     {{ range . }}
     <div class="promo-block" data-animate>
       <div class="promo-block__image">
-        <img src="{{ .image }}" alt="{{ .title }}" loading="lazy">
+        {{ partial "img.html" (dict "src" .image "alt" .title "max" 1200) }}
       </div>
       <div class="promo-block__body">
         <div class="promo-block__inner">
@@ -117,7 +117,7 @@
           </div>
           {{ with .image }}
             <div class="section-screenshot">
-              <img src="{{ . }}" alt="" loading="lazy">
+              {{ partial "img.html" (dict "src" . "alt" "" "max" 1200) }}
             </div>
           {{ end }}
           {{ with .modules }}
@@ -151,7 +151,7 @@
         <div class="shots" data-animate-stagger>
           {{ range .items }}
           <figure class="shot{{ if .wide }} shot--wide{{ end }}{{ if .narrow }} shot--narrow{{ end }}" data-animate>
-            <div class="shot__img"><img src="{{ .image }}" alt="{{ .alt }}" loading="lazy"></div>
+            <div class="shot__img">{{ partial "img.html" (dict "src" .image "alt" .alt "max" 1000) }}</div>
             <figcaption class="shot__cap"><strong>{{ .title }}</strong> {{ .desc }}</figcaption>
           </figure>
           {{ end }}

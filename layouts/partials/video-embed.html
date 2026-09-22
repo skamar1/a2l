@@ -31,8 +31,7 @@
         <div class="video-embed__card"
              data-video-id="{{ .youtube_id }}"
              data-video-title="{{ .video_title | default .title }}">
-          <img class="video-embed__poster" src="{{ .poster }}" alt="{{ .poster_alt }}"
-               loading="lazy" width="1160" height="722">
+          {{ partial "img.html" (dict "src" .poster "alt" .poster_alt "class" "video-embed__poster" "max" 1200) }}
           <button type="button" class="video-embed__btn">
             <span class="video-embed__icon" aria-hidden="true">
               <svg width="26" height="30" viewBox="0 0 26 30" fill="currentColor" role="presentation">

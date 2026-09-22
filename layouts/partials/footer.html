@@ -3,13 +3,19 @@
     <div class="footer__grid">
       <div class="footer__brand">
         <a href="/" class="header__logo" aria-label="{{ site.Title }} - Αρχική">
-          <img src="{{ site.Params.logo }}" alt="{{ site.Title }}" class="footer__logo-img">
+          {{ partial "img.html" (dict "src" site.Params.logo "alt" site.Title "class" "footer__logo-img" "fit" "480x200") }}
         </a>
         <p>{{ site.Params.company_full }}</p>
       </div>
 
+      {{/* Οι τίτλοι των στηλών είναι h2 και όχι h4. Το footer μπαίνει σε κάθε
+           σελίδα, οπότε δεν ξέρουμε τι επίπεδο επικεφαλίδας προηγήθηκε· με h4
+           μετά από ένα h2 η σειρά «πηδάει» ένα επίπεδο και το axe/Lighthouse το
+           κόβει (heading-order). Το h2 είναι το μόνο επίπεδο που στέκει μετά από
+           οποιοδήποτε προηγούμενο. Η εμφάνιση δεν αλλάζει — το στυλ κρέμεται
+           από την κλάση .footer__col-title, όχι από την ετικέτα. */}}
       <div>
-        <h4 class="footer__col-title">Σύνδεσμοι</h4>
+        <h2 class="footer__col-title">Σύνδεσμοι</h2>
         <div class="footer__links">
           {{ range site.Menus.main }}
             <a href="{{ .URL }}">{{ .Name }}</a>
@@ -18,7 +24,7 @@
       </div>
 
       <div>
-        <h4 class="footer__col-title">Προϊόντα</h4>
+        <h2 class="footer__col-title">Προϊόντα</h2>
         <div class="footer__links">
           <a href="/a2crm/">A2 CRM</a>
           <a href="/soft1/">Εφαρμογές SoftOne ERP</a>
@@ -33,7 +39,7 @@
       </div>
 
       <div class="footer__info">
-        <h4 class="footer__col-title">Επικοινωνία</h4>
+        <h2 class="footer__col-title">Επικοινωνία</h2>
         <p><span class="footer__ico">{{ partial "icon.html" "phone-call" }}</span><a href="tel:+302102241787" class="link-inherit">{{ site.Params.phone }}</a></p>
         <p><span class="footer__ico">{{ partial "icon.html" "mail" }}</span><a href="mailto:{{ site.Params.email }}" class="link-inherit">{{ site.Params.email }}</a></p>
         <p><span class="footer__ico">{{ partial "icon.html" "map-pin" }}</span>{{ site.Params.address }}</p>

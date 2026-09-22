@@ -1,0 +1,10 @@
+{{/* Εικόνες μέσα σε κείμενο Markdown (![alt](/images/…)).
+
+     Χωρίς αυτό το hook το Hugo βγάζει σκέτο <img src alt> — χωρίς width/height
+     και στο αρχικό μέγεθος του αρχείου. Το περνάμε από το partials/img.html:
+     η στήλη του άρθρου είναι 760px, οπότε 760/1520 (retina) αρκούν. */}}
+{{ partial "img.html" (dict
+     "src" .Destination
+     "alt" .PlainText
+     "widths" (slice 760 1520)
+     "sizes" "(min-width: 800px) 760px, 100vw") }}

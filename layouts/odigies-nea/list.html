@@ -16,7 +16,9 @@
           <a href="{{ .RelPermalink }}" class="post-card">
             <div class="post-card__img">
               {{ if .Params.image }}
-                <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                {{/* Η μικρογραφία της κάρτας είναι ~380px φαρδιά (3 στήλες),
+                     οπότε 760px αρκούν και για οθόνες retina. */}}
+                {{ partial "img.html" (dict "src" .Params.image "alt" .Title "max" 760) }}
               {{ else }}
                 <div class="post-card__placeholder">
                   {{ if eq .Params.category "Νέα" }}{{ partial "icon.html" "megaphone" }}{{ else if eq .Params.category "Οδηγοί" }}{{ partial "icon.html" "book" }}{{ else }}{{ partial "icon.html" "edit" }}{{ end }}

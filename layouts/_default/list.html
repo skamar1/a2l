@@ -13,7 +13,7 @@
           <article class="post-card">
             {{ with .Params.image }}
               <div class="post-card__img">
-                <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+                {{ partial "img.html" (dict "src" . "alt" $.Title "max" 800) }}
               </div>
             {{ end }}
             <div class="post-card__body">

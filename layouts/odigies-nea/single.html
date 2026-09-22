@@ -13,7 +13,13 @@
       </header>
 
       {{ with .Params.image }}
-        <img src="{{ . }}" alt="{{ $.Title }}" class="post__hero-img" loading="lazy">
+        {{/* Η εικόνα του άρθρου είναι το στοιχείο LCP εδώ: φορτώνει άμεσα,
+             με προτεραιότητα, στο πλάτος της στήλης (760px, x2 για retina). */}}
+        {{ partial "img.html" (dict
+             "src" . "alt" $.Title "class" "post__hero-img"
+             "loading" "eager" "priority" true
+             "widths" (slice 760 1520)
+             "sizes" "(min-width: 800px) 760px, 100vw") }}
       {{ end }}
 
       <div class="article__body">

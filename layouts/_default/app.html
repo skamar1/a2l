@@ -8,7 +8,7 @@
     <div class="app-hero__inner">
       <div class="app-hero__text">
         {{ with .Params.app_logo }}
-          <img src="{{ . }}" alt="{{ $.Title }} logo" class="app-hero__logo">
+          {{ partial "img.html" (dict "src" . "alt" (printf "%s logo" $.Title) "class" "app-hero__logo" "loading" "eager" "fit" "320x320") }}
         {{ end }}
         <div class="product-hero__eyebrow">{{ .Params.tag | default "Mobile App" }}</div>
         <h1 class="app-hero__title"><span class="gradient-text">{{ .Title }}</span></h1>
@@ -16,12 +16,12 @@
         <div class="app-store-badges">
           {{ with .Params.app_store_url }}
             <a href="{{ . }}" target="_blank" rel="noopener" class="store-badge store-badge--apple">
-              <img src="/images/store-badges/app-store-el.svg" alt="Κατεβάστε στο App Store">
+              {{ partial "img.html" (dict "src" "/images/store-badges/app-store-el.svg" "alt" "Κατεβάστε στο App Store") }}
             </a>
           {{ end }}
           {{ with .Params.play_store_url }}
             <a href="{{ . }}" target="_blank" rel="noopener" class="store-badge store-badge--google">
-              <img src="/images/store-badges/google-play-el.webp" alt="Διαθέσιμο στο Google Play">
+              {{ partial "img.html" (dict "src" "/images/store-badges/google-play-el.webp" "alt" "Διαθέσιμο στο Google Play" "fit" "600x102") }}
             </a>
           {{ end }}
         </div>
@@ -29,7 +29,7 @@
       {{ with .Params.screenshots }}
         <div class="app-hero__screens">
           {{ range first 2 . }}
-            <img src="{{ .img }}" alt="{{ .alt }}" class="app-screen" loading="eager">
+            {{ partial "img.html" (dict "src" .img "alt" .alt "class" "app-screen" "loading" "eager" "max" 800) }}
           {{ end }}
         </div>
       {{ end }}
@@ -48,7 +48,7 @@
     <div class="app-screens-grid">
       {{ range . }}
         <div class="app-screen-card">
-          <img src="{{ .img }}" alt="{{ .alt }}" loading="lazy">
+          {{ partial "img.html" (dict "src" .img "alt" .alt "max" 800) }}
           {{ with .caption }}<p class="app-screen-caption">{{ . }}</p>{{ end }}
         </div>
       {{ end }}
@@ -95,12 +95,12 @@
         <div class="app-store-badges app-store-badges--center">
           {{ with $.Params.app_store_url }}
             <a href="{{ . }}" target="_blank" rel="noopener" class="store-badge store-badge--apple">
-              <img src="/images/store-badges/app-store-el.svg" alt="Κατεβάστε στο App Store">
+              {{ partial "img.html" (dict "src" "/images/store-badges/app-store-el.svg" "alt" "Κατεβάστε στο App Store") }}
             </a>
           {{ end }}
           {{ with $.Params.play_store_url }}
             <a href="{{ . }}" target="_blank" rel="noopener" class="store-badge store-badge--google">
-              <img src="/images/store-badges/google-play-el.webp" alt="Διαθέσιμο στο Google Play">
+              {{ partial "img.html" (dict "src" "/images/store-badges/google-play-el.webp" "alt" "Διαθέσιμο στο Google Play" "fit" "600x102") }}
             </a>
           {{ end }}
         </div>
