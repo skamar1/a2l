@@ -31,8 +31,35 @@
     </div>
   </div>
 
-  {{/* Slide 2 */}}
-  <div class="carousel-slide" data-slide="1">
+  {{/* Slide 2 — trakit. Το φόντο είναι σχεδιασμένο για το slide (σκούρο μπλε,
+       το κινητό δεξιά), οπότε το κείμενο πατάει στο άδειο αριστερό μισό. */}}
+  <div class="carousel-slide carousel-slide--art-right" data-slide="1">
+    <div class="carousel-slide__bg">
+      {{ partial "img.html" (dict "src" "/images/trakit/trakit-slide.webp" "alt" "trakit — Ψηφιακό δελτίο αποστολής από το κινητό" "widths" (slice 768 1200 1440 1792) "sizes" "100vw" "quality" 82) }}
+      <div class="carousel-slide__overlay"></div>
+    </div>
+    <div class="carousel-slide__content">
+      <div class="carousel-slide__inner">
+        <div class="carousel-badge carousel-badge--blue">
+          <img src="/images/trakit/mark.svg" width="16" height="16" alt="">
+          <span>Νέο · trakit — Φάση Β από 12/10/2026</span>
+        </div>
+        <h2 class="carousel-slide__title">
+          Ψηφιακά<br>
+          <span class="hl-blue">Δελτία Αποστολής</span><br>
+          από το κινητό
+        </h2>
+        <p class="carousel-slide__desc">Σάρωση QR, έναρξη μεταφοράς και παράδοση, απευθείας στην ΑΑΔΕ με ΜΑΡΚ. Χωρίς αλλαγή προγράμματος και χωρίς εγκατάσταση.</p>
+        <div class="carousel-slide__actions">
+          <a href="/trakit/" class="btn btn--blue btn--lg">Δείτε το trakit</a>
+          <a href="/epikoinonia/" class="btn btn--ghost-white btn--lg">Ζητήστε demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* Slide 3 */}}
+  <div class="carousel-slide" data-slide="2">
     <div class="carousel-slide__bg">
       {{ partial "img.html" (dict "src" "/images/hero-banner.webp" "alt" "Υποστήριξη Επιχειρήσεων" "widths" (slice 768 1200 1440 1792) "sizes" "100vw") }}
       <div class="carousel-slide__overlay"></div>
@@ -57,8 +84,8 @@
     </div>
   </div>
 
-  {{/* Slide 3 */}}
-  <div class="carousel-slide" data-slide="2">
+  {{/* Slide 4 */}}
+  <div class="carousel-slide" data-slide="3">
     <div class="carousel-slide__bg">
       {{ partial "img.html" (dict "src" "/images/hero-banner-2.webp" "alt" "Εμπορικά Προγράμματα" "widths" (slice 768 1200 1440 1792) "sizes" "100vw") }}
       <div class="carousel-slide__overlay"></div>
@@ -83,8 +110,8 @@
     </div>
   </div>
 
-  {{/* Slide 4 */}}
-  <div class="carousel-slide" data-slide="3">
+  {{/* Slide 5 */}}
+  <div class="carousel-slide" data-slide="4">
     <div class="carousel-slide__bg">
       {{ partial "img.html" (dict "src" "/images/hero-banner-3.webp" "alt" "Κατασκευή Ιστοσελίδων" "widths" (slice 768 1200 1440 1792) "sizes" "100vw") }}
       <div class="carousel-slide__overlay"></div>
@@ -109,8 +136,8 @@
     </div>
   </div>
 
-  {{/* Slide 5 */}}
-  <div class="carousel-slide" data-slide="4">
+  {{/* Slide 6 */}}
+  <div class="carousel-slide" data-slide="5">
     <div class="carousel-slide__bg">
       {{/* Φωτογραφία (όχι γραφικό) πίσω από σκούρο overlay: αντέχει χαμηλότερη
            ποιότητα WebP χωρίς ορατή διαφορά και γλιτώνει ~20% βάρος. */}}
@@ -152,6 +179,7 @@
     <button class="carousel-dot" data-dot="2" aria-label="Slide 3"></button>
     <button class="carousel-dot" data-dot="3" aria-label="Slide 4"></button>
     <button class="carousel-dot" data-dot="4" aria-label="Slide 5"></button>
+    <button class="carousel-dot" data-dot="5" aria-label="Slide 6"></button>
   </div>
 
   {{/* Progress bar */}}

@@ -478,6 +478,12 @@ p { color: var(--text-secondary); }
   to   { transform: scale(1.08); }
 }
 
+/* Slide με το θέμα στα δεξιά (trakit): σε στενή οθόνη το κείμενο πέφτει
+   πάνω στο κινητό, οπότε δείχνουμε το άδειο αριστερό μέρος του φόντου. */
+@media (max-width: 768px) {
+  .carousel-slide--art-right .carousel-slide__bg img { object-position: 8% center; }
+}
+
 .carousel-slide__overlay {
   position: absolute;
   inset: 0;
@@ -549,6 +555,14 @@ p { color: var(--text-secondary); }
 }
 
 .carousel-badge--teal img { border-radius: 4px; }
+
+.carousel-badge--blue {
+  border-color: rgba(96,165,250,0.45);
+  background: rgba(30,136,229,0.16);
+  color: #bfdbfe;
+}
+
+.carousel-badge--blue img { border-radius: 4px; }
 
 .carousel-badge__dot {
   width: 8px;
@@ -849,6 +863,20 @@ p { color: var(--text-secondary); }
   background: #3ce4b7;
   color: #06231c;
   box-shadow: 0 4px 24px rgba(45,212,167,0.35);
+  transform: translateY(-1px);
+}
+
+/* Το μπλε του trakit. Το #1565c0 με λευκό κείμενο δίνει αντίθεση 5,7:1. */
+.btn--blue {
+  background: #1565c0;
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn--blue:hover {
+  background: #1976d2;
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(30,136,229,0.4);
   transform: translateY(-1px);
 }
 
@@ -4102,6 +4130,7 @@ p { color: var(--text-secondary); }
 .hl-indigo { color: var(--accent-soft); }
 .hl-pink   { color: #f472b6; }
 .hl-amber  { color: #fbbf24; }
+.hl-blue   { color: #60a5fa; }
 
 .carousel-stat__unit { font-size: 1rem; font-weight: 500; }
 .carousel-stats__grid { max-width: var(--max-width); margin-inline: auto; }

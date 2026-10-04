@@ -73,52 +73,57 @@ disableHugoGeneratorInject = true
     name = "Εν Όψει — myDATA"
     url = "/enopsi/"
     parent = "programata"
-    weight = 0
+    weight = 1
+  [[menus.main]]
+    name = "trakit — Ψηφιακή Διακίνηση"
+    url = "/trakit/"
+    parent = "programata"
+    weight = 2
   [[menus.main]]
     name = "A2 CRM"
     url = "/a2crm/"
     parent = "programata"
-    weight = 1
+    weight = 3
   [[menus.main]]
     name = "Εφαρμογές SoftOne ERP"
     url = "/soft1/"
     parent = "programata"
-    weight = 2
+    weight = 4
   [[menus.main]]
     name = "Εφαρμογές EntersoftOne"
     url = "/entersoftone/"
     parent = "programata"
-    weight = 3
+    weight = 5
   [[menus.main]]
     name = "Εφαρμογές Dynasoft"
     url = "/result-crm/"
     parent = "programata"
-    weight = 4
+    weight = 6
   [[menus.main]]
     name = "Εφαρμογές Megasoft"
     url = "/megasoft/"
     parent = "programata"
-    weight = 5
+    weight = 7
   [[menus.main]]
     name = "ICS VCR — Ταμειακή"
     url = "/ics-vcr/"
     parent = "programata"
-    weight = 8
+    weight = 10
   [[menus.main]]
     name = "Εφαρμογές Qorrect"
     url = "/plano/"
     parent = "programata"
-    weight = 6
+    weight = 8
   [[menus.main]]
     name = "Mobile App — Πάνες για Όλους"
     url = "/panesgiaolous-app/"
     parent = "programata"
-    weight = 7
+    weight = 9
   [[menus.main]]
     name = "Διασύνδεση Skroutz FBS"
     url = "/skroutz-fbs-softone/"
     parent = "programata"
-    weight = 9
+    weight = 11
 
   [[menus.main]]
     name = "Υπολογιστές"

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="trakit">
+  <rect width="32" height="32" rx="8.5" fill="#ffffff"/>
+  <rect x="11.5" y="12" width="7" height="14" fill="#16539c"/>
+  <path d="M6 8.5h14.5V5.5L27 11.5l-6.5 6v-3H6z" fill="#1e88e5"/>
+</svg>
