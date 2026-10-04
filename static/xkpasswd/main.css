@@ -2477,3 +2477,8 @@ body {
 .xkp-fouc{visibility:hidden}
 .xkp-lbl{margin-left:.5em;margin-right:1em}
 
+.pw-text{user-select:text;-webkit-user-select:text;cursor:text;font-family:var(--bs-font-monospace);word-break:break-all}
+.pw-copy{line-height:1}
+.pw-len{white-space:nowrap}
+.pw-offscreen{position:fixed;top:0;left:-9999px;opacity:0}
+
