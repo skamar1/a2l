@@ -1412,6 +1412,19 @@ p { color: var(--text-secondary); }
   background: linear-gradient(180deg, #f4f4ff 0%, #ffffff 100%);
 }
 
+/* Σύνδεσμος επιστροφής στη σελίδα-γονέα (υποσελίδες Megasoft → hub) */
+.product-hero__back {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.product-hero__back:hover {
+  color: var(--accent);
+}
+
 .product-hero__eyebrow {
   display: inline-flex;
   align-items: center;
@@ -1497,6 +1510,19 @@ p { color: var(--text-secondary); }
   position: absolute;
   left: 0;
   color: var(--accent);
+}
+
+/* Σύνδεσμος «Περισσότερα →» στο τέλος κάρτας (ίδιο ύφος με .programata-card__cta) */
+.module-card__link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.module-card__link:hover {
+  text-decoration: underline;
 }
 
 /* --- Post list -------------------------------------------- */

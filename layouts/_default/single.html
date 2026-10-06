@@ -10,6 +10,7 @@
     <div class="container">
       <div class="product-split-hero__inner">
         <div class="product-split-hero__text">
+          {{ with .Params.parent }}<a href="{{ .url }}" class="product-hero__back">← {{ .title }}</a>{{ end }}
           <div class="product-hero__eyebrow">{{ .Params.tag | default "Λογισμικό" }}</div>
           <h1 class="product-split-hero__title"><span class="gradient-text">{{ .Title }}</span></h1>
           <p class="product-split-hero__desc">{{ .Params.description }}</p>
@@ -29,6 +30,7 @@
   <div class="page-content">
     <div class="container">
       <section class="product-hero">
+        {{ with .Params.parent }}<a href="{{ .url }}" class="product-hero__back">← {{ .title }}</a>{{ end }}
         <div class="product-hero__eyebrow">{{ .Params.tag | default "Λογισμικό" }}</div>
         <h1 class="product-hero__title"><span class="gradient-text">{{ .Title }}</span></h1>
         <p class="product-hero__desc">{{ .Params.description }}</p>
@@ -132,6 +134,8 @@
                       {{ range . }}<li>{{ . }}</li>{{ end }}
                     </ul>
                   {{ end }}
+                  {{/* Προαιρετικός σύνδεσμος προς αναλυτική σελίδα (π.χ. hub Megasoft → υποσελίδες) */}}
+                  {{ with .url }}<a href="{{ . }}" class="module-card__link">Περισσότερα →</a>{{ end }}
                 </div>
               {{ end }}
             </div>
