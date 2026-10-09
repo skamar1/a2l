@@ -60,6 +60,12 @@ products:
     image: "/images/ics-vcr.webp"
     desc: "Άυλη cloud ταμειακή, τερματικό SoftPOS και Πάροχος myDATA σε μία φορητή συσκευή, χωρίς επιπλέον εξοπλισμό."
 
+  - name: "Αυτόματα Συρτάρια Μετρητών"
+    url: "/automata-syrtaria/"
+    tag: "Cash Management / ICS & Cashlogy"
+    image: "/images/automata-syrtaria/cashlogy-pos1500.webp"
+    desc: "Έξυπνα συστήματα διαχείρισης μετρητών ICS, Cashlogy και VNE: 100% ακριβή ρέστα, έλεγχος πλαστών, απόλυτη υγιεινή και άμεση σύνδεση με ERP."
+
   - name: "Διασύνδεση SoftOne ↔ Skroutz FBS"
     url: "/skroutz-fbs-softone/"
     tag: "Διασύνδεση e-shop ↔ ERP"

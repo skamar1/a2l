@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" width="600" height="520" role="img" aria-label="Αυτόματο Συρτάρι Μετρητών: 0€ αποκλίσεις, 100% έλεγχος πλαστότητας, απόλυτη υγιεινή και διασύνδεση με POS και ERP">
+  <defs>
+    <linearGradient id="heroCardBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="greenGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="pillShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <style>
+    .f-sans { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  </style>
+
+  <!-- Background decorative ambient circles -->
+  <circle cx="300" cy="240" r="220" fill="#0284c7" fill-opacity="0.05" />
+  <circle cx="480" cy="140" r="100" fill="#0ea5e9" fill-opacity="0.06" />
+
+  <!-- Main Central Device Representation -->
+  <g filter="url(#cardShadow)">
+    <rect x="150" y="70" width="300" height="340" rx="24" fill="url(#heroCardBg)" stroke="#334155" stroke-width="2"/>
+  </g>
+
+  <!-- Device Top Display Screen -->
+  <rect x="180" y="95" width="240" height="70" rx="12" fill="#030712" stroke="#1e293b" stroke-width="1.5"/>
+  <circle cx="205" cy="130" r="5" fill="#10b981"/>
+  <text class="f-sans" x="225" y="125" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="1">ΕΤΟΙΜΟ ΓΙΑ ΠΛΗΡΩΜΗ</text>
+  <text class="f-sans" x="225" y="148" font-size="20" font-weight="800" fill="#38bdf8">34,50 €</text>
+
+  <!-- Note Feeding Slot (Χαρτονομίσματα) -->
+  <rect x="180" y="185" width="240" height="42" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <rect x="220" y="202" width="160" height="8" rx="4" fill="#0284c7" fill-opacity="0.4"/>
+  <text class="f-sans" x="300" y="221" font-size="10" font-weight="700" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">ΥΠΟΔΟΧΗ ΧΑΡΤΟΝΟΜΙΣΜΑΤΩΝ</text>
+
+  <!-- Coin Hopper (Κέρματα) -->
+  <rect x="180" y="245" width="240" height="50" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <!-- Funnel shape -->
+  <path d="M250 258 L350 258 L330 278 L270 278 Z" fill="#334155"/>
+  <circle cx="300" cy="285" r="4" fill="#eab308"/>
+  <circle cx="312" cy="283" r="3" fill="#ca8a04"/>
+  <circle cx="288" cy="284" r="3.5" fill="#eab308"/>
+  <text class="f-sans" x="300" y="271" font-size="9" font-weight="700" fill="#cbd5e1" text-anchor="middle" letter-spacing="0.5">ΥΠΟΔΟΧΗ ΚΕΡΜΑΤΩΝ (BULK)</text>
+
+  <!-- Cash Dispense / Change Tray (Ρέστα) -->
+  <rect x="180" y="315" width="240" height="60" rx="12" fill="#0b1120" stroke="#334155" stroke-width="1.5"/>
+  <rect x="210" y="332" width="180" height="26" rx="6" fill="#1e293b"/>
+  <text class="f-sans" x="300" y="349" font-size="11" font-weight="700" fill="#10b981" text-anchor="middle">ΑΠΟΔΟΣΗ ΡΕΣΤΩΝ: 15,50 €</text>
+
+  <!-- 4 Floating Value Badge Pills -->
+
+  <!-- 1. Top Left: 0€ Αποκλίσεις -->
+  <g filter="url(#pillShadow)">
+    <rect x="25" y="100" width="180" height="64" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="40" y="116" width="32" height="32" rx="10" fill="#f0fdf4"/>
+    <path d="M49 132 l5 5 l10 -11" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text class="f-sans" x="82" y="128" font-size="14" font-weight="800" fill="#0f172a">0€ Αποκλίσεις</text>
+    <text class="f-sans" x="82" y="144" font-size="11" font-weight="600" fill="#16a34a">100% ακριβή ρέστα</text>
+  </g>
+
+  <!-- 2. Bottom Left: Έλεγχος Πλαστότητας -->
+  <g filter="url(#pillShadow)">
+    <rect x="30" y="290" width="185" height="64" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="45" y="306" width="32" height="32" rx="10" fill="#eff6ff"/>
+    <path d="M61 314 v8 M57 318 h8 M54 328 c0 3 7 6 7 6 s7 -3 7 -6 v-8 l-7 -3 l-7 3 z" stroke="#0284c7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text class="f-sans" x="87" y="318" font-size="13" font-weight="800" fill="#0f172a">Έλεγχος ECB</text>
+    <text class="f-sans" x="87" y="334" font-size="11" font-weight="600" fill="#0284c7">100% έλεγχος πλαστών</text>
+  </g>
+
+  <!-- 3. Top Right: Κλείσιμο σε 1' -->
+  <g filter="url(#pillShadow)">
+    <rect x="395" y="110" width="180" height="64" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="410" y="126" width="32" height="32" rx="10" fill="#fefce8"/>
+    <circle cx="426" cy="142" r="10" stroke="#ca8a04" stroke-width="2" fill="none"/>
+    <path d="M426 136 v6 l4 2" stroke="#ca8a04" stroke-width="2" stroke-linecap="round"/>
+    <text class="f-sans" x="452" y="138" font-size="13" font-weight="800" fill="#0f172a">Κλείσιμο σε 1'</text>
+    <text class="f-sans" x="452" y="154" font-size="11" font-weight="600" fill="#ca8a04">Αυτόματο ημερήσιο Ζ</text>
+  </g>
+
+  <!-- 4. Bottom Right: Σύνδεση ERP & POS -->
+  <g filter="url(#pillShadow)">
+    <rect x="390" y="280" width="185" height="64" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="405" y="296" width="32" height="32" rx="10" fill="#f5f3ff"/>
+    <path d="M416 312 h10 M416 318 h10 M414 322 h14 a2 2 0 0 0 2 -2 v-12 a2 2 0 0 0 -2 -2 h-14 a2 2 0 0 0 -2 2 v12 a2 2 0 0 0 2 2 z" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text class="f-sans" x="447" y="308" font-size="13" font-weight="800" fill="#0f172a">POS &amp; ERP Ready</text>
+    <text class="f-sans" x="447" y="324" font-size="11" font-weight="600" fill="#7c3aed">SoftOne · Megasoft · Plano</text>
+  </g>
+
+  <!-- Bottom Brand Footnote / Badge -->
+  <g>
+    <rect x="180" y="440" width="240" height="36" rx="18" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <circle cx="202" cy="458" r="4" fill="#0284c7"/>
+    <text class="f-sans" x="215" y="463" font-size="12" font-weight="700" fill="#334155">ICS Cash Management · A2 Labs</text>
+  </g>
+</svg>

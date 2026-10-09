@@ -124,6 +124,11 @@ disableHugoGeneratorInject = true
     url = "/skroutz-fbs-softone/"
     parent = "programata"
     weight = 11
+  [[menus.main]]
+    name = "Αυτόματα Συρτάρια"
+    url = "/automata-syrtaria/"
+    parent = "programata"
+    weight = 12
 
   [[menus.main]]
     name = "Υπολογιστές"
