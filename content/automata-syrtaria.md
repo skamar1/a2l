@@ -6,9 +6,6 @@ slug: "automata-syrtaria"
 product: true
 hero_image: "/images/automata-syrtaria/hero.svg"
 tag: "Smart Cash Management · ICS, Cashlogy & VNE"
-parent:
-  title: "Προγράμματα"
-  url: "/programata/"
 
 keywords:
   - "αυτόματα συρτάρια"

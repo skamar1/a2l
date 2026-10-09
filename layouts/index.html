@@ -58,8 +58,33 @@
     </div>
   </div>
 
-  {{/* Slide 3 */}}
-  <div class="carousel-slide" data-slide="2">
+  {{/* Slide 3 — Αυτόματα Συρτάρια */}}
+  <div class="carousel-slide carousel-slide--art-right" data-slide="2">
+    <div class="carousel-slide__bg">
+      {{ partial "img.html" (dict "src" "/images/automata-syrtaria/syrtaria-slide.webp" "alt" "Αυτόματα Συρτάρια Μετρητών ICS & Cashlogy" "widths" (slice 768 1200 1440 1792) "sizes" "100vw" "quality" 84) }}
+      <div class="carousel-slide__overlay"></div>
+    </div>
+    <div class="carousel-slide__content">
+      <div class="carousel-slide__inner">
+        <div class="carousel-badge carousel-badge--blue">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="9" cy="6" rx="6" ry="3"/><path d="M3 6v5c0 1.7 2.7 3 6 3s6-1.3 6-3"/><path d="M3 11v5c0 1.7 2.7 3 6 3 1 0 2-.1 2.8-.3"/><circle cx="17" cy="16" r="4"/></svg>
+          <span>Νέο · Αυτόματα Συρτάρια Μετρητών</span>
+        </div>
+        <h2 class="carousel-slide__title">
+          Τέρμα τα λάθη<br>
+          <span class="hl-blue">στα ρέστα</span> &amp; τα πλαστά
+        </h2>
+        <p class="carousel-slide__desc">Έξυπνα συστήματα διαχείρισης μετρητών ICS, Cashlogy &amp; VNE. 100% ακρίβεια, άμεση ανίχνευση πλαστών, απόλυτη υγιεινή και σύνδεση με το POS και το ERP σας.</p>
+        <div class="carousel-slide__actions">
+          <a href="/automata-syrtaria/" class="btn btn--blue btn--lg">Δείτε τα συρτάρια</a>
+          <a href="/epikoinonia/" class="btn btn--ghost-white btn--lg">Ζητήστε προσφορά</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* Slide 4 */}}
+  <div class="carousel-slide" data-slide="3">
     <div class="carousel-slide__bg">
       {{ partial "img.html" (dict "src" "/images/hero-banner.webp" "alt" "Υποστήριξη Επιχειρήσεων" "widths" (slice 768 1200 1440 1792) "sizes" "100vw") }}
       <div class="carousel-slide__overlay"></div>
@@ -84,8 +109,8 @@
     </div>
   </div>
 
-  {{/* Slide 4 */}}
-  <div class="carousel-slide" data-slide="3">
+  {{/* Slide 5 */}}
+  <div class="carousel-slide" data-slide="4">
     <div class="carousel-slide__bg">
       {{ partial "img.html" (dict "src" "/images/hero-banner-2.webp" "alt" "Εμπορικά Προγράμματα" "widths" (slice 768 1200 1440 1792) "sizes" "100vw") }}
       <div class="carousel-slide__overlay"></div>
@@ -110,8 +135,8 @@
     </div>
   </div>
 
-  {{/* Slide 5 */}}
-  <div class="carousel-slide" data-slide="4">
+  {{/* Slide 6 */}}
+  <div class="carousel-slide" data-slide="5">
     <div class="carousel-slide__bg">
       {{ partial "img.html" (dict "src" "/images/hero-banner-3.webp" "alt" "Κατασκευή Ιστοσελίδων" "widths" (slice 768 1200 1440 1792) "sizes" "100vw") }}
       <div class="carousel-slide__overlay"></div>
@@ -136,8 +161,8 @@
     </div>
   </div>
 
-  {{/* Slide 6 */}}
-  <div class="carousel-slide" data-slide="5">
+  {{/* Slide 7 */}}
+  <div class="carousel-slide" data-slide="6">
     <div class="carousel-slide__bg">
       {{/* Φωτογραφία (όχι γραφικό) πίσω από σκούρο overlay: αντέχει χαμηλότερη
            ποιότητα WebP χωρίς ορατή διαφορά και γλιτώνει ~20% βάρος. */}}
@@ -180,6 +205,7 @@
     <button class="carousel-dot" data-dot="3" aria-label="Slide 4"></button>
     <button class="carousel-dot" data-dot="4" aria-label="Slide 5"></button>
     <button class="carousel-dot" data-dot="5" aria-label="Slide 6"></button>
+    <button class="carousel-dot" data-dot="6" aria-label="Slide 7"></button>
   </div>
 
   {{/* Progress bar */}}
@@ -283,6 +309,30 @@
     </div>
   </div>
 </section>
+
+{{/* ── ΑΥΤΟΜΑΤΑ ΣΥΡΤΑΡΙΑ ───────────────────────────────── */}}
+{{ with $d.syrtaria_banner }}
+<section class="promo-banner promo-banner--light" id="automata-syrtaria">
+  <div class="container">
+    <div class="promo-banner__inner">
+      <div class="promo-banner__body">
+        <span class="promo-banner__label">{{ .label }}</span>
+        <h2 class="promo-banner__title">{{ .title }}</h2>
+        <p class="promo-banner__text">{{ .text }}</p>
+        {{ with .bullets }}
+        <ul class="promo-banner__list">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        <a href="{{ .url }}" class="btn btn--primary btn--lg">{{ .cta }}</a>
+      </div>
+      <div class="promo-banner__visual">
+        <img src="{{ .image }}" alt="{{ .title }}" loading="lazy" width="560" height="520">
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
 
 {{/* ── ΕΝ ΟΨΕΙ ─────────────────────────────────────────────
      Το «παράθυρο» δεξιά είναι φτιαγμένο σε HTML/CSS αντί για screenshot:
